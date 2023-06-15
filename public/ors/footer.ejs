@@ -1,0 +1,166 @@
+<%- include('mixer.ejs')%> 
+
+
+<!-- <p>
+    <style type="text/css">
+    @keyframes bounce {
+    0% {
+    transform: scale(1, 1) translateY(0);
+    }
+    10% {
+    transform: scale(1.1, .9) translateY(0);
+    }
+    30% {
+    transform: scale(.9, 1.1) translateY(-100px);
+    }
+    50% {
+    transform: scale(1.05, .95) translateY(0);
+    }
+    57% {
+    transform: scale(1, 1) translateY(-7px);
+    }
+    64% {
+    transform: scale(1, 1) translateY(0);
+    }
+    100% {
+    transform: scale(1, 1) translateY(0);
+    }
+    }
+    
+    .census {
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    right: 5px;
+    }
+    </style>
+    </p>
+    <p>
+    <a class="census" href="https://www.nbs.go.tz/index.php/sw/sensa-2022" target="_blank" rel="noopener"> <img class="mx-auto img-fluid" style="width: 160px; animation: bounce ease 3s infinite;" src="https://www.nbs.go.tz/images/slider/census2022Pump.png" alt="Tanzania Census 2022" /> </a>
+    </p> -->
+</div>
+<!--  END CONTENT AREA  -->
+
+
+</div>
+<!-- END MAIN CONTAINER -->
+
+    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+    <script src="ors/assets/js/libs/jquery-3.1.1.min.js"></script>
+    <script src="ors/bootstrap/js/popper.min.js"></script>
+    <script src="ors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="ors/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="ors/assets/js/app.js"></script>
+    <script>
+        $(document).ready(function() {
+            App.init();
+        });
+    </script>
+    <script src="ors/assets/js/custom.js"></script>
+    <!-- END GLOBAL MANDATORY SCRIPTS -->
+
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <script src="ors/plugins/apex/apexcharts.min.js"></script>
+    <script src="ors/assets/js/dashboard/dash_1.js"></script>
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+
+    <script src="ors/plugins/highlight/highlight.pack.js"></script>
+ 
+<!-- END GLOBAL MANDATORY STYLES -->
+
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="ors/assets/js/scrollspyNav.js"></script>
+<script src="ors/assets/js/components/ui-accordions.js"></script>
+
+<script src="ors/plugins/select2/select2.min.js"></script>
+<script src="ors/plugins/select2/custom-select2.js"></script>
+
+<script src="ors/plugins/flatpickr/flatpickr.js"></script>
+<script src="ors/plugins/noUiSlider/nouislider.min.js"></script>
+
+<script src="ors/plugins/flatpickr/custom-flatpickr.js"></script>
+<script src="ors/plugins/noUiSlider/custom-nouiSlider.js"></script>
+<script src="ors/plugins/bootstrap-range-Slider/bootstrap-rangeSlider.js"></script>
+
+<script src="ors/plugins/bootstrap-maxlength/bootstrap-maxlength.js"></script>
+<script src="ors/plugins/bootstrap-maxlength/custom-bs-maxlength.js"></script>
+
+<script src="ors/plugins/table/datatable/datatables.js"></script>
+
+
+<script src="ors/plugins/sweetalerts/sweetalert2.min.js"></script>
+<script src="ors/plugins/sweetalerts/custom-sweetalert.js"></script>
+
+
+
+    <script src="ors/assets/js/ie11fix/fn.fix-padStart.js"></script>
+    <script src="ors/plugins/editors/quill/quill.js"></script>
+    <script src="ors/plugins/notification/snackbar/snackbar.min.js"></script>
+    <script src="ors/assets/js/apps/custom-mailbox.js"></script>
+
+
+
+    <script src="ors/plugins/jquery-step/jquery.steps.min.js"></script>
+    <script src="ors/plugins/jquery-step/custom-jquery.steps.js"></script>
+
+
+
+<!-- NOTE TO Use Copy CSV Excel PDF Print Options You Must Include These Files  -->
+<script src="ors/plugins/table/datatable/button-ext/dataTables.buttons.min.js"></script>
+<script src="ors/plugins/table/datatable/button-ext/jszip.min.js"></script>    
+<script src="ors/plugins/table/datatable/button-ext/buttons.html5.min.js"></script>
+<script src="ors/plugins/table/datatable/button-ext/buttons.print.min.js"></script>
+<script>
+    $('#html5-extension').DataTable( {
+        // dom: '<"row"<"col-md-12"<"row"<"col-md-6"B><"col-md-6"f> > ><"col-md-12"rt> <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>> >',
+        // buttons: {
+        //     buttons: [
+        //         { extend: 'copy', className: 'btn' },
+        //         { extend: 'csv', className: 'btn' },
+        //         { extend: 'excel', className: 'btn' },
+        //         { extend: 'print', className: 'btn' }
+        //     ]
+        // },
+        "oLanguage": {
+            "oPaginate": { "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>', "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>' },
+            "sInfo": "Showing page _PAGE_ of _PAGES_",
+            "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
+            "sSearchPlaceholder": "Search...",
+           "sLengthMenu": "Results :  _MENU_",
+        },
+        "stripeClasses": [],
+        "lengthMenu": [7, 10, 20, 50],
+        "pageLength": 7 
+    } );
+</script>
+<script>
+    $(document).ready(function() {
+        $('table.multi-table').DataTable({
+            "oLanguage": {
+                "oPaginate": { "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>', "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>' },
+                "sInfo": "Showing page _PAGE_ of _PAGES_",
+                "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
+                "sSearchPlaceholder": "Search...",
+               "sLengthMenu": "Results :  _MENU_",
+            },
+            "stripeClasses": [],
+            "lengthMenu": [7, 10, 20, 50],
+            "pageLength": 7,
+            drawCallback: function () {
+                $('.t-dot').tooltip({ template: '<div class="tooltip status" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>' })
+                $('.dataTables_wrapper table').removeClass('table-striped');
+            }
+        });
+    } );
+</script>
+<script src="ors/plugins/blockui/jquery.blockUI.min.js"></script>
+
+<script src="ors/plugins/blockui/custom-blockui.js"></script>
+<!--  END CUSTOM SCRIPTS FILE  -->
+
+
+
+<script src="ors/assets/js/apps/todoList.js"></script>
+
+</body>
+</html>

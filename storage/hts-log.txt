@@ -1,0 +1,24 @@
+HTTrack3.49-2 launched on Sat, 23 Apr 2022 15:45:59 at http://themepixels.me/demo/bracket/app
+(httrack http://themepixels.me/demo/bracket/app )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+15:51:26	Error: 	"Not Found" (404) at link themepixels.me/demo/bracket/app/skin-select2.html (from themepixels.me/demo/bracket/app/accordion.html)
+15:51:26	Error: 	"Not Found" (404) at link themepixels.me/demo/bracket/app/skin-rangeslider.html (from themepixels.me/demo/bracket/app/accordion.html)
+15:51:26	Error: 	"Not Found" (404) at link themepixels.me/demo/bracket/app/skin-input-form.html (from themepixels.me/demo/bracket/app/accordion.html)
+15:51:26	Error: 	"Not Found" (404) at link themepixels.me/demo/bracket/app/skin-file-browser.html (from themepixels.me/demo/bracket/app/accordion.html)
+15:51:26	Error: 	"Not Found" (404) at link themepixels.me/demo/bracket/app/skin-datepicker.html (from themepixels.me/demo/bracket/app/accordion.html)
+15:51:26	Error: 	"Not Found" (404) at link themepixels.me/demo/bracket/app/skin-sidebar.html (from themepixels.me/demo/bracket/app/accordion.html)
+15:51:26	Error: 	"Not Found" (404) at link themepixels.me/demo/bracket/js/tooltip-colored.js (from themepixels.me/demo/bracket/app/progress.html)
+15:51:26	Error: 	"Not Found" (404) at link themepixels.me/demo/bracket/js/popover-colored.js (from themepixels.me/demo/bracket/app/progress.html)
+15:52:56	Error: 	"Not Found" (404) at link themepixels.me/demo/bracket/lib/images/sort_both.png (from themepixels.me/demo/bracket/lib/datatables/jquery.dataTables.css)
+15:52:56	Error: 	"Not Found" (404) at link themepixels.me/demo/bracket/lib/images/sort_asc.png (from themepixels.me/demo/bracket/lib/datatables/jquery.dataTables.css)
+15:52:56	Error: 	"Not Found" (404) at link themepixels.me/demo/bracket/lib/images/sort_desc.png (from themepixels.me/demo/bracket/lib/datatables/jquery.dataTables.css)
+15:52:56	Error: 	"Not Found" (404) at link themepixels.me/demo/bracket/lib/images/sort_asc_disabled.png (from themepixels.me/demo/bracket/lib/datatables/jquery.dataTables.css)
+15:52:56	Error: 	"Not Found" (404) at link themepixels.me/demo/bracket/lib/images/sort_desc_disabled.png (from themepixels.me/demo/bracket/lib/datatables/jquery.dataTables.css)
+
+HTTrack Website Copier/3.49-2 mirror complete in 8 minutes 5 seconds : 211 links scanned, 197 files written (15359972 bytes overall) [7540375 bytes received at 15547 bytes/sec], 9957393 bytes transferred using HTTP compression in 143 files, ratio 20%, 3.2 requests per connection
+(13 errors, 0 warnings, 0 messages)

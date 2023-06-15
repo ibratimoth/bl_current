@@ -1,0 +1,338 @@
+<%- include('sidebar.ejs')%>
+
+<!--  BEGIN CONTENT AREA  -->
+<div id="content" class="main-content">
+<div class="layout-px-spacing">
+
+<div class="row layout-top-spacing" id="cancel-row">
+
+
+
+    <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+        <div class="statbox widget box box-shadow">
+            <div id="accordionBasic" class="widget-header">
+                <div class="row">
+                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                    </div>
+                </div>
+                
+            </div> 
+                    <div class="widget-content widget-content-area">
+
+                        <div style="position: absolute; top: 0; right: 0;z-index: 9999; margin-left: 20px; margin-right: 20px;">
+                            <div class="toast toast-primary fade hide" role="alert" data-delay="6000" aria-live="assertive" aria-atomic="true">
+                                <div class="toast-header">
+                                    <strong class="mr-auto">ORS Notifications</strong>
+                                    <small class="meta-time">just now</small>
+                                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="toast-body">
+                                    BL220518-1539 has new status. 
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                <!-- </div> -->
+            <!-- </div> -->
+
+            <div class="widget-content widget-content-area">
+                <a class="info-link" style="font-weight: bold;color: blue;font-size: 20px;" href="">List of My Aplications </a>
+                <!-- <h4 style="font-weight: bold;color: blue;">List of My Aplications</h4> -->
+       
+                <div id="toggleAccordion">
+
+                  <div class="card">
+                      
+                    <!-- <div class="card-header" id="headingOne1">
+                      <section class="mb-0 mt-0">
+                        <div role="menu" class="collapsed text-black" data-toggle="collapse" data-target="#defaultAccordionOne" aria-expanded="true" aria-controls="defaultAccordionOne">
+                          Saved Applications  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                        </div>
+                      </section>
+                    </div> -->
+
+                    <div id="defaultAccordionOne" class="collapse" aria-labelledby="headingOne1" data-parent="#toggleAccordion">
+                      <div class="card-body">
+                        <div class="widget-content widget-content-area br-6">
+                            <div class="table-responsive mb-4 mt-4">
+                                <table class="multi-table table table-hover" id="PapplicationId" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Tracking Number</th>
+                                            <th>Created Date</th>
+                                            <th>Service</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Tracking Number</th>
+                                            <th>Created Date</th>
+                                            <th>Service</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="headingTwo1">
+                      <section class="mb-0 mt-0">
+                        <div role="menu" class="text-black" data-toggle="collapse" data-target="#defaultAccordionTwo" aria-expanded="false" aria-controls="defaultAccordionTwo">
+                          Submitted Applications  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                        </div>
+                      </section>
+                    </div>
+                    <div id="defaultAccordionTwo" class="collapse show active" aria-labelledby="headingTwo1" data-parent="#toggleAccordion">
+                        <div class="card-body">
+                            
+                            <div class="widget-content widget-content-area br-6">
+                            <div class="table-responsive mb-4 mt-4">
+                                <table id="html5-extension" class="table table-hover non-hover" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Tracking Number</th>
+                                            <th>Created Date</th>
+                                            <th>Submitted Date</th>
+                                            <th>Service</th>
+                                            <!-- <th>Business Class</th> -->
+                                            <th>Business Type</th>
+                                            <th>Stage</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                      
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                  </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<div id="rotateInDownLeft" class="modal animated rotateInDownLeft custo-rotateInDownLeft" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Upload File here</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control uploadType" name="uploadType" id="uploadType">
+                <input type="text" class="form-control categoryID" name="categoryID" id="categoryID">
+                <input id="fileupload" type="file" name="fileupload" class="form-control-file" />
+            </div>
+            <div class="modal-footer md-button">
+                <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Cancel</button>
+                <button type="button" id="upload-btn" name="upload-btn" onclick="uploadFile()" class="btn btn-primary" data-dismiss="modal">Upload</button>
+            </div>
+        </div>
+    </div>
+    </div>
+        <!-- toastr -->
+        <script src="plugins/notification/snackbar/snackbar.min.js"></script>
+        <!-- END PAGE LEVEL PLUGINS -->
+    
+        <!--  BEGIN CUSTOM SCRIPTS FILE  -->
+        <script src="assets/js/components/notification/custom-snackbar.js"></script>
+        <!--  END CUSTOM SCRIPTS FILE  -->
+    
+        <script>
+            // Get the Toast button
+            var toastButton = document.getElementById("toast-btn");
+            // Get the Toast element
+            var toastElement = document.getElementsByClassName("toast")[0];
+    
+            toastButton.onclick = function() {
+                $('.toast').toast('show');
+            }
+    
+    
+        </script>
+<script type="text/javascript">
+setTimeout(
+function myApp()
+{ 
+$.ajax({
+    url: 'OnGoingApp',
+    dataType: 'json',
+    success: function(data) {
+        // alert(data)
+        $("#html5-extension").find('tbody').empty();
+            for (var i=0; i<data.length; i++) {
+                if(data[i].paymentStatus){
+                        var row = '<tr><td class="text-black tacker" id="tacker" style="font-weight: bold;">' + data[i].trackingNo+ '</td>'; 
+                    row = row + '<td style="color: blue;">' + data[i].createdDate + '</span></td>';
+                    row = row + '<td style="color: blue;">' + data[i].submittedDate + '</td>';
+                    row = row + '<td style="color: blue;"> ' + data[i].ServiceCode + ' </td>';
+                    row = row + '<td style="color: blue;">' + data[i].businessTypeName + '</td>';
+                    row = row + '<td style="color: blue;"> ' + data[i].ApplicationStep + ' </td>';
+                    row = row + '<td style="color: blue;"> ' + data[i].ApplicationStatusId + 
+                        '</td>';
+                            row = row + '<td>'+
+                        '<div class="btn-group">'+
+                            '<button type="button" class="btn btn-success btn-sm">Paid</button>'+
+                            '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">'+
+                                '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>'+
+                            '</button>'+
+                            '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
+                                '<a class="dropdown-item warning passingID text-black" href="/ViewBL/'+data[i].trackingNo+'">View Application</a>'+
+                        '</div>'+
+                        ' </td></tr>';
+         
+
+                    }
+                    else if(!data[i].paymentStatus){
+                        var row = '<tr><td class="text-black tacker" id="tacker" style="font-weight: bold;">' + data[i].trackingNo+ '</td>'; 
+                row = row + '<td class="text-black">' + data[i].createdDate + '</td>';
+                row = row + '<td class="text-black">' + data[i].submittedDate + '</td>';
+                row = row + '<td class="text-black"> ' + data[i].ServiceCode + ' </td>';
+                // row = row + '<td class="text-center text-black" style="font-weight: bold;"> ' + data[i].BusinessClassId + ' </td>';
+                row = row + '<td class="text-black">' + data[i].businessTypeName + '</td>';
+                row = row + '<td class="text-black"> ' + data[i].ApplicationStep + ' </td>';
+                row = row + '<td class="text-black"> ' + data[i].ApplicationStatusId + ' </td>';
+                if(data[i].ApplicationStatusId == 'Suplement for attachment only'){
+                        row = row + '<td>'+
+                            '<div class="btn-group">'+
+                            // '<button type="button" class="btn btn-primary btn-sm">Action</button>'+
+                            '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">'+
+                                '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>'+
+                            '</button>'+
+                            '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
+                                '<a class="dropdown-item warning passingID text-black" href="/ViewBL/'+data[i].trackingNo+'">View Application</a>'+
+                                '<a class="dropdown-item warning passingID text-black" href="/ViewSupliment/'+data[i].trackingNo+'">Edit Application</a>'+
+                        '</div>'+
+                        ' </td></tr>';
+                            }if(data[i].ApplicationStatusId == 'Supplement for data and attachment'){
+                        row = row + '<td>'+
+                            '<div class="btn-group">'+
+                            // '<button type="button" class="btn btn-primary btn-sm">Action</button>'+
+                            '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">'+
+                                '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>'+
+                            '</button>'+
+                            '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
+                                '<a class="dropdown-item warning passingID text-black" href="/ViewBL/'+data[i].trackingNo+'">View Application</a>'+
+                                '<a class="dropdown-item warning passingID text-black" href="/ViewSuppliment/'+data[i].trackingNo+'">Edit Application</a>'+
+                        '</div>'+
+                        ' </td></tr>';
+                            }else{
+                                row = row + '<td>'+
+                            '<div class="btn-group">'+
+                            // '<button type="button" class="btn btn-primary btn-sm">Action</button>'+
+                            '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">'+
+                                '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>'+
+                            '</button>'+
+                            '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
+                                '<a class="dropdown-item warning passingID text-black" href="/ViewBL/'+data[i].trackingNo+'">View Application</a>'+
+                        '</div>'+
+                        ' </td></tr>';                               
+                            }
+                    }
+                $('#html5-extension').append(row);
+            }
+    },
+    error: function(jqXHR, textStatus, errorThrown){
+        alert('Error: ' + textStatus + ' - ' + errorThrown);
+    }
+});
+}, 2000);
+</script>
+
+<script type="text/javascript">
+    setTimeout(
+    function myApp()
+    { 
+    $.ajax({
+        url: 'POnGoingApp',
+        dataType: 'json',
+        success: function(data) {
+            // alert(data)
+            $("#PapplicationId").find('tbody').empty();
+                for (var i=0; i<=data.length; i++) {
+                    var row = $('<tr><td class="text-black tacker" id="tacker" style="font-weight: bold;">' + data[i].trackingNo+ '</td>'+
+                        '<td class="text-black">' + data[i].createdDate + '</td>'+
+                        '<td class="text-black"> New Application for Business Licence </td>'+
+                    
+                        '<td class="text-center text-black">'+
+                            '<div class="d-flex">'+
+                                '<p class="align-self-center mb-0 admin-name"> Pending </p></div></td>'+
+                        '<td>'+
+                            
+                            ' <button class="btn btn-primary text-white"><a href="/EditBL/'+ data[i].trackingNo +'" class="text-white">Edit</a></button>'+
+                            ' <button class="mr-2 btn btn-danger warning confirm" data-id="'+ data[i].trackingNo +'">Delete</button>'+
+                            ' </td></tr>');
+
+                    $('#PapplicationId').append(row);
+$('.widget-content .warning.confirm').on('click', function () {
+    var deleteBtn = $(this),
+    id = deleteBtn.data('id'),
+    title_tracker = deleteBtn.closest('tr').find('.tacker').text();
+  swal({
+      title: 'Are you sure?',
+      text: "You want to delete Pending Application with Tracking Number " + title_tracker,
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Delete',
+      padding: '2em'
+    }).then(function(result) {
+
+      if (result.value) {
+        $.ajax({
+        url: "/DeletePendApp/"+title_tracker,
+        type: 'GET',
+        contentType: 'application/json',
+        success: function(response) {
+            swal({
+          title: 'Deleted!',
+          text: 'Your Pending Application has been deleted succesfully.',
+          type: 'success',
+          timer: 2000,
+            }
+        ).then(function(result){
+            location.reload();
+        })
+        }
+    });
+      }
+    })
+})
+                }
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+            alert('Error: ' + textStatus + ' - ' + errorThrown);
+        }
+    });
+    }, 1000);
+</script>
+<%- include('footer.ejs')%> 

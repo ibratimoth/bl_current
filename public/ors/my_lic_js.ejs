@@ -1,0 +1,268 @@
+<!-- toastr -->
+<script src="plugins/notification/snackbar/snackbar.min.js"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+
+<!--  BEGIN CUSTOM SCRIPTS FILE  -->
+<script src="assets/js/components/notification/custom-snackbar.js"></script>
+<!--  END CUSTOM SCRIPTS FILE  -->
+
+<script>
+    // Get the Toast button
+    var toastButton = document.getElementById("toast-btn");
+    // Get the Toast element
+    var toastElement = document.getElementsByClassName("toast")[0];
+
+    toastButton.onclick = function() {
+        $('.toast').toast('show');
+    }
+
+
+</script>
+<script type="text/javascript">
+// setTimeout(
+function myApp()
+{ 
+$.ajax({
+url: 'ComplLic',
+dataType: 'json',
+success: function(data) {
+$("#html5-extension").find('tbody').empty();
+    for (var i=0; i<data.length; i++) {
+        if(data[i].paymentStatus){
+                var row = '<tr><td class="text-black tacker" id="tacker" style="font-weight: bold;">' + data[i].BLNumber+ '</td>'; 
+                row = row + '<td style="color: black;"> ' + data[i].EntityName + ' </td>';
+            row = row + '<td style="color: black;">' + data[i].businessTypeName + '</span></td>';
+            row = row + '<td style="color: black;"> ' + data[i].BusinessClassId + ' </td>';
+            row = row + '<td style="color: black;">' + data[i].FeePaid + '</td>';
+            // row = row + '<td style="color: black;">' + data[i].expireDate + '</td>';
+            if(data[i].IsBranch === 'Principal'){
+            row = row + '<td>'+
+                '<div class="btn-group">'+
+                    '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">Action'+
+                    '</button>'+
+                    '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
+                        '<a class="dropdown-item warning passingID text-black" href="http://41.59.225.60/api/printout/'+data[i].trackingNo +'/4201/bl">Download Licence</a>'+
+                        '<a class="dropdown-item text-black lineofbiz business" data-id="'+ data[i].BLNumber +'">Apply Line of Business</a>'+
+                        '<a class="dropdown-item text-black warning confirm" data-id="'+ data[i].trackingNo +'">Cancelation</a>'+
+                        '<a class="dropdown-item text-black" href="/ApplyBLBranch/'+data[i].trackingNo+'" >Apply For Branch</a>'+
+                        '<a class="dropdown-item text-black" href="/Transfer/'+data[i].trackingNo+'">Transfer Business Licence</a>'+
+                '</div>'+
+                ' </td></tr>';
+
+                    }
+            if(data[i].IsBranch === 'Branch'){
+            row = row + '<td>'+
+                '<div class="btn-group">'+
+                    '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">Action'+
+                    '</button>'+
+                    '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
+                        '<a class="dropdown-item warning passingID text-black" href="http://41.59.225.60/api/printout/'+data[i].trackingNo +'/4201/bl">Download Licence</a>'+
+                        '<a class="dropdown-item text-black lineofbiz business" data-id="'+ data[i].BLNumber +'">Apply Line of Business</a>'+
+                        '<a class="dropdown-item text-black warning confirm" data-id="'+ data[i].trackingNo +'">Cancelation</a>'+
+                        '<a class="dropdown-item text-black" href="/Transfer/'+data[i].trackingNo+'">Transfer Business Licence</a>'+
+                '</div>'+
+                ' </td></tr>';
+                    }
+            }
+      
+        $('#html5-extension').append(row);
+        $('.widget-content .warning.confirm').on('click', function () {
+var deleteBtn = $(this),
+id = deleteBtn.data('id'),
+title_tracker = deleteBtn.closest('tr').find('.tacker').text();
+swal({
+title: 'Cancel Business Licence',
+text: "Are you sure you want to cancel Business Licence Number " + title_tracker+"?",
+type: 'warning',
+showCancelButton: true,
+confirmButtonText: 'Confirm',
+padding: '2em'
+}).then(function(result) {
+
+if (result.value) {
+$.ajax({
+url: "/Cancelation",
+type: 'POST',
+data: JSON.stringify({"BLNumber": title_tracker}),
+contentType: 'application/json',
+success: function(response) {
+    swal({
+  title: 'Business Licence Cancelation!',
+  text: 'Application for Cancelation of Business Licence has been sent succesfully.',
+  type: 'success',
+  timer: 2000,
+    }
+).then(function(result){
+    location.reload();
+})
+}
+});
+}
+})
+})
+
+$('.widget-content .lineofbiz.business').on('click', function () {
+var deleteBtn = $(this),
+id = deleteBtn.data('id'),
+title_tracker = deleteBtn.closest('tr').find('.tacker').text();
+
+$('#myExtraLargeModalLabel1').modal('show');
+var txtBox = document.getElementById('previousBLNo');
+txtBox.value = title_tracker;
+getSector();
+
+})   
+}
+}
+});
+}
+window.onload = myApp;
+</script>
+<script>
+function getSector(){
+        $.ajax({
+            url: "/GetBusSector",
+            type: 'GET',
+            contentType: 'application/json',
+            success: function(response) {
+                if(typeof(response) === "string"){response = JSON.parse(response)}
+            if(response.length > 0) {
+                    $("#sectorlist").append(`<option value='--Select--'>--Select--</option>`)
+                response.forEach(el => {
+                    $("#sectorlist").append(`<option value='${el.sectorId}'> ${el.sectorName}</option>`)
+                })
+            }
+            }
+        });
+    }
+</script>
+<script>
+
+    function getCategory()
+    { 
+        var regId = document.getElementById('sectorlist').value;
+        $('#categorylist')
+        .empty()
+        $.ajax({
+            url: "/GetCategory/"+regId,
+            type: 'GET',
+            contentType: 'application/json',
+            success: function(response) {
+                if(typeof(response) === "string"){response = JSON.parse(response)}
+            if(response.length > 0) {
+                $("#categorylist").append(`<option value='--Select--'>--Select--</option>`)
+                response.forEach(el => {
+                    $("#categorylist").append(`<option value='${el.categoryId}'> ${el.businessCategoryName}</option>`)
+                })
+            }
+            }
+        });
+    }
+</script>
+<script>
+    function getBizType()
+    { 
+        var regId = document.getElementById('categorylist').value;
+        $('#typelist')
+        .empty()
+        $.ajax({
+            url: "/GetBizType/"+regId,
+            type: 'GET',
+            contentType: 'application/json',
+            success: function(response) {
+                if(typeof(response) === "string"){response = JSON.parse(response)}
+            if(response.length > 0) {
+                $("#typelist").append(`<option value='--Select--'>--Select--</option>`)
+                response.forEach(el => {
+                    $("#typelist").append(`<option value='${el.businessTypeId}'> ${el.businessTypeName}</option>`)
+                })
+            }
+            }
+        });
+    }
+</script>
+<script>
+    function getBizCatDet()
+    { 
+        var regId = document.getElementById('typelist').value;
+        // var txtBox12 = document.getElementById('bizNumber');
+        // txtBox12.value = regId;
+        $.ajax({
+            url: "/GetBizDet/"+regId,
+            type: 'GET',
+            contentType: 'application/json',
+            success: function(response) {
+                alert(response)
+                if(typeof(response) === "string"){response = JSON.parse(response)}
+                if(response.status === 'failed'){
+      swal({
+        title: 'Failed',
+        text: 'Business Type Already has On-Going Request',
+        timer: 3000,
+        padding: '2em',
+        onOpen: function () {
+          swal.showLoading()
+        }
+      }).then(function (result) {
+        if (
+          // Read more about handling dismissals
+          result.dismiss === swal.DismissReason.timer
+        ) {
+          console.log('I was closed by the timer')
+        }
+      })
+                }if(response.status === 'success'){
+                    var results = response.data;
+                    var BusinessLicenceClassCode = results[0].BusinessLicenceClassCode;
+                    var issuingAuthorityId = results[0].IssuingAuthorityId;
+                    var isPerUnitFeeApplicable = results[0].IsPerUnitFeeApplicable
+                    var txtBox = document.getElementById('businessLicenceClassId');
+                    txtBox.value = BusinessLicenceClassCode;
+                    var txtBox1 = document.getElementById('issuingAuthorityId');
+                    txtBox1.value = issuingAuthorityId;
+                    console.log(isPerUnitFeeApplicable)
+                    if(isPerUnitFeeApplicable == true){
+                        $(".nounits_div").show();
+                    }if(isPerUnitFeeApplicable == false){
+                        $(".nounits_div").hide();
+                    }
+    
+                }
+            }
+        });
+    }
+</script>
+<script>
+function ApplyBizType(){
+    var previousBLNo = document.getElementById('previousBLNo').value;
+    var sectorlist = document.getElementById('sectorlist').value;
+    var categorylist = document.getElementById('categorylist').value;
+    var typelist = document.getElementById('typelist').value;
+    var nounits = document.getElementById('nounits').value;
+    var businessLicenceClassId = document.getElementById('businessLicenceClassId').value;
+    var issuingAuthorityId = document.getElementById('issuingAuthorityId').value;
+    $.ajax({
+        url: "/ApplyBizType",
+        type: 'POST',
+        data: JSON.stringify({"BLNumber": previousBLNo, "sectorlist": sectorlist, 
+        "categorylist": categorylist, "typelist": typelist, 
+        "nounits": nounits, "businessLicenceClassId": businessLicenceClassId, 
+        "issuingAuthorityId": issuingAuthorityId}),
+        contentType: 'application/json',
+        success: function(response) {
+        //     console.log(response)
+        //    alert(response)
+            // if(typeof(response) === "string"){response = JSON.parse(response)}
+            if(response === 'success'){
+                swal({
+  title: 'Business Licence Application!',
+  text: 'Application for New Business Line has been sent succesfully.',
+  type: 'success',
+  timer: 2000,
+    })
+    window.location.href = "/MyLicence";
+        }
+    }
+    });
+}
+</script>

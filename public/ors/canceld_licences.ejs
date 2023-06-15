@@ -1,0 +1,118 @@
+<%- include('sidebar.ejs')%>
+
+<!--  BEGIN CONTENT AREA  -->
+<div id="content" class="main-content">
+<div class="layout-px-spacing">
+
+<div class="row layout-top-spacing" id="cancel-row">
+
+
+
+    <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+        <div class="statbox widget box box-shadow">
+            <div id="accordionBasic" class="widget-header">
+                <div class="row">
+                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                        <!-- <a class="info-link" style="font-weight: bold;color: blue;" href="">Aplications <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a> -->
+                        
+                    </div>
+                </div>
+                
+            </div> 
+
+            <!-- <div id="snackbarBasic" class="col-lg-12 col-12 layout-spacing"> -->
+                <!-- <div class="statbox widget box box-shadow"> -->
+                    <!-- <div class="widget-header">                                
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                <h4>Basic</h4>
+                            </div>
+                        </div>
+                    </div>                             -->
+                    <div class="widget-content widget-content-area">
+
+                        <!-- <button id="toast-btn" class="btn btn-primary">Open Toast</button> -->
+
+                        <div style="position: absolute; top: 0; right: 0;z-index: 9999; margin-left: 20px; margin-right: 20px;">
+                            <div class="toast toast-primary fade hide" role="alert" data-delay="6000" aria-live="assertive" aria-atomic="true">
+                                <div class="toast-header">
+                                    <strong class="mr-auto">ORS Notifications</strong>
+                                    <small class="meta-time">just now</small>
+                                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="toast-body">
+                                    BL220518-1539 has new status. 
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                <!-- </div> -->
+            <!-- </div> -->
+
+            <div class="widget-content widget-content-area">
+                <a class="info-link" style="font-weight: bold;color: blue;font-size: 20px;" href="">List of Issued Licences </a>
+                <!-- <h4 style="font-weight: bold;color: blue;">List of My Aplications</h4> -->
+       
+
+                        <div class="card-body">
+                            
+                            <div class="widget-content widget-content-area br-6">
+                            <div class="table-responsive mb-4 mt-4">
+                                <table id="html5-extension" class="table table-hover non-hover" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Licence Number</th>
+                                            <th>Business Owner</th>
+                                            <th>Business Type</th>
+                                            <th>Business Class</th>
+                                            <th>Fee Paid</th>
+                                            <th>Status</th>
+                                            <!-- <th>Action</th> -->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                          
+                            </div>
+                        </div>
+                        </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<div id="rotateInDownLeft" class="modal animated rotateInDownLeft custo-rotateInDownLeft" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Upload File here</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control uploadType" name="uploadType" id="uploadType">
+                <input type="text" class="form-control categoryID" name="categoryID" id="categoryID">
+                <input id="fileupload" type="file" name="fileupload" class="form-control-file" />
+            </div>
+            <div class="modal-footer md-button">
+                <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Cancel</button>
+                <button type="button" id="upload-btn" name="upload-btn" onclick="uploadFile()" class="btn btn-primary" data-dismiss="modal">Upload</button>
+            </div>
+        </div>
+    </div>
+    </div>
+<%- include('can_lic_js.ejs')%> 
+<%- include('footer.ejs')%> 

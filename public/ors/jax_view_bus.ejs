@@ -1,0 +1,996 @@
+<script>
+    // setTimeout(
+    function getAttachments()
+    { 
+    $.ajax({
+        url: '/GetBLAttachment',
+        dataType: 'json',
+        success: function(data) {
+            // alert(data)
+            $("#attachmentId").find('tbody').empty();
+                for (var i=0; i<=data.length; i++) {
+                    var row = $('<tr><td class="text-black cheque-amt tacker" id="tacker">' + data[i].AttachmentName+ '</td>'+
+                        '<td class="text-black">' + data[i].Description + '</td>'+
+                            '<td class="text-left">'+
+                            
+                                '<button type="button" class="btn btn-primary warningtt passingIDtt" data-toggle="modal" data-name=' + data[i].AttachmentTypeId+ ' data-desc=' + data[i].AttachmentName+ ' data-batch="1">View File</button> '+
+
+                            ' </td>'+
+                            '</tr>');
+                    $('#attachmentId').append(row);
+                    $('.widget-content .warning.passingID').on('click', function () {
+        var deleteBtn = $(this),
+        id = deleteBtn.data('name'),
+        name = deleteBtn.data('desc'),
+        title_tracker = deleteBtn.closest('tr').find('.tacker').text();
+        $("#categoryID").val( id );
+        $("#trak_no").val( id );
+        $("#atach_nem").val( title_tracker );
+        $('#rotateInDownLeft').modal('show');
+    })
+                }
+        }
+    });
+    }
+    // , 1000);
+
+</script>
+<script>
+
+    function getBusOwnTypeData()
+    { 
+        // var BizownerTypeId= document.getElementById('bustype').value;
+        $('#busowntype')
+        .empty()
+        $.ajax({
+            url: "/GetBusOwnerType",
+            type: 'GET',
+            contentType: 'application/json',
+            success: function(response) {
+                if(typeof(response) === "string"){response = JSON.parse(response)}
+            if(response.length > 0) {
+                $("#busowntype").append(`<option value='0'>--Select--</option>`)
+                response.forEach(el => {
+                    $("#busowntype").append(`<option value='${el.OwnerSubTypeId}'> ${el.OwnerSubTypeName}</option>`)
+                })
+            }
+            }
+        });
+    }
+</script>
+<script>
+    // setTimeout(
+function comment()
+    { 
+    var trackingNo = document.getElementById('trackNo').value;
+    var textBox = document.getElementById('comments');
+    $.ajax({
+            url: "/ApplicationDetails",
+            type: 'POST',
+            data: JSON.stringify({"trackingNo": trackingNo}),
+            contentType: 'application/json',
+            success: function(response) {
+                console.log(response)
+                if(typeof(response) === "string"){response = JSON.parse(response)}
+                if(response.length > 0) {
+                response.forEach(el => {
+                    textBox.value = el.Comment
+                })
+            }
+            }
+        });
+    }
+    // , 2000);
+</script>
+<script>
+    function onlyNumberKey(evt) {
+          
+          // Only ASCII character in that range allowed
+          var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+          if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+              return false;
+          return true;
+      }
+</script>
+<script>
+function SubmitSupplimentFx()
+    { 
+    var trackingNo = document.getElementById('trackNo').value;
+    $.ajax({
+            url: "/SubmitSupplimenti",
+            type: 'POST',
+            data: JSON.stringify({"trackingNo": trackingNo}),
+            contentType: 'application/json',
+            success: function(response) {
+            window.location.href = "/MyApplication";
+    }
+});
+}
+</script>
+<script>
+    function fileUploadX(){
+    var fileInput = document.querySelector('#fileupload');
+    var regId = document.getElementById('categoryID').value;
+    
+    var reader = new FileReader();
+    reader.readAsDataURL(fileInput.files[0]);
+    
+    reader.onload = function () {
+        $.ajax({
+            url: "/UploadFx",
+            type: 'POST',
+            data: JSON.stringify({"atachment": reader.result, "attachmentId": regId}),
+            contentType: 'application/json',
+            success: function(response) {
+               // alert("response")
+                if(typeof(response) === "string"){response = JSON.parse(response)}
+            }
+        });
+        // alert(reader.result);
+        // console.log(reader.result);//base64encoded string
+    
+    };
+    reader.onerror = function (error) {
+        alert('Error: ' + error);
+        console.log('Error: ', error);
+    };
+    }
+</script>
+<script>
+        function fileUploadM(){
+        var fileInput = document.querySelector('#fileupload');
+        var regId = document.getElementById('categoryID').value;
+        var trackngNo = document.getElementById('trackngNo').value;
+        
+        var reader = new FileReader();
+        reader.readAsDataURL(fileInput.files[0]);
+        
+        reader.onload = function () {
+            $.ajax({
+                url: "/UploadFn",
+                type: 'POST',
+                data: JSON.stringify({"atachment": reader.result, "attachmentId": regId, "trackngNo": trackngNo}),
+                contentType: 'application/json',
+                success: function(response) {
+                   // alert("response")
+                    if(typeof(response) === "string"){response = JSON.parse(response)}
+                }
+            });
+            // alert(reader.result);
+            // console.log(reader.result);//base64encoded string
+        
+        };
+        reader.onerror = function (error) {
+            alert('Error: ' + error);
+            console.log('Error: ', error);
+        };
+        }
+</script>
+<script>
+    function saveBizDet()
+    { 
+        // alert('mwox')
+        // $('#icon-pills-profile').tab('show');
+        // $('.c').addClass('active');
+        // $('.a').removeClass('active');
+        // $('.b').removeClass('active');
+        
+        // alert(document.getElementById('house_no').value)
+        var BizOwnerType= document.getElementById('busowntype').value;
+        var NoUnit= document.getElementById('nounits').value;
+        var trackNo= document.getElementById('trackNo').value;
+        var BizTin= document.getElementById('tin_no').value;
+        // var TaxPayer= document.getElementById('taxpayer').value;
+        var TypeList= document.getElementById('typelist').value;
+        var inputEmail4comp= document.getElementById('inputEmail4comp').value;
+        var inputEmail4phn= document.getElementById('inputEmail4phn').value;
+        var inputEmail4pobox= document.getElementById('inputEmail4pobox').value;
+        var businessLicenceClassId= document.getElementById('businessLicenceClassId').value;
+        // var issuingAuthorityId= document.getElementById('issuingAuthorityId').value;
+        var fname= document.getElementById('fname_nat_local').value;
+        var mname= document.getElementById('mname_nat_local').value;
+        var lname= document.getElementById('lname_nat_local').value;
+        var gender= document.getElementById('gender_nat').value;
+        var dob= document.getElementById('basicFlatpickr1').value;
+        var sectorlist= document.getElementById('sectorlist').value;
+        var categorylist= document.getElementById('categorylist').value;
+        // var busorigintype= document.getElementById('busorigintype').value;
+        var nida_no= document.getElementById('nida_no').value;
+        // var bustype= document.getElementById('bustype').value;
+        var regionlistB= document.getElementById('regionlistB').value;
+        var addressAreaB= document.getElementById('addressAreaB').value;
+        var districtlistB= document.getElementById('districtlistB').value;
+        var wardIdB= document.getElementById('wardIdB').value;
+        var postcode= document.getElementById('postcode').value;
+        // var street= document.getElementById('inputEmail4street').value;
+        var road= document.getElementById('inputroad').value;
+        var plot_no= document.getElementById('plot_no').value;
+        var block_no= document.getElementById('block_no').value;
+        var house_no= document.getElementById('house_no').value;
+        var unservayedarea= document.getElementById('unservayedarea').value;
+
+        var reg_no_other= document.getElementById('reg_no_other').value;
+        var corporate_name= document.getElementById('corporate_name').value;
+        var leadername_nat= document.getElementById('leadername_nat').value;
+        var leadername_nat_2= document.getElementById('leadername_nat_2').value;
+
+        var inco_no= document.getElementById('inco_no').value;
+        var company_name= document.getElementById('company_name').value;
+
+        var bn_no= document.getElementById('bn_no').value;
+        var bn_name= document.getElementById('bn_name').value;
+        
+
+        $.ajax({
+            // url: "/saveStageSecond",
+            url: "/updateStageSecond",
+            type: 'POST',
+            data: JSON.stringify({"trackNo": trackNo, "bn_name": bn_name, "bn_no": bn_no, "company_name": company_name, 
+            "inco_no": inco_no, "reg_no_other": reg_no_other, "corporate_name": corporate_name, "leadername_nat": leadername_nat, 
+            "leadername_nat_2": leadername_nat_2, "inputEmail4pobox": inputEmail4pobox, "unservayedarea": unservayedarea, 
+            "house_no": house_no, "block_no": block_no, "plot_no": plot_no, "road": road, "regionlistB": regionlistB, 
+            "districtlistB": districtlistB, "wardIdB": wardIdB, "postcode": postcode, "addressAreaB": addressAreaB, 
+            "categorylist": categorylist, "sectorlist": sectorlist, "nida_no": nida_no, 
+            "bustype": bustype, "fname": fname, "mname": mname, "lname": lname, "gender": gender, "dob": dob, 
+            "inputEmail4phn": inputEmail4phn, "inputEmail4comp": inputEmail4comp, 
+            "businessLicenceClassId": businessLicenceClassId, "BizOwnerType": BizOwnerType, "NoUnit": NoUnit, 
+            "BizTin": BizTin, "TaxPayer": TaxPayer, "TypeList": TypeList}),
+            contentType: 'application/json',
+            success: function(response) {
+               alert(response)
+                if(response === 'success'){
+                //   getAttachments();
+                //   getPermit();
+                }
+            },
+        error: function(jqXHR, textStatus, errorThrown){
+            alert('Error: ' + textStatus + ' - ' + errorThrown);
+        }
+        });
+    }
+</script>
+<script>
+    function getPostCode()
+    { 
+        //alert(document.getElementById('wardIdB').value)
+        var regId = document.getElementById('wardIdB').value;
+        //alert(regId)
+        var txtBox1 = document.getElementById('postcode');
+        txtBox1.value = regId;
+
+    }
+</script>
+<script>
+    function getWardB()
+    { 
+    
+        var regId = document.getElementById('districtlistB').value;
+        $('#wardIdB')
+        .empty()
+        $.ajax({
+            url: "/GetWard/"+regId,
+            type: 'GET',
+            contentType: 'application/json',
+            success: function(response) {
+                if(typeof(response) === "string"){response = JSON.parse(response)}
+            if(response.length > 0) {
+                $("#wardIdB").append(`<option value='0'>--Select--</option>`)
+                response.forEach(el => {
+                    $("#wardIdB").append(`<option value='${el.WardId}'> ${el.wardName}</option>`)
+                })
+            }
+            }
+        });
+    }
+    </script>
+<script>
+    function getBizCatDet()
+    { 
+    
+        var regId = document.getElementById('typelist').value;
+        var txtBox12 = document.getElementById('bizNumber');
+        txtBox12.value = regId;
+        $.ajax({
+            url: "/GetBizDet/"+regId,
+            type: 'GET',
+            contentType: 'application/json',
+            success: function(response) {
+                if(typeof(response) === "string"){response = JSON.parse(response)}
+                if(response.status === 'failed'){
+                    // var saveBtn = document.getElementById('icon-pills-profile-tab').value;
+                    // saveBtn.style.display = 'none';
+      swal({
+        title: 'Failed',
+        text: 'Business Type Already has On-Going Request',
+        timer: 3000,
+        padding: '2em',
+        onOpen: function () {
+          swal.showLoading()
+        }
+      }).then(function (result) {
+        if (
+          // Read more about handling dismissals
+          result.dismiss === swal.DismissReason.timer
+        ) {
+          console.log('I was closed by the timer')
+        }
+      })
+                }if(response.status === 'success'){
+                    var results = response.data;
+                    var idCode = results[0].Id;
+                    var issuingAuthorityId = results[0].IssuingAuthorityId;
+                    var isPerUnitFeeApplicable = results[0].IsPerUnitFeeApplicable
+                    var txtBox = document.getElementById('businessLicenceClassId');
+                    txtBox.value = idCode;
+                    var txtBox1 = document.getElementById('issuingAuthorityId');
+                    txtBox1.value = issuingAuthorityId;
+                    console.log(isPerUnitFeeApplicable)
+                    if(isPerUnitFeeApplicable == true){
+                        $(".nounits_div").show();
+                    }if(isPerUnitFeeApplicable == false){
+                        $(".nounits_div").hide();
+                    }
+    
+                }
+            }
+        });
+    }
+    </script>
+<script>
+
+    function getCategory()
+    { 
+        var regId = document.getElementById('sectorlist').value;
+        $('#categorylist')
+        .empty()
+        $.ajax({
+            url: "/GetCategory/"+regId,
+            type: 'GET',
+            contentType: 'application/json',
+            success: function(response) {
+                if(typeof(response) === "string"){response = JSON.parse(response)}
+            if(response.length > 0) {
+                $("#categorylist").append(`<option value='--Select--'>--Select--</option>`)
+                response.forEach(el => {
+                    $("#categorylist").append(`<option value='${el.categoryId}'> ${el.businessCategoryName}</option>`)
+                })
+            }
+            }
+        });
+    }
+    </script>
+<script>
+        function TinVerifier(){
+            var tin_no = document.getElementById("tin_no").value;
+            var busowntype = document.getElementById("busowntype").value;
+            var txtBox = document.getElementById('taxpayer');
+            $(".TinLoader").show();
+            $(".TinFirst").hide();
+            $.ajax({
+                url: "/TINVerification",
+                type: 'POST',
+                data: JSON.stringify({"tin_no": tin_no, "busowntype": busowntype}),
+                contentType: 'application/json',
+                success: function(response) {
+                    if(response === 'failed'){
+                        swal({
+                            type: 'error',
+                            title: 'Oops...',
+                            text: 'TIN Number not valid, Please Try Again!',
+                            padding: '2em',
+                            timer: 3000
+                        })
+                        txtBox.value = "";
+                        $(".TinLoader").hide();
+                       $(".TinFirst").show();
+                    }else if(response === 'require natural person TIN'){
+                        swal({
+                            type: 'error',
+                            title: 'Oops...',
+                            text: 'Require Natural Person TIN Number, Please Try Again!',
+                            padding: '2em',
+                            timer: 3000
+                        })
+                        txtBox.value = "";
+                        $(".TinLoader").hide();
+                       $(".TinFirst").show();
+                    }else if(response === 'require Organization TIN'){
+                        swal({
+                            type: 'error',
+                            title: 'Oops...',
+                            text: 'Require Organization TIN Number, Please Try Again!',
+                            padding: '2em',
+                            timer: 3000
+                        })
+                        txtBox.value = "";
+                        $(".TinLoader").hide();
+                       $(".TinFirst").show();
+                    }
+                    else{
+                        txtBox.value = response;
+                       $(".TinLoader").hide();
+                       $(".TinFirst").show();
+                    }
+                }
+            });
+        }
+</script>
+<script>
+    function CompanyVerifier(){
+        var inco_no = document.getElementById("inco_no").value;
+        var txtBox = document.getElementById('company_name');
+        var txtBox1 = document.getElementById('company_type');
+        var txtBox2 = document.getElementById('company_date');
+        var txtBox3 = document.getElementById('tin_no');
+        $(".CompLoader").show();
+        $(".CompFirst").hide();
+        $.ajax({
+            url: "/CompanyVerification",
+            type: 'POST',
+            data: JSON.stringify({"inco_no": inco_no}),
+            contentType: 'application/json',
+            success: function(response) {
+                if(response.status === 'failed'){
+                    swal({
+                        type: 'error',
+                        title: 'Oops...',
+                        text: 'Comapny not Registered, Please Try Again!',
+                        padding: '2em',
+                        timer: 3000
+                    })
+                    txtBox.value = "";
+                    $(".CompLoader").hide();
+                    $(".CompFirst").show();
+                }else{
+                   txtBox.value = response.comapnyName;
+                   txtBox1.value = response.comapnyType;
+                   txtBox2.value = response.comapnyDate;
+                   txtBox3.value = response.companyTIN;
+                   $(".CompLoader").hide();
+                   $(".CompFirst").show();
+                }
+            }
+        });
+    }
+</script>
+<script>
+    function BNVerifier(){
+        var bn_no = document.getElementById("bn_no").value;
+        var txtBox = document.getElementById('bn_name');
+        var txtBox1 = document.getElementById('bn_type');
+        var txtBox2 = document.getElementById('date_registration');
+        $(".BNLoader").show();
+        $(".BNFirst").hide();
+        $.ajax({
+            url: "/BNVerification",
+            type: 'POST',
+            data: JSON.stringify({"bn_no": bn_no}),
+            contentType: 'application/json',
+            success: function(response) {
+                if(response.status === 'failed'){
+                    swal({
+                        type: 'error',
+                        title: 'Oops...',
+                        text: 'Business Name not Registered, Please Try Again!',
+                        padding: '2em',
+                        timer: 3000
+                    })
+                    txtBox.value = "";
+                    $(".BNLoader").hide();
+                    $(".BNFirst").show();
+                }else{
+                   txtBox.value = response.businessName;
+                   txtBox1.value = response.BusinessType;
+                   txtBox2.value = response.registryDate;
+                   $(".BNLoader").hide();
+                   $(".BNFirst").show();
+                }
+            }
+        });
+    }
+</script>
+<script>
+    function NinVerifier(){
+        var nin_no = document.getElementById("nida_no").value;
+        var txtBox = document.getElementById('fname_nat_local');
+        var mname = document.getElementById('mname_nat_local');
+        var lname = document.getElementById('lname_nat_local');
+        var gender = document.getElementById('gender_nat');
+        var dob = document.getElementById('basicFlatpickr1');
+        $(".NinLoader").show();
+        $(".NinFirst").hide();
+        $.ajax({
+            url: "/NINVerification",
+            type: 'POST',
+            data: JSON.stringify({"nin_no": nin_no}),
+            contentType: 'application/json',
+            success: function(response) {
+                if(typeof(response) === "string"){response = JSON.parse(response)}
+                if(response.status === 'failed'){
+                    swal({
+                        type: 'error',
+                        title: 'Oops...',
+                        text: 'NIN Number not valid, Please Try Again!',
+                        padding: '2em',
+                        timer: 3000
+                    })
+                    txtBox.value = "";
+                    $(".NinLoader").hide();
+                    $(".NinFirst").show();
+                }else if(response.status === 'success'){
+                   txtBox.value = response.fname;
+                   mname.value = response.mname;
+                   lname.value = response.lname;
+                   gender.value = response.gender;
+                   dob.value = response.dob;
+                   $(".NinLoader").hide();
+                   $(".NinFirst").show();
+                }
+            }
+        });
+    }
+</script>
+<script>
+    function getAddrAreaB()
+    { 
+    
+        var regId = document.getElementById('addressAreaB').value;
+        if(regId === '1'){
+            $(".maeneo").show();
+            $(".locationB").show();
+            $(".unservayedB").hide();
+        }if(regId === '2'){
+            $(".maeneo").hide();
+            $(".locationB").hide();
+            $(".unservayedB").show();
+        }if(regId === '--Select--'){
+            $(".maeneo").hide();
+            $(".locationB").hide();
+            $(".unservayedB").hide();
+        }
+    }
+</script>
+<script>
+            // setTimeout(
+            function firstView()
+            { 
+                
+                    // $(".unservayed").hide();
+                    $.ajax({
+                        url: "/firstStageView",
+                        type: 'GET',
+                        contentType: 'application/json', // added data type
+                        success: function(response) {
+                            console.log(response)
+                        if(typeof(response) === "string"){response = JSON.parse(response)}
+                        var fname = response.person[0].fname;
+                        var mname = response.person[0].mname;
+                        var lname = response.person[0].lname;
+                        var gender = response.person[0].gender;
+                        var dob = response.person[0].date_birth;
+                        var citizen = response.person[0].citizen;
+        
+                        var trackingNo = response.trackNo;
+                        var OrigTypeName = response.OrigTypeName;
+                        var AplicationID = response.AplicationID;
+                        var ServiceCode = response.ServiceCode;
+                        var OwnerSubTypeName = response.OwnerSubTypeName;
+                        var AplicationTIN = response.AplicationTIN;
+                        var BusinessClassId = response.BusinessClassId;
+                        var BusinessTypeName = response.BusinessTypeName;
+                        var BusinessTypeId = response.BusinessTypeId;
+                        var AreaTypeName = response.AreaTypeName;
+                        var Road = response.Road;
+                        var PostCode = response.PostCode;
+                        var Street = response.Street;
+                        var PoBox = response.PoBox;
+                        var CompanyPhone = response.CompanyPhone;
+                        var CompanyEmail = response.CompanyEmail;
+                        var UnsurveyedArea = response.UnsurveyedArea;
+                        var PlotNo = response.PlotNo;
+                        var BlockNo = response.BlockNo;
+                        var HouseNo = response.HouseNo;
+                        var RegionName = response.RegionName;
+                        var DistrictName = response.DistrictName;
+                        var WardName = response.WardName;ControlNo;
+                        var DistrictCode = response.DistrictCode;
+                        var RegionCode = response.RegionCode;
+                        var AreaTypeId = response.AreaTypeId;
+                        var RegNo = response.RegNo;
+                        var BusinessLicOwnerTypeId = response.BusinessLicOwnerTypeId;
+                        var WardId = response.WardId;
+                        var txtBox = document.getElementById('inputEmail4');
+                        txtBox.value = trackingNo;
+                        var txtBoxtrackNo = document.getElementById('trackNo');
+                        txtBoxtrackNo.value = trackingNo;
+                        var txtBox1 = document.getElementById('fname');
+                        txtBox1.value = fname;
+                        var txtBox2 = document.getElementById('mname');
+                        txtBox2.value = mname;
+                        var txtBox3 = document.getElementById('lname');
+                        txtBox3.value = lname;
+                        var txtBox4 = document.getElementById('gender');
+                        txtBox4.value = gender;
+                        var txtBox5 = document.getElementById('dob');
+                        txtBox5.value = dob;
+                        var txtBox6 = document.getElementById('citizen');
+                        txtBox6.value = citizen;
+                        var txtBox7 = document.getElementById('busorigintype');
+                        txtBox7.value = OrigTypeName;
+                        var txtBox8 = document.getElementById('applicationId');
+                        txtBox8.value = AplicationID;
+                        var txtBox9 = document.getElementById('serviceCode');
+                        txtBox9.value = ServiceCode;
+                        // var txtBox9 = document.getElementById('typelist');
+                        // txtBox9.value = BusinessTypeName;
+                        // var txtBox10 = document.getElementById('addressAreaB');
+                        // txtBox10.value = AreaTypeName;
+                        var txtBox11 = document.getElementById('inputroad');
+                        txtBox11.value = Road;
+                        var txtBox12 = document.getElementById('postcode');
+                        txtBox12.value = PostCode;
+                        var txtBox13 = document.getElementById('inputEmail4Street');
+                        txtBox13.value = Street;
+                        var txtBox14 = document.getElementById('inputEmail4pobox');
+                        txtBox14.value = PoBox;
+                        var txtBox15 = document.getElementById('inputEmail4phn');
+                        txtBox15.value = CompanyPhone;
+                        var txtBox16 = document.getElementById('inputEmail4comp');
+                        txtBox16.value = CompanyEmail;
+                        var txtBox17 = document.getElementById('unservayedarea');
+                        txtBox17.value = UnsurveyedArea;
+                        var txtBox18 = document.getElementById('plot_no');
+                        txtBox18.value = PlotNo;
+                        var txtBox19 = document.getElementById('block_no');
+                        txtBox19.value = BlockNo;
+                        var txtBox20 = document.getElementById('house_no');
+                        txtBox20.value = HouseNo;
+                        var txtBox21 = document.getElementById('businessLicenceClassId');
+                        txtBox21.value = BusinessClassId;
+                        var txtBox22 = document.getElementById('nida_no');
+                        txtBox22.value = RegNo;
+                        var txtBox23 = document.getElementById('inco_no');
+                        txtBox23.value = RegNo;
+                        var txtBox24 = document.getElementById('reg_no_other');
+                        txtBox24.value = RegNo;
+                        var txtBox24 = document.getElementById('bn_no');
+                        txtBox24.value = RegNo;
+                        // var txtBox23 = document.getElementById('wardIdB');
+                        // txtBox23.value = WardName;
+                        var paymentDetails = response.payment;
+                        var invoiceDetails = response.invoiceData;
+                        if(paymentDetails.length <= 0){
+                            var row = $('<tr><td class="text-black cheque-amt tacker" id="tacker">-</td>'+
+                            '<td class="text-black">-</td>'+
+                            '<td class="text-black">No control Number yet</td>'+
+                            '<td class="text-black">-</td>'+
+                                '</tr>');
+                        $('#paymentId').append(row);
+                        }else{
+                            for(var i = 0; i < paymentDetails.length; i++){
+                            var AmountTotal = paymentDetails[i].AmountTotal;
+                            var ServiceName = paymentDetails[i].ServiceName;
+                            var ExpireDate = paymentDetails[i].ExpireDate;
+                            var ControlNo = paymentDetails[i].ControlNo;
+                            var CurrencyUsed = paymentDetails[i].CurrencyUsed;
+                            var nf = Intl.NumberFormat();
+                            var row = $('<tr><td class="text-black cheque-amt tacker" id="tacker">' + ServiceName+ '</td>'+
+                            '<td class="text-black">' + CurrencyUsed + " " + nf.format(AmountTotal) + '</td>'+
+                            '<td class="text-black">' + ControlNo + '</td>'+
+                            '<td class="text-black">' + ExpireDate + '</td>'+
+                                '</tr>');
+                        $('#paymentId').append(row);
+                        }
+                        // for(var i = 0; i < invoiceDetails.length; i++){
+                        //     var InvoiceNo = invoiceDetails[i].InvoiceNo;
+                        //     var ItemName = invoiceDetails[i].ItemName;
+                        //     var Amount = invoiceDetails[i].Amount;
+                        //     var CurrencyUsedItem = invoiceDetails[i].CurrencyUsedItem;
+                        //     var CreatedDate = invoiceDetails[i].CreatedDate;
+                        //     var nf = Intl.NumberFormat();
+                        //     var row = $('<tr><td class="text-black cheque-amt tacker" id="tacker">' + InvoiceNo+ '</td>'+
+                        //     '<td class="text-black">' + ItemName + '</td>'+
+                        //     '<td class="text-black">' + CurrencyUsedItem + " " + nf.format(Amount) + '</td>'+
+                        //     '<td class="text-black">' + CreatedDate + '</td>'+
+                        //         '</tr>');
+                        // $('#paymentIdItems').append(row);
+                        // }
+                        }
+                        $("#busowntype").append(`<option value='${BusinessLicOwnerTypeId}'> ${OwnerSubTypeName}</option>`)
+                        $("#addressAreaB").append(`<option value='${AreaTypeId}'> ${AreaTypeName}</option>`)
+                        $("#regionlistB").append(`<option value='${RegionCode}'> ${RegionName}</option>`)
+                        $("#districtlistB").append(`<option value='${DistrictCode}'> ${DistrictName}</option>`)
+                        // $("#districtlistB").append(`<option value='${DistrictName}'> ${DistrictName}</option>`)
+                        $("#wardIdB").append(`<option value='${WardId}'> ${WardName}</option>`)
+                        if(AreaTypeId === '1'){
+            $(".maeneo").show();
+            // $(".locationB").show();
+            $(".unservayedB").hide();
+        }if(AreaTypeId === '2'){
+            $(".maeneo").hide();
+            // $(".locationB").hide();
+            $(".unservayedB").show();
+        }if(AreaTypeId === '--Select--'){
+            $(".maeneo").hide();
+            $(".locationB").hide();
+            $(".unservayedB").hide();
+        }
+                        getBusOwnTypeData();
+                        regGetAddressArea();
+                        regB();
+       
+
+                        }
+                    });
+            }
+            window.onload = firstView;
+</script>
+<script>
+            function getAddrAreaB()
+            { 
+            
+                var regId = document.getElementById('addressAreaB').value;
+                if(regId === '1'){
+                    $(".maeneo").show();
+                    $(".locationB").show();
+                    $(".unservayedB").hide();
+                }if(regId === '2'){
+                    $(".maeneo").hide();
+                    $(".locationB").hide();
+                    $(".unservayedB").show();
+                }if(regId === '--Select--'){
+                    $(".maeneo").hide();
+                    $(".locationB").hide();
+                    $(".unservayedB").hide();
+                }
+            }
+</script>
+<script>
+function downloadInvoice(){
+    var applicationId = document.getElementById('applicationId').value;
+    var serviceCode = document.getElementById('serviceCode').value;
+    location.href = "http://41.59.225.60/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/invoice/1/normal";
+}
+</script>
+<script>
+    function downloadInvoiceNMB(){
+        var applicationId = document.getElementById('applicationId').value;
+        var serviceCode = document.getElementById('serviceCode').value;
+        location.href = "http://41.59.225.60/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/invoice/1/nmb";
+    }
+</script>
+<script>
+    function downloadInvoiceCRDB(){
+        var applicationId = document.getElementById('applicationId').value;
+        var serviceCode = document.getElementById('serviceCode').value;
+        location.href = "http://41.59.225.60/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/invoice/1/crdb";
+    }
+</script>
+<script>
+    function downloadInvoiceNBC(){
+        var applicationId = document.getElementById('applicationId').value;
+        var serviceCode = document.getElementById('serviceCode').value;
+        location.href = "http://41.59.225.60/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/invoice/1/nbc";
+    }
+</script>
+<script>
+    function downloadReceipt(){
+        var applicationId = document.getElementById('applicationId').value;
+        var serviceCode = document.getElementById('serviceCode').value;
+        location.href = "http://41.59.225.60/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/receipt/1/normal";
+    }
+</script>
+<script>
+    function getBusOwnType()
+       { 
+                var regId = document.getElementById('busowntype').value;
+                if(regId === '1'){
+                    $(".natural_person").show();
+                    $(".thercorporate").hide();
+                    $(".company").hide();
+                    $(".business_name").hide();
+                }if(regId === '2'){
+                    $(".natural_person").hide();
+                    $(".company").show();
+                    $(".thercorporate").hide();
+                    $(".business_name").hide();
+                }if(regId === '3'){
+                    $(".natural_person").hide();
+                    $(".company").hide();
+                    $(".thercorporate").show();
+                    $(".business_name").hide();
+                }if(regId === '4'){
+                    $(".natural_person").hide();
+                    $(".company").hide();
+                    $(".thercorporate").hide();
+                    $(".business_name").show();
+                }
+            }
+        </script>
+        <script>
+            function getSector(){
+            setTimeout(
+            function sector()
+            { 
+                $.ajax({
+                    url: "/GetBusSector",
+                    type: 'GET',
+                    contentType: 'application/json',
+                    success: function(response) {
+                        if(typeof(response) === "string"){response = JSON.parse(response)}
+                    if(response.length > 0) {
+                        $("#sectorlist").append(`<option value='--Select--'>--Select--</option>`)
+                        response.forEach(el => {
+                            $("#sectorlist").append(`<option value='${el.sectorId}'> ${el.sectorName}</option>`)
+                        })
+                    }
+                    }
+                });
+            }, 3000);
+            }
+            </script>
+            <script>
+                function getDistrictB()
+                { 
+                    //alert("djdjd")
+                    var regId = document.getElementById('regionlistB').value;
+                    var businessLicenceClassId = document.getElementById('businessLicenceClassId').value;
+                    // console.log(regId + " asaa.... " + businessLicenceClassId)
+                    $('#districtlistB')
+                    .empty()
+                    if(businessLicenceClassId === '1'){
+                        $.ajax({
+                        url: "/GetDistrict/"+regId,
+                        type: 'GET',
+                        contentType: 'application/json',
+                        success: function(response) {
+                            if(typeof(response) === "string"){response = JSON.parse(response)}
+                        if(response.length > 0) {
+                            $("#districtlistB").append(`<option value='--Select--'>--Select--</option>`)
+                            response.forEach(el => {
+                                $("#districtlistB").append(`<option value='${el.districtId}'> ${el.districtName}</option>`)
+                            })
+                        }
+                        }
+                    });
+                    }
+                    if(businessLicenceClassId === '2'){
+                        $.ajax({
+                        url: "/GetLga/"+regId,
+                        type: 'GET',
+                        contentType: 'application/json',
+                        success: function(response) {
+                            if(typeof(response) === "string"){response = JSON.parse(response)}
+                        if(response.length > 0) {
+                            $("#districtlistB").append(`<option value='--Select--'>--Select--</option>`)
+                            response.forEach(el => {
+                                $("#districtlistB").append(`<option value='${el.districtId}'> ${el.districtName}</option>`)
+                            })
+                        }
+                        }
+                    });
+                    }
+                }
+                </script>
+            <script>
+                function regB()
+                { 
+                    $.ajax({
+                        url: "/GetRegions",
+                        type: 'GET',
+                        contentType: 'application/json',
+                        success: function(response) {
+                            if(typeof(response) === "string"){response = JSON.parse(response)}
+                        if(response.length > 0) {
+                            $("#regionlistB").append(`<option value='--Select--'>--Select--</option>`)
+                            response.forEach(el => {
+                                $("#regionlistB").append(`<option value='${el.regionId}'> ${el.regionName}</option>`)
+                            })
+                        }
+                        }
+                    });
+                }
+            </script>
+            <script>
+                function getBizType()
+                { 
+                    var regId = document.getElementById('categorylist').value;
+                    $('#typelist')
+                    .empty()
+                    $.ajax({
+                        url: "/GetBizType/"+regId,
+                        type: 'GET',
+                        contentType: 'application/json',
+                        success: function(response) {
+                            if(typeof(response) === "string"){response = JSON.parse(response)}
+                        if(response.length > 0) {
+                            $("#typelist").append(`<option value='--Select--'>--Select--</option>`)
+                            response.forEach(el => {
+                                $("#typelist").append(`<option value='${el.businessTypeId}'> ${el.businessTypeName}</option>`)
+                            })
+                        }
+                        }
+                    });
+                }
+                </script>
+                <script>
+                    function regGetAddressArea()
+                    { 
+                        $.ajax({
+                            url: "/GetAddressArea",
+                            type: 'GET',
+                            contentType: 'application/json',
+                            success: function(response) {
+                                if(typeof(response) === "string"){response = JSON.parse(response)}
+                            if(response.length > 0) {
+                                $("#addressAreaB").append(`<option value='--Select--'>--Select--</option>`)
+                                response.forEach(el => {
+                                    $("#addressAreaB").append(`<option value='${el.regionId}'> ${el.regionName}</option>`)
+                                })
+                            }
+                            }
+                        });
+                    }
+                </script>
+        <script>
+            function TinVerifier(){
+                var tin_no = document.getElementById("tin_no").value;
+                var busowntype = document.getElementById("busowntype").value;
+                var txtBox = document.getElementById('taxpayer');
+                $(".TinLoader").show();
+                $(".TinFirst").hide();
+                $.ajax({
+                    url: "/TINVerification",
+                    type: 'POST',
+                    data: JSON.stringify({"tin_no": tin_no, "busowntype": busowntype}),
+                    contentType: 'application/json',
+                    success: function(response) {
+                        if(response === 'failed'){
+                            swal({
+                                type: 'error',
+                                title: 'Oops...',
+                                text: 'TIN Number not valid, Please Try Again!',
+                                padding: '2em',
+                                timer: 3000
+                            })
+                            txtBox.value = "";
+                            $(".TinLoader").hide();
+                           $(".TinFirst").show();
+                        }else if(response === 'require natural person TIN'){
+                            swal({
+                                type: 'error',
+                                title: 'Oops...',
+                                text: 'Require Natural Person TIN Number, Please Try Again!',
+                                padding: '2em',
+                                timer: 3000
+                            })
+                            txtBox.value = "";
+                            $(".TinLoader").hide();
+                           $(".TinFirst").show();
+                        }else if(response === 'require Organization TIN'){
+                            swal({
+                                type: 'error',
+                                title: 'Oops...',
+                                text: 'Require Organization TIN Number, Please Try Again!',
+                                padding: '2em',
+                                timer: 3000
+                            })
+                            txtBox.value = "";
+                            $(".TinLoader").hide();
+                           $(".TinFirst").show();
+                        }
+                        else{
+                            swal({
+                                type: 'success',
+                                title: 'Success!',
+                                text: 'TIN verified successful',
+                                padding: '2em',
+                                timer: 3000
+                            })
+                           $(".TinLoader").hide();
+                           $(".TinFirst").show();
+                        }
+                    }
+                });
+            }
+            </script>

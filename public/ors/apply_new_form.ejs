@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <title>BRELA - Business Licence</title>
+    <link rel="icon" type="image/x-icon" href="ors/assets/img/favicon.ico"/>
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+    <link href="ors/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="ors/assets/css/plugins.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="ors/plugins/select2/select2.min.css">
+    <link href="ors/assets/css/components/tabs-accordian/custom-accordions.css" rel="stylesheet" type="text/css" />
+
+    <link href="ors/assets/css/elements/tooltip.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <link href="ors/plugins/sweetalerts/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+    <link href="ors/plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
+    <link href="ors/assets/css/components/custom-sweetalert.css" rel="stylesheet" type="text/css" />
+    
+    <!--  BEGIN CUSTOM STYLE FILE  -->
+    <link href="ors/assets/css/scrollspyNav.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="ors/plugins/jquery-step/jquery.steps.css">
+
+    <!-- toastr -->
+    <link href="ors/plugins/notification/snackbar/snackbar.min.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL PLUGINS -->
+    <style>
+        #formValidate .wizard > .content {min-height: 25em;}
+        #example-vertical.wizard > .content {min-height: 24.5em;}
+    </style>
+    <!--  END CUSTOM STYLE FILE  -->
+</head>
+<body class="sidebar-noneoverflow" data-spy="scroll" data-target="#navSection" data-offset="100">
+    
+    <!--  BEGIN NAVBAR  -->
+    <div class="header-container fixed-top">
+        <header class="header navbar navbar-expand-sm">
+            <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
+            
+            <ul class="navbar-item flex-row">
+                <li class="nav-item align-self-center page-heading">
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h3>Business Licence</h3>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-item flex-row search-ul">
+                <li class="nav-item align-self-center search-animated">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search toggle-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <form class="form-inline search-full form-inline search" role="search">
+                        <div class="search-bar">
+                            <input type="text" class="form-control search-form-control  ml-lg-auto" placeholder="Search...">
+                        </div>
+                    </form> -->
+                </li>
+            </ul>
+            <ul class="navbar-item flex-row navbar-dropdown">
+                <li class="nav-item dropdown language-dropdown more-dropdown">
+                    <div class="dropdown  custom-dropdown-icon">
+                        <a class="dropdown-toggle btn" href="#" role="button" id="customDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="ors/assets/img/logo_bg.jpg" class="flag-width" alt="flag"><span>English</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customDropdown">
+                            <!-- <a class="dropdown-item" data-img-value="de" data-value="German" href="javascript:void(0);"><img src="ors/assets/img/de.png" class="flag-width" alt="flag"> German</a>
+                            <a class="dropdown-item" data-img-value="jp" data-value="Japanese" href="javascript:void(0);"><img src="ors/assets/img/jp.png" class="flag-width" alt="flag"> Japanese</a>
+                            <a class="dropdown-item" data-img-value="fr" data-value="French" href="javascript:void(0);"><img src="ors/assets/img/fr.png" class="flag-width" alt="flag"> French</a> -->
+                            <a class="dropdown-item" data-img-value="ca" data-value="English" href="javascript:void(0);"><img src="ors/assets/img/logo_bg.jpg" class="flag-width" alt="flag"> English</a>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="nav-item dropdown message-dropdown">
+                    <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="messageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg><span class="badge badge-primary"></span>
+                    </a>
+                    <div class="dropdown-menu p-0 position-absolute" aria-labelledby="messageDropdown">
+                        <div class="">
+                            <a class="dropdown-item">
+                                <div class="">
+
+                                    <div class="media">
+                                        <div class="user-img">
+                                            <img class="usr-img rounded-circle" src="ors/assets/img/90x90.jpg" alt="profile">
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="">
+                                                <h5 class="usr-name">Licence Expired</h5>
+                                                <p class="msg-title">RENEW ALERT</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </a>
+                            <a class="dropdown-item">
+                                <div class="">
+
+                                    <div class="media">
+                                        <div class="user-img">
+                                            <img class="usr-img rounded-circle" src="ors/assets/img/90x90.jpg" alt="profile">
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="">
+                                                <h5 class="usr-name">Licence Issued</h5>
+                                                <p class="msg-title">NEW LICENCE</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                            <a class="dropdown-item">
+                                <div class="">
+
+                                    <div class="media">
+                                        <div class="user-img">
+                                            <img class="usr-img rounded-circle" src="ors/assets/img/90x90.jpg" alt="profile">
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="">
+                                                <h5 class="usr-name">Licence Rejected</h5>
+                                                <p class="msg-title">LICENCE UPDATE</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown notification-dropdown">
+                    <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="notificationDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg><span class="badge badge-success"></span>
+                    </a>
+                    <div class="dropdown-menu position-absolute" aria-labelledby="notificationDropdown">
+                        <div class="notification-scroll">
+
+                            <div class="dropdown-item">
+                                <div class="media">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                    <div class="media-body">
+                                        <div class="notification-para"><span class="user-name">Shaun Park</span> likes your photo.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dropdown-item">
+                                <div class="media">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                                    <div class="media-body">
+                                        <div class="notification-para"><span class="user-name">Kelly Young</span> shared your post</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dropdown-item">
+                                <div class="media">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+                                    <div class="media-body">
+                                        <div class="notification-para"><span class="user-name">Kelly Young</span> mentioned you in comment.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown user-profile-dropdown  order-lg-0 order-1">
+                    <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </a>
+                    <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
+                        <div class="">
+                            <!-- <div class="dropdown-item">
+                                <a class="" href="user_profile.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> My Profile</a>
+                            </div> -->
+                            <div class="dropdown-item">
+                                <a class="" href="/logout"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg> Sign Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </header>
+    </div>
+    <!--  END NAVBAR  -->
+
+    <!--  BEGIN MAIN CONTAINER  -->
+    <div class="main-container" id="container">
+
+        <div class="overlay"></div>
+        <div class="cs-overlay"></div>
+        <div class="search-overlay"></div>
+
+        <!--  BEGIN SIDEBAR  -->
+        <div class="sidebar-wrapper sidebar-theme">
+        
+            <nav id="sidebar">
+                <ul class="navbar-nav theme-brand flex-row  text-center">
+                    <li class="nav-item theme-logo">
+                        <a href="/Dashboard">
+                            <img src="ors/assets/img/brela_logo.png" style="width: 40%;height: 40%;" class="usr-img rounded-circle" alt="logo"><br/><h6 class="text-white"> BRELA Online Registration System </h6>
+                        </a>
+                    </li>
+                    <li class="nav-item toggle-sidebar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left sidebarCollapse"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    </li>
+                   
+                </ul>
+    
+                <div class="shadow-bottom"></div>
+                <ul class="list-unstyled menu-categories" id="accordionExample">
+    
+                    <li class="menu active">
+                        <a href="/Dashboard" aria-expanded="false" class="dropdown-toggle">
+                            <div class="text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                <span>Dashboard</span>
+                            </div>
+                           
+                        </a>
+                    </li>
+    
+                    <li class="menu menu-heading">
+                        <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg><span class="text-white">LICENSING SERVICES</span></div>
+                    </li>
+    
+                    <li class="menu">
+                        <a href="/ApplyBL" data-applyId="1" aria-expanded="false" class="dropdown-toggle">
+                            <div class="text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit text-white"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                <span>New Business Licence</span>
+                            </div>
+                        </a>
+                    </li>
+     
+                   
+    
+                    <!-- <li class="menu menu-heading">
+                        <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg><span class="text-white">POST REGISTRATION</span></div>
+                    </li> -->
+                    <li class="menu">
+                        <a href="/MyApplication" aria-expanded="false" class="dropdown-toggle">
+                            <div class="text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail text-white"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                <span>My Applications</span>
+                            </div>
+                        </a>
+                    </li>
+    
+                    <li class="menu">
+                        <a href="#elements" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle text-white">
+                            <div class=" text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap text-white"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                <span>My Licences</span>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </div>
+                        </a>
+                        <ul class="collapse submenu list-unstyled text-white" id="elements" data-parent="#accordionExample">
+                            <li>
+                                <a href="/MyLicence"> Active Licences </a>
+                            </li>
+                            <li>
+                                <a href="/ExpiredLicence"> Expired Licences </a>
+                            </li>
+                            <li>
+                                <a href="/CancelledLicence"> Cancelled Licences </a>
+                            </li>
+                            <!-- <li>
+                                <a href="#"> Licence Reports </a>
+                            </li>   -->
+                        </ul>
+                    </li>
+    
+                    <!-- <li class="menu menu-heading">
+                        <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg><span class="text-white">USER MANUAL</span></div>
+                    </li>
+    
+                    <li class="menu">
+                        <a href="/Settings" aria-expanded="false" class="dropdown-toggle">
+                            <div class="text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout text-white"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                                <span>How to Use</span>
+                            </div>
+                        </a>
+                    </li>
+    
+                    <li class="menu">
+                        <a href="#datatables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <div class="text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers text-white"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                                <span>FAQ</span>
+                            </div>
+                            
+                        </a>
+                    </li>
+    
+                    <li class="menu">
+                        <a href="#forms" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <div class="text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard text-white"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                                <span>Privacy Policy</span>
+                            </div>
+                        </a>
+                    </li>
+                 
+                    <li class="menu">
+                        <a href="#pages" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <div class="text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file text-white"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                                <span>Helpdesk</span>
+                            </div>
+                           
+                        </a>
+                    </li>
+    
+                    <li class="menu">
+                        <a href="/logout" aria-expanded="false" class="dropdown-toggle">
+                            <div class="text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out text-white"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+                                <span>Sign Out</span>
+                            </div>
+                        </a>
+                    </li>
+       
+                    <li class="menu">
+                        <a href="../../documentation/index.html" aria-expanded="false" class="dropdown-toggle">
+                            <div class="text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book text-white"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                                <span>Documentation</span>
+                            </div>
+                        </a>
+                    </li> -->
+                    
+                </ul>
+                
+            </nav>
+    
+        </div>
+        <!--  END SIDEBAR  -->
+
+        <!--  BEGIN CONTENT AREA  -->
+        <div id="content" class="main-content">
+            <div class="container-fluid">
+                <div class="container-fluid">
+
+
+
+                    <div class="row layout-top-spacing" id="cancel-row">
+
+                        <div class="col-lg-12 layout-spacing">
+                            <div class="statbox widget box box-shadow">
+                                <div class="widget-header">
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                            <!-- <h4 style="font-weight: bold;color: blue;">Business Licence Application Form</h4> -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="widget-content widget-content-area">
+                                    <input type="hidden" class="form-control text-black" id="trackNo" name="trackNo">
+                                    <input type="hidden" class="form-control text-black" id="bizNumber" name="bizNumber">
+                                    <div id="circle-basic" class="">
+                                        <h3>Application Details</h3>
+                                        <section>
+
+                                             <div class="widget-content widget-content-area">
+                                                <h5 style="font-weight: bold;color: blue;"> Business Licence Application Form</h5>
+                                                <form>
+                                                    <div class="form-group row  mb-4">
+                                                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-black">Tracking Number:</label>
+                                                        <div class="col-sm-4">
+                                                            <input type="text" class="form-control form-control-sm text-black" id="inputEmail4" placeholder="Waiting for tracking number..." disabled>
+                                                        </div>
+                                                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-black">Service Type:</label>
+                                                        <div class="col-sm-4">
+                                                            <input type="text" class="form-control form-control-sm text-black" id="servtype" value="New Application for Business Licence"  placeholder="Service Name" disabled>
+                                                            <input type="hidden" class="form-control text-black" id="servtypecode" value="4201">
+                                                        </div>
+                                                    </div>
+                                                    <h6 style="font-weight: bold;color: blue;"> Applicant Information</h6>
+                                                    <div class="form-group row  mb-4">
+                                                        <label for="colFormLabelSm" class="col-md-2 col-form-label col-form-label-sm text-black">First Name:</label>
+                                                        <div class="col-sm-4">
+                                                            <input type="text" class="form-control form-control-sm text-black" id="fname" placeholder="Please Wait..." disabled>
+                                                        </div>
+                                                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-black">Middle Name:</label>
+                                                        <div class="col-sm-4">
+                                                            <input type="text" class="form-control form-control-sm text-black" id="mname" placeholder="Please Wait..." disabled>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row  mb-4">
+                                                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-black">Last Name:</label>
+                                                        <div class="col-sm-4">
+                                                            <input type="text" class="form-control form-control-sm text-black" id="lname" placeholder="Please Wait..." disabled>
+                                                        </div>
+                                                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-black">Citizenship:</label>
+                                                        <div class="col-sm-4">
+                                                            <input type="text" class="form-control form-control-sm text-black" id="citizen" placeholder="Please Wait..." disabled>
+                                                        </div>
+                                                        <!-- <label for="colFormLabelSm" class="col-md-1 col-form-label col-form-label-sm text-black">Gender:</label> -->
+                                                        <div class="col-sm-3">
+                                                            <input type="hidden" class="form-control form-control-sm text-black" id="gender" placeholder="Please Wait..." disabled>
+                                                        </div>
+                                                        <!-- <label for="colFormLabelSm" class="col-sm-1 col-form-label col-form-label-sm text-black">Date of Birt:</label> -->
+                                                        <div class="col-sm-3">
+                                                            <input type="hidden" class="form-control form-control-sm text-black" id="dob" placeholder="Please Wait..." disabled>
+                                                        </div>
+
+                                                        <!-- <label for="colFormLabelSm" class="col-sm-1 col-form-label col-form-label-sm text-black">Citizenship:</label>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" class="form-control form-control-sm text-black" id="citizen" placeholder="Calling Last Name..." disabled>
+                                                        </div> -->
+                                                    </div>
+                                                 
+                                                    <div class="form-row mb-6">
+                                                        <p><b>Pre-requisite for applying and Obtaining a Business License</b><br>
+
+                                                            In order to apply for a Business, the Applicant need to have the scanned copy of the following documents<br>
+                                                            
+                                                                    a. Lease Agreement or Title deed in the name of the applying entity as a proof of having a business Premise;<br>
+                                                            
+                                                                    b. Certificate of Incorporation for a Company or a Certificate of Registration for a Business Name;<br>
+                                                            
+                                                                    c. Tax Identification Number (TIN);<br>
+                                                            
+                                                                    d. Company Shareholders or Business Partners Identifications cards such as Passport ID, Birth Certificate, Voters ID, National ID for Tanzania Citizens OR Residency Permit Class “A” for Shareholders OR Residency Permit Class “B” for Directors for Non-Citizens staying in Tanzania;<br>
+                                                            
+                                                                    e. Sector Permit for Businesses Regulated by Sector Ministry, Authorities or Agencies from the Respective Agencies (Provide Link to a Content Document for the Sectors).<br><br></p>
+                                                        <!-- <button class="btn btn-warning mb-2" onclick="saveApplicantDet()">Save</button> -->
+                                                     
+                                                    </div>
+                                                </form>
+            
+                                            </div> 
+                                        </section>
+                                        <h3>Business Details</h3>
+                                        <section>
+                                            <div class="widget-content widget-content-area">
+                                                <h5 style="font-weight: bold;color: blue;"> Business Information</h5>
+                                                <form name="form1">
+                                                    <div class="form-row mb-4">
+            
+                                                        <!-- <div class="form-group col-md-4">
+                                                            <label for="inputState" class="text-black">Business Owner Type</label>
+                                                            <select class="form-control  basic" id="bustype" onchange="getBusOwnTypeData()">
+                                                                </select>
+                                                        </div> -->
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputState" class="text-black">Business Owner Sub Type</label>
+                                                            <select class="form-control  basic" id="busowntype" onchange="getBusOwnType()" required>
+                                                                </select>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">Tax Identification Number TIN</label>
+                                                                <div class="input-group mb-4">
+                                                                <input type="text" class="form-control tin_no" id="tin_no" name="tin_no" placeholder="Enter TIN number " aria-label="Recipient's username" >
+                                                                <div class="invalid-feedback">
+                                                                    Please fill the name
+                                                                </div>
+                                                                <div class="input-group-append TinFirst">
+                                                                  <button class="btn btn-primary" onclick="TinVerifier()" type="button">LOAD FROM TRA</button>
+                                                                </div>
+                                                                <div class="input-group-append TinLoader" style="display: none">
+                                                                    <button class="btn btn-info btn-lg mb-3 mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-loader spin mr-2"><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line></svg>  Please Wait...</button>
+                                                                </div>
+                                                              </div>
+
+                                                          </div>
+                                                          
+                                                          <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">Taxpayer Name</label>
+                                                            <input type="email" class="form-control text-black" id="taxpayer" placeholder="Waiting for Business TIN number..." disabled>
+                                                        </div>
+                                                        <!-- <div class="form-group col-md-4">
+                                                            <label for="inputState" class="text-black bs-tooltip" data-placement="top" title="Nationality Origin Type">Origin Type</label>
+                                                            <select class="form-control  basic" id="busorigintype">
+                                                                </select>
+                                                        </div> -->
+            
+                                                    </div>
+
+                                                    <div class="form-row mb-4 natural_person" id="natural_person" name="natural_person" style="display: none">
+                                                      
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">NIDA Number(NIN)</label>
+                                                                <div class="input-group mb-4">
+                                                                <input type="text" class="form-control" id="nida_no" placeholder="NIDA Number" aria-label="NIDA Number">
+                                                                <div class="input-group-append NinFirst">
+                                                                  <button class="btn btn-primary" onclick="NinVerifier()" type="button">LOAD FROM NIDA</button>
+                                                                </div>
+                                                                <div class="input-group-append NinLoader" style="display: none">
+                                                                    <button class="btn btn-info btn-lg mb-3 mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-loader spin mr-2"><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line></svg>  Please Wait...</button>
+                                                                </div>
+                                                              </div>
+                                                          </div>
+                                                          <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">First Name</label>
+                                                            <input type="text" class="form-control text-black" id="fname_nat_local" disabled>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">Middle Name</label>
+                                                            <input type="text" class="form-control text-black" id="mname_nat_local" disabled>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">Last Name</label>
+                                                            <input type="text" class="form-control text-black" id="lname_nat_local" disabled>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">Gender</label>
+                                                            <input type="text" class="form-control text-black" id="gender_nat" disabled>
+                                                        </div>
+                                                        <div class="form-group col-md-4 text-black">
+                                                            <label for="inputEmail4" class="text-black">Date of Birth</label>
+                                                            <div class="form-group mb-0">
+                                                                <input id="basicFlatpickr1" class="form-control flatpickr1 flatpickr-input active text-black" type="text" disabled>
+                                                            </div>
+                                                        </div>
+                                                   
+                                                    </div>
+            
+                                                    <div class="form-row mb-4 company" id="company" name="company" style="display: none">
+                                                    
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputEmail4" class="text-black">Incorporate Number</label>
+                                                                <div class="input-group mb-4">
+                                                                <input type="text" class="form-control inco_no" id="inco_no" name="inco_no" placeholder="Incorporate Number" aria-label="Incorporate Number">
+                                                                <div class="input-group-append CompFirst">
+                                                                    <button class="btn btn-primary" onclick="CompanyVerifier()" type="button">SEARCH</button>
+                                                                  </div>
+                                                                  <div class="input-group-append CompLoader" style="display: none">
+                                                                      <button class="btn btn-info btn-lg mb-3 mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-loader spin mr-2"><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line></svg>  Please Wait...</button>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                          <div class="form-group col-md-6">
+                                                            <label for="inputEmail4" class="text-black">Company Name</label>
+                                                            <input type="text text-black" class="form-control" id="company_name" disabled>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputEmail4" class="text-black">Company Type</label>
+                                                            <input type="text text-black" class="form-control" id="company_type" disabled>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputEmail4" class="text-black">Date of Incoperation</label>
+                                                            <input type="text text-black" class="form-control" id="company_date" disabled>
+                                                        </div>
+                                                    </div>
+            
+                                                    <div class="form-row mb-4 thercorporate" id="thercorporate" name="thercorporate" style="display: none">
+                                                      
+                                                          <div class="form-group col-md-6">
+                                                            <label for="inputEmail4" class="text-black">Registration Number</label>
+                                                            <input type="text" class="form-control reg_no_other" name="reg_no_other" id="reg_no_other">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputEmail4" class="text-black">Corporate Name</label>
+                                                            <input type="text" class="form-control corporate_name" id="corporate_name" name="corporate_name">
+                                                            <div class="invalid-feedback check_name_space" style="display: none">
+                                                                Corporate Name must be atleast two strings
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputEmail4" class="text-black">Leader/Trustee/Director 1 Full Name</label>
+                                                            <input type="text" class="form-control leadername_nat" id="leadername_nat" name="leadername_nat">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputEmail4" class="text-black">Leader/Trustee/Director 2 Full Name</label>
+                                                            <input type="text" class="form-control leadername_nat_2" id="leadername_nat_2" name="leadername_nat_2">
+                                                        </div>
+                                                    </div>
+            
+                                                    <div class="form-row mb-4 business_name" id="business_name" name="business_name" style="display: none">
+                                                  
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputEmail4" class="text-black">Registration Number</label>
+                                                            <div class="input-group mb-4">
+                                                                <input type="text" class="form-control bn_no" id="bn_no" name="bn_no" placeholder="Registration Number" aria-label="Registration Number" required>
+                                                                <div class="input-group-append BNFirst">
+                                                                    <button class="btn btn-primary" onclick="BNVerifier()" type="button">SEARCH</button>
+                                                                  </div>
+                                                                  <div class="input-group-append BNLoader" style="display: none">
+                                                                      <button class="btn btn-info btn-lg mb-3 mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-loader spin mr-2"><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line></svg>  Please Wait...</button>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                          <div class="form-group col-md-6">
+                                                            <label for="inputEmail4" class="text-black">Business Name</label>
+                                                            <input type="text" class="form-control text-black" id="bn_name" disabled>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputEmail4" class="text-black">Business Name Type</label>
+                                                            <input type="text" class="form-control text-black" id="bn_type" disabled>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputEmail4" class="text-black">Date of Registration</label>
+                                                            <input type="text" class="form-control text-black" id="date_registration" disabled>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-row mb-4">
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">Business Sector</label>
+                                                            <select class="form-control  basic" onchange="getCategory()" id="sectorlist">
+            
+                                                                </select>
+                                                        </div>
+                                                        
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">Category</label>
+                                                            <select class="form-control  basic" onchange="getBizType()" id="categorylist">
+                                                                </select>
+                                                        </div>
+            
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">Type</label>
+                                                            <select class="form-control  basic" onchange="getBizCatDet()" id="typelist">
+                                                                </select>
+                                                            <span class="permitInfo" style="color: red;display: none;">This Business Line require permit.</span>
+                                                        </div>
+                                                        <div class="form-group col-md-4 nounits_div" style="display: none">
+                                                            <label for="inputEmail4" class="text-black">Number of Units for the selected business line</label>
+                                                            <input type="number" class="form-control " value="0" id="nounits">
+                                                            <span style="color: red;">Number of Units must be greater or equal to 1</span>
+                                                        </div>
+                                                        <div class="form-group col-md-4 permitInfo" style="display: none">
+                                                            <span style="color: red;">This Business Line require permit.</span>
+                                                        </div>
+            
+                                                    <input type="hidden" class="form-control" id="businessLicenceClassId">
+                                                    <input type="hidden" class="form-control" id="issuingAuthorityId">
+                                                    </div>
+                                                    <h6 style="font-weight: bold;color: blue;"> Business Location</h6>
+            
+                                                    <div class="form-row mb-4">
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">Address Type</label>
+                                                            <select id="addressAreaB" name="addressAreaB" onchange="getAddrAreaB()" class="form-control text-black" required>
+                                                                <option selected>--Select--</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row mb-4">
+            
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">Region</label>
+                                                            <select class="form-control  basic text-black" onchange="getDistrictB()" id="regionlistB">
+            
+                                                                </select>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">District</label>
+                                                            <select class="form-control  basic text-black" onchange="getWardB()" id="districtlistB" >
+                                                                </select>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">Ward</label>
+                                                            <select class="form-control  basic text-black" onchange="getPostCode()" id="wardIdB" required>
+                                                                </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row mb-4">
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">Postal Code</label>
+                                                            <input type="text" class="form-control text-black" id="postcode" placeholder="Enter Postal Code" disabled>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">Street</label>
+                                                            <input type="text" class="form-control text-black" id="inputEmail4street" placeholder="Enter Street Name" required>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">Road</label>
+                                                            <input type="text" class="form-control text-black" id="inputroad" placeholder="Enter Road" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row mb-4 locationB" style="display: none">
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">Plot No</label>
+                                                            <input type="text" class="form-control" id="plot_no">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">Block No</label>
+                                                            <input type="text" class="form-control" id="block_no" placeholder="Enter block No">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">House Number</label>
+                                                            <input type="number" class="form-control" id="house_no" placeholder="Enter House No">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row mb-4 unservayedB" style="display: none">
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">Unsurveyed Area</label>
+                                                            <textarea class="form-control text-black" id="unservayedarea" rows="3" placeholder="eg. Near Catholic Church"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <h4 style="font-weight: bold;color: blue;"> Contact Information</h4>
+                                                    <div class="form-row mb-4">
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">Mobile Phone No</label>
+                                                            <input type="number" minlength="10" maxlength="12" onkeypress="return onlyNumberKey(event)" class="form-control text-black" id="inputEmail4phn" placeholder="Enter Phone No" required>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">Email address</label>
+                                                            <input type="email" class="form-control text-black inputEmail4comp" id="inputEmail4comp" name="inputEmail4comp" placeholder="Enter Email" required>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">P.O. Box</label>
+                                                            <input type="text" class="form-control text-black" id="inputEmail4pobox" placeholder="Enter P.O Box" required>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div style="text-align: center;">
+                                                        <button class="btn btn-success" onclick="saveBizDet()" id="savebtn" type="button" >Save</button>
+                                                        <!-- <a class="nav-link btn btn-primary mt-3" id="icon-pills-profile-tab" onclick="saveBizDet()" data-toggle="pill" href="#icon-pills-profile" role="tab" aria-controls="icon-pills-contact" aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-database"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Save</a> -->
+                                                    </div>
+                                                   
+                                                </form>
+                                            </div>
+                                        </section>
+                                        <h3>Attachments</h3>
+                                        <section>
+                                            <div class="widget-content widget-content-area">
+                                                <h4 style="font-weight: bold;color: blue;">Reqired Attachments and Permits</h4>
+                                                <!-- <div class="form-row mb-4">
+                                                <div class="form-group col-md-4">
+                                                    <label for="inputEmail4" class="text-black">Attachments</label>
+                                                    <select class="form-control  basic text-black" onchange="getDistrictB()" id="attachments" >
+    
+                                                        </select>
+                                                </div>
+                                                <div class="form-group col-md-4" style="display: none;">
+                                                    <label for="inputEmail4" class="text-black">File</label>
+                                                        <div class="custom-file">
+                                                            
+                                                            <input type="file" class="custom-file-input" id="customFile">
+                                                            <label class="custom-file-label" for="customFile">Choose file</label>
+                                                        </div>
+                                                </div>
+                                                <div class="form-group col-md-4" style="display: none;">
+                                                    <label for="inputEmail4" class="text-black"> .</label>
+                                                    <input type="button" name="time" class="mb-4 btn btn-primary" value="Submit">
+                                                </div>
+                                                </div> -->
+                                                <!-- <div class="form-row mb-4">
+                                                    <div class="form-group col-md-4">
+                                                        <label for="inputEmail4" class="text-black">Permits</label>
+                                                        <select class="form-control  basic text-black" onchange="getDistrictB()" id="permits" >
+        
+                                                            </select>
+                                                    </div>
+                                                    <div class="form-group col-md-4" style="display: none;">
+                                                        <label for="inputEmail4" class="text-black">File</label>
+                                                            <div class="custom-file">
+                                                                
+                                                                <input type="file" class="custom-file-input" id="customFile">
+                                                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                                            </div>
+                                                    </div>
+                                                    <div class="form-group col-md-4" style="display: none;">
+                                                        <label for="inputEmail4" class="text-black"> .</label>
+                                                        <input type="button" name="time" class="mb-4 btn btn-primary" value="Submit">
+                                                    </div>
+                                                    </div> -->
+                                                <div id="toggleAccordion" >
+                                                  <div class="card">
+                                                    <div class="card-header" id="headingOne1">
+                                                      <section class="mb-0 mt-0">
+                                                        <div style="font-weight: bold;color: blue;" role="menu" class="collapsed" data-toggle="collapse" data-target="#defaultAccordionOne" aria-expanded="true" aria-controls="defaultAccordionOne">
+                                                          Required Attachments  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                                        </div>
+                                                      </section>
+                                                    </div>
+                                
+                                                    <div id="defaultAccordionOne" class="collapse show" aria-labelledby="headingOne1" data-parent="#toggleAccordion">
+                                                      <div class="card-body">
+                                                        <div class="widget-content widget-content-area br-6">
+                                                            <div class="table-responsive mb-4 mt-4">
+                                                                <table class="multi-table table table-hover attachmentId" id="attachmentId" style="width:100%">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Attachment Name</th>
+                                                                            <th>Description</th>
+                                                                            <th>Document</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        
+                                                                
+                                                                    </tbody>
+                                                                    <tfoot>
+                                                                        <tr>
+                                                                            <th>Attachment Name</th>
+                                                                            <th>Description</th>
+                                                                            <th>Document</th>
+                                                                        </tr>
+                                                                    </tfoot>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="card">
+                                                    <div class="card-header" id="headingTwo1">
+                                                      <section class="mb-0 mt-0">
+                                                        <div style="font-weight: bold;color: blue;" role="menu" class="show" data-toggle="collapse" data-target="#defaultAccordionTwo" aria-expanded="false" aria-controls="defaultAccordionTwo">
+                                                          Required Permits   <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                                        </div>
+                                                      </section>
+                                                    </div>
+                                                    <div id="defaultAccordionTwo" class="collapse show" aria-labelledby="headingTwo1" data-parent="#toggleAccordion">
+                                                        <div class="card-body">
+                                                            <div class="widget-content widget-content-area br-6">
+                                                            <div class="table-responsive mb-4 mt-4">
+                                                                <table class="multi-table table table-hover permittId" id="permittId" style="width:100%">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Permit Name</th>
+                                                                            <th>Description</th>
+                                                                            <th>Document</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        
+                                                                
+                                                                    </tbody>
+                                                                    <tfoot>
+                                                                        <tr>
+                                                                            <th>Permit Name</th>
+                                                                            <th>Description</th>
+                                                                            <th>Document</th>
+                                                                        </tr>
+                                                                    </tfoot>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="widget-content widget-content-area">
+                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                            <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                                                            <label class="custom-control-label text-black" for="customRadioInline1">I/We declare that the particulars given above are correct and complete to best of my/ our knowledge</label>
+                                                            </div>
+                                                    </div>
+                                                  </div>
+                                                <div style="text-align: center;">
+                                                    <button class="btn btn-success" onclick="ApplicationFinal()" type="button" >Submit</button>
+                                                </div>
+                                                </div>
+
+                                            </div>
+                                        </section>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+                </div>
+                <div id="rotateInDownLeft" class="modal animated rotateInDownLeft custo-rotateInDownLeft" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Upload File here</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="hidden" class="form-control uploadType" name="uploadType" id="uploadType">
+                                <input type="hidden" class="form-control categoryID" name="categoryID" id="categoryID">
+                
+                                <!-- <div class="form-group col-md-12">
+                                    <label for="inputEmail4" class="text-black">Tracking Number</label>
+                                    <input type="text" class="form-control trak_no" id="trak_no" >
+                                </div> -->
+                                <div class="form-group col-md-12">
+                                    <label for="inputEmail4" class="text-black">Attachment Name</label>
+                                    <input type="phone" class="form-control atach_nem" id="atach_nem" >
+                                    
+                                </div>
+                                <input id="fileupload" type="file" onchange="validateSize(this)" name="fileupload" class="form-control-file fileupload" />
+                                <span style="color: red;">File maximum 2MB(formart only pdf)</span>
+                            </div>
+                            <div class="modal-footer md-button">
+                                <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Cancel</button>
+                                <!-- <button type="button" id="upload-btn" name="upload-btn" onclick="fileUploadXPlan()" class="btn btn-primary" data-dismiss="modal">Upload</button> -->
+                                <button type="button" id="upload-btn" name="upload-btn" onclick="fileUploadX()" class="btn btn-primary" data-dismiss="modal">Upload</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="zoomupModal" class="modal animated zoomupModal custo-zoomupModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Upload File here</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="hidden" class="form-control uploadType1" name="uploadType1" id="uploadType1">
+                                <input type="hidden" class="form-control categoryID1" name="categoryID1" id="categoryID1">
+                
+                                <div class="form-group col-md-12">
+                                    <label for="inputEmail4" class="text-black">Permit Name</label>
+                                    <input type="text" class="form-control atach_nem1" id="atach_nem1" >
+                                    
+                                </div>
+                                <input id="fileupload1" type="file" onchange="validateSize1(this)" name="fileupload1" class="form-control-file fileupload1" />
+                                <span style="color: red;">File maximum 2MB(format only pdf)</span>
+                            </div>
+                            <div class="modal-footer md-button">
+                                <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Cancel</button>
+                                <button type="button" id="upload-btn1" name="upload-btn1" onclick="fileUploadP()" class="btn btn-primary" data-dismiss="modal">Upload</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%- include('jax_new_bus.ejs')%> 
+        </div>
+        <!--  END CONTENT AREA  -->
+
+    </div>
+    <!-- END MAIN CONTAINER -->
+    
+    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+    <script src="ors/assets/js/libs/jquery-3.1.1.min.js"></script>
+    <script src="ors/bootstrap/js/popper.min.js"></script>
+    <script src="ors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="ors/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="ors/assets/js/app.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            App.init();
+        });
+    </script>
+    <script src="ors/plugins/highlight/highlight.pack.js"></script>
+    <script src="ors/assets/js/custom.js"></script>
+    <!-- END GLOBAL MANDATORY SCRIPTS -->
+
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="ors/assets/js/scrollspyNav.js"></script>
+    <script src="ors/plugins/jquery-step/jquery.steps.min.js"></script>
+    <script src="ors/plugins/jquery-step/custom-jquery.steps.js"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->   
+    
+    <script src="ors/plugins/notification/snackbar/snackbar.min.js"></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+
+    <!--  BEGIN CUSTOM SCRIPTS FILE  -->
+    <script src="ors/assets/js/components/notification/custom-snackbar.js"></script>
+    <!--  END CUSTOM SCRIPTS FILE  -->
+    <script src="ors/plugins/select2/select2.min.js"></script>
+    <script src="ors/plugins/select2/custom-select2.js"></script>
+    <script src="ors/assets/js/elements/tooltip.js"></script>
+    <script src="ors/assets/js/components/ui-accordions.js"></script>
+
+    <script>
+        // Get the Toast button
+        var toastButton = document.getElementById("toast-btn");
+        // Get the Toast element
+        var toastElement = document.getElementsByClassName("toast")[0];
+
+        toastButton.onclick = function() {
+            $('.toast').toast('show');
+        }
+
+
+    </script>
+    <script src="ors/plugins/sweetalerts/sweetalert2.min.js"></script>
+    <script src="ors/plugins/sweetalerts/custom-sweetalert.js"></script>
+
+</body>
+</html>

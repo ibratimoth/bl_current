@@ -1,0 +1,141 @@
+<!-- toastr -->
+<script src="plugins/notification/snackbar/snackbar.min.js"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+
+<!--  BEGIN CUSTOM SCRIPTS FILE  -->
+<script src="assets/js/components/notification/custom-snackbar.js"></script>
+<!--  END CUSTOM SCRIPTS FILE  -->
+
+<script>
+    // Get the Toast button
+    var toastButton = document.getElementById("toast-btn");
+    // Get the Toast element
+    var toastElement = document.getElementsByClassName("toast")[0];
+
+    toastButton.onclick = function() {
+        $('.toast').toast('show');
+    }
+
+
+</script>
+<script type="text/javascript">
+setTimeout(
+function myApp()
+{ 
+$.ajax({
+url: 'ComplLicEx',
+dataType: 'json',
+success: function(data) {
+$("#html5-extension").find('tbody').empty();
+    for (var i=0; i<data.length; i++) {
+        if(data[i].paymentStatus){
+                var row = '<tr><td class="text-black tacker" id="tacker" style="font-weight: bold;">' + data[i].BLNumber+ '</td>'; 
+                row = row + '<td style="color: black;"> ' + data[i].EntityName + ' </td>';
+            row = row + '<td style="color: black;">' + data[i].businessTypeName + '</span></td>';
+            row = row + '<td style="color: black;"> ' + data[i].BusinessClassId + ' </td>';
+            row = row + '<td style="color: black;">' + data[i].FeePaid + '</td>';
+            // row = row + '<td style="color: black;">' + data[i].expireDate + '</td>';
+            if(data[i].IsBranch === 'Principal'){
+                if(data[i].LicenceStatusId === 'Active'){
+            row = row + '<td>'+
+                '<div class="btn-group">'+
+                    '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">Action'+
+                    '</button>'+
+                    '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
+                        '<a class="dropdown-item warning passingID text-black" href="http://41.59.225.60/api/printout/'+data[i].trackingNo +'/4201/bl">Download Certificate</a>'+
+                        '<a class="dropdown-item text-black" href="/CancelApplication/'+data[i].trackingNo+'" >Cancelation</a>'+
+                        '<a class="dropdown-item text-black" href="/ApplyBLBranch/'+data[i].trackingNo+'" >Apply For Branch</a>'+
+                        '<a class="dropdown-item text-black" href="/Transfer/'+data[i].trackingNo+'">Transfer Business Licence</a>'+
+                '</div>'+
+                ' </td></tr>';
+                    }
+                    if(data[i].LicenceStatusId === 'Expired'){
+            row = row + '<td>'+
+                '<div class="btn-group">'+
+                    '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">Action'+
+                    '</button>'+
+                    '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
+                        '<a class="dropdown-item text-black warning confirm" data-id="'+ data[i].trackingNo +'">Renew</a>'+
+                '</div>'+
+                ' </td></tr>';
+                    }
+                    if(data[i].LicenceStatusId === 'Cancelled'){
+                    }
+                    if(data[i].LicenceStatusId === 'Expired '){
+                    }
+                    }
+            if(data[i].IsBranch === 'Branch'){
+                if(data[i].LicenceStatusId === 'Active'){
+            row = row + '<td>'+
+                '<div class="btn-group">'+
+                    '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">Action'+
+                    '</button>'+
+                    '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
+                        '<a class="dropdown-item warning passingID text-black" href="http://41.59.225.60/api/printout/'+data[i].trackingNo +'/4201/bl">Download Certificate</a>'+
+                        '<a class="dropdown-item text-black" href="/CancelApplication/'+data[i].trackingNo+'" >Cancelation</a>'+
+                        '<a class="dropdown-item text-black" href="/Transfer/'+data[i].trackingNo+'">Transfer Business Licence</a>'+
+                '</div>'+
+                ' </td></tr>';
+                    }
+                    if(data[i].LicenceStatusId === 'Expired'){
+            row = row + '<td>'+
+                '<div class="btn-group">'+
+                    '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">Action'+
+                    '</button>'+
+                    '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
+                        '<a class="dropdown-item text-black warning confirm" data-id="'+ data[i].trackingNo +'">Renew</a>'+
+                '</div>'+
+                ' </td></tr>';
+                    }
+                    if(data[i].LicenceStatusId === 'Cancelled'){
+
+                    }
+                    if(data[i].LicenceStatusId === 'Expired '){
+                    }
+                    }
+            }
+      
+        $('#html5-extension').append(row);
+        $('.widget-content .warning.confirm').on('click', function () {
+var deleteBtn = $(this),
+id = deleteBtn.data('id'),
+title_tracker = deleteBtn.closest('tr').find('.tacker').text();
+swal({
+title: 'Renew Business Licence',
+text: "Do you want to Renew Business Licence Number " + title_tracker+"?",
+type: 'warning',
+showCancelButton: true,
+confirmButtonText: 'Renew',
+padding: '2em'
+}).then(function(result) {
+
+if (result.value) {
+$.ajax({
+url: "/Renew",
+type: 'POST',
+data: JSON.stringify({"BLNumber": title_tracker}),
+contentType: 'application/json',
+success: function(response) {
+    swal({
+  title: 'Renew Business Licence!',
+  text: 'Application for Renew of Business Licence has been sent succesfully.',
+  type: 'success',
+  timer: 2000,
+    }
+).then(function(result){
+    location.reload();
+})
+}
+});
+}
+})
+})
+    }
+}
+// ,
+// error: function(jqXHR, textStatus, errorThrown){
+//     alert('Error: ' + textStatus + ' - ' + errorThrown);
+// }
+});
+}, 2000);
+</script>

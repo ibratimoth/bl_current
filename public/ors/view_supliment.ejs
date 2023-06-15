@@ -1,0 +1,641 @@
+<%- include('sidebarmenu.ejs')%>
+
+<!--  BEGIN CONTENT AREA  -->
+<div id="content" class="main-content">
+<div class="container-fluid">
+        <div class="row">
+
+<div class="col-lg-12 layout-top-spacing">
+    <div class="statbox widget box box-shadow">
+        <div class="widget-header">
+            <div class="row">
+                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                    <h4>View Business Licence Application</h4>
+                    <input type="hidden" class="form-control text-black" value="<%= trackingNo %>" id="trackNo" name="trackNo">
+                    <input type="hidden" class="form-control text-black" value="<%= trackingNo %>" id="trackngNo" name="trackngNo">
+                </div>
+            </div>
+            <div class="form-row mb-12">
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4" class="text-black">Comment</label>
+                    <textarea class="form-control text-black" id="comments" rows="3" disabled></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="widget-content widget-content-area icon-pill">
+            
+            <ul class="nav nav-pills mb-3 mt-3" id="icon-pills-tab" role="tablist">
+                <!-- <li class="nav-item">
+                    <a class="nav-link active a" id="icon-pills-payment-tab" data-toggle="pill" href="#icon-pills-payment" role="tab" aria-haspopup="true" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> Comment Section </a>
+        
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link a" id="icon-pills-applicatnt-tab" data-toggle="pill" href="#icon-pills-home" role="tab" aria-haspopup="true" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> Application Details </a>
+        
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link b" id="icon-pills-business-tab" data-toggle="pill" href="#icon-pills-business" role="tab" aria-controls="icon-pills-business" aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Business Details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link c active" id="icon-pills-profile-tab" data-toggle="pill" href="#icon-pills-profile" role="tab" aria-controls="icon-pills-contact" aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-database"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Attachments</a>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="icon-pills-tabContent">
+                <div class="tab-pane fade" id="icon-pills-home" role="tabpanel" aria-labelledby="icon-pills-home-tab">
+                    <div class="row">
+                        <div id="flFormsGrid" class="col-lg-12 layout-spacing">
+                            <div class="statbox widget box box-shadow">
+                                <div class="widget-header">
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                            
+                                        </div>                                                                        
+                                    </div>
+                                </div>
+                                <div class="widget-content widget-content-area">
+                                    <h4> Application Information</h4>
+                                    <form>
+                                        <div class="form-row mb-4">
+                                            <div class="form-group col-md-6 text-black">
+                                                <label for="inputEmail4" class="text-black">Tracking Number</label>
+                                                <input type="text" class="form-control text-black" id="inputEmail4" placeholder="Tracking No" disabled>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4" class="text-black">Service Type</label>
+                                                <input type="text" class="form-control text-black" id="servtype" value="New Application for Business Licence" placeholder="Service Name" disabled >
+                                            </div>
+
+                                        </div>
+                                        <h4> Applicant Information</h4>
+                                        <div class="form-row mb-4">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">First Name</label>
+                                                <input type="text" class="form-control text-black" id="fname" placeholder="fname" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Middle Name</label>
+                                                <input type="text" class="form-control text-black" id="mname" placeholder="middle name" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Last Name</label>
+                                                <input type="text" class="form-control text-black" id="lname" placeholder="last name" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4 text-black">
+                                                <label for="inputEmail4" class="text-black">Gender</label>
+                                                <div class="form-group mb-0">
+                                                  <input type="text" class="form-control text-black" id="gender" placeholder="Gender" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-4 text-black">
+                                                <label for="inputEmail4" class="text-black">Date of Birth</label>
+                                                <div class="form-group mb-0">
+                                                  <input type="text" class="form-control text-black" id="dob" placeholder="date of birth" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-4 text-black">
+                                                <label for="inputEmail4" class="text-black">Citizenship</label>
+                                                <div class="form-group mb-0">
+                                                  <input type="text" class="form-control text-black" id="citizen" placeholder="Citizen" disabled>
+                                                </div>
+                                            </div>
+                                                                                      
+                                            <!-- <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Address Information</label>
+                                                <select id="addressArea" name="addressArea" onchange="getAddrArea()" class="form-control text-black">
+                                                    <option selected>--Select--</option>
+                                                </select>
+                                            </div> -->
+                                        </div>
+                                        
+                                        <!-- <div class="form-row mb-4">
+
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Region</label>
+                                                <select class="form-control  basic text-black" onchange="getDistrict()" id="regionlist">
+                                                    <option selected>--Select--</option>
+
+                                                    </select>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">District</label>
+                                                <select class="form-control  basic text-black" onchange="getWard()" id="districtlist">
+                                                    <option selected>--Select--</option>   
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Ward</label>
+                                                <select class="form-control  basic text-black" id="wardId">
+                                                    <option selected>--Select--</option>
+                                                    </select>
+                                            </div>
+                                        </div> -->
+                                        <!-- <div class="form-row mb-4">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Postal Code</label>
+                                                <input type="text" class="form-control text-black" id="postal_city" placeholder="Enter Postal City">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Street</label>
+                                                <input type="text" class="form-control text-black" id="streetName" placeholder="Enter Street Name">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Road</label>
+                                                <input type="text" class="form-control text-black" id="road" placeholder="Enter Road">
+                                            </div>
+
+                                        </div> -->
+                                    
+                                        <!-- <div class="form-row mb-4 location">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Plot Number</label>
+                                                <input type="text" class="form-control text-black" id="plot_no" placeholder="Enter Plot No">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Block Number</label>
+                                                <input type="text" class="form-control text-black" id="block_no" placeholder="Enter block No">
+                                            </div>
+
+
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">P.O. Box</label>
+                                                <input type="text" class="form-control text-black" id="pobox" placeholder="Enter P.O Box">
+                                            </div>
+                                        </div> -->
+
+                                        <!-- <div class="form-row mb-4">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">House Number</label>
+                                                <input type="text" class="form-control text-black" id="house_no" placeholder="Enter House No">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Phone Number</label>
+                                                <input type="phone" class="form-control text-black" id="phone_no" placeholder="Enter Phone No">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Email Address</label>
+                                                <input type="email" class="form-control text-black" id="email_addr" placeholder="Enter Email">
+                                            </div>
+                                        </div> -->
+                                        <!-- <div class="form-row mb-4 unservayed">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Unsurveyed Area</label>
+                                                <textarea class="form-control" id="unservayedarea" rows="3"></textarea>
+                                            </div>
+                                        </div> -->
+                                        <div class="form-row mb-6">
+                                            <a class="nav-link btn btn-success mt-3" id="icon-pills-business-tab" onclick="saveApplicantDet()" data-toggle="pill" href="#icon-pills-business" role="tab" aria-controls="icon-pills-business" aria-selected="false"> Next</a>
+                                            <!-- <button class="btn btn-primary" type="button" onclick="saveApplicantDet()">Button</button> -->
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>     
+                </div>
+                <div class="tab-pane fade" id="icon-pills-business" role="tabpanel" aria-labelledby="icon-pills-business-tab">
+                    <div class="row">
+                        <div id="flFormsGrid2" class="col-lg-12 layout-spacing">
+                            <div class="statbox widget box box-shadow">
+                                <div class="widget-header">
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                            
+                                        </div>                                                                        
+                                    </div>
+                                </div>
+                                <div class="widget-content widget-content-area">
+                                    <h4> Business Information</h4>
+                                    <form>
+                                        <div class="form-row mb-4">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputState" class="text-black">Origin Type</label>
+                                                <input type="text" class="form-control text-black" id="busorigintype" disabled>
+                                                <!-- <select class="form-control  basic" id="busorigintype">
+                                                    </select> -->
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputState" class="text-black">Business Owner Type</label>
+                                                <input type="text" class="form-control text-black" id="bustype" disabled>
+                                                <!-- <select class="form-control  basic" id="bustype" onchange="getBusOwnTypeData()">
+                                                    </select> -->
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputState" class="text-black">Business Owner Sub Type</label>
+                                                <input type="text" class="form-control text-black" id="busowntype" disabled>
+                                                <!-- <select class="form-control  basic" id="busowntype" onchange="getBusOwnType()">
+                                                    </select> -->
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-row mb-4 natural_person" id="natural_person" name="natural_person" style="display: none">
+                                        
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">NIDA Number(NIN)</label>
+                                                    <div class="input-group mb-4">
+                                                    <input type="text" class="form-control" id="nida_no" placeholder="NIDA Number" aria-label="NIDA Number">
+                                                    <div class="input-group-append">
+                                                      <button class="btn btn-primary" type="button">LOAD FROM NIDA</button>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">First Name</label>
+                                                <input type="text" class="form-control" id="fname_nat_local" >
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Middle Name</label>
+                                                <input type="text" class="form-control" id="mname_nat_local" >
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Last Name</label>
+                                                <input type="text" class="form-control" id="lname_nat_local" >
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Gender</label>
+                                                <input type="text" class="form-control" id="gender_nat" >
+                                            </div>
+                                            <div class="form-group col-md-4 text-black">
+                                                <label for="inputEmail4" class="text-black">Date of Birth</label>
+                                                <div class="form-group mb-0">
+                                                    <input id="basicFlatpickr1" value="1990-10-22" class="form-control flatpickr1 flatpickr-input active" type="text" placeholder="Select Date..">
+                                                </div>
+                                            </div>
+                                            <!-- <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Date of Birth</label>
+                                                <input type="text" class="form-control" id="dob_nat" disabled>
+                                            </div> -->
+                                        </div>
+
+                                        <div class="form-row mb-4 company" id="company" name="company" style="display: none">
+                                        
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4" class="text-black">Incorporate Number</label>
+                                                    <div class="input-group mb-4">
+                                                    <input type="text" class="form-control" placeholder="Incorporate Number" aria-label="Incorporate Number">
+                                                    <div class="input-group-append">
+                                                      <button class="btn btn-primary" type="button">SEARCH</button>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div class="form-group col-md-6">
+                                                <label for="inputEmail4" class="text-black">Company Name</label>
+                                                <input type="text" class="form-control" id="fname_nat" disabled>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4" class="text-black">Company Type</label>
+                                                <input type="text" class="form-control" id="mname_nat" disabled>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4" class="text-black">Date of Incoperation</label>
+                                                <input type="text" class="form-control" id="lname_nat" disabled>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row mb-4 thercorporate" id="thercorporate" name="thercorporate" style="display: none">
+                                        
+                                              <div class="form-group col-md-6">
+                                                <label for="inputEmail4" class="text-black">Registration Number</label>
+                                                <input type="text" class="form-control" id="fname_nat">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4" class="text-black">Corporate Name</label>
+                                                <input type="text" class="form-control" id="corporate_name">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4" class="text-black">Leader 1 Full Name</label>
+                                                <input type="text" class="form-control" id="leadername_nat">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4" class="text-black">Leader 2 Full Name</label>
+                                                <input type="text" class="form-control" id="leadername_nat">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row mb-4 business_name" id="business_name" name="business_name" style="display: none">
+                                        
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4" class="text-black">Registration Number</label>
+                                                    <div class="input-group mb-4">
+                                                    <input type="text" class="form-control" placeholder="Registration Number" aria-label="Business Number">
+                                                    <div class="input-group-append">
+                                                      <button class="btn btn-primary" type="button">SEARCH</button>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div class="form-group col-md-6">
+                                                <label for="inputEmail4" class="text-black">Business Name</label>
+                                                <input type="text" class="form-control" id="fname_nat" disabled>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4" class="text-black">Company Type</label>
+                                                <input type="text" class="form-control" id="mname_nat" disabled>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4" class="text-black">Date of Incoperation</label>
+                                                <input type="text" class="form-control" id="lname_nat" disabled>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-row mb-4">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">TIN Registration Date</label>
+                                                <div class="form-group mb-0">
+                                                    <input id="basicFlatpickr" value="2019-09-04" class="form-control flatpickr flatpickr-input active" type="text" placeholder="Select Date.." disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Business TIN</label>
+                                                    <div class="input-group mb-4">
+                                                    <input type="text" class="form-control text-black" id="tin_no" aria-label="Recipient's username" disabled>
+                                                    <!-- <div class="input-group-append">
+                                                      <button class="btn btn-primary" type="button">LOAD FROM TRA</button>
+                                                    </div> -->
+                                                  </div>
+                                              </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Taxpayer Name</label>
+                                                <input type="email" class="form-control" id="taxpayer" disabled>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-row mb-4">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Business Sector</label>
+                                                <input type="text" class="form-control text-black" id="sectorlist" aria-label="Recipient's username" disabled>
+                                                <!-- <select class="form-control  basic" onchange="getCategory()" id="sectorlist">
+
+                                                    </select> -->
+                                            </div>
+                                            
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Category</label>
+                                                <input type="text" class="form-control text-black" id="categorylist" aria-label="Recipient's username" disabled>
+                                                <!-- <select class="form-control  basic" onchange="getBizType()" id="categorylist">
+                                                    </select> -->
+                                            </div>
+
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Type</label>
+                                                <input type="text" class="form-control text-black" id="typelist" aria-label="Recipient's username" disabled>
+                                                <!-- <select class="form-control  basic" onchange="getBizCatDet()" id="typelist">
+                                                    </select> -->
+                                            </div>
+                                            <div class="form-group col-md-4 nounits_div" style="display: none">
+                                                <label for="inputEmail4" class="text-black">Number of Units for the selected business line</label>
+                                                <input type="number" class="form-control " value="1" id="nounits">
+                                                <span style="color: red;">Number of Units must be greater or equal to 1</span>
+                                            </div>
+
+                                            <input type="hidden" class="form-control" id="businessLicenceClassId">
+                                            <input type="hidden" class="form-control" id="issuingAuthorityId">
+                                        </div>
+                                        <h4> Address Information</h4>
+
+                                        <div class="form-row mb-4">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Address Type</label>
+                                                <input type="text" class="form-control text-black" id="addressAreaB" aria-label="Recipient's username" disabled>
+                                                <!-- <select id="addressAreaB" name="addressAreaB" onchange="getAddrAreaB()" class="form-control text-black">
+                                                    <option selected>--Select--</option>
+                                                </select> -->
+                                            </div>
+                                        </div>
+                                        <div class="form-row mb-4">
+
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Region</label>
+                                                <input type="text" class="form-control text-black" id="regionlistB" aria-label="Recipient's username" disabled>
+                                                <!-- <select class="form-control  basic" onchange="getDistrictB()" id="regionlistB">
+
+                                                    </select> -->
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">District</label>
+                                                <input type="text" class="form-control text-black" id="districtlistB" aria-label="Recipient's username" disabled>
+                                                <!-- <select class="form-control  basic" onchange="getWardB()" id="districtlistB">
+                                                    </select> -->
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Ward</label>
+                                                <input type="text" class="form-control text-black" id="wardIdB" aria-label="Recipient's username" disabled>
+                                                <!-- <select class="form-control  basic" onchange="getPostCode()" id="wardIdB">
+                                                    </select> -->
+                                            </div>
+                                        </div>
+                                        <!-- <div class="form-row mb-4">
+
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Village</label>
+                                                <input type="text" class="form-control" id="village" placeholder="Enter Village Name">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">SubVillage</label>
+                                                <input type="text" class="form-control" id="subvillage" placeholder="Enter SubVillage Name">
+                                            </div>
+                                        </div> -->
+                                        <div class="form-row mb-4">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Postal Code</label>
+                                                <input type="text" class="form-control text-black" id="postcode" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Street</label>
+                                                <input type="text" class="form-control text-black" id="inputEmail4Street" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Road</label>
+                                                <input type="text" class="form-control text-black" id="inputroad" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="form-row mb-4 locationB">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Plot No</label>
+                                                <input type="text" class="form-control text-black" id="plot_no" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Block No</label>
+                                                <input type="text" class="form-control text-black" id="block_no" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">House Number</label>
+                                                <input type="number" class="form-control text-black" id="house_no" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="form-row mb-4 unservayedB">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Unsurveyed Area</label>
+                                                <textarea class="form-control text-black" id="unservayedarea" rows="3" disabled></textarea>
+                                            </div>
+                                        </div>
+                                        <h4> Contact Information</h4>
+                                        <div class="form-row mb-4">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">P.O. Box</label>
+                                                <input type="text" class="form-control text-black" id="inputEmail4pobox" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Phone No</label>
+                                                <input type="phone" class="form-control text-black" id="inputEmail4phn" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputEmail4" class="text-black">Email address</label>
+                                                <input type="email" class="form-control text-black" id="inputEmail4comp" disabled>
+                                            </div>
+                                        </div>
+                                        <!-- <a class="nav-link btn btn-primary mt-3" id="icon-pills-profile-tab" onclick="saveBizDet()" data-toggle="pill" href="#icon-pills-profile" role="tab" aria-controls="icon-pills-contact" aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-database"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Save</a> -->
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>     
+                </div>
+                <div class="tab-pane fade show active" id="icon-pills-profile" role="tabpanel" aria-labelledby="icon-pills-profile-tab1">
+
+                    <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+                        <div class="widget-content widget-content-area br-6">
+                            <div class="table-responsive mb-4 mt-4 text-black">
+                                Required Documents/Attachments
+                                <table class="multi-table table table-hover attachmentId" id="attachmentId" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Attachment Name</th>
+                                            <th>Description</th>
+                                            <th>Document</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Attachment Name</th>
+                                            <th>Description</th>
+                                            <th>Document</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+                        <div class="widget-content widget-content-area br-6">
+                            <div class="table-responsive mb-4 mt-4 text-black">
+                                Permits Documents/Attachments
+                                <table class="multi-table table table-hover" id="permittId" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Permit Name</th>
+                                            <th>Description</th>
+                                            <th>Document</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Attachment Name</th>
+                                            <th>Description</th>
+                                            <th>Document</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <a href="/SubmitSuppliment" aria-expanded="false" class="dropdown-toggle"> -->
+                        <button type="button" onclick="SubmitSupplimentFx()" class="btn btn-warning mt-3">Submit</button>
+                    <!-- </a> -->
+                </div>
+
+                <div class="tab-pane fade" id="icon-pills-contact" role="tabpanel" aria-labelledby="icon-pills-contact-tab">
+                    <p class="dropcap  dc-outline-primary">
+                        Have you been convicted for crime offence for the last 12 months:
+                    </p>
+                    <div class="widget-content widget-content-area">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadioInline1">Yes</label>
+                            </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadioInline2">No</label>
+                        </div>
+                    </div>
+                    <div class="widget-content widget-content-area">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadioInline1">I/We declare that the particulars given above are correct and complete to best of my/ our knowledge</label>
+                            </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div id="rotateInDownLeft" class="modal animated rotateInDownLeft custo-rotateInDownLeft" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Upload File here</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" class="form-control uploadType" name="uploadType" id="uploadType">
+                <input type="hidden" class="form-control categoryID" name="categoryID" id="categoryID">
+
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4" class="text-black">Attachment Name</label>
+                    <input type="phone" class="form-control atach_nem" id="atach_nem" >
+                    
+                </div>
+                <input id="fileupload" type="file" onchange="validateSize(this)" name="fileupload" class="form-control-file fileupload" />
+                <span style="color: red;">File maximum 2MB(formart only pdf)</span>
+            </div>
+            <div class="modal-footer md-button">
+                <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Cancel</button>
+                <button type="button" id="upload-btn" name="upload-btn" onclick="fileUploadXSup()" class="btn btn-primary" data-dismiss="modal">Upload</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div id="rotateInDownLeft" class="modal animated rotateInDownLeft custo-rotateInDownLeft" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Upload File here</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" class="form-control uploadType" name="uploadType" id="uploadType">
+                <input type="text" class="form-control categoryID" name="categoryID" id="categoryID">
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4" class="text-black">Attachment Name</label>
+                    <input type="phone" class="form-control atach_nem" id="atach_nem" >
+                </div>
+                <input id="fileupload" type="file" name="fileupload" class="form-control-file fileupload" />
+            </div>
+            <div class="modal-footer md-button">
+                <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Cancel</button>
+                <button type="button" id="upload-btn" name="upload-btn" onclick="fileUploadX()" class="btn btn-primary" data-dismiss="modal">Upload</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+<%- include('jax_new_view_bus.ejs')%> 
+<%- include('footermenu.ejs')%> 
