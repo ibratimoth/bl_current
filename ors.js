@@ -4264,11 +4264,11 @@ app.get('/Settings', async function(req, res) {
 
 
 var config = {
-  user: 'sa',
-  password: '@ORS2o2o#$',
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
   // server: '41.59.225.45', 
-  server: '10.60.82.30',
-  database: 'BRELADB',
+  server: process.env.IP_SERVER,
+  database: process.env.DB_BRELADB,
   options: {
       encrypt: false,
       trustServerCertificate: true,
@@ -4276,11 +4276,11 @@ var config = {
 };
 
 var configBL = {
-  user: 'sa',
-  password: '@ORS2o2o#$',
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
   // server: '41.59.225.45', 
-  server: '10.60.82.30', 
-  database: 'BL-DB',
+  server: process.env.IP_SERVER, 
+  database: process.env.DB_BL,
   options: {
       encrypt: false,
       trustServerCertificate: true,
@@ -4288,11 +4288,11 @@ var configBL = {
 };
 
 var configUser = {
-  user: 'sa',
-  password: '@ORS2o2o#$',
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
   // server: '41.59.225.45', 
-  server: '10.60.82.30',
-  database: 'USER-MANAGEMENT-DB',
+  server: process.env.IP_SERVER,
+  database: process.env.DB_USER_MANAGER,
   options: {
       encrypt: false,
       trustServerCertificate: true,
@@ -4300,11 +4300,11 @@ var configUser = {
 };
 
 var configBill = {
-  user: 'sa',
-  password: '@ORS2o2o#$',
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
   // server: '41.59.225.45', 
-  server: '10.60.82.30', 
-  database: 'ORS-BILLINGDB',
+  server: process.env.IP_SERVER,
+  database: process.env.DB_BILLING,
   options: {
       encrypt: false,
       trustServerCertificate: true,
@@ -4312,11 +4312,11 @@ var configBill = {
 };
 
 var configSearch = {
-  user: 'sa',
-  password: '@ORS2o2o#$',
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
   // server: '41.59.225.45', 
-  server: '10.60.82.30',
-  database: 'OrgSearch-DB',
+  server: process.env.IP_SERVER,
+  database: process.env.BD_SEARCH,
   options: {
       encrypt: false,
       trustServerCertificate: true,
@@ -4324,11 +4324,11 @@ var configSearch = {
 };
 
 var configMaster = {
-  user: 'sa',
-  password: '@ORS2o2o#$',
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
   // server: '41.59.225.45', 
-  server: '10.60.82.30',
-  database: 'master',
+  server: process.env.IP_SERVER,
+  database: process.env.DB_MASTER,
   options: {
       encrypt: false,
       trustServerCertificate: true,
