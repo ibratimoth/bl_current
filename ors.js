@@ -179,6 +179,9 @@ app.get('/GenTrackNo',function(req,res){
     }
     console.log('response.body')
     console.log(response.body)
+    if(response.body == 'failed'){
+      res.send({status: "failed"})
+    }else{
       var jsonData = JSON.parse(response.body);
       if(jsonData.status == 'fail'){
         res.send("No tracking Number generated")
@@ -188,7 +191,7 @@ app.get('/GenTrackNo',function(req,res){
         res.send(jsonData[0].trackingNo)
         res.end()
       }
-
+    }
 
   });
 }else{
@@ -2002,6 +2005,9 @@ app.get('/GetParticular',function(req,res){
       console.log(body)
       if(body !== undefined){
         var jsonData = JSON.parse(body);
+        if(jsonData.status == 'failed'){
+          res.send({"status": "failed"})
+        }else{
         // for(var i = 0; i < jsonData.length; i++){
         var fname = jsonData[0].fname;
         var mname = jsonData[0].mname;
@@ -2020,6 +2026,7 @@ app.get('/GetParticular',function(req,res){
           "status": "success", "fname": fname, "mname": mname, "lname": lname, 
           "date_birth": date_birth, "citizen": citizen, "gender": gender
         })
+      }
       }else{
         res.send({"status": "failed"})
       }
@@ -2116,7 +2123,9 @@ app.get('/GetOwnerType',function(req,res){
     url: GetOwnerType,
     method: 'GET',
   }, function(error, response, body){
-    if(error) res.send("failed")
+    if(error) {
+      res.send({status: "failed"})
+    }else{
     var jsonData = JSON.parse(response.body);
     for(var i = 0; i < jsonData.length; i++){
   //  console.log("Id =" + response.body);
@@ -2126,6 +2135,7 @@ app.get('/GetOwnerType',function(req,res){
     }
    // console.log(objs12)
     res.send(objs12)
+  }
   });
 }else{
   //console.log(loginTrial)
@@ -4254,7 +4264,8 @@ app.get('/Settings', async function(req, res) {
 var config = {
   user: 'sa',
   password: '@ORS2o2o#$',
-  server: '41.59.225.45', 
+  // server: '41.59.225.45',
+  server: '10.60.82.30', 
   database: 'BRELADB',
   options: {
       encrypt: false,
@@ -4265,7 +4276,8 @@ var config = {
 var configBL = {
   user: 'sa',
   password: '@ORS2o2o#$',
-  server: '41.59.225.45', 
+  // server: '41.59.225.45',
+  server: '10.60.82.30', 
   database: 'BL-DB',
   options: {
       encrypt: false,
@@ -4276,7 +4288,8 @@ var configBL = {
 var configUser = {
   user: 'sa',
   password: '@ORS2o2o#$',
-  server: '41.59.225.45', 
+  // server: '41.59.225.45',
+  server: '10.60.82.30', 
   database: 'USER-MANAGEMENT-DB',
   options: {
       encrypt: false,
@@ -4287,7 +4300,8 @@ var configUser = {
 var configBill = {
   user: 'sa',
   password: '@ORS2o2o#$',
-  server: '41.59.225.45', 
+  // server: '41.59.225.45', 
+  server: '10.60.82.30',
   database: 'ORS-BILLINGDB',
   options: {
       encrypt: false,
@@ -4298,7 +4312,8 @@ var configBill = {
 var configSearch = {
   user: 'sa',
   password: '@ORS2o2o#$',
-  server: '41.59.225.45', 
+  // server: '41.59.225.45', 
+  server: '10.60.82.30',
   database: 'OrgSearch-DB',
   options: {
       encrypt: false,
@@ -4309,7 +4324,8 @@ var configSearch = {
 var configMaster = {
   user: 'sa',
   password: '@ORS2o2o#$',
-  server: '41.59.225.45', 
+  // server: '41.59.225.45', 
+  server: '10.60.82.30',
   database: 'master',
   options: {
       encrypt: false,
@@ -4338,7 +4354,7 @@ sql.connect(configBL, function (err) {
     ' WHERE d.BusinessLicenceApplicationId = a.Id AND a.Id = b.ApplicationId ' + 
     ' AND c.BusinessTypeId = a.BusinessTypeId AND b.ApplicationStatusId NOT IN(5) ' + 
     ' AND d.isSentToRegistry NOT IN(1) AND b.ApplicationStageId NOT IN(6) ' + 
-    ' AND CreatedByUserId = '+userId + ' ORDER BY a.Id DESC', 
+    ' AND CreatedByUserId = '+userId + ' ORDER BY a.Id DESC LIMIT 1', 
     function (err, recordset) {
         if (err) {
           console.log(new Date() + " MyApplication fail to load " + err)
@@ -4464,7 +4480,7 @@ sql.connect(configBL, function (err) {
     console.log("fail to connect to server " + err);
     //sql.close();
     res.send("failed");
-  }
+  }else{
 
     // create Request object
     var request = new sql.Request();
@@ -4473,16 +4489,20 @@ sql.connect(configBL, function (err) {
     request.input('submitDet', new Date());
     request.query(`INSERT INTO dbo.BusinessLicApplication (TrackingNo, CreatedByUserId, ApplicationStep, BusinessTypeId, BusinessLicOwnerTypeId, ApplicationStatusId, ApplicationTypeId, CreatedDate, ServiceCode) values (@trackngNo, @userId, 2, 0, 0, 1, 1, @submitDet, 4201)`, 
     function (err, recordset) {
-        if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
+        if (err) {          
+          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send("failed");
+        }else{
         
          sql.close();
         // send records as a response
         console.log(recordset)
         res.send("sucess");
+        }
 
     });
+  }
 });
 });
 
