@@ -4354,7 +4354,7 @@ sql.connect(configBL, function (err) {
     ' WHERE d.BusinessLicenceApplicationId = a.Id AND a.Id = b.ApplicationId ' + 
     ' AND c.BusinessTypeId = a.BusinessTypeId AND b.ApplicationStatusId NOT IN(5) ' + 
     ' AND d.isSentToRegistry NOT IN(1) AND b.ApplicationStageId NOT IN(6) ' + 
-    ' AND CreatedByUserId = '+userId + ' ORDER BY a.Id DESC LIMIT 1', 
+    ' AND CreatedByUserId = '+userId + ' ORDER BY a.Id DESC', 
     function (err, recordset) {
         if (err) {
           console.log(new Date() + " MyApplication fail to load " + err)
