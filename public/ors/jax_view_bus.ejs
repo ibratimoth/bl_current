@@ -563,6 +563,9 @@ function SubmitSupplimentFx()
                         success: function(response) {
                             console.log(response)
                         if(typeof(response) === "string"){response = JSON.parse(response)}
+                        var ServiceCode = response.ServiceCode;
+                        var txtBox9 = document.getElementById('serviceCode');
+                        txtBox9.value = ServiceCode;
                         var fname = response.person[0].fname;
                         var mname = response.person[0].mname;
                         var lname = response.person[0].lname;
@@ -573,7 +576,6 @@ function SubmitSupplimentFx()
                         var trackingNo = response.trackNo;
                         var OrigTypeName = response.OrigTypeName;
                         var AplicationID = response.AplicationID;
-                        var ServiceCode = response.ServiceCode;
                         var OwnerSubTypeName = response.OwnerSubTypeName;
                         var AplicationTIN = response.AplicationTIN;
                         var BusinessClassId = response.BusinessClassId;
@@ -619,8 +621,7 @@ function SubmitSupplimentFx()
                         txtBox7.value = OrigTypeName;
                         var txtBox8 = document.getElementById('applicationId');
                         txtBox8.value = AplicationID;
-                        var txtBox9 = document.getElementById('serviceCode');
-                        txtBox9.value = ServiceCode;
+
                         // var txtBox9 = document.getElementById('typelist');
                         // txtBox9.value = BusinessTypeName;
                         // var txtBox10 = document.getElementById('addressAreaB');
@@ -747,37 +748,47 @@ function SubmitSupplimentFx()
 </script>
 <script>
 function downloadInvoice(){
-    var applicationId = document.getElementById('applicationId').value;
+    var applicationId = document.getElementById('trackNo').value;
     var serviceCode = document.getElementById('serviceCode').value;
-    location.href = "http://41.59.225.60/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/invoice/1/normal";
+    var username = document.getElementById('username').value;
+    var trackingNo = document.getElementById('trackingNo').value;
+    location.href = "http://41.59.225.60/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/normal/"+username;
 }
 </script>
 <script>
     function downloadInvoiceNMB(){
         var applicationId = document.getElementById('applicationId').value;
         var serviceCode = document.getElementById('serviceCode').value;
-        location.href = "http://41.59.225.60/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/invoice/1/nmb";
+        var username = document.getElementById('username').value;
+    var trackingNo = document.getElementById('trackingNo').value;
+        location.href = "http://41.59.225.60/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/nmb/"+username;
     }
 </script>
 <script>
     function downloadInvoiceCRDB(){
         var applicationId = document.getElementById('applicationId').value;
         var serviceCode = document.getElementById('serviceCode').value;
-        location.href = "http://41.59.225.60/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/invoice/1/crdb";
+        var username = document.getElementById('username').value;
+    var trackingNo = document.getElementById('trackingNo').value;
+        location.href = "http://41.59.225.60/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/crdb/"+username;
     }
 </script>
 <script>
     function downloadInvoiceNBC(){
         var applicationId = document.getElementById('applicationId').value;
         var serviceCode = document.getElementById('serviceCode').value;
-        location.href = "http://41.59.225.60/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/invoice/1/nbc";
+        var username = document.getElementById('username').value;
+    var trackingNo = document.getElementById('trackingNo').value;
+        location.href = "http://41.59.225.60/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/invoice/1/nbc/"+username;
     }
 </script>
 <script>
     function downloadReceipt(){
         var applicationId = document.getElementById('applicationId').value;
         var serviceCode = document.getElementById('serviceCode').value;
-        location.href = "http://41.59.225.60/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/receipt/1/normal";
+        var username = document.getElementById('username').value;
+    var trackingNo = document.getElementById('trackingNo').value;
+        location.href = "http://41.59.225.60/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/receipt/1/normal/"+username;
     }
 </script>
 <script>

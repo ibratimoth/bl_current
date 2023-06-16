@@ -1385,7 +1385,7 @@ app.get('/ViewBL/:id',function(req,res){
   var req_id = req.params.id;
   req.session.req_id_view = req_id;
   if(typeof req.session.userID !== "undefined" || req.session.userID === true){
-  res.render(path.join(__dirname+'/public/ors/view_buslic'));
+  res.render(path.join(__dirname+'/public/ors/view_buslic'), {"username": req.session.username, "trackingNo": req.session.req_id_view});
 }else{
   res.redirect('/');
 }
@@ -2175,7 +2175,7 @@ app.get('/GetBLAttachment',function(req,res){
     if(error) {          
       console.log("fail to GetBLAttachment " + error);
          // sql.close();
-          res.send("failed");
+          res.send({"status": "failed"});
         }
     console.log("Id =" + response.body);
     var jsonData = JSON.parse(response.body);
@@ -3134,7 +3134,6 @@ app.get('/PMyApplication', async function(req, res) {
 })
 
 app.get('/Dashboard', async function(req, res) {
-  // app.get('/MyLicence', async function(req, res) {
   var objs12 = [];
   var userId = req.session.userID;
   if(typeof req.session.userID !== "undefined" || req.session.userID === true){
@@ -3254,7 +3253,6 @@ app.get('/Dashboard', async function(req, res) {
 })
 
 app.get('/OnGoingApp', async function(req, res) {
-  // app.get('/MyLicence', async function(req, res) {
   var objs12 = [];
   var userId = req.session.userID;
   if(typeof req.session.userID !== "undefined" || req.session.userID === true){
@@ -3374,7 +3372,6 @@ app.get('/OnGoingApp', async function(req, res) {
 })
 
 app.get('/MyApplication', async function(req, res) {
-  // app.get('/MyLicence', async function(req, res) {
   var objs12 = [];
   var userId = req.session.userID;
   if(typeof req.session.userID !== "undefined" || req.session.userID === true){
@@ -3493,7 +3490,6 @@ app.get('/MyApplication', async function(req, res) {
 })
 
 app.get('/SubApplication', async function(req, res) {
-  // app.get('/MyLicence', async function(req, res) {
   var objs12 = [];
   var userId = req.session.userID;
   if(typeof req.session.userID !== "undefined" || req.session.userID === true){
@@ -4051,7 +4047,8 @@ app.get('/POnGoingApp', async function(req, res) {
 
 app.get('/MyLicence',function(req,res){
   if(typeof req.session.userID !== "undefined" || req.session.userID === true){
-    res.render(path.join(__dirname+'/public/ors/my_licences'));
+    console.log(req.session.username)
+    res.render(path.join(__dirname+'/public/ors/my_licences'), {"username": req.session.username});
   }else{
     res.redirect('/');
   }
@@ -4141,6 +4138,7 @@ app.post('/auth',function(req,res){
           req.session.loggedin = true;
           req.session.userID = userID;
           req.session.token = token;
+          req.session.username = username;
           console.log(new Date() + ": Successful login")
           res.redirect('/Dashboard');
   

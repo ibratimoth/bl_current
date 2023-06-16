@@ -12,6 +12,8 @@
                 <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                     <h4>View Business Licence Application</h4>
                     <input type="hidden" class="form-control text-black" id="trackNo" name="trackNo">
+                    <input type="hidden" class="form-control text-black" value="<%= username %>" id="username" name="username">
+                    <input type="hidden" class="form-control text-black" value="<%= trackingNo %>" id="trackingNo" name="trackingNo">
                 </div>
             </div>
         </div>
@@ -84,7 +86,7 @@
                         </div>
                     </div>
                     <input type="hidden" class="form-control text-black" id="applicationId" name="applicationId">
-                    <input type="hidden" class="form-control text-black" id="serviceCode" name="serviceCode">
+                    <input type="text" class="form-control text-black" id="serviceCode" name="serviceCode">
                     <!-- <a href="http://41.59.225.60/api/download-bill-payment/" aria-expanded="false" class="dropdown-toggle"> -->
                         <button type="button" onclick="downloadInvoice()" class="btn btn-warning mt-3">Download Invoice</button>
                         <button type="button" onclick="downloadInvoiceNMB()" class="btn btn-primary mt-3">NMB Transfer Invoice</button>

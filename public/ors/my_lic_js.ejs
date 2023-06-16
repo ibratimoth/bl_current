@@ -22,6 +22,7 @@
 // setTimeout(
 function myApp()
 { 
+    var username = document.getElementById('username').value;
 $.ajax({
 url: 'ComplLic',
 dataType: 'json',
@@ -41,7 +42,7 @@ $("#html5-extension").find('tbody').empty();
                     '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">Action'+
                     '</button>'+
                     '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
-                        '<a class="dropdown-item warning passingID text-black" href="http://41.59.225.60/api/printout/'+data[i].trackingNo +'/4201/bl">Download Licence</a>'+
+                        '<a class="dropdown-item warning passingID text-black" href="http://41.59.225.60/api/printout/'+data[i].trackingNo +'/4201/bl/'+username+'">Download Licence</a>'+
                         '<a class="dropdown-item text-black lineofbiz business" data-id="'+ data[i].BLNumber +'">Apply Line of Business</a>'+
                         '<a class="dropdown-item text-black warning confirm" data-id="'+ data[i].trackingNo +'">Cancelation</a>'+
                         '<a class="dropdown-item text-black" href="/ApplyBLBranch/'+data[i].trackingNo+'" >Apply For Branch</a>'+
@@ -56,7 +57,7 @@ $("#html5-extension").find('tbody').empty();
                     '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">Action'+
                     '</button>'+
                     '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
-                        '<a class="dropdown-item warning passingID text-black" href="http://41.59.225.60/api/printout/'+data[i].trackingNo +'/4201/bl">Download Licence</a>'+
+                        '<a class="dropdown-item warning passingID text-black" href="http://41.59.225.60/api/printout/'+data[i].trackingNo +'/4201/bl/'+username+'">Download Licence</a>'+
                         '<a class="dropdown-item text-black lineofbiz business" data-id="'+ data[i].BLNumber +'">Apply Line of Business</a>'+
                         '<a class="dropdown-item text-black warning confirm" data-id="'+ data[i].trackingNo +'">Cancelation</a>'+
                         '<a class="dropdown-item text-black" href="/Transfer/'+data[i].trackingNo+'">Transfer Business Licence</a>'+
