@@ -4264,8 +4264,7 @@ app.get('/Settings', async function(req, res) {
 var config = {
   user: 'sa',
   password: '@ORS2o2o#$',
-  // server: '41.59.225.45',
-  server: '10.60.82.30', 
+  server: '41.59.225.45', 
   database: 'BRELADB',
   options: {
       encrypt: false,
@@ -4276,8 +4275,7 @@ var config = {
 var configBL = {
   user: 'sa',
   password: '@ORS2o2o#$',
-  // server: '41.59.225.45',
-  server: '10.60.82.30', 
+  server: '41.59.225.45', 
   database: 'BL-DB',
   options: {
       encrypt: false,
@@ -4288,8 +4286,7 @@ var configBL = {
 var configUser = {
   user: 'sa',
   password: '@ORS2o2o#$',
-  // server: '41.59.225.45',
-  server: '10.60.82.30', 
+  server: '41.59.225.45', 
   database: 'USER-MANAGEMENT-DB',
   options: {
       encrypt: false,
@@ -4300,8 +4297,7 @@ var configUser = {
 var configBill = {
   user: 'sa',
   password: '@ORS2o2o#$',
-  // server: '41.59.225.45', 
-  server: '10.60.82.30',
+  server: '41.59.225.45', 
   database: 'ORS-BILLINGDB',
   options: {
       encrypt: false,
@@ -4312,8 +4308,7 @@ var configBill = {
 var configSearch = {
   user: 'sa',
   password: '@ORS2o2o#$',
-  // server: '41.59.225.45', 
-  server: '10.60.82.30',
+  server: '41.59.225.45', 
   database: 'OrgSearch-DB',
   options: {
       encrypt: false,
@@ -4324,8 +4319,7 @@ var configSearch = {
 var configMaster = {
   user: 'sa',
   password: '@ORS2o2o#$',
-  // server: '41.59.225.45', 
-  server: '10.60.82.30',
+  server: '41.59.225.45', 
   database: 'master',
   options: {
       encrypt: false,
