@@ -1347,7 +1347,7 @@ app.get('/district/:id', function (req, res) {
 app.get('/ApplyBL',function(req,res){
 if(typeof req.session.userID !== "undefined" || req.session.userID === true){
   // res.render(path.join(__dirname+'/public/ors/new_buslic'));
-  res.render(path.join(__dirname+'/public/ors/apply_new_form'));
+  res.render(path.join(__dirname+'/public/ors/apply_new_form'), {controller: 1});
 }else{
   //console.log(loginTrial)
   res.redirect('/');
@@ -1513,9 +1513,9 @@ app.get('/EditBL/:id',function(req,res){
   var req_id = req.params.id;
   req.session.req_id_view = req_id;
   if(typeof req.session.userID !== "undefined" || req.session.userID === true){
-  res.render(path.join(__dirname+'/public/ors/edit_buslic'), {OldTrackNo: req_id});
+  // res.render(path.join(__dirname+'/public/ors/edit_buslic'), {OldTrackNo: req_id});
+  res.render(path.join(__dirname+'/public/ors/edit_buslic_new'), {OldTrackNo: req_id});
 }else{
-  //console.log(loginTrial)
   res.redirect('/');
 }
 });
@@ -2037,6 +2037,33 @@ app.get('/GetBusOwnerType',function(req,res){
   if(typeof req.session.userID !== "undefined" || req.session.userID === true){
   request({
     url: GetBusOnwerType,
+    method: 'GET',
+  }, function(error, response, body){
+    if(error) res.send("failed")
+    console.log("Id =" + response.body);
+    var jsonData = JSON.parse(response.body);
+    for(var i = 0; i < jsonData.length; i++){
+  //  console.log("Id =" + response.body);
+    var OwnerSubTypeId = jsonData[i].OwnerSubTypeId;
+    var OwnerTypeId = jsonData[i].OwnerTypeId;
+    var OwnerSubTypeName = jsonData[i].OwnerSubTypeName;
+    var OwnerSubTypeCode = jsonData[i].OwnerSubTypeCode;
+      objs12.push({"OwnerSubTypeId": OwnerSubTypeId, "OwnerTypeId": OwnerTypeId, "OwnerSubTypeName": OwnerSubTypeName, "OwnerSubTypeCode": OwnerSubTypeCode})
+    }
+   // console.log(objs12)
+    res.send(objs12)
+  });
+}else{
+  res.redirect('/');
+}
+});
+
+app.get('/GetBusOwnerTypeUpdate/:id',function(req,res){
+  var OldtrackNo = req.params.id;
+  var objs12 = [];
+  if(typeof req.session.userID !== "undefined" || req.session.userID === true){
+  request({
+    url: GetBusOnwerType+'/'+OldtrackNo,
     method: 'GET',
   }, function(error, response, body){
     if(error) res.send("failed")
@@ -9172,6 +9199,38 @@ var owner_type_id = req.params.id
       });
     }
   });
+});
+
+app.get('/busOnwerType/:id', function (req, res) {
+  var TrackingNo = req.params.id
+    // connect to your database
+    sql.connect(configBL, function (err) {
+    
+        if (err){
+          console.log("fail to connect to server " + err);
+         // sql.close();
+          //res.send("fail to generate tracking");
+        }else{
+  
+        // create Request object
+        var request = new sql.Request();
+        request.input('TrackingNo', TrackingNo);
+        // query to the database and get the records
+        request.query('SELECT BusinessLicOwnerTypeId from dbo.BusinessLicApplication where TrackingNo = @TrackingNo', 
+        function (err1, recordset1) {
+            
+            if (err1){
+              console.log("fail to get business type " + err1);
+              //sql.close();
+              //res.send("fail to generate tracking");
+            }else{
+      sql.close();
+            // send records as a response
+            res.send(recordset1.recordset);
+            }
+        });
+      }
+    });
 });
 
 app.get('/GetbusOnwerType/:id', function (req, res) {
