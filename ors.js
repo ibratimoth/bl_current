@@ -18,6 +18,8 @@ const { report } = require('process');
 var sql = require("mssql");
 var http = require('http');
 const e = require('express');
+require('dotenv').config()
+
 
 var app = express(); 
 // Create application/x-www-form-urlencoded parser  
