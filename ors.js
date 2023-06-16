@@ -218,7 +218,7 @@ app.post('/ApplyBizType',function(req,res){
     if(error) {          
       console.log("fail to generate tracking No " + error);
           //sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }
     var jsonData = JSON.parse(response.body);
     var newtrackingNo = jsonData[0].trackingNo
@@ -234,7 +234,7 @@ app.post('/ApplyBizType',function(req,res){
     if(error1) {          
       console.log("fail to Apply Business Type " + error1);
           //sql.close();
-          //res.send("failed");
+          //res.send({status: "failed"});
         }
   console.log(response1.body)
   // var jsonData = JSON.parse(response.body);
@@ -255,7 +255,7 @@ app.post('/ApplyBizType',function(req,res){
       if(error2) {          
         console.log("fail to Renew Attachment " + error2);
         //  sql.close();
-          //res.send("failed");
+          //res.send({status: "failed"});
         }
     request({
       url: GetRenewStageAddress,
@@ -265,7 +265,7 @@ app.post('/ApplyBizType',function(req,res){
       if(error3) {          
         console.log("fail to Get renew Stage Address " + error3);
          // sql.close();
-         // res.send("failed");
+         // res.send({status: "failed"});
         }
       //console.log(response.body)
       res.send(response3.body)
@@ -291,7 +291,7 @@ app.post('/applyBizTypeLic', function (req, res) {
      if (err) {          
       console.log("fail to applyBizTypeLic " + err);
           //sql.close();
-          // res.send("failed");
+          // res.send({status: "failed"});
         };
   //  console.log("======>>> " + BLNumber)
      var request11 = new sql.Request();
@@ -301,7 +301,7 @@ app.post('/applyBizTypeLic', function (req, res) {
      if (err1) {          
       console.log("fail to BusinessLicenceDetails " + err1);
          //sql.close();
-          //res.send("failed");
+          //res.send({status: "failed"});
         }
      var result_from21 = recordset1.recordset;
      
@@ -329,7 +329,7 @@ app.post('/applyBizTypeLic', function (req, res) {
        if (err21) {          
         console.log("fail to BusinessLicApplication " + err21);
           // sql.close();
-          // res.send("failed");
+          // res.send({status: "failed"});
         }
        var result_from31 = recordset.recordset;
 
@@ -368,7 +368,7 @@ app.post('/applyBizTypeLic', function (req, res) {
            if (err2) {          
             console.log("fail to Save_EntityOwner_SP " + err2);
           // sql.close();
-          // res.send("failed");
+          // res.send({status: "failed"});
         }
           //  console.log("====== 4" + "result_from")
            var request1 = new sql.Request();
@@ -378,7 +378,7 @@ app.post('/applyBizTypeLic', function (req, res) {
            if (err3) {          
             console.log("fail to Save_EntityOwner_SP " + err3);
           // sql.close();
-          // res.send("failed");
+          // res.send({status: "failed"});
         }
            var result_from11 = recordset3.recordset;
           //  console.log("====== 5" + result_from11)
@@ -401,7 +401,7 @@ app.post('/applyBizTypeLic', function (req, res) {
                    if (err4) {          
                     console.log("fail to failed to save businses licene " + err4);
           // sql.close();
-          // res.send("failed");
+          // res.send({status: "failed"});
         }
                   //  console.log("====== 6" + "result_from")
    
@@ -417,7 +417,7 @@ app.post('/applyBizTypeLic', function (req, res) {
                              if (err5) {          
                               console.log("fail to BLicenseApplicationTracker " + err5);
           // sql.close();
-          // res.send("failed");
+          // res.send({status: "failed"});
                               }               
                             //  console.log("====== 7" + "result_from")
                             // var request41 = new sql.Request();
@@ -452,7 +452,7 @@ app.post('/applyBizTypeLic', function (req, res) {
                                if (err6) {          
                                 console.log("fail to Save_EntityOwner_SP " + err6);
           // sql.close();
-          // res.send("failed");
+          // res.send({status: "failed"});
                                }
                               // sql.close();
                               //  console.log(recordset.recordset)
@@ -656,7 +656,7 @@ app.post('/Renew',function(req,res){
     if(error) {          
       console.log("fail to Save_EntityOwner_SP " + error);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
     var jsonData = JSON.parse(response.body);
     var newtrackingNo = jsonData[0].trackingNo
   request({
@@ -667,7 +667,7 @@ app.post('/Renew',function(req,res){
     if(error1) {          
       console.log("fail to renew licence " + error1);
           sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }
   console.log(response1.body)
   // var jsonData = JSON.parse(response.body);
@@ -686,7 +686,7 @@ app.post('/Renew',function(req,res){
     }, function(error, response, body){
       if(error) {          console.log("fail to Save_EntityOwner_SP " + error);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
     request({
       url: GetRenewStageAddress,
       method: 'POST',
@@ -694,7 +694,7 @@ app.post('/Renew',function(req,res){
     }, function(error, response, body){
       if(error) {          console.log("fail to Save_EntityOwner_SP " + error);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
       //console.log(response.body)
       res.send(response.body)
     });
@@ -712,7 +712,7 @@ app.post('/Cancelation',function(req,res){
     if(error) {          
       console.log("fail to Save_EntityOwner_SP " + error);
           sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }
     var jsonData = JSON.parse(response.body);
     var newtrackingNo = jsonData[0].trackingNo
@@ -726,7 +726,7 @@ app.post('/Cancelation',function(req,res){
     if(error) {          
       console.log("fail to Save_EntityOwner_SP " + error);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
   console.log(response.body)
   // var jsonData = JSON.parse(response.body);
   var jsonData = response.body;
@@ -745,7 +745,7 @@ app.post('/Cancelation',function(req,res){
       if(error) {          
         console.log("fail to Save_EntityOwner_SP " + error);
           sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }
     request({
       url: GetCancelStageAddress,
@@ -756,7 +756,7 @@ app.post('/Cancelation',function(req,res){
       if(error) {          
           console.log("fail to Save_EntityOwner_SP " + error);
           sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }
       console.log(response.body)
       if(response.body == undefined){
@@ -781,7 +781,7 @@ app.post('/canceLic', function (req, res) {
      if (err) {          
       console.log("fail to connect to the server " + err);
           sql.close();
-          res.send("failed");};
+          res.send({status: "failed"});};
   //  console.log("======>>> " + BLNumber)
      var request11 = new sql.Request();
      request11.input('BLNumber', BLNumber);
@@ -790,7 +790,7 @@ app.post('/canceLic', function (req, res) {
      if (err1) {          
       console.log("fail to get business licence details " + err1);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
      var result_from21 = recordset1.recordset;
      
      var BusinessLicenceApplicationId = result_from21[0].BusinessLicenceApplicationId;
@@ -817,7 +817,7 @@ app.post('/canceLic', function (req, res) {
        if (err2) {          
         console.log(new Date() + ": " + err2);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
        var result_from31 = recordset.recordset;
 
        var TrackingNo = result_from31[0].TrackingNo;
@@ -855,7 +855,7 @@ app.post('/canceLic', function (req, res) {
            if (err3) {          
             console.log(new Date() + ": " + err3);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
           //  console.log("====== 4" + "result_from")
            var request1 = new sql.Request();
            request1.input('newtrackingNo', newtrackingNo);
@@ -864,7 +864,7 @@ app.post('/canceLic', function (req, res) {
            if (err4) {          
             console.log(new Date() + ": " + err4);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
            var result_from11 = recordset.recordset;
           //  console.log("====== 5" + result_from11)
            var BLAppId = result_from11[0].Id;
@@ -886,7 +886,7 @@ app.post('/canceLic', function (req, res) {
                    if (err5) {          
                     console.log(new Date() + ": " + err5);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
                   //  console.log("====== 6" + "result_from")
    
                    var request3 = new sql.Request();
@@ -901,7 +901,7 @@ app.post('/canceLic', function (req, res) {
                              if (err6) {          
                               console.log(new Date() + ": " + err6);
           sql.close();
-          res.send("failed");}               
+          res.send({status: "failed"});}               
                               
                              var request4 = new sql.Request();
                              request4.input('BusLicAppId', BLAppId);
@@ -910,7 +910,7 @@ app.post('/canceLic', function (req, res) {
                                if (err7) {          
                                 console.log(new Date() + ": " + err7);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
                               // sql.close();
                               //  console.log(recordset.recordset)
                                var result_form41 = recordset.recordset;
@@ -943,7 +943,7 @@ app.post('/renewLic', function (req, res) {
      if (err) {          
       console.log("fail to connect " + err);
           sql.close();
-          res.send("failed");};
+          res.send({status: "failed"});};
   //  console.log("======>>> " + BLNumber)
      var request11 = new sql.Request();
      request11.input('BLNumber', BLNumber);
@@ -952,7 +952,7 @@ app.post('/renewLic', function (req, res) {
      if (err) {          
       console.log("fail to renewLic " + err);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
      var result_from21 = recordset.recordset;
      
      var BusinessLicenceApplicationId = result_from21[0].BusinessLicenceApplicationId;
@@ -978,7 +978,7 @@ app.post('/renewLic', function (req, res) {
        function (err, recordset) {
        if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
        var result_from31 = recordset.recordset;
 
        var TrackingNo = result_from31[0].TrackingNo;
@@ -1014,7 +1014,7 @@ app.post('/renewLic', function (req, res) {
        request22.query(`INSERT INTO dbo.BusinessLicApplication (TrackingNo, CreatedByUserId, ApplicationStep, BusinessTypeId, BusinessLicOwnerTypeId, ApplicationStatusId, ApplicationTypeId, CreatedDate, ServiceCode, NoOfPartners, BusinessClassId, NumberOfUnits, EntityName, RegNo, SubmittedDate) values (@newtrackingNo, @CreatedByUserId, @ApplicationStep, @BusinessTypeId, @BusinessLicOwnerTypeId, @ApplicationStatusId, 2, @CreatedDate, 4201, @NoOfPartners, @BusinessClassId, @NumberOfUnits, @EntityName, @RegNo, @CreatedDate)`, function (err, recordset) {
            if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
           //  console.log("====== 4" + "result_from")
            var request1 = new sql.Request();
            request1.input('newtrackingNo', newtrackingNo);
@@ -1022,7 +1022,7 @@ app.post('/renewLic', function (req, res) {
            function (err, recordset) {
            if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
            var result_from11 = recordset.recordset;
           //  console.log("====== 5" + result_from11)
            var BLAppId = result_from11[0].Id;
@@ -1042,7 +1042,7 @@ app.post('/renewLic', function (req, res) {
                request2.query(`INSERT INTO dbo.BusinessLicenceDetails (BusinessLicenceApplicationId, BusinessTIN, Email, PhoneNo, PoBox, IsBranch, IssueingOfficeId, LicenceStatusId, Activated, PreviousBLNumber, BusinessStateStatusId, PrincipalLicNo, PrinciplaFeePaid) values (@BusLicAppId, @BizTin, @inputEmail4comp, @inputEmail4phn, @inputEmail4pobox, @IsBranch, @issuingAuthorityId, 5, 0, @BLNumber, @BusinessStateStatusId, @PrincipalLicNo, @PrinciplaFeePaid)`, function (err, recordset) {
                    if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
                   //  console.log("====== 6" + "result_from")
    
                    var request3 = new sql.Request();
@@ -1056,7 +1056,7 @@ app.post('/renewLic', function (req, res) {
                          function (err, recordset) {
                              if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           sql.close();
-          res.send("failed");}               
+          res.send({status: "failed"});}               
                             //  console.log("====== 7" + "result_from")
                             // var request41 = new sql.Request();
                             // request41.input('BusinessLicenceApplicationId', BusinessLicenceApplicationId);
@@ -1089,7 +1089,7 @@ app.post('/renewLic', function (req, res) {
                              function (err, recordset) {
                                if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
                               // sql.close();
                               //  console.log(recordset.recordset)
                                var result_form41 = recordset.recordset;
@@ -1125,7 +1125,7 @@ app.post('/renewAttachmentLic', function (req, res) {
    
      if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           sql.close();
-          res.send("failed");};
+          res.send({status: "failed"});};
 
                             var request41 = new sql.Request();
                             request41.input('OldTrackingNo', OldTrackingNo);
@@ -1133,7 +1133,7 @@ app.post('/renewAttachmentLic', function (req, res) {
                             function (err, recordset) {
                               if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
                              // sql.close();
                               console.log(recordset.recordset)
                               var result_form411 = recordset.recordset;
@@ -1153,7 +1153,7 @@ app.post('/renewAttachmentLic', function (req, res) {
                               function (err, recordset) {
                                   if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           sql.close();
-          res.send("failed");}  
+          res.send({status: "failed"});}  
                                   sql.close();
                                   res.send("success")
                                 });
@@ -1174,7 +1174,7 @@ app.post('/cancelAttachmentLic', function (req, res) {
      if (err) {          
       console.log("fail to connect to server " + err);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         };
 
                             var request41 = new sql.Request();
@@ -1184,7 +1184,7 @@ app.post('/cancelAttachmentLic', function (req, res) {
                               if (err) {         
                                  console.log("fail to read Attachments " + err2);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
                              // sql.close();
                               console.log(recordset2.recordset)
                               var result_form411 = recordset2.recordset;
@@ -1216,7 +1216,7 @@ app.post('/cancelAttachmentLic', function (req, res) {
                                   if (err1) {          
                                     console.log("fail to save attachment " + err1);
                                     //sql.close();
-                                    res.send("failed");
+                                    res.send({status: "failed"});
                                   }  
                                   sql.close();
                                   res.send("success")
@@ -1328,7 +1328,7 @@ app.get('/district/:id', function (req, res) {
   // if(typeof req.session.userID !== "undefined" || req.session.userID === true){
   sql.connect(config, function (err) {
 
-      if (err) res.send("failed");
+      if (err) res.send({status: "failed"});
 
       // create Request object
       var request = new sql.Request();
@@ -1425,7 +1425,7 @@ app.post('/ApplicationDetails', function(req, res){
    
     if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           sql.close();
-          res.send("failed");};
+          res.send({status: "failed"});};
   console.log("======>>> " + trackingNo)
     var request1 = new sql.Request();
     request1.input('trackingNo', trackingNo);
@@ -1433,7 +1433,7 @@ app.post('/ApplicationDetails', function(req, res){
     function (err, recordset) {
     if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
     console.log(recordset.recordset)
     var result_from = recordset.recordset;
     for(var i = 0; i < result_from.length; i++){
@@ -1459,7 +1459,7 @@ app.post('/SubmitSupplimenti',function(req,res){
      if(error) {          
       console.log("fail to SubmitSupplimenti " + error);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
        console.log(response.body)
        res.send("sucess")
    });
@@ -1476,14 +1476,14 @@ app.post('/SubmitSuppliment', function(req, res){
    if (err) {          
     console.log("fail to SubmitSuppliment " + err);
           sql.close();
-          res.send("failed");};
+          res.send({status: "failed"});};
    var request1 = new sql.Request();
    request1.input('trackingNo', trackingNo);
    request1.query('SELECT Id FROM dbo.BusinessLicApplication where TrackingNo = @trackingNo', 
    function (err, recordset) {
    if (err) {          console.log("fail to BusinessLicApplicationi " + err);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
    var result_from = recordset.recordset;
    //console.log("======="+result_from)
     var BL_Id = result_from[0].Id;
@@ -1494,14 +1494,14 @@ app.post('/SubmitSuppliment', function(req, res){
        if (err) {          
         console.log("fail to BusinessLicApplication " + err);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
        var request2 = new sql.Request();
        request2.input('BL_Id', BL_Id);
        request2.query(`UPDATE dbo.BLicenseApplicationTracker SET ApplicationStatusId = 4, ApplicationStageId = 3 WHERE ApplicationId = @BL_Id`, 
        function (err, recordset) {
            if (err) {          console.log("fail to BLicenseApplicationTracker " + err);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
      res.send("sucess")
        })
    })
@@ -2050,7 +2050,8 @@ app.get('/GetBusOwnerType',function(req,res){
   }, function(error, response, body){
     if(error) res.send("failed")
     console.log("Id =" + response.body);
-    var jsonData = JSON.parse(response.body);
+    // var jsonData = JSON.parse(response.body);
+    var jsonData = response.body
     for(var i = 0; i < jsonData.length; i++){
   //  console.log("Id =" + response.body);
     var OwnerSubTypeId = jsonData[i].OwnerSubTypeId;
@@ -2101,7 +2102,9 @@ app.get('/GetOriginType',function(req,res){
     url: GetOriginType,
     method: 'GET',
   }, function(error, response, body){
-    if(error) res.send("failed")
+    if(error) {
+      res.send({status: "failed"})
+    }else{
     var jsonData = JSON.parse(response.body);
     for(var i = 0; i < jsonData.length; i++){
   //  console.log("Id =" + response.body);
@@ -2111,6 +2114,7 @@ app.get('/GetOriginType',function(req,res){
     }
    // console.log(objs12)
     res.send(objs12)
+  }
   });
 }else{
   //console.log(loginTrial)
@@ -2217,7 +2221,7 @@ app.get('/GetBLAttachmentB',function(req,res){
     if(error) {          
       console.log("fail to GetBLAttachmentB " + error);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
     console.log("Id =" + response.body);
     var jsonData = JSON.parse(response.body);
     for(var i = 0; i < jsonData.length; i++){
@@ -2401,7 +2405,7 @@ app.post('/saveStageFirst',function(req,res){
     if(error) {          
       console.log("fail to Save_EntityOwner_SP " + error);
          // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
       console.log(response.body)
       res.send({"sucess": "sucess"})
     // });
@@ -2429,7 +2433,7 @@ app.post('/saveBranchStageFirst',function(req,res){
      if(error) {          
       console.log("fail to saveBranchStageFirst " + error);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
       // console.log(response.body)
        res.send({"sucess": "sucess"})
    });
@@ -2458,7 +2462,7 @@ app.post('/UploadFx',function(req,res){
      if(error) {          
       console.log("fail to UploadFx " + error);
           // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
        res.send({"sucess": "sucess"})
    });
   }else{
@@ -2618,7 +2622,7 @@ app.post('/TINVerification',function(req,res){
      if(error) {          
       console.log("fail to TINVerification " + error);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }
      console.log(response.body)
       var jsonData = JSON.parse(response.body);
@@ -2674,7 +2678,7 @@ app.post('/CompanyVerification',function(req,res){
     if(error) {          
       console.log("fail to CompanyVerification " + error);
           // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }
     console.log(response.body)
      var jsonData = JSON.parse(response.body);
@@ -2727,7 +2731,7 @@ app.post('/BNVerification',function(req,res){
     if(error) {          
       console.log("fail to BNVerification " + error);
           // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }
     // console.log(response.body)
      var jsonData = JSON.parse(response.body);
@@ -2863,7 +2867,7 @@ app.post('/saveStageSecond',function(req,res){
       if(error) {          
         console.log("fail to saveStageSecond " + error);
           // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
       var BLdetailsId = response.body;
       request({
         url: GetsaveStageAddress,
@@ -2873,7 +2877,7 @@ app.post('/saveStageSecond',function(req,res){
         if(error) {          
           console.log("fail to saveStageSecond " + error1);
           // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }
         res.send(response.body)
       });
@@ -2986,7 +2990,7 @@ app.post('/saveBStageSecond',function(req,res){
     if(error) {          
       console.log("fail to saveBStageSecond " + error);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }
   // console.log(response.body)
     var BLdetailsId = response.body;
@@ -2999,7 +3003,7 @@ app.post('/saveBStageSecond',function(req,res){
       if(error) {          
         console.log("fail to saveBStageSecond " + error);
           //sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }
       console.log(response.body)
       res.send(response.body)
@@ -3042,7 +3046,7 @@ app.post('/saveTransferStageSecond',function(req,res){
     if(error) {          
       console.log("fail to saveTransferStageSecond " + error);
           // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
   // console.log(response.body)
     var BLdetailsId = response.body;
     // console.log("1=== " + BLdetailsId)
@@ -3054,7 +3058,7 @@ app.post('/saveTransferStageSecond',function(req,res){
       if(error) {          
         console.log("fail to saveTransferStageSecond " + error1);
           // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }
       //console.log(response.body)
       res.send(response.body)
@@ -3097,7 +3101,7 @@ app.post('/GetCancelStageTwo',function(req,res){
     if(error) {          
       console.log("fail to GetCancelStageTwo " + error);
           // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }
   //console.log(response.body)
   // var jsonData = JSON.parse(response.body);
@@ -3115,7 +3119,7 @@ app.post('/GetCancelStageTwo',function(req,res){
       if(error) {          
         console.log("fail to GetCancelStageTwo " + error);
           ///sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
       //console.log(response.body)
       res.send(response.body)
     });
@@ -4342,7 +4346,7 @@ sql.connect(configBL, function (err) {
   if (err) {
     console.log("fail to connect to server " + err);
    // sql.close();
-    res.send("failed");
+    res.send({status: "failed"});
   }else{
     var request = new sql.Request();
     request.query('SELECT d.IsBranch as IsBranch, d.BLNumber as BLNumber, a.Id as Id, ' + 
@@ -4378,7 +4382,7 @@ app.post('/MyLic', async function(req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       //sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }
     var request = new sql.Request();
     request.query('SELECT d.FeePaid as FeePaid, a.BusinessClassId as BusinessClassId, a.EntityName as EntityName, d.LicenceStatusId as LicenceStatusId, d.IsBranch as IsBranch, d.BLNumber as BLNumber, a.Id as Id, a.TrackingNo as TrackingNo, a.ServiceCode as ServiceCode, d.ExpireDate as ExpireDate, d.DateIssued as DateIssued, b.ApplicationStatusId as ApplicationStatusId, b.ApplicationStageId as ApplicationStageId, c.BusinessTypeName as BusinessTypeName, b.PaymentStatus as PaymentStatus, d.isSentToRegistry as IsSentRegistry FROM dbo.BusinessLicApplication as a, dbo.BLicenseApplicationTracker as b, dbo.BusinessTypes as c, dbo.BusinessLicenceDetails as d WHERE d.BusinessLicenceApplicationId = a.Id AND a.Id = b.ApplicationId AND c.BusinessTypeId = a.BusinessTypeId AND b.ApplicationStatusId = 5 AND d.LicenceStatusId IN (1) AND d.isSentToRegistry = 1 AND b.ApplicationStageId = 6 AND a.CreatedByUserId = '+userId + ' ORDER BY a.Id DESC', 
@@ -4386,11 +4390,12 @@ app.post('/MyLic', async function(req, res) {
   
       if (err) {
         console.log(new Date() + " MyLic fail to load " + err)
-        res.send("failed")
+        res.send({status: "failed"})
+      }else{
+        var result_from = recordset.recordset;
+        sql.close();
+        res.send(result_from)
       }
-      var result_from = recordset.recordset;
-      sql.close();
-      res.send(result_from)
     });
   });
 })
@@ -4402,7 +4407,7 @@ app.post('/MyLicCan', async function(req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       //sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }
     var request = new sql.Request();
     request.query('SELECT d.FeePaid as FeePaid, a.BusinessClassId as BusinessClassId, a.EntityName as EntityName, d.LicenceStatusId as LicenceStatusId, d.IsBranch as IsBranch, d.BLNumber as BLNumber, a.Id as Id, a.TrackingNo as TrackingNo, a.ServiceCode as ServiceCode, d.ExpireDate as ExpireDate, d.DateIssued as DateIssued, b.ApplicationStatusId as ApplicationStatusId, b.ApplicationStageId as ApplicationStageId, c.BusinessTypeName as BusinessTypeName, b.PaymentStatus as PaymentStatus, d.isSentToRegistry as IsSentRegistry FROM dbo.BusinessLicApplication as a, dbo.BLicenseApplicationTracker as b, dbo.BusinessTypes as c, dbo.BusinessLicenceDetails as d WHERE d.BusinessLicenceApplicationId = a.Id AND a.Id = b.ApplicationId AND c.BusinessTypeId = a.BusinessTypeId AND b.ApplicationStatusId = 5 AND d.LicenceStatusId NOT IN (1,2,3) AND d.isSentToRegistry = 1 AND b.ApplicationStageId = 6 AND a.CreatedByUserId = '+userId + ' ORDER BY a.Id DESC', 
@@ -4410,7 +4415,7 @@ app.post('/MyLicCan', async function(req, res) {
   
       if (err) {          console.log("fail to MyLicCan " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
       var result_from = recordset.recordset;
       sql.close();
       res.send(result_from)
@@ -4425,7 +4430,7 @@ app.post('/ExLic', async function(req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
      // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }
     var request = new sql.Request();
     request.query('SELECT d.FeePaid as FeePaid, a.BusinessClassId as BusinessClassId, a.EntityName as EntityName, d.LicenceStatusId as LicenceStatusId, d.IsBranch as IsBranch, d.BLNumber as BLNumber, a.Id as Id, a.TrackingNo as TrackingNo, a.ServiceCode as ServiceCode, d.ExpireDate as ExpireDate, d.DateIssued as DateIssued, b.ApplicationStatusId as ApplicationStatusId, b.ApplicationStageId as ApplicationStageId, c.BusinessTypeName as BusinessTypeName, b.PaymentStatus as PaymentStatus, d.isSentToRegistry as IsSentRegistry FROM dbo.BusinessLicApplication as a, dbo.BLicenseApplicationTracker as b, dbo.BusinessTypes as c, dbo.BusinessLicenceDetails as d WHERE d.BusinessLicenceApplicationId = a.Id AND a.Id = b.ApplicationId AND c.BusinessTypeId = a.BusinessTypeId AND b.ApplicationStatusId = 5 AND d.LicenceStatusId IN (2) AND d.isSentToRegistry = 1 AND b.ApplicationStageId = 6 AND a.CreatedByUserId = '+userId + ' ORDER BY a.Id DESC', 
@@ -4433,7 +4438,7 @@ app.post('/ExLic', async function(req, res) {
   
       if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
       var result_from = recordset.recordset;
       sql.close();
       res.send(result_from)
@@ -4448,7 +4453,7 @@ sql.connect(configBL, function (err) {
   if (err) {
     console.log("fail to connect to server " + err);
     // sql.close();
-    res.send("failed");
+    res.send({status: "failed"});
   }
   var request = new sql.Request();
   request.query('SELECT Id, TrackingNo, CreatedDate ' + 
@@ -4460,7 +4465,7 @@ function (err, recordset) {
       if (err) {          
         console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }
       var result_from = recordset.recordset;
       sql.close();
@@ -4481,7 +4486,7 @@ sql.connect(configBL, function (err) {
   if (err) {
     console.log("fail to connect to server " + err);
     //sql.close();
-    res.send("failed");
+    res.send({status: "failed"});
   }else{
 
     // create Request object
@@ -4494,7 +4499,7 @@ sql.connect(configBL, function (err) {
         if (err) {          
           console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
         
          sql.close();
@@ -4521,7 +4526,7 @@ sql.connect(configBL, function (err) {
   if (err) {
     console.log("fail to connect to server " + err);
     //sql.close();
-    res.send("failed");
+    res.send({status: "failed"});
   }
     var request1 = new sql.Request();
     request1.input('BLNo', BLNo);
@@ -4529,7 +4534,7 @@ sql.connect(configBL, function (err) {
     function (err, recordset) {
     if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
     var result_from = recordset.recordset;
     var businessType = result_from[0].BusinessTypeId;
     var businessLicOwnerTypeId = result_from[0].BusinessLicOwnerTypeId;
@@ -4553,7 +4558,7 @@ sql.connect(configBL, function (err) {
     function (err, recordset) {
         if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
         
          sql.close();
         // send records as a response
@@ -4592,14 +4597,14 @@ sql.connect(config, function (err) {
   if (err) {
     console.log("fail to connect to server " + err);
     //sql.close();
-    res.send("failed");
+    res.send({status: "failed"});
   }
 
     var request1 = new sql.Request();
     request1.query('SELECT max(Id) as Id FROM dbo.tblAddress', function (err, recordset) {
       if (err) {          console.log("fail to recordAddressInfo " + err);
          // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
      // sql.close();
       //console.log(recordset.recordset)
       var result_form = recordset.recordset;
@@ -4633,7 +4638,7 @@ sql.connect(config, function (err) {
       function (err, recordset) {
         if (err) {          console.log("fail to recordAddressInfo " + err);
          // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
          sql.close();
         // send records as a response
         res.send({"sucess": "success"});
@@ -4694,7 +4699,7 @@ app.post('/saveStageTwo', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       //sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }
   
 
@@ -4704,7 +4709,7 @@ app.post('/saveStageTwo', function (req, res) {
       if (err1) {          
         console.log("fail to BusinessLicApplication " + err1);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }
       var result_form = recordset.recordset;
       var Id = result_form[0].Id;
@@ -4727,7 +4732,7 @@ app.post('/saveStageTwo', function (req, res) {
         function (err, recordset) {
             if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
             var request2 = new sql.Request();
                   request2.input('BusLicAppId', Id);
                   request2.input('inputEmail4comp', inputEmail4comp);
@@ -4738,7 +4743,7 @@ app.post('/saveStageTwo', function (req, res) {
                   request2.query(`INSERT INTO dbo.BusinessLicenceDetails (BusinessLicenceApplicationId, BusinessTIN, Email, PhoneNo, PoBox, IsBranch, IssueingOfficeId, LicenceStatusId, Activated) values (@BusLicAppId, @BizTin, @inputEmail4comp, @inputEmail4phn, @inputEmail4pobox, 0, @issuingAuthorityId, 5, 0)`, function (err, recordset) {
                       if (err) {          console.log("fail to get BusinessLicApplication " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
       
       
                       var request3 = new sql.Request();
@@ -4752,7 +4757,7 @@ app.post('/saveStageTwo', function (req, res) {
                             function (err, recordset) {
                                 if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
-          res.send("failed");}               
+          res.send({status: "failed"});}               
       
                                 var request4 = new sql.Request();
                                 request4.input('BusLicAppId', Id);
@@ -4760,7 +4765,7 @@ app.post('/saveStageTwo', function (req, res) {
                                 function (err, recordset) {
                                   if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           ////sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
                                  // sql.close();
                                   //console.log(recordset.recordset)
                                   var result_form = recordset.recordset;
@@ -4794,7 +4799,7 @@ app.post('/saveStageTwo', function (req, res) {
         function (err, recordset) {
             if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
         //  sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
             var request2 = new sql.Request();
                   request2.input('BusLicAppId', Id);
                   request2.input('inputEmail4comp', inputEmail4comp);
@@ -4805,7 +4810,7 @@ app.post('/saveStageTwo', function (req, res) {
                   request2.query(`INSERT INTO dbo.BusinessLicenceDetails (BusinessLicenceApplicationId, BusinessTIN, Email, PhoneNo, PoBox, IsBranch, IssueingOfficeId, LicenceStatusId, Activated) values (@BusLicAppId, @BizTin, @inputEmail4comp, @inputEmail4phn, @inputEmail4pobox, 0, @issuingAuthorityId, 5, 0)`, function (err, recordset) {
                       if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
       
       
                       var request3 = new sql.Request();
@@ -4819,7 +4824,7 @@ app.post('/saveStageTwo', function (req, res) {
                             function (err, recordset) {
                                 if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
-          res.send("failed");}               
+          res.send({status: "failed"});}               
       
                                 var request4 = new sql.Request();
                                 request4.input('BusLicAppId', Id);
@@ -4827,7 +4832,7 @@ app.post('/saveStageTwo', function (req, res) {
                                 function (err, recordset) {
                                   if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
         //  sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
                                  // sql.close();
                                   //console.log(recordset.recordset)
                                   var result_form = recordset.recordset;
@@ -4862,7 +4867,7 @@ app.post('/saveStageTwo', function (req, res) {
         function (err, recordset) {
             if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
             var request2 = new sql.Request();
                   request2.input('BusLicAppId', Id);
                   request2.input('inputEmail4comp', inputEmail4comp);
@@ -4873,7 +4878,7 @@ app.post('/saveStageTwo', function (req, res) {
                   request2.query(`INSERT INTO dbo.BusinessLicenceDetails (BusinessLicenceApplicationId, BusinessTIN, Email, PhoneNo, PoBox, IsBranch, IssueingOfficeId, LicenceStatusId, Activated) values (@BusLicAppId, @BizTin, @inputEmail4comp, @inputEmail4phn, @inputEmail4pobox, 0, @issuingAuthorityId, 5, 0)`, function (err, recordset) {
                       if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
       
       
                       var request3 = new sql.Request();
@@ -4887,7 +4892,7 @@ app.post('/saveStageTwo', function (req, res) {
                             function (err, recordset) {
                                 if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}               
+          res.send({status: "failed"});}               
       
                                 var request4 = new sql.Request();
                                 request4.input('BusLicAppId', Id);
@@ -4895,7 +4900,7 @@ app.post('/saveStageTwo', function (req, res) {
                                 function (err, recordset) {
                                   if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
                                  // sql.close();
                                   //console.log(recordset.recordset)
                                   var result_form = recordset.recordset;
@@ -4930,7 +4935,7 @@ app.post('/saveStageTwo', function (req, res) {
         function (err, recordset) {
             if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
             var request2 = new sql.Request();
                   request2.input('BusLicAppId', Id);
                   request2.input('inputEmail4comp', inputEmail4comp);
@@ -4941,7 +4946,7 @@ app.post('/saveStageTwo', function (req, res) {
                   request2.query(`INSERT INTO dbo.BusinessLicenceDetails (BusinessLicenceApplicationId, BusinessTIN, Email, PhoneNo, PoBox, IsBranch, IssueingOfficeId, LicenceStatusId, Activated) values (@BusLicAppId, @BizTin, @inputEmail4comp, @inputEmail4phn, @inputEmail4pobox, 0, @issuingAuthorityId, 5, 0)`, function (err, recordset) {
                       if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
       
       
                       var request3 = new sql.Request();
@@ -4955,7 +4960,7 @@ app.post('/saveStageTwo', function (req, res) {
                             function (err, recordset) {
                                 if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}               
+          res.send({status: "failed"});}               
       
                                 var request4 = new sql.Request();
                                 request4.input('BusLicAppId', Id);
@@ -4963,7 +4968,7 @@ app.post('/saveStageTwo', function (req, res) {
                                 function (err, recordset) {
                                   if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
                                  // sql.close();
                                   //console.log(recordset.recordset)
                                   var result_form = recordset.recordset;
@@ -4998,7 +5003,7 @@ app.get('/saveApplicationFinal',function(req,res){
     if(error) {
       console.log("fail to saveApplicationFinal " + error);
      // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }
   console.log(response.body)
     var message = response.body;
@@ -5012,7 +5017,7 @@ app.get('/saveApplicationFinal',function(req,res){
         if(error) {
           console.log("fail to saveApplicationFinal " + error);
           //sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }
         console.log(response.body)
         
@@ -5065,7 +5070,7 @@ app.post('/submitApplication', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       //sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }
     var request1 = new sql.Request();
     request1.input('trackngNo', trackngNo);
@@ -5074,7 +5079,7 @@ app.post('/submitApplication', function (req, res) {
       if (err) {          
         console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
       var result_form = recordset.recordset;
       var kaunti = result_form[0].kaunti;
       console.log("2222===22.... " + kaunti)
@@ -5087,7 +5092,7 @@ app.post('/submitApplication', function (req, res) {
         function (err, recordset) {
           if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
           var result_form = recordset.recordset;
           var kaunti = result_form[0].kaunti;
           console.log("4444===444.... " + kaunti)
@@ -5114,7 +5119,7 @@ app.post('/submitFinal', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
      // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }
     var request1 = new sql.Request();
     console.log("mark")
@@ -5124,7 +5129,7 @@ app.post('/submitFinal', function (req, res) {
       if (err) {
         console.log("fail to submitFinal " + err);
        // sql.close();
-        res.send("failed");
+        res.send({status: "failed"});
       }
       var result_form = recordset.recordset;
       var kaunti = result_form[0].kaunti;
@@ -5141,7 +5146,7 @@ app.post('/submitFinal', function (req, res) {
           if (err){
             console.log("fail to submitFinal " + err);
            // sql.close();
-            res.send("failed");
+            res.send({status: "failed"});
           }
             sql.close();
             res.send("success")
@@ -5197,7 +5202,7 @@ app.post('/updateStageTwo', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       //sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }
   
 
@@ -5207,7 +5212,7 @@ app.post('/updateStageTwo', function (req, res) {
       if (err) {
         console.log("fail to submitFinal " + err);
        // sql.close();
-        res.send("failed");
+        res.send({status: "failed"});
       }
       var result_form = recordset.recordset;
       var Id = result_form[0].Id;
@@ -5229,7 +5234,7 @@ app.post('/updateStageTwo', function (req, res) {
             if (err) {
               console.log("fail to submitFinal " + err);
              // sql.close();
-              res.send("failed");
+              res.send({status: "failed"});
             }
             var request2 = new sql.Request();
                   request2.input('BusLicAppId', Id);
@@ -5241,7 +5246,7 @@ app.post('/updateStageTwo', function (req, res) {
                       if (err) {
                         console.log("fail to submitFinal " + err);
                         //sql.close();
-                        res.send("failed");
+                        res.send({status: "failed"});
                       }
       
       
@@ -5257,7 +5262,7 @@ app.post('/updateStageTwo', function (req, res) {
                                 if (err) {
                                   console.log("fail to submitFinal " + err);
                                  // sql.close();
-                                  res.send("failed");
+                                  res.send({status: "failed"});
                                 }   
                                 
                                 var request55 = new sql.Request();
@@ -5267,7 +5272,7 @@ app.post('/updateStageTwo', function (req, res) {
                                     if (err) {
                                       console.log("fail to submitFinal " + err);
                                      // sql.close();
-                                      res.send("failed");
+                                      res.send({status: "failed"});
                                     }   
       
                                 var request4 = new sql.Request();
@@ -5277,7 +5282,7 @@ app.post('/updateStageTwo', function (req, res) {
                                   if (err) {
                                     console.log("fail to submitFinal " + err);
                                    // sql.close();
-                                    res.send("failed");
+                                    res.send({status: "failed"});
                                   }
                                  // sql.close();
                                   //console.log(recordset.recordset)
@@ -5312,7 +5317,7 @@ app.post('/updateStageTwo', function (req, res) {
             if (err) {
               console.log("fail to submitFinal " + err);
               //sql.close();
-              res.send("failed");
+              res.send({status: "failed"});
             }
             var request2 = new sql.Request();
                   request2.input('BusLicAppId', Id);
@@ -5324,7 +5329,7 @@ app.post('/updateStageTwo', function (req, res) {
                       if (err) {
                         console.log("fail to submitFinal " + err);
                         //sql.close();
-                        res.send("failed");
+                        res.send({status: "failed"});
                       }
       
       
@@ -5340,7 +5345,7 @@ app.post('/updateStageTwo', function (req, res) {
                                 if (err) {
                                   console.log("fail to submitFinal " + err);
                                   //sql.close();
-                                  res.send("failed");
+                                  res.send({status: "failed"});
                                 }  
                                 
                                 var request55 = new sql.Request();
@@ -5350,7 +5355,7 @@ app.post('/updateStageTwo', function (req, res) {
                                     if (err) {
                                       console.log("fail to submitFinal " + err);
                                       //sql.close();
-                                      res.send("failed");
+                                      res.send({status: "failed"});
                                     } 
       
                                 var request4 = new sql.Request();
@@ -5360,7 +5365,7 @@ app.post('/updateStageTwo', function (req, res) {
                                   if (err) {
                                     console.log("fail to submitFinal " + err);
                                     //sql.close();
-                                    res.send("failed");
+                                    res.send({status: "failed"});
                                   }
                                  // sql.close();
                                   //console.log(recordset.recordset)
@@ -5397,7 +5402,7 @@ app.post('/updateStageTwo', function (req, res) {
             if (err) {
               console.log("fail to submitFinal " + err);
               //sql.close();
-              res.send("failed");
+              res.send({status: "failed"});
             }
             var request2 = new sql.Request();
                   request2.input('BusLicAppId', Id);
@@ -5409,7 +5414,7 @@ app.post('/updateStageTwo', function (req, res) {
                       if (err) {
                         console.log("fail to submitFinal " + err);
                         //sql.close();
-                        res.send("failed");
+                        res.send({status: "failed"});
                       }
       
       
@@ -5425,7 +5430,7 @@ app.post('/updateStageTwo', function (req, res) {
                                 if (err) {
                                   console.log("fail to submitFinal " + err);
                                  // sql.close();
-                                  res.send("failed");
+                                  res.send({status: "failed"});
                                 }     
                                 
                                 var request55 = new sql.Request();
@@ -5435,7 +5440,7 @@ app.post('/updateStageTwo', function (req, res) {
                                     if (err) {
                                       console.log("fail to submitFinal " + err);
                                      // sql.close();
-                                      res.send("failed");
+                                      res.send({status: "failed"});
                                     }  
       
                                 var request4 = new sql.Request();
@@ -5445,7 +5450,7 @@ app.post('/updateStageTwo', function (req, res) {
                                   if (err) {
                                     console.log("fail to submitFinal " + err);
                                    // sql.close();
-                                    res.send("failed");
+                                    res.send({status: "failed"});
                                   }
                                  // sql.close();
                                   //console.log(recordset.recordset)
@@ -5481,7 +5486,7 @@ app.post('/updateStageTwo', function (req, res) {
         function (err, recordset) {
             if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
             var request2 = new sql.Request();
                   request2.input('BusLicAppId', Id);
                   request2.input('inputEmail4comp', inputEmail4comp);
@@ -5492,7 +5497,7 @@ app.post('/updateStageTwo', function (req, res) {
                       if (err) {
                         console.log("fail to submitFinal " + err);
                        // sql.close();
-                        res.send("failed");
+                        res.send({status: "failed"});
                       }
       
       
@@ -5507,7 +5512,7 @@ app.post('/updateStageTwo', function (req, res) {
                             function (err, recordset) {
                                 if (err) {        console.log("fail to submitFinal " + err);
                                 //sql.close();
-                                res.send("failed");}    
+                                res.send({status: "failed"});}    
                                 
                                 var request55 = new sql.Request();
                                 request55.input('ApplicationId', Id);
@@ -5516,7 +5521,7 @@ app.post('/updateStageTwo', function (req, res) {
                                     if (err) {
                                       console.log("fail to submitFinal " + err);
                                       // sql.close();
-                                      res.send("failed");
+                                      res.send({status: "failed"});
                                     } 
       
                                 var request4 = new sql.Request();
@@ -5526,7 +5531,7 @@ app.post('/updateStageTwo', function (req, res) {
                                   if (err) {
                                     console.log("fail to submitFinal " + err);
                                     // sql.close();
-                                    res.send("failed");
+                                    res.send({status: "failed"});
                                   }
                                  // sql.close();
                                   //console.log(recordset.recordset)
@@ -5599,7 +5604,7 @@ if(BizOwnerType == 1){
     if (err) {
       console.log("fail to connect to server " + err);
       sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }
   
     new sql.Request()
@@ -5623,7 +5628,7 @@ if(BizOwnerType == 1){
         if(err) {
           console.log("fail to submitFinal " + err);
           //sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }
   
         var result_form = recordsets.recordset;
@@ -5661,7 +5666,7 @@ if(BizOwnerType == 1){
             if(err) {
               console.log("fail to Save_Address_SP " + err);
               //sql.close();
-              res.send("failed");
+              res.send({status: "failed"});
             }
     
             new sql.Request()
@@ -5696,7 +5701,7 @@ if(BizOwnerType == 1){
                 if(err) {
                   console.log("fail to Save_Address_SP " + err);
                   // sql.close();
-                  res.send("failed");
+                  res.send({status: "failed"});
                 }
 
      new sql.Request()
@@ -5713,7 +5718,7 @@ if(BizOwnerType == 1){
          if(err) {
           console.log("fail to Save_Address_SP " + err);
           // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
          }
 
                 sql.close();
@@ -5731,7 +5736,7 @@ if(BizOwnerType == 3){
     if (err) {
       console.log("fail to connect to server " + err);
       // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }
   
     new sql.Request()
@@ -5753,7 +5758,7 @@ if(BizOwnerType == 3){
         if(err) {
           console.log("fail to Save_OtherCorporateBody_SP " + err);
           // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }
   
         var result_form = recordsets.recordset;
@@ -5792,7 +5797,7 @@ if(BizOwnerType == 3){
             if(err) {
               console.log("fail to Save_Address_SP " + err);
               // sql.close();
-              res.send("failed");
+              res.send({status: "failed"});
             }
     
             new sql.Request()
@@ -5827,7 +5832,7 @@ if(BizOwnerType == 3){
                 if(err) {
                   console.log("fail to Save_Address_SP " + err);
                   // sql.close();
-                  res.send("failed");
+                  res.send({status: "failed"});
                 }
 
      new sql.Request()
@@ -5844,7 +5849,7 @@ if(BizOwnerType == 3){
          if(err) {
           console.log("fail to Save_Address_SP " + err);
           // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
          }
 
                 sql.close();
@@ -5862,7 +5867,7 @@ if(BizOwnerType == 2){
     if (err) {
       console.log("fail to connect to server " + err);
       // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }
 
         new sql.Request()
@@ -5897,7 +5902,7 @@ if(BizOwnerType == 2){
             if(err) {
               console.log("fail to Save_Address_SP " + err);
               // sql.close();
-              res.send("failed");
+              res.send({status: "failed"});
             }
     
             new sql.Request()
@@ -5932,7 +5937,7 @@ if(BizOwnerType == 2){
                 if(err) {
                   console.log("fail to Save_Address_SP " + err);
                   // sql.close();
-                  res.send("failed");
+                  res.send({status: "failed"});
                 }
 
      new sql.Request()
@@ -5949,7 +5954,7 @@ if(BizOwnerType == 2){
          if(err) {
           console.log("fail to Save_Address_SP " + err);
           // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
          }
 
                 sql.close();
@@ -5965,7 +5970,7 @@ if(BizOwnerType == 4){
     if (err) {
       console.log("fail to connect to server " + err);
       // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }
 
         new sql.Request()
@@ -6000,7 +6005,7 @@ if(BizOwnerType == 4){
             if(err) {
               console.log("fail to Save_Address_SP " + err);
               // sql.close();
-              res.send("failed");
+              res.send({status: "failed"});
             }
     
             new sql.Request()
@@ -6035,7 +6040,7 @@ if(BizOwnerType == 4){
                 if(err) {
                   console.log("fail to Save_Address_SP " + err);
                   // sql.close();
-                  res.send("failed");
+                  res.send({status: "failed"});
                 }
 
      new sql.Request()
@@ -6052,7 +6057,7 @@ if(BizOwnerType == 4){
          if(err) {
           console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
          }
 
                 sql.close();
@@ -6113,7 +6118,7 @@ app.post('/updateAddressRecord', function(req, res){
       if (err) {
         console.log("fail to connect to server " + err);
         // sql.close();
-        res.send("failed");
+        res.send({status: "failed"});
       }
     
       new sql.Request()
@@ -6137,7 +6142,7 @@ app.post('/updateAddressRecord', function(req, res){
           if(err) {
             console.log("fail to Save_EntityOwner_SP " + err);
             // sql.close();
-            res.send("failed");
+            res.send({status: "failed"});
           }
     
           var result_form = recordsets.recordset;
@@ -6175,7 +6180,7 @@ app.post('/updateAddressRecord', function(req, res){
               if(err) {
                 console.log("fail to Save_EntityOwner_SP " + err);
                 // sql.close();
-                res.send("failed");
+                res.send({status: "failed"});
               }
       
               new sql.Request()
@@ -6210,7 +6215,7 @@ app.post('/updateAddressRecord', function(req, res){
                   if(err) {
                     console.log("fail to Save_EntityOwner_SP " + err);
                     // sql.close();
-                    res.send("failed");
+                    res.send({status: "failed"});
                   }
   
        new sql.Request()
@@ -6227,7 +6232,7 @@ app.post('/updateAddressRecord', function(req, res){
            if(err) {
             console.log("fail to Save_EntityOwner_SP " + err);
             // sql.close();
-            res.send("failed");
+            res.send({status: "failed"});
            }
   
                   sql.close();
@@ -6245,7 +6250,7 @@ app.post('/updateAddressRecord', function(req, res){
       if(err) {
         console.log("fail to Save_EntityOwner_SP " + err);
         // sql.close();
-        res.send("failed");
+        res.send({status: "failed"});
       }
     
       new sql.Request()
@@ -6267,7 +6272,7 @@ app.post('/updateAddressRecord', function(req, res){
           if(err) {
             console.log("fail to Save_EntityOwner_SP " + err);
             // sql.close();
-            res.send("failed");
+            res.send({status: "failed"});
           }
     
           var result_form = recordsets.recordset;
@@ -6306,7 +6311,7 @@ app.post('/updateAddressRecord', function(req, res){
               if(err) {
                 console.log("fail to Save_EntityOwner_SP " + err);
                 // sql.close();
-                res.send("failed");
+                res.send({status: "failed"});
               }
       
               new sql.Request()
@@ -6341,7 +6346,7 @@ app.post('/updateAddressRecord', function(req, res){
                   if(err) {
                     console.log("fail to Save_EntityOwner_SP " + err);
                     // sql.close();
-                    res.send("failed");
+                    res.send({status: "failed"});
                   }
   
        new sql.Request()
@@ -6358,7 +6363,7 @@ app.post('/updateAddressRecord', function(req, res){
            if(err) {
             console.log("fail to Save_EntityOwner_SP " + err);
             // sql.close();
-            res.send("failed");
+            res.send({status: "failed"});
            }
   
                   sql.close();
@@ -6376,7 +6381,7 @@ app.post('/updateAddressRecord', function(req, res){
       if(err) {
         console.log("fail to Save_EntityOwner_SP " + err);
         // sql.close();
-        res.send("failed");
+        res.send({status: "failed"});
       }
   
           new sql.Request()
@@ -6411,7 +6416,7 @@ app.post('/updateAddressRecord', function(req, res){
               if(err) {
                 console.log("fail to Save_EntityOwner_SP " + err);
                 // sql.close();
-                res.send("failed");
+                res.send({status: "failed"});
               }
       
               new sql.Request()
@@ -6446,7 +6451,7 @@ app.post('/updateAddressRecord', function(req, res){
                   if(err) {
                     console.log("fail to Save_EntityOwner_SP " + err);
                     // sql.close();
-                    res.send("failed");
+                    res.send({status: "failed"});
                   }
   
        new sql.Request()
@@ -6463,7 +6468,7 @@ app.post('/updateAddressRecord', function(req, res){
            if(err) {
             console.log("fail to Save_EntityOwner_SP " + err);
             // sql.close();
-            res.send("failed");
+            res.send({status: "failed"});
            }
   
                   sql.close();
@@ -6479,7 +6484,7 @@ app.post('/updateAddressRecord', function(req, res){
       if(err) {
         console.log("fail to Save_EntityOwner_SP " + err);
         // sql.close();
-        res.send("failed");
+        res.send({status: "failed"});
       }
   
           new sql.Request()
@@ -6514,7 +6519,7 @@ app.post('/updateAddressRecord', function(req, res){
               if(err) {
                 console.log("fail to Save_EntityOwner_SP " + err);
                 // sql.close();
-                res.send("failed");
+                res.send({status: "failed"});
               }
       
               new sql.Request()
@@ -6549,7 +6554,7 @@ app.post('/updateAddressRecord', function(req, res){
                   if(err) {
                     console.log("fail to Save_EntityOwner_SP " + err);
                     // sql.close();
-                    res.send("failed");
+                    res.send({status: "failed"});
                   }
   
        new sql.Request()
@@ -6566,7 +6571,7 @@ app.post('/updateAddressRecord', function(req, res){
            if(err) {
             console.log("fail to Save_EntityOwner_SP " + err);
             // sql.close();
-            res.send("failed");
+            res.send({status: "failed"});
            }
   
                   sql.close();
@@ -6606,7 +6611,7 @@ app.post('/saveBStageTwo', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }
    console.log("======>>> " + BLNo)
      var request1 = new sql.Request();
@@ -6616,7 +6621,7 @@ app.post('/saveBStageTwo', function (req, res) {
      if (err) {
       console.log("fail to Save_EntityOwner_SP " + err);
       // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
      }
      var result_from = recordset.recordset;
      
@@ -6635,7 +6640,7 @@ app.post('/saveBStageTwo', function (req, res) {
        if (err) {
         console.log("fail to Save_EntityOwner_SP " + err);
         // sql.close();
-        res.send("failed");
+        res.send({status: "failed"});
        }
        var result_from1 = recordset.recordset;
        var BranchId = result_from1[0].Id;
@@ -6647,7 +6652,7 @@ app.post('/saveBStageTwo', function (req, res) {
        if (err) {          
         console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }
        var result_from1 = recordset.recordset;
        var ApplicationTin = result_from1[0].BusinessTIN;
@@ -6665,7 +6670,7 @@ app.post('/saveBStageTwo', function (req, res) {
          if (err) {
           console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
          }
          var request2 = new sql.Request();
                request2.input('BusLicAppId', BranchId);
@@ -6680,7 +6685,7 @@ app.post('/saveBStageTwo', function (req, res) {
                    if (err) {
                     console.log("fail to Save_EntityOwner_SP " + err);
                     // sql.close();
-                    res.send("failed");
+                    res.send({status: "failed"});
                    }
    
    
@@ -6696,7 +6701,7 @@ app.post('/saveBStageTwo', function (req, res) {
                              if (err) {
                               console.log("fail to Save_EntityOwner_SP " + err);
                               // sql.close();
-                              res.send("failed");
+                              res.send({status: "failed"});
                              }              
    
                              var request4 = new sql.Request();
@@ -6706,7 +6711,7 @@ app.post('/saveBStageTwo', function (req, res) {
                                if (err) {
                                 console.log("fail to Save_EntityOwner_SP " + err);
                                 // sql.close();
-                                res.send("failed");
+                                res.send({status: "failed"});
                                }
                               // sql.close();
                               //  console.log(recordset.recordset)
@@ -6757,7 +6762,7 @@ app.post('/saveTransferStageTwo', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }
    // console.log("======>>> " + BLNo)
      var request1 = new sql.Request();
@@ -6767,7 +6772,7 @@ app.post('/saveTransferStageTwo', function (req, res) {
      if (err) {
       console.log("fail to Save_EntityOwner_SP " + err);
       // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
      }
      var result_from = recordset.recordset;
      
@@ -6785,7 +6790,7 @@ app.post('/saveTransferStageTwo', function (req, res) {
        if (err) {
         console.log("fail to Save_EntityOwner_SP " + err);
         // sql.close();
-        res.send("failed");
+        res.send({status: "failed"});
        }
        var result_from1 = recordset.recordset;
        var BranchId = result_from1[0].Id;
@@ -6797,7 +6802,7 @@ app.post('/saveTransferStageTwo', function (req, res) {
        if (err) {
         console.log("fail to Save_EntityOwner_SP " + err);
         // sql.close();
-        res.send("failed");
+        res.send({status: "failed"});
        }
        var result_from1 = recordset.recordset;
        var ApplicationTin = result_from1[0].BusinessTIN;
@@ -6816,7 +6821,7 @@ app.post('/saveTransferStageTwo', function (req, res) {
          if (err) {
           console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
          }
          var request2 = new sql.Request();
                request2.input('BusLicAppId', BranchId);
@@ -6832,7 +6837,7 @@ app.post('/saveTransferStageTwo', function (req, res) {
                    if (err) {
                     console.log("fail to Save_EntityOwner_SP " + err);
                     // sql.close();
-                    res.send("failed");
+                    res.send({status: "failed"});
                    }
    
    
@@ -6847,7 +6852,7 @@ app.post('/saveTransferStageTwo', function (req, res) {
                          function (err, recordset) {
                              if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");}               
+          res.send({status: "failed"});}               
    
                              var request4 = new sql.Request();
                              request4.input('BusLicAppId', BranchId);
@@ -6855,7 +6860,7 @@ app.post('/saveTransferStageTwo', function (req, res) {
                              function (err, recordset) {
                                if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
                               // sql.close();
                               //  console.log(recordset.recordset)
                                var result_form = recordset.recordset;
@@ -6905,7 +6910,7 @@ app.post('/cancelStageTwo', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }
    // console.log("======>>> " + BLNo)
      var request1 = new sql.Request();
@@ -6914,7 +6919,7 @@ app.post('/cancelStageTwo', function (req, res) {
      function (err, recordset) {
      if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
      var result_from = recordset.recordset;
      // console.log("====== " + result_from)
      // var businessType = result_from[0].BusinessTypeId;
@@ -6934,7 +6939,7 @@ app.post('/cancelStageTwo', function (req, res) {
        function (err, recordset) {
        if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
        var result_from1 = recordset.recordset;
        var BranchId = result_from1[0].Id;
       //  console.log("======+++ " + BranchId)
@@ -6944,7 +6949,7 @@ app.post('/cancelStageTwo', function (req, res) {
        function (err, recordset) {
        if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
        var result_from1 = recordset.recordset;
        var ApplicationTin = result_from1[0].BusinessTIN;
        var IssueingOfficeId = result_from1[0].IssueingOfficeId;
@@ -6962,7 +6967,7 @@ app.post('/cancelStageTwo', function (req, res) {
      function (err, recordset) {
          if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
          var request2 = new sql.Request();
                request2.input('BusLicAppId', BranchId);
                request2.input('inputEmail4comp', Email);
@@ -6976,7 +6981,7 @@ app.post('/cancelStageTwo', function (req, res) {
                request2.query(`INSERT INTO dbo.BusinessLicenceDetails (BusinessLicenceApplicationId, BusinessTIN, Email, PhoneNo, PoBox, IsBranch, IssueingOfficeId, LicenceStatusId, Activated, BLNumber) values (@BusLicAppId, @BizTin, @inputEmail4comp, @inputEmail4phn, @inputEmail4pobox, @IsBranch, @issuingAuthorityId, 5, 0, @BLNumber)`, function (err, recordset) {
                    if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
    
    
                    var request3 = new sql.Request();
@@ -6990,7 +6995,7 @@ app.post('/cancelStageTwo', function (req, res) {
                          function (err, recordset) {
                              if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");}               
+          res.send({status: "failed"});}               
    
                              var request4 = new sql.Request();
                              request4.input('BusLicAppId', BranchId);
@@ -6998,7 +7003,7 @@ app.post('/cancelStageTwo', function (req, res) {
                              function (err, recordset) {
                                if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
                               // sql.close();
                               //  console.log(recordset.recordset)
                                var result_form = recordset.recordset;
@@ -7033,7 +7038,7 @@ app.get('/UpdatePaidAmount', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }
   
       // create Request object
@@ -7045,7 +7050,7 @@ app.get('/UpdatePaidAmount', function (req, res) {
   
           if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
            sql.close();
           // send records as a response
           var result_from = recordset.recordset;
@@ -7064,7 +7069,7 @@ app.post('/UpdatePaymentDetails', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }
      var request = new sql.Request();
      request.input('userId', userId);
@@ -7074,7 +7079,7 @@ app.post('/UpdatePaymentDetails', function (req, res) {
      function (err, recordset) {
          if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
          sql.close();
         // console.log(req.session.req_id_touse + " <<<<======>>>> " + req.session.AmountTotal)
          res.send("success")
@@ -7093,7 +7098,7 @@ app.post('/AddressRecordB', function(req, res){
       if (err) {
         console.log("fail to connect to server " + err);
         // sql.close();
-        res.send("failed");
+        res.send({status: "failed"});
       }
     
       var request11 = new sql.Request();
@@ -7166,7 +7171,7 @@ app.post('/AddressRecordB', function(req, res){
           .execute('Save_Address_SP', function(err, recordsets, returnValue) {
               if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
       
               new sql.Request()
               .input('AddressOwnerId', BLdetailsId)
@@ -7199,7 +7204,7 @@ app.post('/AddressRecordB', function(req, res){
               .execute('Save_Address_SP', function(err, recordsets, returnValue) {
                   if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
   
        new sql.Request()
        .input('EntityTypeId', 3)
@@ -7214,7 +7219,7 @@ app.post('/AddressRecordB', function(req, res){
        .execute('Save_EntityOwner_SP', function(err, recordsets, returnValue) {
            if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
   
                   sql.close();
                   res.send("success")// your isTrue value
@@ -7255,7 +7260,7 @@ app.post('/AddressRecordB', function(req, res){
             .execute('Save_Address_SP', function(err, recordsets, returnValue) {
                 if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
         
                 new sql.Request()
                 .input('AddressOwnerId', BLdetailsId)
@@ -7288,7 +7293,7 @@ app.post('/AddressRecordB', function(req, res){
                 .execute('Save_Address_SP', function(err, recordsets, returnValue) {
                     if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
     
          new sql.Request()
          .input('EntityTypeId', 3)
@@ -7303,7 +7308,7 @@ app.post('/AddressRecordB', function(req, res){
          .execute('Save_EntityOwner_SP', function(err, recordsets, returnValue) {
              if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
     
                     sql.close();
                     res.send("success")// your isTrue value
@@ -7344,7 +7349,7 @@ app.post('/AddressRecordB', function(req, res){
         .execute('Save_Address_SP', function(err, recordsets, returnValue) {
             if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
     
             new sql.Request()
             .input('AddressOwnerId', BLdetailsId)
@@ -7377,7 +7382,7 @@ app.post('/AddressRecordB', function(req, res){
             .execute('Save_Address_SP', function(err, recordsets, returnValue) {
                 if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
 
      new sql.Request()
      .input('EntityTypeId', 3)
@@ -7393,7 +7398,7 @@ app.post('/AddressRecordB', function(req, res){
          if(err) {          
           console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
 
                 sql.close();
                 res.send("success")// your isTrue value
@@ -7450,7 +7455,7 @@ app.post('/AddressRecordTransfer', function(req, res){
       if (err) {
         console.log("fail to connect to server " + err);
        // sql.close();
-        res.send("failed");
+        res.send({status: "failed"});
       }
     
       var request11 = new sql.Request();
@@ -7524,7 +7529,7 @@ app.post('/AddressRecordTransfer', function(req, res){
         .execute('Save_Address_SP', function(err, recordsets, returnValue) {
             if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
     
             new sql.Request()
             .input('AddressOwnerId', BLdetailsId)
@@ -7557,7 +7562,7 @@ app.post('/AddressRecordTransfer', function(req, res){
             .execute('Save_Address_SP', function(err, recordsets, returnValue) {
                 if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
 
      new sql.Request()
      .input('EntityTypeId', 3)
@@ -7572,7 +7577,7 @@ app.post('/AddressRecordTransfer', function(req, res){
      .execute('Save_EntityOwner_SP', function(err, recordsets, returnValue) {
          if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
 
                 sql.close();
                 res.send("success")// your isTrue value
@@ -7614,7 +7619,7 @@ app.post('/AddressRecordTransfer', function(req, res){
         .execute('Save_Address_SP', function(err, recordsets, returnValue) {
             if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
     
             new sql.Request()
             .input('AddressOwnerId', BLdetailsId)
@@ -7647,7 +7652,7 @@ app.post('/AddressRecordTransfer', function(req, res){
             .execute('Save_Address_SP', function(err, recordsets, returnValue) {
                 if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
 
      new sql.Request()
      .input('EntityTypeId', 3)
@@ -7662,7 +7667,7 @@ app.post('/AddressRecordTransfer', function(req, res){
      .execute('Save_EntityOwner_SP', function(err, recordsets, returnValue) {
          if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
 
                 sql.close();
                 res.send("success")// your isTrue value
@@ -7704,7 +7709,7 @@ app.post('/AddressRecordTransfer', function(req, res){
         .execute('Save_Address_SP', function(err, recordsets, returnValue) {
             if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
     
             new sql.Request()
             .input('AddressOwnerId', BLdetailsId)
@@ -7737,7 +7742,7 @@ app.post('/AddressRecordTransfer', function(req, res){
             .execute('Save_Address_SP', function(err, recordsets, returnValue) {
                 if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
 
      new sql.Request()
      .input('EntityTypeId', 3)
@@ -7752,7 +7757,7 @@ app.post('/AddressRecordTransfer', function(req, res){
      .execute('Save_EntityOwner_SP', function(err, recordsets, returnValue) {
          if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
 
                 sql.close();
                 res.send("success")// your isTrue value
@@ -7780,7 +7785,7 @@ app.post('/AddressRecordCancel', function(req, res){
       if (err) {
         console.log("fail to connect to server " + err);
        // sql.close();
-        res.send("failed");
+        res.send({status: "failed"});
       }
     
       var request11 = new sql.Request();
@@ -7845,7 +7850,7 @@ app.post('/AddressRecordCancel', function(req, res){
           .execute('Save_Address_SP', function(err, recordsets, returnValue) {
               if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
 
               var request111 = new sql.Request();
               request111.input('OldTrackingNo', OldTrackingNo);
@@ -7906,7 +7911,7 @@ app.post('/AddressRecordCancel', function(req, res){
               .execute('Save_Address_SP', function(err, recordsets, returnValue) {
                   if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
 
                   var request211 = new sql.Request();
                   request211.input('OldTrackingNo', OldTrackingNo);
@@ -7928,7 +7933,7 @@ app.post('/AddressRecordCancel', function(req, res){
        .execute('Save_EntityOwner_SP', function(err, recordsets, returnValue) {
            if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
   
                   sql.close();
                   res.send("success")// your isTrue value
@@ -7956,7 +7961,7 @@ app.post('/AddressRecordRenew', function(req, res){
       if (err) {
         console.log("fail to connect to server " + err);
        // sql.close();
-        res.send("failed");
+        res.send({status: "failed"});
       }
     
       var request11 = new sql.Request();
@@ -8021,7 +8026,7 @@ app.post('/AddressRecordRenew', function(req, res){
           .execute('Save_Address_SP', function(err, recordsets, returnValue) {
               if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
 
               var request111 = new sql.Request();
               request111.input('OldTrackingNo', OldTrackingNo);
@@ -8082,7 +8087,7 @@ app.post('/AddressRecordRenew', function(req, res){
               .execute('Save_Address_SP', function(err, recordsets, returnValue) {
                   if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
 
                   var request211 = new sql.Request();
                   request211.input('OldTrackingNo', OldTrackingNo);
@@ -8104,7 +8109,7 @@ app.post('/AddressRecordRenew', function(req, res){
        .execute('Save_EntityOwner_SP', function(err, recordsets, returnValue) {
            if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
   
                   sql.close();
                   res.send("success")// your isTrue value
@@ -8132,7 +8137,7 @@ app.post('/uploaadFile', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       //sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }
   
     var request1 = new sql.Request();
@@ -8141,7 +8146,7 @@ app.post('/uploaadFile', function (req, res) {
       if (err) {          
         console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }
       var result_form = recordset.recordset;
       console.log(result_form)
@@ -8154,7 +8159,7 @@ app.post('/uploaadFile', function (req, res) {
       }, function(error, response, body){
         if(error) {          console.log("fail to Save_EntityOwner_SP " + error);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
         sql.close();
           res.send({"sucess": "sucess"})
       });
@@ -8175,7 +8180,7 @@ app.post('/uploaadPFile', function (req, res) {
      if (err) {
        console.log("fail to connect to server " + err);
        //sql.close();
-       res.send("failed");
+       res.send({status: "failed"});
      }
    
      var request1 = new sql.Request();
@@ -8184,7 +8189,7 @@ app.post('/uploaadPFile', function (req, res) {
        if (err) {          
          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-           res.send("failed");
+           res.send({status: "failed"});
          }
        var result_form = recordset.recordset;
        console.log(result_form)
@@ -8197,7 +8202,7 @@ app.post('/uploaadPFile', function (req, res) {
        }, function(error, response, body){
          if(error) {          console.log("fail to Save_EntityOwner_SP " + error);
            //sql.close();
-           res.send("failed");}
+           res.send({status: "failed"});}
          sql.close();
            res.send({"sucess": "sucess"})
        });
@@ -8218,7 +8223,7 @@ app.post('/uploaadFileSup', function (req, res) {
      if (err) {
        console.log("fail to connect to server " + err);
        //sql.close();
-       res.send("failed");
+       res.send({status: "failed"});
      }
    
      var request1 = new sql.Request();
@@ -8227,7 +8232,7 @@ app.post('/uploaadFileSup', function (req, res) {
        if (err) {          
          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
-           res.send("failed");
+           res.send({status: "failed"});
          }
        var result_form = recordset.recordset;
        console.log(result_form)
@@ -8241,7 +8246,7 @@ app.post('/uploaadFileSup', function (req, res) {
          if(error) {          
           console.log("fail to Save_EntityOwner_SP " + error);
            //sql.close();
-           res.send("failed");}
+           res.send({status: "failed"});}
          sql.close();
            res.send({"sucess": "sucess"})
        });
@@ -8262,7 +8267,7 @@ app.post('/uploaadFilem', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       //sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }
    
      var request1 = new sql.Request();
@@ -8270,7 +8275,7 @@ app.post('/uploaadFilem', function (req, res) {
      request1.query('SELECT Id FROM dbo.BusinessLicApplication WHERE TrackingNo = @trackngNo', function (err, recordset) {
        if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
        var result_form = recordset.recordset;
        console.log(result_form)
        var Id = result_form[0].Id;
@@ -8284,7 +8289,7 @@ app.post('/uploaadFilem', function (req, res) {
        }, function(error, response, body){
          if(error) {          console.log("fail to Save_EntityOwner_SP " + error);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
            res.send({"sucess": "sucess"})
          // });
        });
@@ -8309,7 +8314,7 @@ app.post('/uploaadFiley', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
      // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }else{
    
      var request1 = new sql.Request();
@@ -8318,7 +8323,7 @@ app.post('/uploaadFiley', function (req, res) {
      function (err, recordset) {
        if (err) {          console.log("fail to uploaadFiley " + err);
           //sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
        var result_form = recordset.recordset;
        console.log(result_form)
@@ -8356,7 +8361,7 @@ sql.connect(configBL, function (err) {
   if (err) {
     console.log("fail to connect to server " + err);
     //sql.close();
-    res.send("failed");
+    res.send({status: "failed"});
   }else{
 
     // create Request object
@@ -8367,7 +8372,7 @@ sql.connect(configBL, function (err) {
 
         if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
          sql.close();
         // send records as a response
@@ -8386,7 +8391,7 @@ sql.connect(configBL, function (err) {
   if (err) {
     console.log("fail to connect to server " + err);
     //sql.close();
-    res.send("failed");
+    res.send({status: "failed"});
   }else{
 
     // create Request object
@@ -8398,7 +8403,7 @@ sql.connect(configBL, function (err) {
 
         if (err) {          console.log("fail to bizType " + err);
           //sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
          sql.close();
         // send records as a response
@@ -8417,7 +8422,7 @@ app.get('/bizTypeAll', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
      // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }else{
   
       // create Request object
@@ -8429,7 +8434,7 @@ app.get('/bizTypeAll', function (req, res) {
   
           if (err) {          console.log("fail to bizTypeAll " + err);
           //sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
            sql.close();
           // send records as a response
@@ -8448,7 +8453,7 @@ app.get('/test', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       //sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }else{
 
       // create Request object
@@ -8459,7 +8464,7 @@ app.get('/test', function (req, res) {
           
           if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
            sql.close();
           // send records as a response
@@ -8540,7 +8545,7 @@ sql.connect(config, function (err) {
   if (err) {
     console.log("fail to connect to server " + err);
     //sql.close();
-    res.send("failed");
+    res.send({status: "failed"});
   }else{
 
     // create Request object
@@ -8552,7 +8557,7 @@ sql.connect(config, function (err) {
 
         if (err) {          console.log("fail to regions " + err);
           //sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
          sql.close();
         // send records as a response
@@ -8571,7 +8576,7 @@ app.get('/lga/:id', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       //sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }else{
   
       // create Request object
@@ -8583,7 +8588,7 @@ app.get('/lga/:id', function (req, res) {
   
           if (err) {          console.log("fail to lga " + err);
           //sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
            sql.close();
           // send records as a response
@@ -8602,7 +8607,7 @@ app.get('/GetSavedDistrict/:id', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       //sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }else{
   
       // create Request object
@@ -8614,7 +8619,7 @@ app.get('/GetSavedDistrict/:id', function (req, res) {
   
           if (err) {          console.log("fail to GetSavedDistrict " + err);
           //sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
            sql.close();
           // send records as a response
@@ -8634,7 +8639,7 @@ app.get('/GetSavedWard/:id', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
      // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }else{
   
       // create Request object
@@ -8646,7 +8651,7 @@ app.get('/GetSavedWard/:id', function (req, res) {
           if (err) {          
             console.log("fail to GetSavedWard " + err);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
            sql.close();
           // send records as a response
@@ -8672,7 +8677,7 @@ app.post('/atachFile', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
      // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }else{
 
       var request1 = new sql.Request();
@@ -8681,7 +8686,7 @@ app.post('/atachFile', function (req, res) {
       function (err, recordset) {
         if (err) {          console.log("fail to atachFile " + err);
           sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
        // sql.close();
         //console.log(recordset.recordset)
         var result_form = recordset.recordset;
@@ -8697,7 +8702,7 @@ app.post('/atachFile', function (req, res) {
       function (err, recordset) {
           if (err) {          console.log("fail to BusinessLicenceAttachments " + err);
           //sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
            sql.close();
           // send records as a response
@@ -8716,7 +8721,7 @@ sql.connect(configBL, function (err) {
   if (err) {
     console.log("fail to connect to server " + err);
     //sql.close();
-   // res.send("failed");
+   // res.send({status: "failed"});
   }else{
     // create Request object
     var request = new sql.Request();
@@ -8727,7 +8732,7 @@ sql.connect(configBL, function (err) {
         if (err1) {          
           console.log("fail to BusSector " + err1);
         //  sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
          sql.close();
         // send records as a response
@@ -8747,7 +8752,7 @@ app.get('/BLAttachmnt', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       //sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }else{
 
       // create Request object
@@ -8760,7 +8765,7 @@ app.get('/BLAttachmnt', function (req, res) {
           if (err) {          
             console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
            sql.close();
           // send records as a response
@@ -8779,7 +8784,7 @@ app.get('/BLAttachmntBra', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       //sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }else{
 
       // create Request object
@@ -8791,7 +8796,7 @@ app.get('/BLAttachmntBra', function (req, res) {
 
           if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
            sql.close();
           // send records as a response
@@ -8811,7 +8816,7 @@ app.get('/BLPermit/:id', function (req, res) {
       if (err) {
         console.log("fail to connect to server " + err);
        // sql.close();
-        res.send("failed");
+        res.send({status: "failed"});
       }else{
   
         // create Request object
@@ -8825,7 +8830,7 @@ app.get('/BLPermit/:id', function (req, res) {
             if (err) {          
               console.log("fail to BLPermit " + err);
           //sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
              sql.close();
             // send records as a response
@@ -8844,7 +8849,7 @@ sql.connect(configBL, function (err) {
   if (err) {
     console.log("fail to connect to server " + err);
    // sql.close();
-    res.send("failed");
+    res.send({status: "failed"});
   }else{
 
     // create Request object
@@ -8856,7 +8861,7 @@ sql.connect(configBL, function (err) {
 
         if (err) {          console.log("fail to category " + err);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
          sql.close();
         // send records as a response
@@ -8875,7 +8880,7 @@ sql.connect(config, function (err) {
   if (err) {
     console.log("fail to connect to server " + err);
     // sql.close();
-    res.send("failed");
+    res.send({status: "failed"});
   }else{
 
     // create Request object
@@ -8887,7 +8892,7 @@ sql.connect(config, function (err) {
 
         if (err) {          console.log("fail to district " + err);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
          sql.close();
         // send records as a response
@@ -8906,7 +8911,7 @@ app.get('/postcode/:id', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       //sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }else{
   
       // create Request object
@@ -8918,7 +8923,7 @@ app.get('/postcode/:id', function (req, res) {
   
           if (err) {          console.log("fail to postcode " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
            sql.close();
           // send records as a response
           res.send(recordset.recordset);
@@ -8936,7 +8941,7 @@ app.get('/getbiz_check/:id', function (req, res) {
       if (err) {
         console.log("fail to connect to server " + err);
         //sql.close();
-        res.send("failed");
+        res.send({status: "failed"});
       }else{
   
         var request1 = new sql.Request();
@@ -8947,7 +8952,7 @@ app.get('/getbiz_check/:id', function (req, res) {
   
             if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
             var result_form = recordset.recordset;
             var kaunti = result_form[0].kaunti;
@@ -8967,7 +8972,7 @@ app.post('/last_commit', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       //sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }else{
 
       var request1 = new sql.Request();
@@ -8978,7 +8983,7 @@ app.post('/last_commit', function (req, res) {
 
           if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
           var result_form = recordset.recordset;
           var ApplicationStep = result_form[0].ApplicationStep;
@@ -8998,7 +9003,7 @@ app.get('/getbiz/:id', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       //sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }else{
 
       // create Request object
@@ -9010,7 +9015,7 @@ app.get('/getbiz/:id', function (req, res) {
 
           if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send("failed");}
+          res.send({status: "failed"});}
           var result_form = recordset.recordset;
           // var businessLicenceClassCode = result_form[0].BusinessLicenceClassCode;
           // var issuingAuthorityId = result_form[0].IssuingAuthorityId;
@@ -9033,7 +9038,7 @@ app.get('/dltPendApp/:id', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       //sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }else{
       // create Request object
       var request = new sql.Request();
@@ -9131,7 +9136,7 @@ app.post('/submitBusInfoApp', function (req, res) {
   if (err) {
     console.log("fail to connect to server " + err);
     //sql.close();
-    res.send("failed");
+    res.send({status: "failed"});
   }else{
 
   // create Request object
@@ -9143,7 +9148,7 @@ app.post('/submitBusInfoApp', function (req, res) {
       
       if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
        sql.close();
       // send records as a response
@@ -9166,7 +9171,7 @@ app.get('/genBLTrackingNo', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
      // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }else{
       // create Request object
       var request = new sql.Request();
@@ -9196,7 +9201,7 @@ var owner_type_id = req.params.id
     if (err) {
       console.log("fail to connect to server " + err);
       //sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }else{
 
       // create Request object
@@ -9293,7 +9298,7 @@ app.get('/getSavedTin/:id', function (req, res) {
           if (err) {
             console.log("fail to connect to server " + err);
            // sql.close();
-            res.send("failed");
+            res.send({status: "failed"});
           }else{
     
           // create Request object
@@ -9306,7 +9311,7 @@ app.get('/getSavedTin/:id', function (req, res) {
               if (err) {          
                 console.log("fail to getSavedTin " + err);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
               sql.close();
               // send records as a response
@@ -9328,7 +9333,7 @@ app.get('/getPaymentDetails/:id/:code', function (req, res) {
       if (err) {
         console.log("fail to connect to server " + err);
         //sql.close();
-        res.send("failed");
+        res.send({status: "failed"});
       }else{
   
       // create Request object
@@ -9342,7 +9347,7 @@ app.get('/getPaymentDetails/:id/:code', function (req, res) {
           if (err1) {          
             console.log("fail to getPaymentDetails " + err1);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
            sql.close();
           // send records as a response
@@ -9362,7 +9367,7 @@ app.get('/getInvoiceDataDetails/:id', function (req, res) {
       if (err) {
         console.log("fail to connect to server " + err);
         //sql.close();
-        res.send("failed");
+        res.send({status: "failed"});
       }else{
   
       // create Request object
@@ -9375,7 +9380,7 @@ app.get('/getInvoiceDataDetails/:id', function (req, res) {
           if (err1) {          
             console.log("fail to getPaymentDetails " + err1);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
            sql.close();
           // send records as a response
@@ -9394,7 +9399,7 @@ app.get('/getSavedBizType/:id', function (req, res) {
       if (err) {
         console.log("fail to connect to server " + err);
         //sql.close();
-        res.send("failed");
+        res.send({status: "failed"});
       }else{
   
         // create Request object
@@ -9406,7 +9411,7 @@ app.get('/getSavedBizType/:id', function (req, res) {
             
             if (err) {          console.log("fail to getSavedBizType " + err);
           //sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
       sql.close();
             // send records as a response
@@ -9425,7 +9430,7 @@ app.get('/getSavedAreaType/:id', function (req, res) {
       if (err) {
         console.log("fail to connect to server " + err);
         sql.close();
-        res.send("failed");
+        res.send({status: "failed"});
       }else{
   
         // create Request object
@@ -9437,7 +9442,7 @@ app.get('/getSavedAreaType/:id', function (req, res) {
             
             if (err) {          console.log("fail to getSavedAreaType " + err);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
       sql.close();
             // send records as a response
@@ -9456,7 +9461,7 @@ app.get('/GetbusOnwerTypeName/:id', function (req, res) {
         if (err) {
           console.log("fail to connect to server " + err);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
     
           // create Request object
@@ -9468,7 +9473,7 @@ app.get('/GetbusOnwerTypeName/:id', function (req, res) {
               
               if (err) {          console.log("fail to GetbusOnwerTypeName " + err);
           //sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
         sql.close();
               // send records as a response
@@ -9487,7 +9492,7 @@ app.get('/originType', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
      // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }else{
 
       // create Request object
@@ -9497,11 +9502,12 @@ app.get('/originType', function (req, res) {
       request.query('SELECT * from dbo.tblOriginType', 
       function (err, recordset1) {
           
-          if (err) {          console.log("fail to originType " + err);
+          if (err) {          
+            console.log("fail to originType " + err);
           //sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
-    sql.close();
+          sql.close();
           // send records as a response
           res.send(recordset1.recordset);
         }
@@ -9519,7 +9525,7 @@ console.log(TrackingNo)
     if (err) {
       console.log("fail to connect to server " + err);
      // sql.close();
-      res.send("failed");
+     res.send({status: "failed"});
     }else{
 
       // create Request object
@@ -9531,7 +9537,7 @@ console.log(TrackingNo)
           
           if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
-          res.send("failed");
+         res.send({status: "failed"});
         }else{
 
     sql.close();
@@ -9553,7 +9559,7 @@ app.get('/GetApplicationStatus/:id', function (req, res) {
       if (err) {
         console.log("fail to connect to server " + err);
        // sql.close();
-        res.send("failed");
+        res.send({status: "failed"});
       }else{
   
         // create Request object
@@ -9565,7 +9571,7 @@ app.get('/GetApplicationStatus/:id', function (req, res) {
             
             if (err) {          console.log("fail to GetApplicationStatus " + err);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
   
       sql.close();
@@ -9586,7 +9592,7 @@ app.get('/ownerType', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
      // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }else{
 
       // create Request object
@@ -9595,11 +9601,12 @@ app.get('/ownerType', function (req, res) {
       // query to the database and get the records
       request.query('SELECT * from dbo.tblOwnerType', function (err, recordset1) {
           
-          if (err) {          console.log("fail to ownerType " + err);
-         // sql.close();
-          res.send("failed");
+          if (err) {          
+            console.log("fail to ownerType " + err);
+            // sql.close();
+            res.send({status: "failed"});
         }else{
-    sql.close();
+          sql.close();
           // send records as a response
           res.send(recordset1.recordset);
         }
@@ -9646,7 +9653,7 @@ app.get('/ownerTypeView/:id', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }else{
 
       // create Request object
@@ -9660,7 +9667,7 @@ app.get('/ownerTypeView/:id', function (req, res) {
           if (err) {          
             console.log("fail to ownerTypeView " + err);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
     sql.close();
           // send records as a response
@@ -9679,7 +9686,7 @@ app.post('/userDetails', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
      // sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }else{
 
       // create Request object
@@ -9692,7 +9699,7 @@ app.post('/userDetails', function (req, res) {
           if (err) {          
             console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
     sql.close();
           // send records as a response
@@ -9711,7 +9718,7 @@ app.get('/sectors', function (req, res) {
     if (err) {
       console.log("fail to connect to server " + err);
       //sql.close();
-      res.send("failed");
+      res.send({status: "failed"});
     }else{
 
       // create Request object
@@ -9723,7 +9730,7 @@ app.get('/sectors', function (req, res) {
           
           if (err) {          console.log("fail to sectors " + err);
          // sql.close();
-          res.send("failed");
+          res.send({status: "failed"});
         }else{
            sql.close();
           // send records as a response
