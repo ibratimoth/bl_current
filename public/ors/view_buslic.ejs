@@ -2,6 +2,37 @@
 
 <!--  BEGIN CONTENT AREA  -->
 <div id="content" class="main-content">
+    <style type="text/css">
+        #mask {
+            position: fixed;
+            z-index: 999;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity:0.2;
+        }
+        #loading {
+            width: 200px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 999;
+            border: solid 1px #000;
+            background: #333;
+            color:#FFF;
+        }
+    </style>
+
+    <div id="mask">
+    
+    </div>
+    <div id="loading">
+    loading
+    </div>
 <div class="container-fluid">
         <div class="row">
 
@@ -86,7 +117,7 @@
                         </div>
                     </div>
                     <input type="hidden" class="form-control text-black" id="applicationId" name="applicationId">
-                    <input type="text" class="form-control text-black" id="serviceCode" name="serviceCode">
+                    <input type="hidden" class="form-control text-black" id="serviceCode" name="serviceCode">
                     <!-- <a href="http://41.59.225.60/api/download-bill-payment/" aria-expanded="false" class="dropdown-toggle"> -->
                         <button type="button" onclick="downloadInvoice()" class="btn btn-warning mt-3">Download Invoice</button>
                         <button type="button" onclick="downloadInvoiceNMB()" class="btn btn-primary mt-3">NMB Transfer Invoice</button>

@@ -11891,3 +11891,432 @@ jfhsbf==== 1
 [{"BusinessTypeName":"Social Security Agents","BusinessTypeId":"42"}]
 [{"Id":"27781","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"djsgf","Road":"hgdfhs","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"sjhsdj","PoBox":"dsfsd","CreateDate":"2023-06-17T05:07:28.010Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1488","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"43@jdj.com","CompanyPhone":"07464643743","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27782","AddressOwnerId":"10765","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"djsgf","Road":"hgdfhs","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"sjhsdj","PoBox":"dsfsd","CreateDate":"2023-06-17T05:07:28.163Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1488","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"43@jdj.com","CompanyPhone":"07464643743","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
 11643
+Hello ORS
+Sat Jun 17 2023 13:34:34 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+11657
+Hello ORS
+Sat Jun 17 2023 13:35:39 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+11657
+Hello ORS
+Hello ORS
+Sat Jun 17 2023 13:43:12 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+11657
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Sat Jun 17 2023 13:45:26 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11657
+servicecode 4201
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Sat Jun 17 2023 13:50:55 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11657
+servicecode 4201
+Hello ORS
+Hello ORS
+Hello ORS
+Sat Jun 17 2023 13:51:45 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11657
+servicecode 4201
+body
+Hello ORS
+Hello ORS
+Hello ORS
+Sat Jun 17 2023 13:52:50 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11657
+servicecode 4201
+body
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Sat Jun 17 2023 13:56:40 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11657
+servicecode 4201
+Hello ORS
+Hello ORS
+Hello ORS
+Sat Jun 17 2023 13:57:56 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11657
+servicecode 4201
+Hello ORS
+Sat Jun 17 2023 13:58:26 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11657
+servicecode 4201
+json ength 0
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Sat Jun 17 2023 14:00:09 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11657
+servicecode 4201
+json ength 0
+undefined
+fail to getPaymentDetails RequestError: Error converting data type nvarchar to bigint.
+get business owner types
+fail to AddressArea RequestError: Invalid object name 'tblAreaType'.
+Id =
+{"status":"failed"}
+fail to get business type RequestError: Invalid object name 'tblOwnerSubType'.
+fail to Save_EntityOwner_SP Error: aborted
+Sat Jun 17 2023 14:00:22 GMT+0300 (East Africa Time): List of Regions
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11657
+servicecode 4201
+json ength 0
+undefined
+fail to getPaymentDetails RequestError: Error converting data type nvarchar to bigint.
+get business owner types
+fail to get business type RequestError: Invalid object name 'tblOwnerSubType'.
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Sat Jun 17 2023 14:01:34 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11657
+servicecode 4201
+json ength 0
+body
+Hello ORS
+Hello ORS
+Hello ORS
+Sat Jun 17 2023 14:02:28 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11657
+servicecode 4201
+json ength 0
+body
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Sat Jun 17 2023 14:03:52 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11657
+servicecode 4201
+json ength 0
+body
+[
+  {
+    AmountTotal: '',
+    ServiceName: '',
+    ExpireDate: '',
+    CurrencyUsed: '',
+    ControlNo: '',
+    InvoiceID: ''
+  }
+]
+get business owner types
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sat Jun 17 2023 14:04:05 GMT+0300 (East Africa Time): List of Regions
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11657
+servicecode 4201
+json ength 0
+body
+[
+  {
+    AmountTotal: '',
+    ServiceName: '',
+    ExpireDate: '',
+    CurrencyUsed: '',
+    ControlNo: '',
+    InvoiceID: ''
+  }
+]
+get business owner types
+Sat Jun 17 2023 14:04:23 GMT+0300 (East Africa Time): List of Regions
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Hello ORS
+Hello ORS
+Sat Jun 17 2023 14:07:58 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11657
+servicecode 4201
+json ength 0
+body
+[
+  {
+    AmountTotal: '',
+    ServiceName: '',
+    ExpireDate: '',
+    CurrencyUsed: '',
+    ControlNo: '',
+    InvoiceID: ''
+  }
+]
+get business owner types
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sat Jun 17 2023 14:08:11 GMT+0300 (East Africa Time): List of Regions
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+Sat Jun 17 2023 14:08:22 GMT+0300 (East Africa Time) MyApplication fail to load RequestError: Invalid object name 'dbo.BusinessLicApplication'.
+Sat Jun 17 2023 14:08:25 GMT+0300 (East Africa Time) MyApplication fail to load RequestError: Invalid object name 'dbo.BusinessLicApplication'.
+reg_id 11657
+servicecode 4201
+json ength 0
+body
+[
+  {
+    AmountTotal: '',
+    ServiceName: '',
+    ExpireDate: '',
+    CurrencyUsed: '',
+    ControlNo: '',
+    InvoiceID: ''
+  }
+]
+Hello ORS
+Sat Jun 17 2023 14:08:34 GMT+0300 (East Africa Time): Successful login
+Hello ORS
+Sat Jun 17 2023 14:39:17 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11657
+servicecode 4201
+json ength 0
+body
+[
+  {
+    AmountTotal: '',
+    ServiceName: '',
+    ExpireDate: '',
+    CurrencyUsed: '',
+    ControlNo: '',
+    InvoiceID: ''
+  }
+]
+get business owner types
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sat Jun 17 2023 14:39:31 GMT+0300 (East Africa Time): List of Regions
+yes
+Id =[{"AttachmentTypeId":1,"AttachmentName":"Proof of Business Premise","Description":"Proof of Business Premise"}]
+req.params.id
+20168
+1
+======>>> BL230617-1772
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+fail to Save_EntityOwner_SP RequestError: Invalid object name 'dbo.BusinessLicApplication'.
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS

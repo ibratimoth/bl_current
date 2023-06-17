@@ -1390,7 +1390,8 @@ app.get('/ViewBL/:id',function(req,res){
   var req_id = req.params.id;
   req.session.req_id_view = req_id;
   if(typeof req.session.userID !== "undefined" || req.session.userID === true){
-  res.render(path.join(__dirname+'/public/ors/view_buslic'), {"username": req.session.username, "trackingNo": req.session.req_id_view});
+  res.render(path.join(__dirname+'/public/ors/view_buslic'), 
+  {"username": req.session.username, "trackingNo": req.session.req_id_view});
 }else{
   res.redirect('/');
 }
@@ -1431,9 +1432,12 @@ app.post('/ApplicationDetails', function(req, res){
     request1.input('trackingNo', trackingNo);
     request1.query('SELECT Comment FROM dbo.BusinessLicApplication as a, dbo.BLicenseApplicationTracker as b, dbo.BLApplicationComments as c where a.TrackingNo = @trackingNo and a.Id = b.ApplicationId and c.TrackerId =b.TrackerId', 
     function (err, recordset) {
-    if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
+    if (err) {          
+      console.log("fail to Save_EntityOwner_SP " + err);
           sql.close();
-          res.send({status: "failed"});}
+          res.send({status: "failed"});
+        }
+        else{
     console.log(recordset.recordset)
     var result_from = recordset.recordset;
     for(var i = 0; i < result_from.length; i++){
@@ -1443,6 +1447,7 @@ app.post('/ApplicationDetails', function(req, res){
     // console.log(objs13)
     sql.close()
       res.send(objs13)
+  }
     })
       })
 })
@@ -1701,9 +1706,12 @@ app.get('/firstStageView', async function(req, res) {
                                                                       if(error){
                                                                         res.send("failed")
                                                                       }else{
-                                                                       // console.log(body)
+                                                                       console.log('body')
+                                                                       
                                                                         if(body !== undefined){
                                                                           var jsonData = JSON.parse(body);
+                                                                          console.log(jsonData)
+                                                                          // var jsonData = body;
                                                                           // for(var i = 0; i < jsonData.length; i++){
                                                                           var AmountTotal = jsonData[0].AmountTotal;
                                                                           var ServiceName = jsonData[0].ServiceName;
@@ -9330,9 +9338,11 @@ app.get('/getSavedTin/:id', function (req, res) {
 });
 
 app.get('/getPaymentDetails/:id/:code', function (req, res) {
+  var obj = []
   var reg_id = req.params.id;
   var servicecode = req.params.code;
-  console.log(reg_id)
+  console.log('reg_id ' + reg_id)
+  console.log('servicecode ' + servicecode)
   // connect to your database
   sql.connect(configBill, function (err) {
   
@@ -9357,7 +9367,31 @@ app.get('/getPaymentDetails/:id/:code', function (req, res) {
         }else{
            sql.close();
           // send records as a response
-          res.send(recordset.recordset);
+          var jsonData = recordset.recordset
+          console.log('json ength ' + jsonData.length)
+          if(jsonData.length <= 0){
+            var AmountTotal = "";
+            var ServiceName = "";
+            var ExpireDate = "";
+            var CurrencyUsed = "";
+            var ControlNo = "";
+            var InvoiceID = "";
+            obj.push({'AmountTotal': AmountTotal, 'ServiceName': ServiceName, 
+            'ExpireDate': ExpireDate, 'CurrencyUsed': CurrencyUsed, 
+            'ControlNo': ControlNo, 'InvoiceID': InvoiceID})
+            res.send(obj);
+          }else{
+          var AmountTotal = jsonData[0].AmountTotal;
+          var ServiceName = jsonData[0].ServiceName;
+          var ExpireDate = jsonData[0].ExpireDate;
+          var CurrencyUsed = jsonData[0].CurrencyUsed;
+          var ControlNo = jsonData[0].ControlNo;
+          var InvoiceID = jsonData[0].InvoiceID;
+          obj.push({'AmountTotal': AmountTotal, 'ServiceName': ServiceName, 
+          'ExpireDate': ExpireDate, 'CurrencyUsed': CurrencyUsed, 
+          'ControlNo': ControlNo, 'InvoiceID': InvoiceID})
+          res.send(obj);
+          }
         }
       });
     }
@@ -9380,7 +9414,7 @@ app.get('/getInvoiceDataDetails/:id', function (req, res) {
       var request = new sql.Request();
       request.input('reg_id', reg_id);
       // query to the database and get the records
-      request.query('SELECT * FROM dbo.tblInvoiceItem WHERE InvoiceID = @reg_id', 
+      request.query('SELECT * FROM tblInvoiceItem WHERE InvoiceID = @reg_id', 
       function (err1, recordset) {
   
           if (err1) {          

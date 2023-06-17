@@ -554,7 +554,8 @@ function SubmitSupplimentFx()
             // setTimeout(
             function firstView()
             { 
-                
+                $('#paymentId')
+                    .empty()
                     // $(".unservayed").hide();
                     $.ajax({
                         url: "/firstStageView",
