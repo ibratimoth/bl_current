@@ -37,32 +37,43 @@
             });
     }, 2000);
 </script>
+<script type="text/javascript">
+    window.addEventListener("load", function(args){
+        window.setTimeout(function () {
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("mask").style.display = "none";
+        }, 5000);
+    });
+</script>
 <script>
         setTimeout(
 function getParticular()
 { 
+    $(window).load(function() {
+            $(".loader").fadeOut("slow");
+    });
     $.ajax({
-        url: "GetParticular",
+        url: "/GetParticular",
         type: 'GET',
         contentType: 'application/json',
         success: function(response) {
             if(typeof(response) === "string"){response = JSON.parse(response)}
-        if(response.length > 0) {
-            response.forEach(el => {
+        // if(response.length > 0) {
+        //     response.forEach(el => {
                 var txtBox = document.getElementById('fname');
-                txtBox.value = el.fname;
+                txtBox.value = response.fname;
                 var txtBox1 = document.getElementById('mname');
-                txtBox1.value = el.mname;
+                txtBox1.value = response.mname;
                 var txtBox2 = document.getElementById('lname');
-                txtBox2.value = el.lname;
+                txtBox2.value = response.lname;
                 var txtBox3 = document.getElementById('dob');
-                txtBox3.value = el.date_birth;
+                txtBox3.value = response.date_birth;
                 var txtBox4 = document.getElementById('citizen');
-                txtBox4.value = el.citizen;
+                txtBox4.value = response.citizen;
                 var txtBox5 = document.getElementById('gender');
-                txtBox5.value = el.gender;
-            })
-        }
+                txtBox5.value = response.gender;
+        //     })
+        // }
         }
     });
 }, 1000);
@@ -245,6 +256,9 @@ function saveApplicantDet()
             getOrigin();
             getOwnerType();
             getBusOwnTypeData();
+            getBusOwnTypeData();
+            regAddress();
+            regB();
            // alert("response")
             if(typeof(response) === "string"){response = JSON.parse(response)}
             if(response === 'success'){
@@ -515,6 +529,7 @@ function getWardB()
 <script>
     function saveBizDet()
     { 
+        
         var BizOwnerType= document.getElementById('busowntype').value;
         var NoUnit= document.getElementById('nounits').value;
         var BizTin= document.getElementById('tin_no').value;
@@ -580,12 +595,13 @@ function getWardB()
           timer: 2000,
             }
             )
-            $('#icon-pills-profile').tab('show');
-       $('.c').addClass('active');
-    $('.a').removeClass('active');
-    $('.b').removeClass('active');
             getAttachments();
-       getPermit();
+            getPermit();
+            // $('#icon-pills-profile').tab('show');
+            // $('.c').addClass('active');
+            // $('.a').removeClass('active');
+            // $('.b').removeClass('active');
+
 
        
             },
@@ -596,45 +612,78 @@ function getWardB()
     }
 </script>
 <script>
-    function getAttachments(){
-    setTimeout(
-    function getAttachments()
-    { 
+    function getAttachments() {
     $.ajax({
-        url: 'GetBLAttachment',
+        url: '/GetBLAttachment',
         dataType: 'json',
-        success: function(data) {
-            // alert(data)
+        success: function (data) {
             $("#attachmentId").find('tbody').empty();
-                for (var i=0; i<=data.length; i++) {
-                    var row = $('<tr><td class="text-black cheque-amt tacker" id="tacker">' + data[i].AttachmentName+ '</td>'+
-                        '<td class="text-black">' + data[i].Description + '</td>'+
-                            '<td class="text-left">'+
-                            
-                                '<button type="button" class="btn btn-primary warning passingID" data-toggle="modal" data-name=' + data[i].AttachmentTypeId+ ' data-desc=' + data[i].AttachmentName+ ' data-batch="1">Attach File</button> '+
-                            // ' <button type="button" id="attach_btn" data-name="XYZ" data-batch="123" class="btn btn-info mb-2 mr-2 attachID" data-toggle="modal" data-id=' + data[i].AttachmentName+ ' data-target="#rotateleftModal">View</button>'+
-                            // ' <button type="button" class="btn btn-primary passingID" data-toggle="modal" data-target="#rotateInDownLeft" data-name=' + data[i].AttachmentName+ ' data-desc=' + data[i].AttachmentTypeId+ ' data-batch="1">Attach File</button> ' +
-                            // '&lt;button class="mr-2 btn btn-primary  warning passingID"&gt;Attach File&lt;/button&gt;'+
-    
-    
-                            ' </td>'+
-                            '</tr>');
-                    $('#attachmentId').append(row);
-                    $('.widget-content .warning.passingID').on('click', function () {
-        var deleteBtn = $(this),
-        id = deleteBtn.data('name'),
-        name = deleteBtn.data('desc'),
-        title_tracker = deleteBtn.closest('tr').find('.tacker').text();
-        $("#categoryID").val( id );
-        $("#trak_no").val( id );
-        $("#atach_nem").val( title_tracker );
-        $('#rotateInDownLeft').modal('show');
-    })
-                }
+            for (var i = 0; i < data.length; i++) {
+                var row = $('<tr><td class="text-black cheque-amt tacker">' + data[i].AttachmentName + '</td>' +
+                    '<td class="text-black">' + data[i].Description + '</td>' +
+                    '<td class="text-left">' +
+                    '<button type="button" class="btn btn-primary warning passingID" data-toggle="modal" data-name="' +
+                    data[i].AttachmentTypeId + '" data-desc="' + data[i].AttachmentName + '" data-batch="1">Attach File</button> ' +
+                    '</td>' +
+                    '</tr>');
+                $('#attachmentId').append(row);
+                            // Attach click event handler to dynamically created elements
+            $(document).off('click', '.widget-content .warning.passingID'); // Remove any existing event handlers
+            $(document).on('click', '.widget-content .warning.passingID', function () {
+                var deleteBtn = $(this),
+                    id = deleteBtn.data('name'),
+                    name = deleteBtn.data('desc'),
+                    title_tracker = deleteBtn.closest('tr').find('.tacker').text();
+                $("#categoryID").val(id);
+                $("#trak_no").val(id);
+                $("#atach_nem").val(title_tracker);
+                $('#rotateInDownLeft').modal('show');
+            });
+            }
+            
+
         }
     });
-    }, 1000);
-    }
+}
+
+    // function getAttachments(){
+    // setTimeout(
+    // function getAttachments()
+    // { 
+    // $.ajax({
+    //     url: '/GetBLAttachment',
+    //     dataType: 'json',
+    //     success: function(data) {
+    //         // alert(data)
+    //         $("#attachmentId").find('tbody').empty();
+    //             for (var i=0; i<=data.length; i++) {
+    //                 var row = $('<tr><td class="text-black cheque-amt tacker" id="tacker">' + data[i].AttachmentName+ '</td>'+
+    //                     '<td class="text-black">' + data[i].Description + '</td>'+
+    //                         '<td class="text-left">'+
+                            
+    //                             '<button type="button" class="btn btn-primary warning passingID" data-toggle="modal" data-name=' + 
+    //                             data[i].AttachmentTypeId+ ' data-desc=' + data[i].AttachmentName+ ' data-batch="1">Attach File</button> '+
+    
+    
+    //                         ' </td>'+
+    //                         '</tr>');
+    //                 $('#attachmentId').append(row);
+    //                 $('.widget-content .warning.passingID').on('click', function () {
+    //                     var deleteBtn = $(this),
+    //                     id = deleteBtn.data('name'),
+    //                     name = deleteBtn.data('desc'),
+    //                     title_tracker = deleteBtn.closest('tr').find('.tacker').text();
+    //                     $("#categoryID").val( id );
+    //                     $("#trak_no").val( id );
+    //                     $("#atach_nem").val( title_tracker );
+    //                     $('#rotateInDownLeft').modal('show');
+    //                 })
+    //             }
+    //     }
+    // });
+    // }
+    // , 1000);
+    // }
 </script>
 <script>
 async function uploadFile() {
@@ -699,8 +748,8 @@ function myFunction(){
 }
 </script>
 <script>
-    function getPermit(){
-    setTimeout(
+    // function getPermit(){
+    // setTimeout(
     function getPermits()
     { 
         var bizNumber = document.getElementById('bizNumber').value;
@@ -727,20 +776,21 @@ function myFunction(){
                             '</tr>');
                     $('#permittId').append(row);
                     $('.widget-content .warning1.passingID1').on('click', function () {
-        var deleteBtn = $(this),
-        id = deleteBtn.data('name1'),
-        name = deleteBtn.data('desc1'),
-        title_tracker = deleteBtn.closest('tr').find('.tacker1').text();
-        $("#categoryID1").val( id );
-        $("#trak_no1").val( id );
-        $("#atach_nem1").val( title_tracker );
-        $('#zoomupModal').modal('show');
-    })
+                        var deleteBtn = $(this),
+                        id = deleteBtn.data('name1'),
+                        name = deleteBtn.data('desc1'),
+                        title_tracker = deleteBtn.closest('tr').find('.tacker1').text();
+                        $("#categoryID1").val( id );
+                        $("#trak_no1").val( id );
+                        $("#atach_nem1").val( title_tracker );
+                        $('#zoomupModal').modal('show');
+                    })
                 }
         }
     });
-    }, 2000);
     }
+    // , 2000);
+    // }
 </script>
 <script>
 // function reg()
@@ -817,8 +867,8 @@ function getAddrArea()
     });
 </script>
 <script>
-    setTimeout(
-    function reg()
+    // setTimeout(
+    function regAddress()
     { 
         // alert('hello')
         $.ajax({
@@ -829,12 +879,13 @@ function getAddrArea()
                 if(typeof(response) === "string"){response = JSON.parse(response)}
             if(response.length > 0) {
                 response.forEach(el => {
-                    $("#addressAreaB").append(`<option value='${el.regionId}'> ${el.regionName}</option>`)
+                    $("#addressAreaB").append(`<option value='${el.AreaTypeId}'> ${el.AreaTypeName}</option>`)
                 })
             }
             }
         });
-    }, 3000);
+    }
+    // , 1000);
 </script>
 <script>
     function getAddrAreaB()
@@ -857,7 +908,7 @@ function getAddrArea()
     }
 </script>
 <script>
-    setTimeout(
+    // setTimeout(
     function regB()
     { 
         $.ajax({
@@ -874,7 +925,8 @@ function getAddrArea()
             }
             }
         });
-    }, 4000);
+    }
+    // , 4000);
 </script>
 <script>
 function fileUploadX(){

@@ -554,7 +554,7 @@ app.get('/GetAddressArea',function(req,res){
     method: 'GET',
   }, function(error, response, body){
     if(error){
-      res.send("failed")
+      res.send({status: "failed"})
     } 
     console.log("Id =");
     console.log(body);
@@ -562,9 +562,9 @@ app.get('/GetAddressArea',function(req,res){
       var jsonData = JSON.parse(body);
       for(var i = 0; i < jsonData.length; i++){
       // console.log("Id =" + body);
-      var regionId = jsonData[i].AreaTypeId;
-      var regionName = jsonData[i].AreaTypeName;
-        objs12.push({"regionId": regionId, "regionName": regionName})
+      var AreaTypeId = jsonData[i].AreaTypeId;
+      var AreaTypeName = jsonData[i].AreaTypeName;
+        objs12.push({"AreaTypeId": AreaTypeId, "AreaTypeName": AreaTypeName})
       }
       // console.log(objs12)
       res.send(objs12)
@@ -2041,6 +2041,7 @@ app.get('/GetParticular',function(req,res){
 });
 
 app.get('/GetBusOwnerType',function(req,res){
+  console.log("get business owner types")
   var bizOwnerId = req.params.id;
   var objs12 = [];
   if(typeof req.session.userID !== "undefined" || req.session.userID === true){
@@ -2048,20 +2049,25 @@ app.get('/GetBusOwnerType',function(req,res){
     url: GetBusOnwerType,
     method: 'GET',
   }, function(error, response, body){
-    if(error) res.send("failed")
-    console.log("Id =" + response.body);
-    // var jsonData = JSON.parse(response.body);
-    var jsonData = response.body
+    if(error) {
+      res.send({status: "failed"})
+    }else{
+    
+    var jsonData = JSON.parse(response.body);
+    // var jsonData = response.body
+    
     for(var i = 0; i < jsonData.length; i++){
+      
   //  console.log("Id =" + response.body);
     var OwnerSubTypeId = jsonData[i].OwnerSubTypeId;
     var OwnerTypeId = jsonData[i].OwnerTypeId;
     var OwnerSubTypeName = jsonData[i].OwnerSubTypeName;
     var OwnerSubTypeCode = jsonData[i].OwnerSubTypeCode;
-      objs12.push({"OwnerSubTypeId": OwnerSubTypeId, "OwnerTypeId": OwnerTypeId, "OwnerSubTypeName": OwnerSubTypeName, "OwnerSubTypeCode": OwnerSubTypeCode})
+      objs12.push({"status": "success", "OwnerSubTypeId": OwnerSubTypeId, 
+      "OwnerTypeId": OwnerTypeId, "OwnerSubTypeName": OwnerSubTypeName, "OwnerSubTypeCode": OwnerSubTypeCode})
     }
-   // console.log(objs12)
     res.send(objs12)
+  }
   });
 }else{
   res.redirect('/');
@@ -8522,13 +8528,12 @@ app.get('/AddressArea', function (req, res) {
       // query to the database and get the records
       request.query('SELECT * FROM tblAreaType', 
       function (err, recordset) {
-
-          
-          if (err) {          console.log("fail to AddressArea " + err);
-         // sql.close();
+          if (err) {          
+            console.log("fail to AddressArea " + err);
+         sql.close();
           res.send({status: "failed"});
         }else{
-     sql.close();
+          sql.close();
           // send records as a response
           res.send(recordset.recordset);
         }
@@ -8759,7 +8764,8 @@ app.get('/BLAttachmnt', function (req, res) {
       var request = new sql.Request();
 
       // query to the database and get the records
-      request.query('SELECT AttachmentTypeId, AttachmentName, Description FROM dbo.BLAttachmentTypes WHERE AttachmentTypeId = 1', 
+      request.query('SELECT AttachmentTypeId, AttachmentName, Description ' + 
+                    ' FROM BLAttachmentTypes WHERE AttachmentTypeId = 1', 
       function (err, recordset) {
 
           if (err) {          
@@ -9208,14 +9214,14 @@ var owner_type_id = req.params.id
       var request = new sql.Request();
          
       // query to the database and get the records
-      request.query('SELECT * from dbo.tblOwnerSubType where status = 1 AND OwnerSubTypeId NOT IN (5)', 
+      request.query('SELECT * from tblOwnerSubType where status = 1 AND OwnerSubTypeId NOT IN (5)', 
       function (err1, recordset1) {
           
           if (err1){
             // {        
             console.log("fail to get business type " + err1);
             //sql.close();
-            res.send("fail to generate tracking");
+            res.send({status: 'fail', message: "fail to get business type"});
           }else{
            sql.close();
           // send records as a response

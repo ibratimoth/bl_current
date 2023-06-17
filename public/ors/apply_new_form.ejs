@@ -26,6 +26,8 @@
     <!-- toastr -->
     <link href="ors/plugins/notification/snackbar/snackbar.min.css" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL PLUGINS -->
+
+  
     <style>
         #formValidate .wizard > .content {min-height: 25em;}
         #example-vertical.wizard > .content {min-height: 24.5em;}
@@ -33,7 +35,37 @@
     <!--  END CUSTOM STYLE FILE  -->
 </head>
 <body class="sidebar-noneoverflow" data-spy="scroll" data-target="#navSection" data-offset="100">
+    <style type="text/css">
+        #mask {
+            position: fixed;
+            z-index: 999;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity:0.2;
+        }
+        #loading {
+            width: 200px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 999;
+            border: solid 1px #000;
+            background: #333;
+            color:#FFF;
+        }
+    </style>
+
+    <div id="mask">
     
+    </div>
+    <div id="loading">
+    loading
+    </div>
     <!--  BEGIN NAVBAR  -->
     <div class="header-container fixed-top">
         <header class="header navbar navbar-expand-sm">
@@ -348,6 +380,7 @@
 
         <!--  BEGIN CONTENT AREA  -->
         <div id="content" class="main-content">
+            
             <div class="container-fluid">
                 <div class="container-fluid">
 
@@ -370,10 +403,12 @@
                                     <input type="hidden" class="form-control text-black" id="bizNumber" name="bizNumber">
                                     <input type="hidden" class="form-control text-black" id="bizNumber" name="bizNumber">
                                     <div id="circle-basic" class="">
+
                                         <h3>Application Details</h3>
                                         <section>
 
                                              <div class="widget-content widget-content-area">
+                                                
                                                 <h5 style="font-weight: bold;color: blue;"> Business Licence Application Form</h5>
                                                 <form>
                                                     <div class="form-group row  mb-4">
@@ -653,7 +688,7 @@
             
                                                         <div class="form-group col-md-4">
                                                             <label for="inputEmail4" class="text-black">Region</label>
-                                                            <select class="form-control  basic text-black" onchange="getDistrictB()" id="regionlistB">
+                                                            <select class="form-control basic text-black" onchange="getDistrictB()" id="regionlistB">
             
                                                                 </select>
                                                         </div>
@@ -892,7 +927,7 @@
                                 </div> -->
                                 <div class="form-group col-md-12">
                                     <label for="inputEmail4" class="text-black">Attachment Name</label>
-                                    <input type="phone" class="form-control atach_nem" id="atach_nem" >
+                                    <input type="text" class="form-control atach_nem" id="atach_nem" >
                                     
                                 </div>
                                 <input id="fileupload" type="file" onchange="validateSize(this)" name="fileupload" class="form-control-file fileupload" />
@@ -988,6 +1023,7 @@
     </script>
     <script src="ors/plugins/sweetalerts/sweetalert2.min.js"></script>
     <script src="ors/plugins/sweetalerts/custom-sweetalert.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script> -->
 
 </body>
 </html>
