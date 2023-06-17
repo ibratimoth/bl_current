@@ -562,7 +562,6 @@ function SubmitSupplimentFx()
                         type: 'GET',
                         contentType: 'application/json', // added data type
                         success: function(response) {
-                            console.log(response)
                         if(typeof(response) === "string"){response = JSON.parse(response)}
                         var ServiceCode = response.ServiceCode;
                         var txtBox9 = document.getElementById('serviceCode');
@@ -661,6 +660,8 @@ function SubmitSupplimentFx()
                         // txtBox23.value = WardName;
                         var paymentDetails = response.payment;
                         var invoiceDetails = response.invoiceData;
+                        document.getElementById("loading").style.display = "none";
+                        document.getElementById("mask").style.display = "none";
                         if(paymentDetails.length <= 0){
                             var row = $('<tr><td class="text-black cheque-amt tacker" id="tacker">-</td>'+
                             '<td class="text-black">-</td>'+
@@ -723,7 +724,9 @@ function SubmitSupplimentFx()
        
 
                         }
+                        
                     });
+
             }
             window.onload = firstView;
 </script>

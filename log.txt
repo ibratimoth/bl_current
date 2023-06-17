@@ -12320,3 +12320,86 @@ Hello ORS
 Hello ORS
 Hello ORS
 Hello ORS
+Hello ORS
+Sat Jun 17 2023 14:44:53 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11657
+servicecode 4201
+json ength 0
+body
+[
+  {
+    AmountTotal: '',
+    ServiceName: '',
+    ExpireDate: '',
+    CurrencyUsed: '',
+    ControlNo: '',
+    InvoiceID: ''
+  }
+]
+get business owner types
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sat Jun 17 2023 14:45:10 GMT+0300 (East Africa Time): List of Regions
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11657
+servicecode 4201
+json ength 0
+body
+[
+  {
+    AmountTotal: '',
+    ServiceName: '',
+    ExpireDate: '',
+    CurrencyUsed: '',
+    ControlNo: '',
+    InvoiceID: ''
+  }
+]
+get business owner types
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sat Jun 17 2023 14:47:23 GMT+0300 (East Africa Time): List of Regions
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11657","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Tourism Promotion","BusinessTypeId":"18"}]
+[{"Id":"27803","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.880Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27804","AddressOwnerId":"10768","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11102","PostCode":"11102","Street":"upanga","Road":"ipanga road","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near Church","PoBox":"15","CreateDate":"2023-06-17T13:04:22.890Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1772","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0677777777","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11657
+servicecode 4201
+json ength 0
+body
+[
+  {
+    AmountTotal: '',
+    ServiceName: '',
+    ExpireDate: '',
+    CurrencyUsed: '',
+    ControlNo: '',
+    InvoiceID: ''
+  }
+]
+get business owner types
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sat Jun 17 2023 14:48:21 GMT+0300 (East Africa Time): List of Regions
