@@ -589,6 +589,7 @@ function SubmitSupplimentFx()
                         var CompanyPhone = response.CompanyPhone;
                         var CompanyEmail = response.CompanyEmail;
                         var UnsurveyedArea = response.UnsurveyedArea;
+                        var ApplicationStageId = response.ApplicationStageId;
                         var PlotNo = response.PlotNo;
                         var BlockNo = response.BlockNo;
                         var HouseNo = response.HouseNo;
@@ -656,6 +657,9 @@ function SubmitSupplimentFx()
                         txtBox24.value = RegNo;
                         var txtBox24 = document.getElementById('bn_no');
                         txtBox24.value = RegNo;
+                        if(ApplicationStageId != 1){
+                            $("#paymentDiv").show()
+                        }
                         // var txtBox23 = document.getElementById('wardIdB');
                         // txtBox23.value = WardName;
                         var paymentDetails = response.payment;

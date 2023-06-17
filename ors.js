@@ -120,6 +120,7 @@ var GetBLAttachmntLink = APIURL+'BLAttachmnt';
 var GetBLAttachmntLinkBra = APIURL+'BLAttachmntBra';
 var GetBLLPermitLink = APIURL+'BLPermit';
 var GetSubmitSuppliment = APIURL+'SubmitSuppliment';
+var MyApplicationStage = APIURL+'MyApplicationStage'
 
 var GetBiz = APIURL+'getbiz';
 var GetBizCheck = APIURL+'getbiz_check';
@@ -1744,6 +1745,18 @@ app.get('/firstStageView', async function(req, res) {
                                                                               objs14.push({"InvoiceNo": InvoiceNo, "ItemName": ItemName, "Amount": Amount,
                                                                                "CurrencyUsedItem": CurrencyUsedItem, "CreatedDate": CreatedDate})
                                                                               }
+                                                                              request({
+                                                                                url: MyApplicationStage+"/"+req.session.req_id_view,
+                                                                                method: 'GET',
+                                                                              }, function(error, response, body){
+                                                                                if(error){
+                                                                                  res.send("failed")
+                                                                                }else{
+                                                                                  console.log('tracker body')
+                                                                                 
+                                                                                  if(body !== undefined){
+                                                                                    var jsonData = JSON.parse(body);
+                                                                                    ApplicationStageId = jsonData[0].ApplicationStageId;
                                                                           res.send({"payment": objs13, "WardName": WardName, "AplicationID": AplicationID, "ServiceCode": ServiceCode,
                                                                           "DistrictName": DistrictName, "RegionName": RegionName, "HouseNo": HouseNo, 
                                                                           "BlockNo": BlockNo, "PlotNo": PlotNo, "UnsurveyedArea": UnsurveyedArea, 
@@ -1753,7 +1766,11 @@ app.get('/firstStageView', async function(req, res) {
                                                                           "AplicationTIN": AplicationTIN, "BusinessTypeName": BusinessTypeName, 
                                                                           "AreaTypeName": AreaTypeName, "Road": Road, "PostCode": PostCode, "WardId": WardId,
                                                                           "Street": Street, "BusinessClassId": BusinessClassId, "RegionCode": RegionCode, "DistrictCode": DistrictCode,
-                                                                          "BusinessLicOwnerTypeId": BusinessLicOwnerTypeId, "BusinessTypeId": BusinessTypeId, "AreaTypeId": AreaTypeId, "invoiceData": objs14})
+                                                                          "BusinessLicOwnerTypeId": BusinessLicOwnerTypeId, "ApplicationStageId": ApplicationStageId,
+                                                                          "BusinessTypeId": BusinessTypeId, "AreaTypeId": AreaTypeId, "invoiceData": objs14})
+                                                                                  }
+                                                                                }
+                                                                                })
                                                                             }
                                                                         });
                                                                         }
@@ -4389,6 +4406,46 @@ sql.connect(configBL, function (err) {
 });
 })
 
+app.get('/MyApplicationStage/:id', async function(req, res) {
+  var objs12 = [];
+  var trackingNo = req.params.id;
+  console.log('trackingNo')
+  console.log(trackingNo)
+  sql.connect(configBL, function (err) {
+    if (err) {
+      console.log("fail to connect to server " + err);
+     // sql.close();
+      res.send({status: "failed"});
+    }else{
+      var request = new sql.Request();
+      request.input('trackngNo', trackingNo);
+      request.query('SELECT d.IsBranch as IsBranch, d.BLNumber as BLNumber, a.Id as Id, ' + 
+      ' a.BusinessClassId as BusinessClassId, a.TrackingNo as TrackingNo, ' + 
+      ' a.ServiceCode as ServiceCode, a.SubmittedDate as SubmittedDate, ' + 
+      ' a.CreatedDate as CreatedDate, b.ApplicationStatusId as ApplicationStatusId, ' + 
+      ' b.ApplicationStageId as ApplicationStageId, c.BusinessTypeName as BusinessTypeName, ' + 
+      ' b.PaymentStatus as PaymentStatus, d.isSentToRegistry as IsSentRegistry ' + 
+      ' FROM dbo.BusinessLicApplication as a, dbo.BLicenseApplicationTracker as b, ' + 
+      ' dbo.BusinessTypes as c, dbo.BusinessLicenceDetails as d ' + 
+      ' WHERE d.BusinessLicenceApplicationId = a.Id AND a.TrackingNo = @trackngNo AND a.Id = b.ApplicationId ' + 
+      ' AND c.BusinessTypeId = a.BusinessTypeId AND b.ApplicationStatusId NOT IN(5) ' + 
+      ' AND d.isSentToRegistry NOT IN(1) AND b.ApplicationStageId NOT IN(6)', 
+      function (err, recordset) {
+          if (err) {
+            console.log(new Date() + " MyApplication fail to load " + err)
+            res.send({status: "failed"})
+          }else{
+            var result_from = recordset.recordset;
+            sql.close();
+            console.log('result_from')
+            console.log(result_from)
+            res.send(result_from)
+          }
+      });
+    }
+  });
+  })
+
 app.post('/MyLic', async function(req, res) {
   var objs12 = [];
   var userId = req.body.userId;
@@ -5093,7 +5150,8 @@ app.post('/submitApplication', function (req, res) {
       if (err) {          
         console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
-          res.send({status: "failed"});}
+          res.send({status: "failed"});
+        }else{
       var result_form = recordset.recordset;
       var kaunti = result_form[0].kaunti;
       console.log("2222===22.... " + kaunti)
@@ -5119,7 +5177,7 @@ app.post('/submitApplication', function (req, res) {
     
       });
       }
-
+    }
   });
   });
 });
@@ -9319,7 +9377,7 @@ app.get('/getSavedTin/:id', function (req, res) {
           var request = new sql.Request();
           request.input('TrackingNo', TrackingNo);
           // query to the database and get the records
-          request.query('SELECT ApplicationTIN, Id, ServiceCode, BusinessClassId, RegNo from dbo.BusinessLicApplication where TrackingNo = @TrackingNo', 
+          request.query('SELECT ApplicationTIN, Id, ServiceCode, BusinessClassId, RegNo, ApplicationStep from dbo.BusinessLicApplication where TrackingNo = @TrackingNo', 
           function (err, recordset1) {
               
               if (err) {          

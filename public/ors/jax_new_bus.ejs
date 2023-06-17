@@ -346,7 +346,7 @@ function getSector(){
         success: function(response) {
             if(typeof(response) === "string"){response = JSON.parse(response)}
         if(response.length > 0) {
-            $("#sectorlist").append(`<option value='--Select--'>--Select--</option>`)
+            $("#sectorlist").append(`<option value='0'>--Select--</option>`)
             response.forEach(el => {
                 $("#sectorlist").append(`<option value='${el.sectorId}'> ${el.sectorName}</option>`)
             })
@@ -370,7 +370,7 @@ function getCategory()
         success: function(response) {
             if(typeof(response) === "string"){response = JSON.parse(response)}
         if(response.length > 0) {
-            $("#categorylist").append(`<option value='--Select--'>--Select--</option>`)
+            $("#categorylist").append(`<option value='0'>--Select--</option>`)
             response.forEach(el => {
                 $("#categorylist").append(`<option value='${el.categoryId}'> ${el.businessCategoryName}</option>`)
             })
@@ -529,7 +529,8 @@ function getWardB()
 <script>
     function saveBizDet()
     { 
-        
+        $(".saveBizOne").show();
+        $(".saveBiz").hide();
         var BizOwnerType= document.getElementById('busowntype').value;
         var NoUnit= document.getElementById('nounits').value;
         var BizTin= document.getElementById('tin_no').value;
@@ -570,7 +571,49 @@ function getWardB()
 
         var bn_no= document.getElementById('bn_no').value;
         var bn_name= document.getElementById('bn_name').value;
-
+        var tin_no_ver = document.getElementById("tin_no_ver").value;
+if(BizOwnerType == 0){
+    swal({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Please select Business Owner Type!',
+        padding: '2em',
+        timer: 3000,
+    })
+}if(tin_no_ver == 0){
+    swal({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Please verify TIN!',
+        padding: '2em',
+        timer: 3000,
+    })
+}if(sectorlist == 0){
+    swal({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Please select Business Sector!',
+        padding: '2em',
+        timer: 3000,
+    }) 
+}if(categorylist == 0){
+    swal({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Please select Business Category!',
+        padding: '2em',
+        timer: 3000,
+    })  
+}if(regionlistB == 0){
+    swal({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Please select Region!',
+        padding: '2em',
+        timer: 3000,
+    }) 
+}
+if(BizOwnerType != 0 && tin_no_ver == 1 && sectorlist != 0 && categorylist != 0){
         $.ajax({
             url: "/saveStageSecond",
             type: 'POST',
@@ -597,10 +640,8 @@ function getWardB()
             )
             getAttachments();
             getPermit();
-            // $('#icon-pills-profile').tab('show');
-            // $('.c').addClass('active');
-            // $('.a').removeClass('active');
-            // $('.b').removeClass('active');
+            $(".saveBiz").show();
+            $(".saveBizOne").hide();
 
 
        
@@ -609,6 +650,7 @@ function getWardB()
             alert('Error: ' + textStatus + ' - ' + errorThrown);
         }
         });
+}
     }
 </script>
 <script>
@@ -918,7 +960,7 @@ function getAddrArea()
             success: function(response) {
                 if(typeof(response) === "string"){response = JSON.parse(response)}
             if(response.length > 0) {
-                $("#regionlistB").append(`<option value='--Select--'>--Select--</option>`)
+                $("#regionlistB").append(`<option value='0'>--Select--</option>`)
                 response.forEach(el => {
                     $("#regionlistB").append(`<option value='${el.regionId}'> ${el.regionName}</option>`)
                 })
@@ -1082,6 +1124,7 @@ reader.onerror = function (error) {
 <script>
 function TinVerifier(){
     var tin_no = document.getElementById("tin_no").value;
+    var tin_no_ver = document.getElementById("tin_no_ver");
     var busowntype = document.getElementById("busowntype").value;
     var txtBox = document.getElementById('taxpayer');
     $(".TinLoader").show();
@@ -1100,6 +1143,7 @@ function TinVerifier(){
                     padding: '2em',
                     timer: 3000
                 })
+                tin_no_ver.value = 0;
                 txtBox.value = "";
                 document.querySelector('#savebtn').disabled = true;
                 $(".TinLoader").hide();
@@ -1112,6 +1156,7 @@ function TinVerifier(){
                     padding: '2em',
                     timer: 3000
                 })
+                tin_no_ver.value = 0;
                 txtBox.value = "";
                 document.querySelector('#savebtn').disabled = true;
                 $(".TinLoader").hide();
@@ -1124,12 +1169,14 @@ function TinVerifier(){
                     padding: '2em',
                     timer: 3000
                 })
+                tin_no_ver.value = 0;
                 txtBox.value = "";
                 document.querySelector('#savebtn').disabled = true;
                 $(".TinLoader").hide();
                $(".TinFirst").show();
             }
             else{
+                tin_no_ver.value = 1;
                 txtBox.value = response;
                 document.querySelector('#savebtn').disabled = false;
                $(".TinLoader").hide();
