@@ -198,18 +198,46 @@ $.ajax({
                     row = row + '<td style="color: blue;"> ' + data[i].ServiceCode + ' </td>';
                     row = row + '<td style="color: blue;">' + data[i].businessTypeName + '</td>';
                     row = row + '<td style="color: blue;"> ' + data[i].ApplicationStep + ' </td>';
-                    row = row + '<td style="color: blue;"> ' + data[i].ApplicationStatusId + 
-                        '</td>';
-                            row = row + '<td>'+
-                        '<div class="btn-group">'+
-                            '<button type="button" class="btn btn-success btn-sm">Paid</button>'+
+                    row = row + '<td class="text-black"> ' + data[i].ApplicationStatusId + ' </td>';
+                        if(data[i].ApplicationStatusId == 'Suplement for attachment only'){
+                        row = row + '<td>'+
+                            '<div class="btn-group">'+
+                                '<button type="button" class="btn btn-success btn-sm">Paid</button>'+
+                            // '<button type="button" class="btn btn-primary btn-sm">Action</button>'+
+                            '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">'+
+                                '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>'+
+                            '</button>'+
+                            '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
+                                '<a class="dropdown-item warning passingID text-black" href="/ViewBL/'+data[i].trackingNo+'">View Application</a>'+
+                                '<a class="dropdown-item warning passingID text-black" href="/ViewSupliment/'+data[i].trackingNo+'">Edit Application</a>'+
+                        '</div>'+
+                        ' </td></tr>';
+                            }if(data[i].ApplicationStatusId == 'Supplement for data and attachment'){
+                        row = row + '<td>'+
+                            '<div class="btn-group">'+
+                                '<button type="button" class="btn btn-success btn-sm">Paid</button>'+
+                            // '<button type="button" class="btn btn-primary btn-sm">Action</button>'+
+                            '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">'+
+                                '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>'+
+                            '</button>'+
+                            '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
+                                '<a class="dropdown-item warning passingID text-black" href="/ViewBL/'+data[i].trackingNo+'">View Application</a>'+
+                                '<a class="dropdown-item warning passingID text-black" href="/ViewSuppliment/'+data[i].trackingNo+'">Edit Application</a>'+
+                        '</div>'+
+                        ' </td></tr>';
+                            }else{
+                                row = row + '<td>'+
+                            '<div class="btn-group">'+
+                                '<button type="button" class="btn btn-success btn-sm">Paid</button>'+
+                            // '<button type="button" class="btn btn-primary btn-sm">Action</button>'+
                             '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">'+
                                 '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>'+
                             '</button>'+
                             '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
                                 '<a class="dropdown-item warning passingID text-black" href="/ViewBL/'+data[i].trackingNo+'">View Application</a>'+
                         '</div>'+
-                        ' </td></tr>';
+                        ' </td></tr>';                               
+                            }
          
 
                     }

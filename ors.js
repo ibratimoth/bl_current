@@ -1425,9 +1425,11 @@ app.post('/ApplicationDetails', function(req, res){
    var objs13 = [];
    sql.connect(configBL, function (err) {
    
-    if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
+    if (err) {          
+      console.log("fail to Save_EntityOwner_SP " + err);
           sql.close();
-          res.send({status: "failed"});};
+          res.send({status: "failed"});
+        }else{
   console.log("======>>> " + trackingNo)
     var request1 = new sql.Request();
     request1.input('trackingNo', trackingNo);
@@ -1443,13 +1445,14 @@ app.post('/ApplicationDetails', function(req, res){
     var result_from = recordset.recordset;
     for(var i = 0; i < result_from.length; i++){
       var Comment = result_from[i].Comment;
-      objs13.push({"Comment": Comment})
+      objs13.push({status: "success", "Comment": Comment})
     }
     // console.log(objs13)
     sql.close()
       res.send(objs13)
   }
     })
+  }
       })
 })
 
@@ -1495,7 +1498,8 @@ app.post('/SubmitSuppliment', function(req, res){
     var BL_Id = result_from[0].Id;
    var request = new sql.Request();
    request.input('trackngNo', trackingNo);
-   request.query(`UPDATE dbo.BusinessLicApplication SET ApplicationStep = 3, ApplicationStatusId = 1 WHERE TrackingNo = @trackngNo`, 
+   request.query(`UPDATE dbo.BusinessLicApplication SET ApplicationStep = 3, 
+   ApplicationStatusId = 1 WHERE TrackingNo = @trackngNo`, 
    function (err, recordset) {
        if (err) {          
         console.log("fail to BusinessLicApplication " + err);
@@ -1503,12 +1507,18 @@ app.post('/SubmitSuppliment', function(req, res){
           res.send({status: "failed"});}
        var request2 = new sql.Request();
        request2.input('BL_Id', BL_Id);
-       request2.query(`UPDATE dbo.BLicenseApplicationTracker SET ApplicationStatusId = 4, ApplicationStageId = 3 WHERE ApplicationId = @BL_Id`, 
+       request2.query(`UPDATE dbo.BLicenseApplicationTracker SET 
+       ApplicationStatusId = 4, ApplicationStageId = 3 WHERE ApplicationId = @BL_Id`, 
        function (err, recordset) {
-           if (err) {          console.log("fail to BLicenseApplicationTracker " + err);
+           if (err) {          
+            console.log("fail to BLicenseApplicationTracker " + err);
           sql.close();
-          res.send({status: "failed"});}
-     res.send("sucess")
+          res.send({status: "failed"});
+        }else{
+          sql.close();
+          res.send({status: "sucess"});
+        }
+    //  res.send("sucess")
        })
    })
      })
@@ -2922,75 +2932,53 @@ app.post('/saveStageSecond',function(req,res){
 app.post('/updateStageSecond',function(req,res){
   console.log("[[[[[[[[miki]]]]] ")
   console.log(req.body)
-  // var trackngNo = req.body.trackNo;
-  // var BizOwnerType = req.body.BizOwnerType;
-  // var NoUnit = req.body.NoUnit;
-  // var company_name = req.body.company_name;
-  // var BizTin = req.body.BizTin;
-  // var TaxPayer = req.body.TaxPayer;
-  // var TypeList = req.body.TypeList;
-  // var PhoneBuz = req.body.inputEmail4phn;
-  // var businessLicenceClassId = req.body.businessLicenceClassId;
-  // var inputEmail4comp = req.body.inputEmail4comp;
-  // // var issuingAuthorityId = req.body.issuingAuthorityId;
-  // var fname = req.body.fname;
-  // var mname = req.body.mname;
-  // var lname = req.body.lname;
-  // var gender = req.body.gender;
-  // var busorigintype = req.body.busorigintype;
-  // var dob = req.body.dob;
-  // var nida_no = req.body.nida_no;
-  // var bustype = req.body.bustype;
-  // var addressAreaB = req.body.addressAreaB;
-  // var wardIdB = req.body.wardIdB;
-  // // var street = req.body.street;
-  // var postcode = req.body.postcode;
-  // var road = req.body.road;
-  // var plot_no = req.body.plot_no;
-  // var block_no = req.body.block_no;
-  // var house_no = req.body.house_no;
+  var trackngNo = req.body.trackNo;
+  var addressAreaB = req.body.addressAreaB;
+  var wardIdB = req.body.wardIdB;
+  var street = req.body.street;
+  var postcode = req.body.postcode;
+  var road = req.body.road;
+  var plot_no = req.body.plot_no;
+  var pobox = req.body.pobox;
+  var block_no = req.body.block_no;
+  var house_no = req.body.house_no;
 
-  // var reg_no_other = req.body.reg_no_other;
-  // var corporate_name = req.body.corporate_name;
-  // var leadername_nat = req.body.leadername_nat;
-  // var leadername_nat_2 = req.body.leadername_nat_2;
+  var unservayedarea = req.body.unservayedarea;
+  var regionlistB = req.body.regionlistB;
+  var districtlistB = req.body.districtlistB;
+  var phone_no = req.body.phone_no;
+  var email = req.body.email;
+  var userId = req.session.userID;
+  if(typeof req.session.userID !== "undefined" || req.session.userID === true){
+    // request({
+    //   url: GetupdateStageTwo,
+    //   method: 'POST',
+    //   json: {bn_no: bn_no, bn_name: bn_name, company_name: company_name, inco_no: inco_no, districtlistB: districtlistB, regionlistB: regionlistB, inputEmail4pobox: inputEmail4pobox, unservayedarea: unservayedarea, house_no: house_no, block_no: block_no, plot_no: plot_no, road: road, street: street, postcode: postcode, wardIdB: wardIdB, addressAreaB: addressAreaB, bustype: bustype, nida_no: nida_no, dob: dob, busorigintype: busorigintype, fname: fname, mname: mname, lname: lname, gender: gender, PhoneBuz: PhoneBuz, inputEmail4comp: inputEmail4comp, businessLicenceClassId: businessLicenceClassId, trackngNo: trackngNo, userId: userId, BizOwnerType: BizOwnerType, NoUnit: NoUnit, BizTin: BizTin, TaxPayer: TaxPayer, TypeList: TypeList},
+    // }, function(error, response, body){
+    //   if(error) {  }      
+    //   var BLdetailsId = response.body;
+      // console.log("BLID: " + BLdetailsId)
+      request({
+        url: GetupdateStageTwo,
+        method: 'POST',
+        json: {districtlistB: districtlistB, regionlistB: regionlistB, 
+          street: street, unservayedarea: unservayedarea, 
+          house_no: house_no, block_no: block_no, plot_no: plot_no, road: road, 
+          postcode: postcode, wardIdB: wardIdB, addressAreaB: addressAreaB,
+          trackngNo: trackngNo, userId: userId, pobox: pobox, phone_no: phone_no, email: email},
+      }, function(error, response, body){
+        if(error) { 
 
-  // var unservayedarea = req.body.unservayedarea;
-  // var regionlistB = req.body.regionlistB;
-  // var districtlistB = req.body.districtlistB;
-  // var inputEmail4pobox = req.body.inputEmail4pobox;
-  // var inco_no = req.body.inco_no;
-  // var bn_name = req.body.bn_name;
-  // var bn_no = req.body.bn_no;
-  // var userId = req.session.userID;
-  // if(gender == 'MALE'){
-  //   gender = 1;
-  // }else if(gender == 'FEMALE'){
-  //   gender = 2
-  // }
-  // if(typeof req.session.userID !== "undefined" || req.session.userID === true){
-  //   request({
-  //     url: GetupdateStageTwo,
-  //     method: 'POST',
-  //     json: {bn_no: bn_no, bn_name: bn_name, company_name: company_name, inco_no: inco_no, districtlistB: districtlistB, regionlistB: regionlistB, inputEmail4pobox: inputEmail4pobox, unservayedarea: unservayedarea, house_no: house_no, block_no: block_no, plot_no: plot_no, road: road, street: street, postcode: postcode, wardIdB: wardIdB, addressAreaB: addressAreaB, bustype: bustype, nida_no: nida_no, dob: dob, busorigintype: busorigintype, fname: fname, mname: mname, lname: lname, gender: gender, PhoneBuz: PhoneBuz, inputEmail4comp: inputEmail4comp, businessLicenceClassId: businessLicenceClassId, trackngNo: trackngNo, userId: userId, BizOwnerType: BizOwnerType, NoUnit: NoUnit, BizTin: BizTin, TaxPayer: TaxPayer, TypeList: TypeList},
-  //   }, function(error, response, body){
-  //     if(error) {        
-  //     var BLdetailsId = response.body;
-  //     console.log("BLID: " + BLdetailsId)
-  //     request({
-  //       url: GetupdateStageAddress,
-  //       method: 'POST',
-  //       json: {bn_no: bn_no, bn_name: bn_name, inco_no: inco_no, reg_no_other: reg_no_other, corporate_name: corporate_name, leadername_nat: leadername_nat, leadername_nat_2: leadername_nat_2, BLdetailsId: BLdetailsId, districtlistB: districtlistB, regionlistB: regionlistB, inputEmail4pobox: inputEmail4pobox, unservayedarea: unservayedarea, house_no: house_no, block_no: block_no, plot_no: plot_no, road: road, postcode: postcode, wardIdB: wardIdB, addressAreaB: addressAreaB, bustype: bustype, nida_no: nida_no, dob: dob, busorigintype: busorigintype, fname: fname, mname: mname, lname: lname, gender: gender, PhoneBuz: PhoneBuz, inputEmail4comp: inputEmail4comp, businessLicenceClassId: businessLicenceClassId, trackngNo: trackngNo, userId: userId, BizOwnerType: BizOwnerType, NoUnit: NoUnit, BizTin: BizTin, TaxPayer: TaxPayer, TypeList: TypeList},
-  //     }, function(error, response, body){
-  //       if(error) {      
-  //       console.log("add: " + response.body)
-  //       res.send("success")
-  //     });
-  //   });
-  // }else{
-  //   //console.log(loginTrial)
-  //   res.redirect('/');
-  // }
+        }     
+        console.log(body)
+        // var jsonData = JSON.parse(body)
+        res.send(body)
+      });
+    // });
+  }else{
+    //console.log(loginTrial)
+    res.redirect('/');
+  }
 });
 
 app.post('/saveBStageSecond',function(req,res){
@@ -4537,11 +4525,12 @@ function (err, recordset) {
         console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
           res.send({status: "failed"});
+        }else{
+          var result_from = recordset.recordset;
+          sql.close();
+          res.send(recordset.recordset)
         }
-      var result_from = recordset.recordset;
-      sql.close();
-      res.send(recordset.recordset)
-     // res.render(path.join(__dirname+'/public/ors/my_application'), {"myapplication": objs12});
+        // res.render(path.join(__dirname+'/public/ors/my_application'), {"myapplication": objs12});
   });
 });
 })
@@ -5213,7 +5202,8 @@ app.post('/submitFinal', function (req, res) {
         request.input('userId', userId);
         request.input('trackngNo', trackngNo);
         request.input('Subdet', new Date());
-        request.query(`UPDATE dbo.BusinessLicApplication SET SubmittedDate = @Subdet WHERE TrackingNo = @trackngNo AND CreatedByUserId = @userId`, 
+        request.query(`UPDATE dbo.BusinessLicApplication SET SubmittedDate = @Subdet 
+        WHERE TrackingNo = @trackngNo AND CreatedByUserId = @userId`, 
         function (err, recordset) {
           if (err){
             console.log("fail to submitFinal " + err);
@@ -5234,26 +5224,6 @@ app.post('/updateStageTwo', function (req, res) {
   console.log(req.body)
   var trackngNo = req.body.trackngNo;
   var userId = req.body.userId;
-  var BizOwnerType = req.body.BizOwnerType;
-  var NoUnit = req.body.NoUnit;
-  var inco_no = req.body.inco_no;
-  var company_name = req.body.company_name;
-  var BizTin = req.body.BizTin;
-  var TaxPayer = req.body.TaxPayer;
-  var TypeList = req.body.TypeList;
-  var PhoneBuz = req.body.PhoneBuz;
-  var businessLicenceClassId = req.body.businessLicenceClassId;
-  var inputEmail4comp = req.body.inputEmail4comp;
-  var inputEmail4phn = req.body.inputEmail4phn;
-  var inputEmail4pobox = req.body.inputEmail4pobox;
-  // var issuingAuthorityId = req.body.issuingAuthorityId;
-  var fname = req.body.fname;
-  var mname = req.body.mname;
-  var lname = req.body.lname;
-  var gender = req.body.gender;
-  var dob = req.body.dob;
-  var nida_no = req.body.nida_no;
-  var bustype = req.body.bustype;
   var addressAreaB = req.body.addressAreaB;
   var regionlistB = req.body.regionlistB;
   var districtlistB = req.body.districtlistB;
@@ -5265,363 +5235,51 @@ app.post('/updateStageTwo', function (req, res) {
   var block_no = req.body.block_no;
   var house_no = req.body.house_no;
   var unservayedarea = req.body.unservayedarea;
-  var busorigintype = req.body.busorigintype;
-  var bn_no = req.body.bn_no;
-  var bn_name = req.body.bn_name;
+  var pobox = req.body.pobox;
+  var email = req.body.email;
+  var phone_no = req.body.phone_no;
   
-  sql.connect(configBL, function (err) {
+  sql.connect(config, function (err) {
   
     if (err) {
       console.log("fail to connect to server " + err);
-      //sql.close();
+      sql.close();
       res.send({status: "failed"});
-    }
-  
-
-    var request1 = new sql.Request();
-    request1.input('trackngNo', trackngNo);
-    request1.query('SELECT Id FROM dbo.BusinessLicApplication WHERE TrackingNo = @trackngNo', function (err, recordset) {
-      if (err) {
-        console.log("fail to submitFinal " + err);
-       // sql.close();
-        res.send({status: "failed"});
-      }
-      var result_form = recordset.recordset;
-      var Id = result_form[0].Id;
-      req.session.req_id = Id;
-      if(BizOwnerType == 1){
-        var request = new sql.Request();
-        request.input('userId', userId);
-        request.input('BizOwnerType', BizOwnerType);
-        request.input('NoUnit', NoUnit);
-        // request.input('TinDate', TinDate);
-        request.input('BizTin', BizTin);
-        request.input('TaxPayer', TaxPayer);
-        request.input('trackngNo', trackngNo);
-        request.input('TypeList', TypeList);
-        request.input('ServiceCode', '4201');
-        request.input('Subdet', new Date());
-        request.query(`UPDATE dbo.BusinessLicApplication SET ApplicationStep = 3, BusinessTypeId = @TypeList, BusinessLicOwnerTypeId = @BizOwnerType, ApplicationTin = @BizTin, NumberOfUnits = @NoUnit, ServiceCode = @ServiceCode WHERE TrackingNo = @trackngNo AND CreatedByUserId = @userId`, 
-        function (err, recordset) {
-            if (err) {
-              console.log("fail to submitFinal " + err);
-             // sql.close();
-              res.send({status: "failed"});
-            }
-            var request2 = new sql.Request();
-                  request2.input('BusLicAppId', Id);
-                  request2.input('inputEmail4comp', inputEmail4comp);
-                  request2.input('BizTin', BizTin);
-                  request2.input('inputEmail4phn', PhoneBuz);
-                  request2.input('inputEmail4pobox', inputEmail4pobox);
-                  request2.query(`UPDATE dbo.BusinessLicenceDetails SET BusinessTIN = @BizTin, Email = @inputEmail4comp, PhoneNo = @inputEmail4phn, PoBox = @inputEmail4pobox, LicenceStatusId = 5, Activated = 0 WHERE BusinessLicenceApplicationId = @BusLicAppId`, function (err, recordset) {
-                      if (err) {
-                        console.log("fail to submitFinal " + err);
-                        //sql.close();
-                        res.send({status: "failed"});
-                      }
-      
-      
-                      var request3 = new sql.Request();
-                            request3.input('ApplicationId', Id);
-                            request3.input('ServiceCode', '4201');
-                            request3.input('ApplicationStatusId', '1');
-                            request3.input('userId', userId);
-                            request3.input('CreatedDate', new Date());
-                            request3.input('ApplicationStageId', '3');
-                            request3.query(`UPDATE dbo.BLicenseApplicationTracker SET ApplicationStatusId = 4, ApplicationStageId = 3 WHERE ApplicationId = @ApplicationId`, 
-                            function (err, recordset) {
-                                if (err) {
-                                  console.log("fail to submitFinal " + err);
-                                 // sql.close();
-                                  res.send({status: "failed"});
-                                }   
-                                
-                                var request55 = new sql.Request();
-                                request55.input('ApplicationId', Id);
-                                request55.query(`UPDATE dbo.BusinessLicenceSupplements SET Status = 0, state = 1 WHERE BusinessLicenceApplicationId = @ApplicationId`, 
-                                function (err, recordset) {
-                                    if (err) {
-                                      console.log("fail to submitFinal " + err);
-                                     // sql.close();
-                                      res.send({status: "failed"});
-                                    }   
-      
-                                var request4 = new sql.Request();
-                                request4.input('BusLicAppId', Id);
-                                request4.query('SELECT Id FROM dbo.BusinessLicenceDetails WHERE BusinessLicenceApplicationId = @BusLicAppId', 
-                                function (err, recordset) {
-                                  if (err) {
-                                    console.log("fail to submitFinal " + err);
-                                   // sql.close();
-                                    res.send({status: "failed"});
-                                  }
-                                 // sql.close();
-                                  //console.log(recordset.recordset)
-                                  var result_form = recordset.recordset;
-                                  var Id_bl = result_form[0].Id;
-                                  req.session.BLdet = Id_bl;
-      
-                                  sql.close();
-                                  res.send(Id_bl)
-                            });
-                          });
-                      });
-            
-                  });
-      
-        });
-      }
-      if(BizOwnerType == 3){
-        var request = new sql.Request();
-        request.input('userId', userId);
-        request.input('BizOwnerType', BizOwnerType);
-        request.input('NoUnit', NoUnit);
-        // request.input('TinDate', TinDate);
-        request.input('BizTin', BizTin);
-        request.input('TaxPayer', TaxPayer);
-        request.input('trackngNo', trackngNo);
-        request.input('TypeList', TypeList);
-        request.input('ServiceCode', '4201');
-        request.input('Subdet', new Date());
-        request.query(`UPDATE dbo.BusinessLicApplication SET ApplicationStep = 3, BusinessTypeId = @TypeList, BusinessLicOwnerTypeId = @BizOwnerType, ApplicationTin = @BizTin, NumberOfUnits = @NoUnit, ServiceCode = @ServiceCode WHERE TrackingNo = @trackngNo AND CreatedByUserId = @userId`, 
-        function (err, recordset) {
-            if (err) {
-              console.log("fail to submitFinal " + err);
-              //sql.close();
-              res.send({status: "failed"});
-            }
-            var request2 = new sql.Request();
-                  request2.input('BusLicAppId', Id);
-                  request2.input('inputEmail4comp', inputEmail4comp);
-                  request2.input('BizTin', BizTin);
-                  request2.input('inputEmail4phn', PhoneBuz);
-                  request2.input('inputEmail4pobox', inputEmail4pobox);
-                  request2.query(`UPDATE dbo.BusinessLicenceDetails SET BusinessTIN = @BizTin, Email = @inputEmail4comp, PhoneNo = @inputEmail4phn, PoBox = @inputEmail4pobox, LicenceStatusId = 5, Activated = 0 WHERE BusinessLicenceApplicationId = @BusLicAppId`, function (err, recordset) {
-                      if (err) {
-                        console.log("fail to submitFinal " + err);
-                        //sql.close();
-                        res.send({status: "failed"});
-                      }
-      
-      
-                      var request3 = new sql.Request();
-                            request3.input('ApplicationId', Id);
-                            request3.input('ServiceCode', '4201');
-                            request3.input('ApplicationStatusId', '1');
-                            request3.input('userId', userId);
-                            request3.input('CreatedDate', new Date());
-                            request3.input('ApplicationStageId', '3');
-                            request3.query(`UPDATE dbo.BLicenseApplicationTracker SET ApplicationStatusId = 4, ApplicationStageId = 3 WHERE ApplicationId = @ApplicationId`, 
-                            function (err, recordset) {
-                                if (err) {
-                                  console.log("fail to submitFinal " + err);
-                                  //sql.close();
-                                  res.send({status: "failed"});
-                                }  
-                                
-                                var request55 = new sql.Request();
-                                request55.input('ApplicationId', Id);
-                                request55.query(`UPDATE dbo.BusinessLicenceSupplements SET Status = 0, state = 1 WHERE BusinessLicenceApplicationId = @ApplicationId`, 
-                                function (err, recordset) {
-                                    if (err) {
-                                      console.log("fail to submitFinal " + err);
-                                      //sql.close();
-                                      res.send({status: "failed"});
-                                    } 
-      
-                                var request4 = new sql.Request();
-                                request4.input('BusLicAppId', Id);
-                                request4.query('SELECT Id FROM dbo.BusinessLicenceDetails WHERE BusinessLicenceApplicationId = @BusLicAppId', 
-                                function (err, recordset) {
-                                  if (err) {
-                                    console.log("fail to submitFinal " + err);
-                                    //sql.close();
-                                    res.send({status: "failed"});
-                                  }
-                                 // sql.close();
-                                  //console.log(recordset.recordset)
-                                  var result_form = recordset.recordset;
-                                  var Id_bl = result_form[0].Id;
-                                  req.session.BLdet = Id_bl;
-      
-                                  sql.close();
-                                  res.send(Id_bl)
-                                });
-                            });
-                      });
-            
-                  });
-      
-        });
-      }
-      if(BizOwnerType == 2){
-        var request = new sql.Request();
-        request.input('userId', userId);
-        request.input('BizOwnerType', BizOwnerType);
-        request.input('NoUnit', NoUnit);
-        // request.input('TinDate', TinDate);
-        request.input('BizTin', BizTin);
-        request.input('TaxPayer', TaxPayer);
-        request.input('trackngNo', trackngNo);
-        request.input('TypeList', TypeList);
-        request.input('ServiceCode', '4201');
-        request.input('Subdet', new Date());
-        request.input('RegNo', inco_no);
-        request.input('EntityName', company_name);
-        request.query(`UPDATE dbo.BusinessLicApplication SET ApplicationStep = 3, BusinessTypeId = @TypeList, BusinessLicOwnerTypeId = @BizOwnerType, ApplicationTin = @BizTin, NumberOfUnits = @NoUnit, ServiceCode = @ServiceCode RegNo = @RegNo, EntityName = @EntityName WHERE TrackingNo = @trackngNo AND CreatedByUserId = @userId`, 
-        function (err, recordset) {
-            if (err) {
-              console.log("fail to submitFinal " + err);
-              //sql.close();
-              res.send({status: "failed"});
-            }
-            var request2 = new sql.Request();
-                  request2.input('BusLicAppId', Id);
-                  request2.input('inputEmail4comp', inputEmail4comp);
-                  request2.input('BizTin', BizTin);
-                  request2.input('inputEmail4phn', PhoneBuz);
-                  request2.input('inputEmail4pobox', inputEmail4pobox);
-                  request2.query(`UPDATE dbo.BusinessLicenceDetails SET BusinessTIN = @BizTin, Email = @inputEmail4comp, PhoneNo = @inputEmail4phn, PoBox = @inputEmail4pobox, LicenceStatusId = 5, Activated = 0 WHERE BusinessLicenceApplicationId = @BusLicAppId`, function (err, recordset) {
-                      if (err) {
-                        console.log("fail to submitFinal " + err);
-                        //sql.close();
-                        res.send({status: "failed"});
-                      }
-      
-      
-                      var request3 = new sql.Request();
-                            request3.input('ApplicationId', Id);
-                            request3.input('ServiceCode', '4201');
-                            request3.input('ApplicationStatusId', '1');
-                            request3.input('userId', userId);
-                            request3.input('CreatedDate', new Date());
-                            request3.input('ApplicationStageId', '3');
-                            request3.query(`UPDATE dbo.BLicenseApplicationTracker SET ApplicationStatusId = 4, ApplicationStageId = 3 WHERE ApplicationId = @ApplicationId`, 
-                            function (err, recordset) {
-                                if (err) {
-                                  console.log("fail to submitFinal " + err);
-                                 // sql.close();
-                                  res.send({status: "failed"});
-                                }     
-                                
-                                var request55 = new sql.Request();
-                                request55.input('ApplicationId', Id);
-                                request55.query(`UPDATE dbo.BusinessLicenceSupplements SET Status = 0, state = 1 WHERE BusinessLicenceApplicationId = @ApplicationId`, 
-                                function (err, recordset) {
-                                    if (err) {
-                                      console.log("fail to submitFinal " + err);
-                                     // sql.close();
-                                      res.send({status: "failed"});
-                                    }  
-      
-                                var request4 = new sql.Request();
-                                request4.input('BusLicAppId', Id);
-                                request4.query('SELECT Id FROM dbo.BusinessLicenceDetails WHERE BusinessLicenceApplicationId = @BusLicAppId', 
-                                function (err, recordset) {
-                                  if (err) {
-                                    console.log("fail to submitFinal " + err);
-                                   // sql.close();
-                                    res.send({status: "failed"});
-                                  }
-                                 // sql.close();
-                                  //console.log(recordset.recordset)
-                                  var result_form = recordset.recordset;
-                                  var Id_bl = result_form[0].Id;
-                                  req.session.BLdet = Id_bl;
-      
-                                  sql.close();
-                                  res.send(Id_bl)
-                            });
-                          });
-                      });
-            
-                  });
-      
-        });
-      }
-      if(BizOwnerType == 4){
-        var request = new sql.Request();
-        request.input('userId', userId);
-        request.input('BizOwnerType', BizOwnerType);
-        request.input('NoUnit', NoUnit);
-        // request.input('TinDate', TinDate);
-        request.input('BizTin', BizTin);
-        request.input('TaxPayer', TaxPayer);
-        request.input('trackngNo', trackngNo);
-        request.input('TypeList', TypeList);
-        request.input('ServiceCode', '4201');
-        request.input('Subdet', new Date());
-        request.input('RegNo', bn_no);
-        request.input('EntityName', bn_name);
-        request.query(`UPDATE dbo.BusinessLicApplication SET ApplicationStep = 3, BusinessTypeId = @TypeList, BusinessLicOwnerTypeId = @BizOwnerType, ApplicationTin = @BizTin, NumberOfUnits = @NoUnit, ServiceCode = @ServiceCode, RegNo = @RegNo, EntityName = @EntityName WHERE TrackingNo = @trackngNo AND CreatedByUserId = @userId`, 
-        function (err, recordset) {
-            if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
-          //sql.close();
-          res.send({status: "failed"});}
-            var request2 = new sql.Request();
-                  request2.input('BusLicAppId', Id);
-                  request2.input('inputEmail4comp', inputEmail4comp);
-                  request2.input('BizTin', BizTin);
-                  request2.input('inputEmail4phn', PhoneBuz);
-                  request2.input('inputEmail4pobox', inputEmail4pobox);
-                  request2.query(`UPDATE dbo.BusinessLicenceDetails SET BusinessTIN = @BizTin, Email = @inputEmail4comp, PhoneNo = @inputEmail4phn, PoBox = @inputEmail4pobox, LicenceStatusId = 5, Activated = 0 WHERE BusinessLicenceApplicationId = @BusLicAppId`, function (err, recordset) {
-                      if (err) {
-                        console.log("fail to submitFinal " + err);
-                       // sql.close();
-                        res.send({status: "failed"});
-                      }
-      
-      
-                      var request3 = new sql.Request();
-                            request3.input('ApplicationId', Id);
-                            request3.input('ServiceCode', '4201');
-                            request3.input('ApplicationStatusId', '1');
-                            request3.input('userId', userId);
-                            request3.input('CreatedDate', new Date());
-                            request3.input('ApplicationStageId', '3');
-                            request3.query(`UPDATE dbo.BLicenseApplicationTracker SET ApplicationStatusId = 4, ApplicationStageId = 3 WHERE ApplicationId = @ApplicationId`, 
-                            function (err, recordset) {
-                                if (err) {        console.log("fail to submitFinal " + err);
-                                //sql.close();
-                                res.send({status: "failed"});}    
-                                
-                                var request55 = new sql.Request();
-                                request55.input('ApplicationId', Id);
-                                request55.query(`UPDATE dbo.BusinessLicenceSupplements SET Status = 0, state = 1 WHERE BusinessLicenceApplicationId = @ApplicationId`, 
-                                function (err, recordset) {
-                                    if (err) {
-                                      console.log("fail to submitFinal " + err);
-                                      // sql.close();
-                                      res.send({status: "failed"});
-                                    } 
-      
-                                var request4 = new sql.Request();
-                                request4.input('BusLicAppId', Id);
-                                request4.query('SELECT Id FROM dbo.BusinessLicenceDetails WHERE BusinessLicenceApplicationId = @BusLicAppId', 
-                                function (err, recordset) {
-                                  if (err) {
-                                    console.log("fail to submitFinal " + err);
-                                    // sql.close();
-                                    res.send({status: "failed"});
-                                  }
-                                 // sql.close();
-                                  //console.log(recordset.recordset)
-                                  var result_form = recordset.recordset;
-                                  var Id_bl = result_form[0].Id;
-                                  req.session.BLdet = Id_bl;
-      
-                                  sql.close();
-                                  res.send(Id_bl)
-                                });
-                            });
-                      });
-            
-                  });
-      
-        });
-      }
-  });
+    }else{
+      var request55 = new sql.Request();
+      request55.input('trackngNo', trackngNo);
+      request55.input('addressAreaB', addressAreaB);
+      request55.input('regionlistB', regionlistB);
+      request55.input('districtlistB', districtlistB);
+      request55.input('wardIdB', wardIdB);
+      request55.input('street', street);
+      request55.input('postcode', postcode);
+      request55.input('road', road);
+      request55.input('plot_no', plot_no);
+      request55.input('block_no', block_no);
+      request55.input('house_no', house_no);
+      request55.input('unservayedarea', unservayedarea);
+      request55.input('pobox', pobox);
+      request55.input('phone_no', phone_no);
+      request55.input('email', email);
+      request55.query(`UPDATE tblAddress SET AreaTypeId = @addressAreaB, 
+      WardId = @wardIdB, PostCode = @postcode, Street = @street, 
+      Road = @road, PlotNo = @plot_no, BlockNo = @block_no, 
+      RegionCode = @regionlistB, DistrictCode = @districtlistB,
+      HouseNo = @house_no, UnsurveyedArea = @unservayedarea, 
+      PoBox = @pobox, CompanyEmail = @email, CompanyPhone = @phone_no 
+      WHERE TrackingNo = @trackngNo`, 
+          function (err, recordset) {
+              if (err) {
+                console.log("fail to submitFinal " + err);
+                sql.close();
+                res.send({status: "failed"});
+              } else{
+                sql.close();
+                res.send({status: "success"})
+              }  
+    });
+  }
   });
   
   
@@ -8198,7 +7856,7 @@ app.post('/AddressRecordRenew', function(req, res){
 
 app.post('/uploaadFile', function (req, res) {
  console.log(req.body)
-  var trackngNo = req.body.trackngNo;
+  var trackngNo = req.session.trackingNo;
   var token = req.body.token;
   var attachmentId = req.body.attachmentId;
   var atachment = req.body.atachment;
@@ -9535,7 +9193,8 @@ app.get('/getSavedAreaType/:id', function (req, res) {
         var request = new sql.Request();
         request.input('TrackingNo', TrackingNo);
         // query to the database and get the records
-        request.query('SELECT * from dbo.tblAddress as a, dbo.tblAreaType as b where a.AreaTypeId = b.AreaTypeId AND a.TrackingNo = @TrackingNo', 
+        request.query('SELECT * from dbo.tblAddress as a, dbo.tblAreaType as b ' + 
+        ' where a.AreaTypeId = b.AreaTypeId AND a.TrackingNo = @TrackingNo', 
         function (err, recordset1) {
             
             if (err) {          console.log("fail to getSavedAreaType " + err);
