@@ -298,17 +298,15 @@
                                                 <input type="hidden" class="form-control text-black" id="bustype" disabled>
                                             <div class="form-group col-md-6">
                                                 <label for="inputState" class="text-black">Business Owner Sub Type</label>
-                                                <select class="form-control  basic" id="busowntype" onchange="getBusOwnType()">
+                                                <select class="form-control  basic" id="busowntype" onchange="getBusOwnType()" disabled>
                                                     </select>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputEmail4" class="text-black">Business TIN</label>
                                                     <div class="input-group mb-4">
-                                                    <input type="text" class="form-control tin_no" id="tin_no" name="tin_no" placeholder="Enter TIN number " aria-label="Recipient's username" >
-                                                    <div class="invalid-feedback">
-                                                        Please fill the name
-                                                    </div>
-                                                    <div class="input-group-append TinFirst">
+                                                    <input type="text" class="form-control tin_no" id="tin_no" name="tin_no" 
+                                                    aria-label="Recipient's username" disabled>
+                                                    <div class="input-group-append TinFirst" style="display: none">
                                                       <button class="btn btn-primary" onclick="TinVerifier()" type="button">LOAD FROM TRA</button>
                                                     </div>
                                                     <div class="input-group-append TinLoader" style="display: none">
@@ -367,8 +365,8 @@
                                             <div class="form-group col-md-6">
                                                 <label for="inputEmail4" class="text-black">Incorporate Number</label>
                                                     <div class="input-group mb-4">
-                                                    <input type="text" class="form-control inco_no" id="inco_no" name="inco_no" placeholder="Incorporate Number" aria-label="Incorporate Number">
-                                                    <div class="input-group-append CompFirst">
+                                                    <input type="text" class="form-control inco_no" id="inco_no" name="inco_no" placeholder="Incorporate Number" aria-label="Incorporate Number" disabled>
+                                                    <div class="input-group-append CompFirst" style="display: none">
                                                         <button class="btn btn-primary" onclick="CompanyVerifier()" type="button">SEARCH</button>
                                                       </div>
                                                       <div class="input-group-append CompLoader" style="display: none">
@@ -380,11 +378,11 @@
                                                 <label for="inputEmail4" class="text-black">Company Name</label>
                                                 <input type="text text-black" class="form-control" id="company_name" disabled>
                                             </div>
-                                            <div class="form-group col-md-6">
+                                            <div class="form-group col-md-6" style="display: none">
                                                 <label for="inputEmail4" class="text-black">Company Type</label>
                                                 <input type="text text-black" class="form-control" id="company_type" disabled>
                                             </div>
-                                            <div class="form-group col-md-6">
+                                            <div class="form-group col-md-6" style="display: none">
                                                 <label for="inputEmail4" class="text-black">Date of Incoperation</label>
                                                 <input type="text text-black" class="form-control" id="company_date" disabled>
                                             </div>

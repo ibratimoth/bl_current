@@ -20603,3 +20603,1641 @@ Sun Jun 18 2023 06:41:21 GMT+0300 (East Africa Time): List of Regions
 fail to AddressArea RequestError: Invalid object name 'tblAreaType'.
 Id =
 {"status":"failed"}
+Hello ORS
+Sun Jun 18 2023 06:58:33 GMT+0300 (East Africa Time): Successful login
+======>>> BL230617-1944
+[ { Comment: 'Approved' }, { Comment: 'attach' } ]
+yes
+Id =[{"AttachmentTypeId":1,"AttachmentName":"Proof of Business Premise","Description":"Proof of Business Premise"}]
+fail to AddressArea RequestError: Invalid object name 'tblAreaType'.
+fail to Save_EntityOwner_SP RequestError: Invalid object name 'tblRegion'.
+Id =
+{"status":"failed"}
+Sun Jun 18 2023 06:58:51 GMT+0300 (East Africa Time): List of Regions
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11663","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Social Security Agents","BusinessTypeId":"42"}]
+[{"Id":"27814","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.547Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27815","AddressOwnerId":"10771","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.750Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":"1","AreaTypeName":"Unsurveyed"}]
+reg_id 11663
+servicecode 4201
+json ength 1
+body
+[
+  {
+    AmountTotal: '560000',
+    ServiceName: 'New Application for Business Licence',
+    ExpireDate: '2023-07-01T15:21:03.000Z',
+    CurrencyUsed: 'TZS',
+    ControlNo: '991160003792',
+    InvoiceID: '560'
+  }
+]
+560
+trackingNo
+BL230617-1944
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11663',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1944',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T12:09:00.717Z,
+    CreatedDate: 2023-06-17T12:07:07.260Z,
+    ApplicationStatusId: '3',
+    ApplicationStageId: 7,
+    BusinessTypeName: 'Social Security Agents',
+    PaymentStatus: true,
+    IsSentRegistry: false
+  }
+]
+tracker body
+get business owner types
+======>>> BL230617-1944
+[ { Comment: 'Approved' }, { Comment: 'attach' } ]
+fail to get business type RequestError: Invalid object name 'tblOwnerSubType'.
+fail to AddressArea RequestError: Invalid object name 'tblAreaType'.
+Id =
+{"status":"failed"}
+fail to Save_EntityOwner_SP RequestError: Invalid object name 'tblRegion'.
+Sun Jun 18 2023 07:02:41 GMT+0300 (East Africa Time): List of Regions
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11644","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Microfinancing","BusinessTypeId":"28"}]
+[{"Id":"27783","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.897Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27784","AddressOwnerId":"10766","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.910Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11644
+servicecode 4201
+json ength 0
+body
+[
+  {
+    AmountTotal: '',
+    ServiceName: '',
+    ExpireDate: '',
+    CurrencyUsed: '',
+    ControlNo: '',
+    InvoiceID: ''
+  }
+]
+trackingNo
+BL230617-1630
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11644',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1630',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T02:41:37.790Z,
+    CreatedDate: 2023-06-17T02:39:43.557Z,
+    ApplicationStatusId: '1',
+    ApplicationStageId: 3,
+    BusinessTypeName: 'Microfinancing',
+    PaymentStatus: false,
+    IsSentRegistry: false
+  }
+]
+tracker body
+get business owner types
+======>>> BL230617-1630
+[]
+fail to get business type RequestError: Invalid object name 'tblOwnerSubType'.
+fail to AddressArea RequestError: Invalid object name 'tblAreaType'.
+Id =
+{"status":"failed"}
+fail to Save_EntityOwner_SP RequestError: Invalid object name 'tblRegion'.
+Sun Jun 18 2023 07:02:59 GMT+0300 (East Africa Time): List of Regions
+req.params.id
+20168
+1
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11663","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Social Security Agents","BusinessTypeId":"42"}]
+[{"Id":"27814","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.547Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27815","AddressOwnerId":"10771","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.750Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":"1","AreaTypeName":"Unsurveyed"}]
+reg_id 11663
+servicecode 4201
+json ength 1
+body
+[
+  {
+    AmountTotal: '560000',
+    ServiceName: 'New Application for Business Licence',
+    ExpireDate: '2023-07-01T15:21:03.000Z',
+    CurrencyUsed: 'TZS',
+    ControlNo: '991160003792',
+    InvoiceID: '560'
+  }
+]
+560
+trackingNo
+BL230617-1944
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11663',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1944',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T12:09:00.717Z,
+    CreatedDate: 2023-06-17T12:07:07.260Z,
+    ApplicationStatusId: '3',
+    ApplicationStageId: 7,
+    BusinessTypeName: 'Social Security Agents',
+    PaymentStatus: true,
+    IsSentRegistry: false
+  }
+]
+tracker body
+get business owner types
+======>>> BL230617-1944
+fail to get business type RequestError: Invalid object name 'tblOwnerSubType'.
+fail to Save_EntityOwner_SP RequestError: Invalid object name 'tblRegion'.
+fail to AddressArea RequestError: Invalid object name 'tblAreaType'.
+[ { Comment: 'Approved' }, { Comment: 'attach' } ]
+Sun Jun 18 2023 07:03:59 GMT+0300 (East Africa Time): List of Regions
+Id =
+{"status":"failed"}
+yes
+Id =[{"AttachmentTypeId":1,"AttachmentName":"Proof of Business Premise","Description":"Proof of Business Premise"}]
+Hello ORS
+Hello ORS
+Sun Jun 18 2023 07:10:22 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+owner sub types
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11644","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Microfinancing","BusinessTypeId":"28"}]
+[{"Id":"27783","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.897Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27784","AddressOwnerId":"10766","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.910Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11644
+servicecode 4201
+json ength 0
+body
+[
+  {
+    AmountTotal: '',
+    ServiceName: '',
+    ExpireDate: '',
+    CurrencyUsed: '',
+    ControlNo: '',
+    InvoiceID: ''
+  }
+]
+trackingNo
+BL230617-1630
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11644',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1630',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T02:41:37.790Z,
+    CreatedDate: 2023-06-17T02:39:43.557Z,
+    ApplicationStatusId: '1',
+    ApplicationStageId: 3,
+    BusinessTypeName: 'Microfinancing',
+    PaymentStatus: false,
+    IsSentRegistry: false
+  }
+]
+tracker body
+get business owner types
+======>>> BL230617-1630
+[]
+fail to get business type RequestError: Invalid object name 'tblOwnerSubType'.
+fail to AddressArea RequestError: Invalid object name 'tblAreaType'.
+Id =
+{"status":"failed"}
+fail to Save_EntityOwner_SP RequestError: Invalid object name 'tblRegion'.
+Sun Jun 18 2023 07:10:40 GMT+0300 (East Africa Time): List of Regions
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Sun Jun 18 2023 07:11:21 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+owner sub types
+Company
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11644","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Microfinancing","BusinessTypeId":"28"}]
+[{"Id":"27783","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.897Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27784","AddressOwnerId":"10766","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.910Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11644
+servicecode 4201
+json ength 0
+body
+[
+  {
+    AmountTotal: '',
+    ServiceName: '',
+    ExpireDate: '',
+    CurrencyUsed: '',
+    ControlNo: '',
+    InvoiceID: ''
+  }
+]
+trackingNo
+BL230617-1630
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11644',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1630',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T02:41:37.790Z,
+    CreatedDate: 2023-06-17T02:39:43.557Z,
+    ApplicationStatusId: '1',
+    ApplicationStageId: 3,
+    BusinessTypeName: 'Microfinancing',
+    PaymentStatus: false,
+    IsSentRegistry: false
+  }
+]
+tracker body
+get business owner types
+======>>> BL230617-1630
+fail to get business type RequestError: Invalid object name 'tblOwnerSubType'.
+fail to AddressArea RequestError: Invalid object name 'tblAreaType'.
+Id =
+{"status":"failed"}
+[]
+fail to Save_EntityOwner_SP RequestError: Invalid object name 'tblRegion'.
+Sun Jun 18 2023 07:11:41 GMT+0300 (East Africa Time): List of Regions
+req.params.id
+20168
+1
+owner sub types
+Company
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11644","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Microfinancing","BusinessTypeId":"28"}]
+[{"Id":"27783","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.897Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27784","AddressOwnerId":"10766","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.910Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11644
+servicecode 4201
+json ength 0
+body
+[
+  {
+    AmountTotal: '',
+    ServiceName: '',
+    ExpireDate: '',
+    CurrencyUsed: '',
+    ControlNo: '',
+    InvoiceID: ''
+  }
+]
+trackingNo
+BL230617-1630
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11644',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1630',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T02:41:37.790Z,
+    CreatedDate: 2023-06-17T02:39:43.557Z,
+    ApplicationStatusId: '1',
+    ApplicationStageId: 3,
+    BusinessTypeName: 'Microfinancing',
+    PaymentStatus: false,
+    IsSentRegistry: false
+  }
+]
+tracker body
+get business owner types
+======>>> BL230617-1630
+fail to get business type RequestError: Invalid object name 'tblOwnerSubType'.
+[]
+fail to Save_EntityOwner_SP RequestError: Invalid object name 'tblRegion'.
+fail to AddressArea RequestError: Invalid object name 'tblAreaType'.
+Sun Jun 18 2023 07:13:39 GMT+0300 (East Africa Time): List of Regions
+Id =
+{"status":"failed"}
+req.params.id
+20168
+1
+owner sub types
+Company
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11644","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Microfinancing","BusinessTypeId":"28"}]
+[{"Id":"27783","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.897Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27784","AddressOwnerId":"10766","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.910Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11644
+servicecode 4201
+json ength 0
+body
+[
+  {
+    AmountTotal: '',
+    ServiceName: '',
+    ExpireDate: '',
+    CurrencyUsed: '',
+    ControlNo: '',
+    InvoiceID: ''
+  }
+]
+trackingNo
+BL230617-1630
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11644',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1630',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T02:41:37.790Z,
+    CreatedDate: 2023-06-17T02:39:43.557Z,
+    ApplicationStatusId: '1',
+    ApplicationStageId: 3,
+    BusinessTypeName: 'Microfinancing',
+    PaymentStatus: false,
+    IsSentRegistry: false
+  }
+]
+tracker body
+get business owner types
+======>>> BL230617-1630
+fail to get business type RequestError: Invalid object name 'tblOwnerSubType'.
+fail to AddressArea RequestError: Invalid object name 'tblAreaType'.
+[]
+fail to Save_EntityOwner_SP RequestError: Invalid object name 'tblRegion'.
+Id =
+{"status":"failed"}
+Sun Jun 18 2023 07:15:36 GMT+0300 (East Africa Time): List of Regions
+req.params.id
+20168
+1
+owner sub types
+Company
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11644","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Microfinancing","BusinessTypeId":"28"}]
+[{"Id":"27783","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.897Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27784","AddressOwnerId":"10766","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.910Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11644
+servicecode 4201
+json ength 0
+body
+[
+  {
+    AmountTotal: '',
+    ServiceName: '',
+    ExpireDate: '',
+    CurrencyUsed: '',
+    ControlNo: '',
+    InvoiceID: ''
+  }
+]
+trackingNo
+BL230617-1630
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11644',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1630',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T02:41:37.790Z,
+    CreatedDate: 2023-06-17T02:39:43.557Z,
+    ApplicationStatusId: '1',
+    ApplicationStageId: 3,
+    BusinessTypeName: 'Microfinancing',
+    PaymentStatus: false,
+    IsSentRegistry: false
+  }
+]
+tracker body
+get business owner types
+======>>> BL230617-1630
+fail to get business type RequestError: Invalid object name 'tblOwnerSubType'.
+[]
+fail to AddressArea RequestError: Invalid object name 'tblAreaType'.
+Id =
+{"status":"failed"}
+fail to Save_EntityOwner_SP RequestError: Invalid object name 'tblRegion'.
+Sun Jun 18 2023 07:16:26 GMT+0300 (East Africa Time): List of Regions
+req.params.id
+20168
+1
+owner sub types
+Company
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11644","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Microfinancing","BusinessTypeId":"28"}]
+[{"Id":"27783","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.897Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27784","AddressOwnerId":"10766","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.910Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11644
+servicecode 4201
+json ength 0
+body
+[
+  {
+    AmountTotal: '',
+    ServiceName: '',
+    ExpireDate: '',
+    CurrencyUsed: '',
+    ControlNo: '',
+    InvoiceID: ''
+  }
+]
+trackingNo
+BL230617-1630
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11644',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1630',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T02:41:37.790Z,
+    CreatedDate: 2023-06-17T02:39:43.557Z,
+    ApplicationStatusId: '1',
+    ApplicationStageId: 3,
+    BusinessTypeName: 'Microfinancing',
+    PaymentStatus: false,
+    IsSentRegistry: false
+  }
+]
+tracker body
+Sun Jun 18 2023 07:17:30 GMT+0300 (East Africa Time): List of Regions
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+req.params.id
+20168
+1
+owner sub types
+Company
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11644","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Microfinancing","BusinessTypeId":"28"}]
+[{"Id":"27783","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.897Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27784","AddressOwnerId":"10766","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.910Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11644
+servicecode 4201
+json ength 0
+body
+[
+  {
+    AmountTotal: '',
+    ServiceName: '',
+    ExpireDate: '',
+    CurrencyUsed: '',
+    ControlNo: '',
+    InvoiceID: ''
+  }
+]
+trackingNo
+BL230617-1630
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11644',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1630',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T02:41:37.790Z,
+    CreatedDate: 2023-06-17T02:39:43.557Z,
+    ApplicationStatusId: '1',
+    ApplicationStageId: 3,
+    BusinessTypeName: 'Microfinancing',
+    PaymentStatus: false,
+    IsSentRegistry: false
+  }
+]
+tracker body
+Sun Jun 18 2023 07:21:58 GMT+0300 (East Africa Time): List of Regions
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+req.params.id
+20168
+1
+owner sub types
+Company
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11644","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Microfinancing","BusinessTypeId":"28"}]
+[{"Id":"27783","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.897Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27784","AddressOwnerId":"10766","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.910Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11644
+servicecode 4201
+json ength 0
+body
+[
+  {
+    AmountTotal: '',
+    ServiceName: '',
+    ExpireDate: '',
+    CurrencyUsed: '',
+    ControlNo: '',
+    InvoiceID: ''
+  }
+]
+trackingNo
+BL230617-1630
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11644',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1630',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T02:41:37.790Z,
+    CreatedDate: 2023-06-17T02:39:43.557Z,
+    ApplicationStatusId: '1',
+    ApplicationStageId: 3,
+    BusinessTypeName: 'Microfinancing',
+    PaymentStatus: false,
+    IsSentRegistry: false
+  }
+]
+tracker body
+Sun Jun 18 2023 07:22:59 GMT+0300 (East Africa Time): List of Regions
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+req.params.id
+20168
+1
+owner sub types
+Company
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11644","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Microfinancing","BusinessTypeId":"28"}]
+[{"Id":"27783","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.897Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27784","AddressOwnerId":"10766","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.910Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11644
+servicecode 4201
+json ength 0
+body
+[
+  {
+    AmountTotal: '',
+    ServiceName: '',
+    ExpireDate: '',
+    CurrencyUsed: '',
+    ControlNo: '',
+    InvoiceID: ''
+  }
+]
+trackingNo
+BL230617-1630
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11644',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1630',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T02:41:37.790Z,
+    CreatedDate: 2023-06-17T02:39:43.557Z,
+    ApplicationStatusId: '1',
+    ApplicationStageId: 3,
+    BusinessTypeName: 'Microfinancing',
+    PaymentStatus: false,
+    IsSentRegistry: false
+  }
+]
+tracker body
+Sun Jun 18 2023 07:24:46 GMT+0300 (East Africa Time): List of Regions
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+response.body
+[{"trackingNo":"BL230618-2193"}]
+Sun Jun 18 2023 07:27:02 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Hello ORS
+Sun Jun 18 2023 07:27:40 GMT+0300 (East Africa Time): Successful login
+response.body
+[{"trackingNo":"BL230618-1970"}]
+Sun Jun 18 2023 07:27:54 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+get business owner types
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sun Jun 18 2023 07:27:56 GMT+0300 (East Africa Time): List of Regions
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+response.body
+[{"trackingNo":"BL230618-1683"}]
+Sun Jun 18 2023 07:29:35 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+get business owner types
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sun Jun 18 2023 07:29:37 GMT+0300 (East Africa Time): List of Regions
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+response.body
+[{"trackingNo":"BL230618-2203"}]
+Sun Jun 18 2023 07:31:11 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+get business owner types
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sun Jun 18 2023 07:31:13 GMT+0300 (East Africa Time): List of Regions
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+req.params.id
+20168
+1
+owner sub types
+Company
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11663","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Social Security Agents","BusinessTypeId":"42"}]
+[{"Id":"27814","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.547Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27815","AddressOwnerId":"10771","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.750Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":"1","AreaTypeName":"Unsurveyed"}]
+reg_id 11663
+servicecode 4201
+json ength 1
+body
+[
+  {
+    AmountTotal: '560000',
+    ServiceName: 'New Application for Business Licence',
+    ExpireDate: '2023-07-01T15:21:03.000Z',
+    CurrencyUsed: 'TZS',
+    ControlNo: '991160003792',
+    InvoiceID: '560'
+  }
+]
+560
+trackingNo
+BL230617-1944
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11663',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1944',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T12:09:00.717Z,
+    CreatedDate: 2023-06-17T12:07:07.260Z,
+    ApplicationStatusId: '3',
+    ApplicationStageId: 7,
+    BusinessTypeName: 'Social Security Agents',
+    PaymentStatus: true,
+    IsSentRegistry: false
+  }
+]
+tracker body
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sun Jun 18 2023 07:31:59 GMT+0300 (East Africa Time): List of Regions
+Hello ORS
+Hello ORS
+Sun Jun 18 2023 07:36:55 GMT+0300 (East Africa Time): Successful login
+Hello ORS
+Sun Jun 18 2023 07:38:34 GMT+0300 (East Africa Time): Successful login
+response.body
+[{"trackingNo":"BL230618-1521"}]
+Sun Jun 18 2023 07:38:44 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+get business owner types
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sun Jun 18 2023 07:38:45 GMT+0300 (East Africa Time): List of Regions
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+Hello ORS
+Hello ORS
+Hello ORS
+Sun Jun 18 2023 07:39:47 GMT+0300 (East Africa Time): Successful login
+Hello ORS
+Sun Jun 18 2023 07:45:19 GMT+0300 (East Africa Time): Successful login
+Hello ORS
+Sun Jun 18 2023 07:46:51 GMT+0300 (East Africa Time): Successful login
+Hello ORS
+Sun Jun 18 2023 07:50:17 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+owner sub types
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11663","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Social Security Agents","BusinessTypeId":"42"}]
+[{"Id":"27814","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.547Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27815","AddressOwnerId":"10771","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.750Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":"1","AreaTypeName":"Unsurveyed"}]
+reg_id 11663
+servicecode 4201
+json ength 1
+body
+[
+  {
+    AmountTotal: '560000',
+    ServiceName: 'New Application for Business Licence',
+    ExpireDate: '2023-07-01T15:21:03.000Z',
+    CurrencyUsed: 'TZS',
+    ControlNo: '991160003792',
+    InvoiceID: '560'
+  }
+]
+560
+trackingNo
+BL230617-1944
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11663',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1944',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T12:09:00.717Z,
+    CreatedDate: 2023-06-17T12:07:07.260Z,
+    ApplicationStatusId: '3',
+    ApplicationStageId: 7,
+    BusinessTypeName: 'Social Security Agents',
+    PaymentStatus: true,
+    IsSentRegistry: false
+  }
+]
+tracker body
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sun Jun 18 2023 07:51:15 GMT+0300 (East Africa Time): List of Regions
+req.params.id
+20168
+1
+owner sub types
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11663","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Social Security Agents","BusinessTypeId":"42"}]
+[{"Id":"27814","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.547Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27815","AddressOwnerId":"10771","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.750Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":"1","AreaTypeName":"Unsurveyed"}]
+reg_id 11663
+servicecode 4201
+json ength 1
+body
+[
+  {
+    AmountTotal: '560000',
+    ServiceName: 'New Application for Business Licence',
+    ExpireDate: '2023-07-01T15:21:03.000Z',
+    CurrencyUsed: 'TZS',
+    ControlNo: '991160003792',
+    InvoiceID: '560'
+  }
+]
+560
+trackingNo
+BL230617-1944
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11663',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1944',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T12:09:00.717Z,
+    CreatedDate: 2023-06-17T12:07:07.260Z,
+    ApplicationStatusId: '3',
+    ApplicationStageId: 7,
+    BusinessTypeName: 'Social Security Agents',
+    PaymentStatus: true,
+    IsSentRegistry: false
+  }
+]
+tracker body
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sun Jun 18 2023 07:52:09 GMT+0300 (East Africa Time): List of Regions
+req.params.id
+20168
+1
+owner sub types
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11663","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Social Security Agents","BusinessTypeId":"42"}]
+[{"Id":"27814","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.547Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27815","AddressOwnerId":"10771","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.750Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":"1","AreaTypeName":"Unsurveyed"}]
+reg_id 11663
+servicecode 4201
+json ength 1
+body
+[
+  {
+    AmountTotal: '560000',
+    ServiceName: 'New Application for Business Licence',
+    ExpireDate: '2023-07-01T15:21:03.000Z',
+    CurrencyUsed: 'TZS',
+    ControlNo: '991160003792',
+    InvoiceID: '560'
+  }
+]
+560
+trackingNo
+BL230617-1944
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11663',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1944',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T12:09:00.717Z,
+    CreatedDate: 2023-06-17T12:07:07.260Z,
+    ApplicationStatusId: '3',
+    ApplicationStageId: 7,
+    BusinessTypeName: 'Social Security Agents',
+    PaymentStatus: true,
+    IsSentRegistry: false
+  }
+]
+tracker body
+Sun Jun 18 2023 07:55:16 GMT+0300 (East Africa Time): List of Regions
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Sun Jun 18 2023 08:06:45 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+business details
+[{"BusinessLicOwnerTypeId":"2","EntityName":"CHUI MEDIA LIMITED"}]
+owner sub types
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11663","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Social Security Agents","BusinessTypeId":"42"}]
+[{"Id":"27814","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.547Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27815","AddressOwnerId":"10771","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.750Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":"1","AreaTypeName":"Unsurveyed"}]
+reg_id 11663
+servicecode 4201
+json ength 1
+body
+[
+  {
+    AmountTotal: '560000',
+    ServiceName: 'New Application for Business Licence',
+    ExpireDate: '2023-07-01T15:21:03.000Z',
+    CurrencyUsed: 'TZS',
+    ControlNo: '991160003792',
+    InvoiceID: '560'
+  }
+]
+560
+trackingNo
+BL230617-1944
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11663',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1944',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T12:09:00.717Z,
+    CreatedDate: 2023-06-17T12:07:07.260Z,
+    ApplicationStatusId: '3',
+    ApplicationStageId: 7,
+    BusinessTypeName: 'Social Security Agents',
+    PaymentStatus: true,
+    IsSentRegistry: false
+  }
+]
+tracker body
+Sun Jun 18 2023 08:08:50 GMT+0300 (East Africa Time): List of Regions
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Sun Jun 18 2023 08:12:09 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+business details
+[{"BusinessLicOwnerTypeId":"2","EntityName":"CHUI MEDIA LIMITED"}]
+owner sub types
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11663","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Social Security Agents","BusinessTypeId":"42"}]
+[{"Id":"27814","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.547Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27815","AddressOwnerId":"10771","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.750Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":"1","AreaTypeName":"Unsurveyed"}]
+reg_id 11663
+servicecode 4201
+json ength 1
+body
+[
+  {
+    AmountTotal: '560000',
+    ServiceName: 'New Application for Business Licence',
+    ExpireDate: '2023-07-01T15:21:03.000Z',
+    CurrencyUsed: 'TZS',
+    ControlNo: '991160003792',
+    InvoiceID: '560'
+  }
+]
+560
+trackingNo
+BL230617-1944
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11663',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1944',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T12:09:00.717Z,
+    CreatedDate: 2023-06-17T12:07:07.260Z,
+    ApplicationStatusId: '3',
+    ApplicationStageId: 7,
+    BusinessTypeName: 'Social Security Agents',
+    PaymentStatus: true,
+    IsSentRegistry: false
+  }
+]
+tracker body
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sun Jun 18 2023 08:13:12 GMT+0300 (East Africa Time): List of Regions
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Sun Jun 18 2023 08:17:04 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+business details
+[{"BusinessLicOwnerTypeId":"2","EntityName":"CHUI MEDIA LIMITED","RegNo":"157968971"}]
+owner sub types
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11663","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Social Security Agents","BusinessTypeId":"42"}]
+[{"Id":"27814","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.547Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27815","AddressOwnerId":"10771","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.750Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":"1","AreaTypeName":"Unsurveyed"}]
+reg_id 11663
+servicecode 4201
+json ength 1
+body
+[
+  {
+    AmountTotal: '560000',
+    ServiceName: 'New Application for Business Licence',
+    ExpireDate: '2023-07-01T15:21:03.000Z',
+    CurrencyUsed: 'TZS',
+    ControlNo: '991160003792',
+    InvoiceID: '560'
+  }
+]
+560
+trackingNo
+BL230617-1944
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11663',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1944',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T12:09:00.717Z,
+    CreatedDate: 2023-06-17T12:07:07.260Z,
+    ApplicationStatusId: '3',
+    ApplicationStageId: 7,
+    BusinessTypeName: 'Social Security Agents',
+    PaymentStatus: true,
+    IsSentRegistry: false
+  }
+]
+tracker body
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sun Jun 18 2023 08:17:26 GMT+0300 (East Africa Time): List of Regions
+Hello ORS
+Hello ORS
+Sun Jun 18 2023 08:18:25 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+business details
+[{"BusinessLicOwnerTypeId":"2","EntityName":"CHUI MEDIA LIMITED","RegNo":"157968971"}]
+owner sub types
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11663","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Social Security Agents","BusinessTypeId":"42"}]
+[{"Id":"27814","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.547Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27815","AddressOwnerId":"10771","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.750Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":"1","AreaTypeName":"Unsurveyed"}]
+reg_id 11663
+servicecode 4201
+json ength 1
+body
+[
+  {
+    AmountTotal: '560000',
+    ServiceName: 'New Application for Business Licence',
+    ExpireDate: '2023-07-01T15:21:03.000Z',
+    CurrencyUsed: 'TZS',
+    ControlNo: '991160003792',
+    InvoiceID: '560'
+  }
+]
+560
+trackingNo
+BL230617-1944
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11663',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1944',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T12:09:00.717Z,
+    CreatedDate: 2023-06-17T12:07:07.260Z,
+    ApplicationStatusId: '3',
+    ApplicationStageId: 7,
+    BusinessTypeName: 'Social Security Agents',
+    PaymentStatus: true,
+    IsSentRegistry: false
+  }
+]
+tracker body
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sun Jun 18 2023 08:18:49 GMT+0300 (East Africa Time): List of Regions
+Hello ORS
+Sun Jun 18 2023 08:26:58 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+business details
+[{"BusinessLicOwnerTypeId":"2","EntityName":"CHUI MEDIA LIMITED","RegNo":"157968971"}]
+owner sub types
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11663","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Social Security Agents","BusinessTypeId":"42"}]
+[{"Id":"27814","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.547Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27815","AddressOwnerId":"10771","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.750Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":"1","AreaTypeName":"Unsurveyed"}]
+reg_id 11663
+servicecode 4201
+json ength 1
+body
+[
+  {
+    AmountTotal: '560000',
+    ServiceName: 'New Application for Business Licence',
+    ExpireDate: '2023-07-01T15:21:03.000Z',
+    CurrencyUsed: 'TZS',
+    ControlNo: '991160003792',
+    InvoiceID: '560'
+  }
+]
+560
+trackingNo
+BL230617-1944
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11663',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1944',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T12:09:00.717Z,
+    CreatedDate: 2023-06-17T12:07:07.260Z,
+    ApplicationStatusId: '3',
+    ApplicationStageId: 7,
+    BusinessTypeName: 'Social Security Agents',
+    PaymentStatus: true,
+    IsSentRegistry: false
+  }
+]
+tracker body
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sun Jun 18 2023 08:27:34 GMT+0300 (East Africa Time): List of Regions
+req.params.id
+20168
+1
+business details
+[{"BusinessLicOwnerTypeId":"2","EntityName":"CHUI MEDIA LIMITED","RegNo":"157968971"}]
+owner sub types
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11663","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Social Security Agents","BusinessTypeId":"42"}]
+[{"Id":"27814","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.547Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27815","AddressOwnerId":"10771","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.750Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":"1","AreaTypeName":"Unsurveyed"}]
+reg_id 11663
+servicecode 4201
+json ength 1
+body
+[
+  {
+    AmountTotal: '560000',
+    ServiceName: 'New Application for Business Licence',
+    ExpireDate: '2023-07-01T15:21:03.000Z',
+    CurrencyUsed: 'TZS',
+    ControlNo: '991160003792',
+    InvoiceID: '560'
+  }
+]
+560
+trackingNo
+BL230617-1944
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11663',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1944',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T12:09:00.717Z,
+    CreatedDate: 2023-06-17T12:07:07.260Z,
+    ApplicationStatusId: '3',
+    ApplicationStageId: 7,
+    BusinessTypeName: 'Social Security Agents',
+    PaymentStatus: true,
+    IsSentRegistry: false
+  }
+]
+tracker body
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sun Jun 18 2023 08:32:17 GMT+0300 (East Africa Time): List of Regions
+req.params.id
+20168
+1
+business details
+[{"BusinessLicOwnerTypeId":"2","EntityName":"CHUI MEDIA LIMITED","RegNo":"157968971"}]
+owner sub types
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11663","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Social Security Agents","BusinessTypeId":"42"}]
+[{"Id":"27814","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.547Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27815","AddressOwnerId":"10771","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.750Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":"1","AreaTypeName":"Unsurveyed"}]
+reg_id 11663
+servicecode 4201
+json ength 1
+body
+[
+  {
+    AmountTotal: '560000',
+    ServiceName: 'New Application for Business Licence',
+    ExpireDate: '2023-07-01T15:21:03.000Z',
+    CurrencyUsed: 'TZS',
+    ControlNo: '991160003792',
+    InvoiceID: '560'
+  }
+]
+560
+trackingNo
+BL230617-1944
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11663',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1944',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T12:09:00.717Z,
+    CreatedDate: 2023-06-17T12:07:07.260Z,
+    ApplicationStatusId: '3',
+    ApplicationStageId: 7,
+    BusinessTypeName: 'Social Security Agents',
+    PaymentStatus: true,
+    IsSentRegistry: false
+  }
+]
+tracker body
+Sun Jun 18 2023 08:37:25 GMT+0300 (East Africa Time): List of Regions
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]

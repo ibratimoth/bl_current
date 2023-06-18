@@ -1582,11 +1582,14 @@ app.get('/firstStageView', async function(req, res) {
                 if(error){
                   res.send("failed")
                 }else{
-                  // console.log(body)
+                  console.log('business details')
+                  console.log(body)
                   if(body !== undefined){
                     var jsonData = JSON.parse(body);
                     // for(var i = 0; i < jsonData.length; i++){
                     var BusinessLicOwnerTypeId = jsonData[0].BusinessLicOwnerTypeId;
+                    var EntityName = jsonData[0].EntityName;
+                    var RegNo = jsonData[0].RegNo;
                     
 
                     if(BusinessLicOwnerTypeId == 0){
@@ -1604,11 +1607,13 @@ app.get('/firstStageView', async function(req, res) {
                         
                         if(body !== undefined || body !== null){
                           var jsonData = JSON.parse(body);
+                          console.log('owner sub types')
                           console.log(body)
                           // for(const i = 0; i < jsonData.length; i++){
                           OwnerSubTypeName = jsonData[0].OwnerSubTypeName;
                           OwnerSubTypeId = jsonData[0].OwnerSubTypeId;
                           // }
+                          
                           if(OwnerSubTypeName == undefined){
                             OwnerSubTypeName = ''
                           }
@@ -1627,7 +1632,7 @@ app.get('/firstStageView', async function(req, res) {
                                 AplicationID = jsonData[0].Id;
                                 ServiceCode = jsonData[0].ServiceCode;
                                 BusinessClassId = jsonData[0].BusinessClassId;
-                                RegNo = jsonData[0].RegNo;
+                                // RegNo = jsonData[0].RegNo;
                                 console.log("jfhsbf==== " + BusinessClassId)
                                 request({
                                   url: GetsavedBizType+"/"+req.session.req_id_view,
@@ -1772,8 +1777,8 @@ app.get('/firstStageView', async function(req, res) {
                                                                           "BlockNo": BlockNo, "PlotNo": PlotNo, "UnsurveyedArea": UnsurveyedArea, 
                                                                           "CompanyEmail": CompanyEmail, "CompanyPhone": CompanyPhone, "PoBox": PoBox, 
                                                                           "trackNo": req.session.req_id_view, "person": objs12, "RegNo": RegNo, 
-                                                                          "OrigTypeName": OrigTypeName, "OwnerSubTypeName": OwnerSubTypeName, 
-                                                                          "AplicationTIN": AplicationTIN, "BusinessTypeName": BusinessTypeName, 
+                                                                          "OrigTypeName": OrigTypeName, "OwnerSubTypeName": OwnerSubTypeName, "EntityName": EntityName, 
+                                                                          "AplicationTIN": AplicationTIN, "BusinessTypeName": BusinessTypeName, "OwnerSubTypeId": OwnerSubTypeId,
                                                                           "AreaTypeName": AreaTypeName, "Road": Road, "PostCode": PostCode, "WardId": WardId,
                                                                           "Street": Street, "BusinessClassId": BusinessClassId, "RegionCode": RegionCode, "DistrictCode": DistrictCode,
                                                                           "BusinessLicOwnerTypeId": BusinessLicOwnerTypeId, "ApplicationStageId": ApplicationStageId,
@@ -8222,7 +8227,8 @@ app.get('/regions', function (req, res) {
       // query to the database and get the records
       request.query('SELECT * FROM tblRegion', function (err, recordset) {
           
-          if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
+          if (err) {          
+            console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
           res.send({status: "failed"});
         }else{
@@ -9003,7 +9009,8 @@ app.get('/GetbusOnwerType/:id', function (req, res) {
         var request = new sql.Request();
         request.input('TrackingNo', TrackingNo);
         // query to the database and get the records
-        request.query('SELECT BusinessLicOwnerTypeId from dbo.BusinessLicApplication where TrackingNo = @TrackingNo', 
+        request.query('SELECT BusinessLicOwnerTypeId, EntityName, RegNo ' + 
+        ' FROM dbo.BusinessLicApplication where TrackingNo = @TrackingNo', 
         function (err1, recordset1) {
             
             if (err1){

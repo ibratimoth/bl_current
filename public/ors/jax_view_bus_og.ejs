@@ -640,6 +640,8 @@ reader.onerror = function (error) {
                         var OrigTypeName = response.OrigTypeName;
                         var AplicationID = response.AplicationID;
                         var OwnerSubTypeName = response.OwnerSubTypeName;
+                        var OwnerSubTypeId = response.OwnerSubTypeId;
+                        var EntityName = response.EntityName;
                         var AplicationTIN = response.AplicationTIN;
                         var BusinessClassId = response.BusinessClassId;
                         var BusinessTypeName = response.BusinessTypeName;
@@ -685,9 +687,11 @@ reader.onerror = function (error) {
                         txtBox7.value = OrigTypeName;
                         var txtBox8 = document.getElementById('applicationId');
                         txtBox8.value = AplicationID;
+                        var tin_no = document.getElementById('tin_no');
+                        tin_no.value = AplicationTIN;
 
                         // var txtBox9 = document.getElementById('typelist');
-                        // txtBox9.value = BusinessTypeName;
+                        // txtBox9.value = 'BusinessTypeName';
                         // var txtBox10 = document.getElementById('addressAreaB');
                         // txtBox10.value = AreaTypeName;
                         var txtBox11 = document.getElementById('inputroad');
@@ -714,14 +718,20 @@ reader.onerror = function (error) {
                         txtBox21.value = BusinessClassId;
                         var txtBox22 = document.getElementById('nida_no');
                         txtBox22.value = RegNo;
-                        var txtBox23 = document.getElementById('inco_no');
-                        txtBox23.value = RegNo;
+
                         var txtBox24 = document.getElementById('reg_no_other');
                         txtBox24.value = RegNo;
                         var txtBox24 = document.getElementById('bn_no');
                         txtBox24.value = RegNo;
                         if(ApplicationStageId != 1){
                             $("#paymentDiv").show()
+                        }
+                        if(OwnerSubTypeId == 2){
+                            var txtBox23 = document.getElementById('inco_no');
+                            txtBox23.value = RegNo;
+                            var company_name = document.getElementById('company_name');
+                            company_name.value = EntityName;
+                            $("#company").show()
                         }
                         // var txtBox23 = document.getElementById('wardIdB');
                         // txtBox23.value = WardName;
@@ -769,25 +779,26 @@ reader.onerror = function (error) {
                         }
                         $("#busowntype").append(`<option value='${BusinessLicOwnerTypeId}'> ${OwnerSubTypeName}</option>`)
                         $("#addressAreaB").append(`<option value='${AreaTypeId}'> ${AreaTypeName}</option>`)
+                        $("#typelist").append(`<option value='${BusinessTypeId}'> ${BusinessTypeName}</option>`)
                         $("#regionlistB").append(`<option value='${RegionCode}'> ${RegionName}</option>`)
                         $("#districtlistB").append(`<option value='${DistrictCode}'> ${DistrictName}</option>`)
                         // $("#districtlistB").append(`<option value='${DistrictName}'> ${DistrictName}</option>`)
                         $("#wardIdB").append(`<option value='${WardId}'> ${WardName}</option>`)
                         if(AreaTypeId === '1'){
-            $(".maeneo").show();
-            // $(".locationB").show();
-            $(".unservayedB").hide();
-        }if(AreaTypeId === '2'){
-            $(".maeneo").hide();
-            // $(".locationB").hide();
-            $(".unservayedB").show();
-        }if(AreaTypeId === '--Select--'){
-            $(".maeneo").hide();
-            $(".locationB").hide();
-            $(".unservayedB").hide();
-        }
-            comment();
-            getBusOwnTypeData();
+                            $(".maeneo").show();
+                            // $(".locationB").show();
+                            $(".unservayedB").hide();
+                        }if(AreaTypeId === '2'){
+                            $(".maeneo").hide();
+                            // $(".locationB").hide();
+                            $(".unservayedB").show();
+                        }if(AreaTypeId === '--Select--'){
+                            $(".maeneo").hide();
+                            $(".locationB").hide();
+                            $(".unservayedB").hide();
+                        }
+            // comment();
+            // getBusOwnTypeData();
             regGetAddressArea();
             regB();
                         // 
@@ -893,8 +904,8 @@ function downloadInvoice(){
             }
         </script>
         <script>
-            function getSector(){
-            setTimeout(
+            // function getSector(){
+            // setTimeout(
             function sector()
             { 
                 $.ajax({
@@ -911,8 +922,9 @@ function downloadInvoice(){
                     }
                     }
                 });
-            }, 3000);
             }
+            // , 3000);
+            // }
             </script>
             <script>
                 function getDistrictB()
