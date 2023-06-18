@@ -9374,7 +9374,7 @@ app.get('/ownerType', function (req, res) {
       var request = new sql.Request();
          
       // query to the database and get the records
-      request.query('SELECT * from dbo.tblOwnerType', function (err, recordset1) {
+      request.query('SELECT * from tblOwnerType', function (err, recordset1) {
           
           if (err) {          
             console.log("fail to ownerType " + err);
