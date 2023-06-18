@@ -392,7 +392,7 @@ function getBizType()
         success: function(response) {
             if(typeof(response) === "string"){response = JSON.parse(response)}
         if(response.length > 0) {
-            $("#typelist").append(`<option value='--Select--'>--Select--</option>`)
+                $("#typelist").append(`<option value='0'>--Select--</option>`)
             response.forEach(el => {
                 $("#typelist").append(`<option value='${el.businessTypeId}'> ${el.businessTypeName}</option>`)
             })
@@ -529,8 +529,8 @@ function getWardB()
 <script>
     function saveBizDet()
     { 
-        $(".saveBizOne").show();
-        $(".saveBiz").hide();
+        $(".saveBizOne").hide();
+        $(".saveBiz").show();
         var BizOwnerType= document.getElementById('busowntype').value;
         var NoUnit= document.getElementById('nounits').value;
         var BizTin= document.getElementById('tin_no').value;
@@ -580,6 +580,8 @@ if(BizOwnerType == 0){
         padding: '2em',
         timer: 3000,
     })
+    $(".saveBiz").hide();
+    $(".saveBizOne").show();
 }if(tin_no_ver == 0){
     swal({
         type: 'error',
@@ -588,6 +590,8 @@ if(BizOwnerType == 0){
         padding: '2em',
         timer: 3000,
     })
+    $(".saveBiz").hide();
+    $(".saveBizOne").show();
 }if(sectorlist == 0){
     swal({
         type: 'error',
@@ -595,7 +599,9 @@ if(BizOwnerType == 0){
         text: 'Please select Business Sector!',
         padding: '2em',
         timer: 3000,
-    }) 
+    })
+    $(".saveBiz").hide();
+    $(".saveBizOne").show(); 
 }if(categorylist == 0){
     swal({
         type: 'error',
@@ -604,6 +610,19 @@ if(BizOwnerType == 0){
         padding: '2em',
         timer: 3000,
     })  
+    $(".saveBiz").hide();
+    $(".saveBizOne").show();
+}
+if(TypeList == 0){
+    swal({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Please select Business Type!',
+        padding: '2em',
+        timer: 3000,
+    })  
+    $(".saveBiz").hide();
+    $(".saveBizOne").show();
 }if(regionlistB == 0){
     swal({
         type: 'error',
@@ -612,6 +631,8 @@ if(BizOwnerType == 0){
         padding: '2em',
         timer: 3000,
     }) 
+    $(".saveBiz").hide();
+    $(".saveBizOne").show();
 }if(districtlistB == 0){
     swal({
         type: 'error',
@@ -620,6 +641,8 @@ if(BizOwnerType == 0){
         padding: '2em',
         timer: 3000,
     }) 
+    $(".saveBiz").hide();
+    $(".saveBizOne").show();
 }if(addressAreaB == 0){
     swal({
         type: 'error',
@@ -628,6 +651,8 @@ if(BizOwnerType == 0){
         padding: '2em',
         timer: 3000,
     })  
+    $(".saveBiz").hide();
+    $(".saveBizOne").show();
 }if(wardIdB == 0){
     swal({
         type: 'error',
@@ -635,10 +660,46 @@ if(BizOwnerType == 0){
         text: 'Please select Ward!',
         padding: '2em',
         timer: 3000,
+    }) 
+    $(".saveBiz").hide();
+    $(".saveBizOne").show();
+}if(inputEmail4phn.length < 10){
+    swal({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Please check your Phone number!',
+        padding: '2em',
+        timer: 3000,
+    })
+    $(".saveBiz").hide();
+    $(".saveBizOne").show();  
+}
+if(inputEmail4comp.length <= 0){
+    swal({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Please provide email!',
+        padding: '2em',
+        timer: 3000,
+    }) 
+    $(".saveBiz").hide();
+    $(".saveBizOne").show(); 
+}
+if(inputEmail4pobox.length <= 0){
+    swal({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Please provide P.O Box!',
+        padding: '2em',
+        timer: 3000,
     })  
+    $(".saveBiz").hide();
+    $(".saveBizOne").show();
 }
 if(BizOwnerType != 0 && tin_no_ver == 1 && sectorlist != 0 && categorylist != 0 
-&& regionlistB != 0 && districtlistB != 0 && addressAreaB != 0 && wardIdB != 0){
+&& regionlistB != 0 && districtlistB != 0 && 
+addressAreaB != 0 && wardIdB != 0 && TypeList != 0 && inputEmail4phn.length >= 10 && 
+inputEmail4comp.length > 0 && inputEmail4pobox.length > 0){
         $.ajax({
             url: "/saveStageSecond",
             type: 'POST',
@@ -657,16 +718,15 @@ if(BizOwnerType != 0 && tin_no_ver == 1 && sectorlist != 0 && categorylist != 0
                 //console.log(response)
 
                 swal({
-          title: 'Success!',
-          text: 'Data succesfully saved.',
-          type: 'success',
-          timer: 2000,
-            }
-            )
+                    title: 'Success!',
+                    text: 'Data succesfully saved.',
+                    type: 'success',
+                    timer: 2000,
+                })
             getAttachments();
             getPermit();
-            $(".saveBiz").show();
-            $(".saveBizOne").hide();
+            $(".saveBiz").hide();
+            $(".saveBizOne").show();
 
 
        
