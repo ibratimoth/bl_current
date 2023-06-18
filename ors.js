@@ -7874,15 +7874,16 @@ app.post('/uploaadFile', function (req, res) {
       //sql.close();
       res.send({status: "failed"});
     }
-  
+  else{
     var request1 = new sql.Request();
     request1.input('trackngNo', trackngNo);
-    request1.query('SELECT Id FROM dbo.BusinessLicApplication WHERE TrackingNo = @trackngNo', function (err, recordset) {
+    request1.query('SELECT Id FROM dbo.BusinessLicApplication WHERE TrackingNo = @trackngNo', 
+    function (err, recordset) {
       if (err) {          
         console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
           res.send({status: "failed"});
-        }
+        }else{
       var result_form = recordset.recordset;
       console.log(result_form)
       var Id = result_form[0].Id;
@@ -7894,11 +7895,15 @@ app.post('/uploaadFile', function (req, res) {
       }, function(error, response, body){
         if(error) {          console.log("fail to Save_EntityOwner_SP " + error);
           //sql.close();
-          res.send({status: "failed"});}
+          res.send({status: "failed"});
+        }else{
         sql.close();
           res.send({"sucess": "sucess"})
+      }
       });
+    }
   });
+}
   });
 });
 
