@@ -97,39 +97,39 @@ $("#html5-extension").find('tbody').empty();
       
         $('#html5-extension').append(row);
         $('.widget-content .warning.confirm').on('click', function () {
-var deleteBtn = $(this),
-id = deleteBtn.data('id'),
-title_tracker = deleteBtn.closest('tr').find('.tacker').text();
-swal({
-title: 'Renew Business Licence',
-text: "Do you want to Renew Business Licence Number " + title_tracker+"?",
-type: 'warning',
-showCancelButton: true,
-confirmButtonText: 'Renew',
-padding: '2em'
-}).then(function(result) {
+            var deleteBtn = $(this),
+            id = deleteBtn.data('id'),
+            title_tracker = deleteBtn.closest('tr').find('.tacker').text();
+            swal({
+            title: 'Renew Business Licence',
+            text: "Do you want to Renew Business Licence Number " + title_tracker+"?",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Renew',
+            padding: '2em'
+            }).then(function(result) {
 
-if (result.value) {
-$.ajax({
-url: "/Renew",
-type: 'POST',
-data: JSON.stringify({"BLNumber": title_tracker}),
-contentType: 'application/json',
-success: function(response) {
-    swal({
-  title: 'Renew Business Licence!',
-  text: 'Application for Renew of Business Licence has been sent succesfully.',
-  type: 'success',
-  timer: 2000,
-    }
-).then(function(result){
-    location.reload();
-})
-}
-});
-}
-})
-})
+            if (result.value) {
+            $.ajax({
+            url: "/Renew",
+            type: 'POST',
+            data: JSON.stringify({"BLNumber": title_tracker}),
+            contentType: 'application/json',
+            success: function(response) {
+                swal({
+                        title: 'Renew Business Licence!',
+                        text: 'Application for Renew of Business Licence has been sent succesfully.',
+                        type: 'success',
+                        timer: 2000,
+                    }
+            ).then(function(result){
+                location.reload();
+            })
+            }
+            });
+            }
+            })
+            })
     }
 }
 // ,

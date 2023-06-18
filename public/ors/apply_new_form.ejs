@@ -678,7 +678,7 @@
                                                     <h6 style="font-weight: bold;color: blue;"> Business Location</h6>
             
                                                     <div class="form-row mb-4">
-                                                        <div class="form-group col-md-4">
+                                                        <div class="form-group col-md-3">
                                                             <label for="inputEmail4" class="text-black">Address Type</label>
                                                             <select id="addressAreaB" name="addressAreaB" onchange="getAddrAreaB()" class="form-control text-black" required>
                                                                 <option selected>--Select--</option>
@@ -687,20 +687,25 @@
                                                     </div>
                                                     <div class="form-row mb-4">
             
-                                                        <div class="form-group col-md-4">
+                                                        <div class="form-group col-md-3">
                                                             <label for="inputEmail4" class="text-black">Region</label>
                                                             <select class="form-control basic text-black" onchange="getDistrictB()" id="regionlistB">
             
                                                                 </select>
                                                         </div>
-                                                        <div class="form-group col-md-4">
+                                                        <div class="form-group col-md-3">
                                                             <label for="inputEmail4" class="text-black">District</label>
                                                             <select class="form-control  basic text-black" onchange="getWardB()" id="districtlistB" >
                                                                 </select>
                                                         </div>
-                                                        <div class="form-group col-md-4">
+                                                        <div class="form-group col-md-3">
                                                             <label for="inputEmail4" class="text-black">Ward</label>
                                                             <select class="form-control  basic text-black" onchange="getPostCode()" id="wardIdB" required>
+                                                                </select>
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label for="inputEmail4" class="text-black">Sub Ward</label>
+                                                            <select class="form-control  basic text-black" id="subwardIdB" required>
                                                                 </select>
                                                         </div>
                                                     </div>
@@ -1039,7 +1044,6 @@
     </script>
     <script src="ors/plugins/sweetalerts/sweetalert2.min.js"></script>
     <script src="ors/plugins/sweetalerts/custom-sweetalert.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script> -->
-
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 </body>
 </html>

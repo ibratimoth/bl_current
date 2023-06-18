@@ -35,7 +35,8 @@ $("#html5-extension").find('tbody').empty();
             row = row + '<td style="color: black;">' + data[i].businessTypeName + '</span></td>';
             row = row + '<td style="color: black;"> ' + data[i].BusinessClassId + ' </td>';
             row = row + '<td style="color: black;">' + data[i].FeePaid + '</td>';
-            // row = row + '<td style="color: black;">' + data[i].expireDate + '</td>';
+            row = row + '<td style="color: black;">' + data[i].dateIssued + '</td>';
+            row = row + '<td style="color: black;">' + data[i].expireDate + '</td>';
             if(data[i].IsBranch === 'Principal'){
             row = row + '<td>'+
                 '<div class="btn-group">'+

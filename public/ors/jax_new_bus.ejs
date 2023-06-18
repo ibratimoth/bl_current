@@ -505,25 +505,27 @@ function getWardB()
 <script>
     function getPostCode()
     { 
-        //alert(document.getElementById('wardIdB').value)
         var regId = document.getElementById('wardIdB').value;
-        //alert(regId)
+
+        $.ajax({
+            url: "/GetSubWard",
+            type: 'POST',
+            data: JSON.stringify({subwardId: regId}),
+            contentType: 'application/json',
+            success: function(response) {
+                console.log(response)  
+            if(typeof(response) === "string"){response = JSON.parse(response)}
+
+            if(response.length > 0) {
+                    $("#subwardIdB").append(`<option value='0'>--Select--</option>`)
+                response.forEach(el => {
+                    $("#subwardIdB").append(`<option value='${el.SUBWARD_ID}'> ${el.SUBWARD_NAME}</option>`)
+                })
+            }
+            }
+        });
         var txtBox1 = document.getElementById('postcode');
         txtBox1.value = regId;
-        // $.ajax({
-        //     url: "/GetWard/"+regId,
-        //     type: 'GET',
-        //     contentType: 'application/json',
-        //     success: function(response) {
-        //         if(typeof(response) === "string"){response = JSON.parse(response)}
-        //     if(response.length > 0) {
-        //         $("#wardIdB").append(`<option value='--Select--'>--Select--</option>`)
-        //         response.forEach(el => {
-        //             $("#wardIdB").append(`<option value='${el.wardId}'> ${el.wardName}</option>`)
-        //         })
-        //     }
-        //     }
-        // });
     }
 </script>
 <script>
@@ -560,6 +562,7 @@ function getWardB()
         var block_no= document.getElementById('block_no').value;
         var house_no= document.getElementById('house_no').value;
         var unservayedarea= document.getElementById('unservayedarea').value;
+        var subwardIdB= document.getElementById('subwardIdB').value;
 
         var reg_no_other= document.getElementById('reg_no_other').value;
         var corporate_name= document.getElementById('corporate_name').value;
@@ -573,7 +576,17 @@ function getWardB()
         var bn_name= document.getElementById('bn_name').value;
         var tin_no_ver = document.getElementById("tin_no_ver").value;
         // alert(inputEmail4phn[0])
-        if(BizOwnerType == 0){
+        if(subwardIdB == 0){
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Please select Sub Ward Id!',
+                padding: '2em',
+                timer: 3000,
+            })
+            $(".saveBiz").hide();
+            $(".saveBizOne").show();
+        }if(BizOwnerType == 0){
             swal({
                 type: 'error',
                 title: 'Oops...',
@@ -583,7 +596,8 @@ function getWardB()
             })
             $(".saveBiz").hide();
             $(".saveBizOne").show();
-        }if(tin_no_ver == 0){
+        }
+        if(tin_no_ver == 0){
             swal({
                 type: 'error',
                 title: 'Oops...',
@@ -712,7 +726,7 @@ function getWardB()
         if(BizOwnerType != 0 && tin_no_ver == 1 && sectorlist != 0 && categorylist != 0 
         && regionlistB != 0 && districtlistB != 0 && 
         addressAreaB != 0 && wardIdB != 0 && TypeList != 0 && inputEmail4phn.length == 10 && 
-        inputEmail4comp.length > 0 && inputEmail4pobox.length > 0 && inputEmail4phn[0] == '0'){
+        inputEmail4comp.length > 0 && inputEmail4pobox.length > 0 && inputEmail4phn[0] == '0' && subwardIdB != 0){
                 $.ajax({
                     url: "/saveStageSecond",
                     type: 'POST',
@@ -725,7 +739,7 @@ function getWardB()
                     "nida_no": nida_no, "fname": fname, "mname": mname, "lname": lname, "gender": gender, "dob": dob, 
                     "issuingAuthorityId": issuingAuthorityId, "inputEmail4phn": inputEmail4phn, "inputEmail4comp": inputEmail4comp, 
                     "businessLicenceClassId": businessLicenceClassId, "BizOwnerType": BizOwnerType, "NoUnit": NoUnit, "BizTin": BizTin, 
-                    "TaxPayer": TaxPayer, "TypeList": TypeList}),
+                    "TaxPayer": TaxPayer, "TypeList": TypeList, "subwardIdB": subwardIdB}),
                     contentType: 'application/json',
                     success: function(response) {
                         //console.log(response)

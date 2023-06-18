@@ -95,6 +95,7 @@ var GetPostCode = APIURL+'postcode';
 var GetParticulars = APIURL+'getParticular';
 var GetStageTwo = APIURL+'originTypeView';
 var GetBusOnwerType = APIURL+'busOnwerType';
+var GetSubWards = APIURL+'subwards'
 var GetOriginType = APIURL+'originType';
 var GetOwnerType = APIURL+'ownerType';
 var GetBusSectorLink = APIURL+'BusSector';
@@ -237,6 +238,7 @@ app.post('/ApplyBizType',function(req,res){
           //sql.close();
           //res.send({status: "failed"});
         }
+  console.log('response1.body')
   console.log(response1.body)
   // var jsonData = JSON.parse(response.body);
   var jsonData1 = response1.body;
@@ -349,6 +351,21 @@ app.post('/applyBizTypeLic', function (req, res) {
        var RegNo = result_from31[0].RegNo;
       //  console.log("====== 2" + RegNo)
 
+      var request1 = new sql.Request();
+      // request1.input('RegNo', RegNo);
+      // request22.input('ApplicationStatusId', ApplicationStatusId);
+      // request1.query('SELECT COUNT(*) AS kaunti FROM dbo.BusinessLicApplication ' + 
+      // ' WHERE RegNo = @RegNo AND ApplicationStatusId = @ApplicationStatusId', 
+      // function (err21, recordset) {
+      // if (err21) {          
+      //  console.log("fail to BusinessLicApplication " + err21);
+      //    // sql.close();
+      //    // res.send({status: "failed"});
+      //  }
+      // var result_from311 = recordset.recordset;
+
+      // var kaunti = result_from311[0].kaunti;
+      // if(kaunti >= 0){
 
        var request22 = new sql.Request();
        request22.input('newtrackingNo', newtrackingNo);
@@ -364,7 +381,12 @@ app.post('/applyBizTypeLic', function (req, res) {
        request22.input('NumberOfUnits', nounits);
        request22.input('EntityName', EntityName);
        request22.input('RegNo', RegNo);
-       request22.query(`INSERT INTO dbo.BusinessLicApplication (TrackingNo, CreatedByUserId, ApplicationStep, BusinessTypeId, BusinessLicOwnerTypeId, ApplicationStatusId, ApplicationTypeId, CreatedDate, ServiceCode, NoOfPartners, BusinessClassId, NumberOfUnits, EntityName, RegNo, SubmittedDate) values (@newtrackingNo, @CreatedByUserId, @ApplicationStep, @BusinessTypeId, @BusinessLicOwnerTypeId, @ApplicationStatusId, 1, @CreatedDate, 4201, @NoOfPartners, @BusinessClassId, @NumberOfUnits, @EntityName, @RegNo, @CreatedDate)`, 
+       request22.query(`INSERT INTO dbo.BusinessLicApplication (TrackingNo, CreatedByUserId, 
+        ApplicationStep, BusinessTypeId, BusinessLicOwnerTypeId, ApplicationStatusId, 
+        ApplicationTypeId, CreatedDate, ServiceCode, NoOfPartners, BusinessClassId, 
+        NumberOfUnits, EntityName, RegNo, SubmittedDate) values (@newtrackingNo, @CreatedByUserId, 
+          @ApplicationStep, @BusinessTypeId, @BusinessLicOwnerTypeId, @ApplicationStatusId, 1, 
+          @CreatedDate, 4201, @NoOfPartners, @BusinessClassId, @NumberOfUnits, @EntityName, @RegNo, @CreatedDate)`, 
        function (err2, recordset) {
            if (err2) {          
             console.log("fail to Save_EntityOwner_SP " + err2);
@@ -466,7 +488,7 @@ app.post('/applyBizTypeLic', function (req, res) {
                                req.session.BLdet = Id_bl;
    
                                sql.close();
-                               res.send({"newBLAppId": BLAppId, "Id_bl": Id_bl, "Email": Email, "PhoneNo": PhoneNo, "PoBox": PoBox, 
+                               res.send({"status": "success", "newBLAppId": BLAppId, "Id_bl": Id_bl, "Email": Email, "PhoneNo": PhoneNo, "PoBox": PoBox, 
                                "OldTrackingNo": TrackingNo, "BusinessLicenceApplicationId": BusinessLicenceApplicationId})
                         });
                       // });
@@ -475,6 +497,11 @@ app.post('/applyBizTypeLic', function (req, res) {
                    });
                   });
                });
+              // }else{
+              //   res.send({"status": "fail"})
+              // }
+              // });
+               //end point
              });
    });
  });
@@ -702,6 +729,33 @@ app.post('/Renew',function(req,res){
   });
   });
 });
+});
+
+app.post('/GetSubWard',function(req, res){
+  var obj = []
+  var subwardId = req.body.subwardId;
+  console.log(subwardId)
+  request({
+    url: GetSubWards,
+    method: 'POST',
+    json: {subwardId: subwardId},
+  }, function(error1, response1, body1){
+    if(error1) {          
+      console.log("fail to get sub wards " + error1);
+          sql.close();
+          res.send({status: "failed"});
+        }
+    // console.log(response1.body)
+    var results = response1.body
+    for(var i = 0; i < results.length; i++){
+      var SUBWARD_ID = results[i].SUBWARD_ID;
+      var SUBWARD_NAME = results[i].SUBWARD_NAME;
+      obj.push({"SUBWARD_ID": SUBWARD_ID, "SUBWARD_NAME": SUBWARD_NAME})
+    }
+    console.log('reuslts')
+    console.log(obj)
+    res.send(obj)
+  });
 });
 
 app.post('/Cancelation',function(req,res){
@@ -977,7 +1031,8 @@ app.post('/renewLic', function (req, res) {
        request1.input('BusinessLicenceApplicationId', BusinessLicenceApplicationId);
        request1.query('SELECT * FROM dbo.BusinessLicApplication WHERE Id = @BusinessLicenceApplicationId', 
        function (err, recordset) {
-       if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
+       if (err) {          
+        console.log("fail to Save_EntityOwner_SP " + err);
           sql.close();
           res.send({status: "failed"});}
        var result_from31 = recordset.recordset;
@@ -1012,10 +1067,18 @@ app.post('/renewLic', function (req, res) {
        request22.input('NumberOfUnits', NumberOfUnits);
        request22.input('EntityName', EntityName);
        request22.input('RegNo', RegNo);
-       request22.query(`INSERT INTO dbo.BusinessLicApplication (TrackingNo, CreatedByUserId, ApplicationStep, BusinessTypeId, BusinessLicOwnerTypeId, ApplicationStatusId, ApplicationTypeId, CreatedDate, ServiceCode, NoOfPartners, BusinessClassId, NumberOfUnits, EntityName, RegNo, SubmittedDate) values (@newtrackingNo, @CreatedByUserId, @ApplicationStep, @BusinessTypeId, @BusinessLicOwnerTypeId, @ApplicationStatusId, 2, @CreatedDate, 4201, @NoOfPartners, @BusinessClassId, @NumberOfUnits, @EntityName, @RegNo, @CreatedDate)`, function (err, recordset) {
-           if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
+       request22.query(`INSERT INTO dbo.BusinessLicApplication (TrackingNo, CreatedByUserId, 
+        ApplicationStep, BusinessTypeId, BusinessLicOwnerTypeId, ApplicationStatusId, 
+        ApplicationTypeId, CreatedDate, ServiceCode, NoOfPartners, BusinessClassId, NumberOfUnits, 
+        EntityName, RegNo, SubmittedDate) values (@newtrackingNo, @CreatedByUserId, @ApplicationStep, 
+          @BusinessTypeId, @BusinessLicOwnerTypeId, @ApplicationStatusId, 2, @CreatedDate, 4201, 
+          @NoOfPartners, @BusinessClassId, @NumberOfUnits, @EntityName, @RegNo, @CreatedDate)`, 
+       function (err, recordset) {
+           if (err) {          
+            console.log("fail to Save_EntityOwner_SP " + err);
           sql.close();
-          res.send({status: "failed"});}
+          res.send({status: "failed"});
+        }
           //  console.log("====== 4" + "result_from")
            var request1 = new sql.Request();
            request1.input('newtrackingNo', newtrackingNo);
@@ -1040,8 +1103,14 @@ app.post('/renewLic', function (req, res) {
                request2.input('BusinessStateStatusId', BusinessStateStatusId);
                request2.input('PrincipalLicNo', PrincipalLicNo);
                request2.input('PrinciplaFeePaid', PrinciplaFeePaid);
-               request2.query(`INSERT INTO dbo.BusinessLicenceDetails (BusinessLicenceApplicationId, BusinessTIN, Email, PhoneNo, PoBox, IsBranch, IssueingOfficeId, LicenceStatusId, Activated, PreviousBLNumber, BusinessStateStatusId, PrincipalLicNo, PrinciplaFeePaid) values (@BusLicAppId, @BizTin, @inputEmail4comp, @inputEmail4phn, @inputEmail4pobox, @IsBranch, @issuingAuthorityId, 5, 0, @BLNumber, @BusinessStateStatusId, @PrincipalLicNo, @PrinciplaFeePaid)`, function (err, recordset) {
-                   if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
+               request2.query(`INSERT INTO dbo.BusinessLicenceDetails (BusinessLicenceApplicationId, 
+                BusinessTIN, Email, PhoneNo, PoBox, IsBranch, IssueingOfficeId, LicenceStatusId, 
+                Activated, PreviousBLNumber, BusinessStateStatusId, PrincipalLicNo, PrinciplaFeePaid) 
+                VALUES (@BusLicAppId, @BizTin, @inputEmail4comp, @inputEmail4phn, @inputEmail4pobox, 
+                  @IsBranch, @issuingAuthorityId, 5, 0, @BLNumber, @BusinessStateStatusId, 
+                  @PrincipalLicNo, @PrinciplaFeePaid)`, function (err, recordset) {
+                   if (err) {          
+                    console.log("fail to Save_EntityOwner_SP " + err);
           sql.close();
           res.send({status: "failed"});}
                   //  console.log("====== 6" + "result_from")
@@ -1454,6 +1523,43 @@ app.post('/ApplicationDetails', function(req, res){
     })
   }
       })
+})
+
+app.post('/subwards', function(req, res){
+  var subwardId = req.body.subwardId;
+  var objs13 = [];
+  sql.connect(config, function (err) {
+  
+   if (err) {          
+     console.log("fail to subwards " + err);
+         sql.close();
+         res.send({status: "failed"});
+       }else{
+        // console.log('subward')
+   var request1 = new sql.Request();
+   request1.input('subwardId', subwardId);
+   request1.query('SELECT * FROM SUBWARD WHERE POSTCODE = @subwardId', 
+   function (err, recordset) {
+   if (err) {          
+     console.log("fail to SUBWARD " + err);
+         sql.close();
+         res.send({status: "failed"});
+       }
+       else{
+        // console.log('recordset.recordset')
+        // console.log(recordset.recordset)
+  //  var result_from = recordset.recordset;
+  //  for(var i = 0; i < result_from.length; i++){
+  //    var Comment = result_from[i].Comment;
+  //    objs13.push({status: "success", "Comment": Comment})
+  //  }
+  //  // console.log(objs13)
+   sql.close()
+     res.send(recordset.recordset)
+ }
+   })
+ }
+     })
 })
 
 app.post('/SubmitSupplimenti',function(req,res){
@@ -2878,6 +2984,7 @@ app.post('/saveStageSecond',function(req,res){
   var bustype = req.body.bustype;
   var addressAreaB = req.body.addressAreaB;
   var wardIdB = req.body.wardIdB;
+  var subwardIdB = req.body.subwardIdB;
   var street = req.body.street;
   var postcode = req.body.postcode;
   var road = req.body.road;
@@ -2918,7 +3025,18 @@ app.post('/saveStageSecond',function(req,res){
       request({
         url: GetsaveStageAddress,
         method: 'POST',
-        json: {fullname: fullname, bn_no: bn_no, bn_name: bn_name, inco_no: inco_no, reg_no_other: reg_no_other, corporate_name: corporate_name, leadername_nat: leadername_nat, leadername_nat_2: leadername_nat_2, BLdetailsId: BLdetailsId, districtlistB: districtlistB, regionlistB: regionlistB, inputEmail4pobox: inputEmail4pobox, unservayedarea: unservayedarea, house_no: house_no, block_no: block_no, plot_no: plot_no, road: road, street: street, postcode: postcode, wardIdB: wardIdB, addressAreaB: addressAreaB, bustype: bustype, nida_no: nida_no, dob: dob, busorigintype: busorigintype, fname: fname, mname: mname, lname: lname, gender: gender, PhoneBuz: PhoneBuz, issuingAuthorityId: issuingAuthorityId, inputEmail4comp: inputEmail4comp, businessLicenceClassId: businessLicenceClassId, trackngNo: trackngNo, userId: userId, BizOwnerType: BizOwnerType, NoUnit: NoUnit, BizTin: BizTin, TaxPayer: TaxPayer, TypeList: TypeList},
+        json: {fullname: fullname, bn_no: bn_no, bn_name: bn_name, 
+          inco_no: inco_no, reg_no_other: reg_no_other, corporate_name: corporate_name, 
+          leadername_nat: leadername_nat, leadername_nat_2: leadername_nat_2, 
+          BLdetailsId: BLdetailsId, districtlistB: districtlistB, regionlistB: regionlistB, 
+          inputEmail4pobox: inputEmail4pobox, unservayedarea: unservayedarea, house_no: house_no, 
+          block_no: block_no, plot_no: plot_no, road: road, street: street, postcode: postcode, 
+          wardIdB: wardIdB, addressAreaB: addressAreaB, bustype: bustype, nida_no: nida_no, 
+          dob: dob, busorigintype: busorigintype, fname: fname, mname: mname, lname: lname, 
+          gender: gender, PhoneBuz: PhoneBuz, issuingAuthorityId: issuingAuthorityId, 
+          inputEmail4comp: inputEmail4comp, businessLicenceClassId: businessLicenceClassId, 
+          trackngNo: trackngNo, userId: userId, BizOwnerType: BizOwnerType, NoUnit: NoUnit, 
+          BizTin: BizTin, TaxPayer: TaxPayer, TypeList: TypeList, subwardIdB: subwardIdB},
       }, function(error1, response, body){
         if(error) {          
           console.log("fail to saveStageSecond " + error1);
@@ -3060,6 +3178,7 @@ app.post('/saveTransferStageSecond',function(req,res){
   var regionlistB = req.body.regionlistB;
   var districtlistB = req.body.districtlistB;
   var inputEmail4pobox = req.body.inputEmail4pobox;
+  var subwardIdB = req.body.subwardIdB;
   var userId = req.session.userID;
   if(typeof req.session.userID !== "undefined" || req.session.userID === true){
   request({
@@ -4449,7 +4568,19 @@ app.post('/MyLic', async function(req, res) {
       res.send({status: "failed"});
     }
     var request = new sql.Request();
-    request.query('SELECT d.FeePaid as FeePaid, a.BusinessClassId as BusinessClassId, a.EntityName as EntityName, d.LicenceStatusId as LicenceStatusId, d.IsBranch as IsBranch, d.BLNumber as BLNumber, a.Id as Id, a.TrackingNo as TrackingNo, a.ServiceCode as ServiceCode, d.ExpireDate as ExpireDate, d.DateIssued as DateIssued, b.ApplicationStatusId as ApplicationStatusId, b.ApplicationStageId as ApplicationStageId, c.BusinessTypeName as BusinessTypeName, b.PaymentStatus as PaymentStatus, d.isSentToRegistry as IsSentRegistry FROM dbo.BusinessLicApplication as a, dbo.BLicenseApplicationTracker as b, dbo.BusinessTypes as c, dbo.BusinessLicenceDetails as d WHERE d.BusinessLicenceApplicationId = a.Id AND a.Id = b.ApplicationId AND c.BusinessTypeId = a.BusinessTypeId AND b.ApplicationStatusId = 5 AND d.LicenceStatusId IN (1) AND d.isSentToRegistry = 1 AND b.ApplicationStageId = 6 AND a.CreatedByUserId = '+userId + ' ORDER BY a.Id DESC', 
+    request.query('SELECT d.FeePaid as FeePaid, a.BusinessClassId as BusinessClassId, ' + 
+    ' a.EntityName as EntityName, d.LicenceStatusId as LicenceStatusId, ' + 
+    ' d.IsBranch as IsBranch, d.BLNumber as BLNumber, a.Id as Id, ' + 
+    ' a.TrackingNo as TrackingNo, a.ServiceCode as ServiceCode, ' + 
+    ' d.ExpireDate as ExpireDate, d.DateIssued as DateIssued, ' + 
+    ' b.ApplicationStatusId as ApplicationStatusId, b.ApplicationStageId as ApplicationStageId, ' + 
+    ' c.BusinessTypeName as BusinessTypeName, b.PaymentStatus as PaymentStatus, ' + 
+    ' d.isSentToRegistry as IsSentRegistry FROM dbo.BusinessLicApplication as a, ' + 
+    ' dbo.BLicenseApplicationTracker as b, dbo.BusinessTypes as c, dbo.BusinessLicenceDetails as d ' + 
+    ' WHERE d.BusinessLicenceApplicationId = a.Id AND a.Id = b.ApplicationId ' + 
+    ' AND c.BusinessTypeId = a.BusinessTypeId AND b.ApplicationStatusId = 5 ' + 
+    ' AND d.LicenceStatusId IN (1) AND d.isSentToRegistry = 1 AND b.ApplicationStageId = 6 ' + 
+    ' AND a.CreatedByUserId = ' + userId + ' ORDER BY a.Id DESC', 
     function (err, recordset) {
   
       if (err) {
@@ -5337,6 +5468,7 @@ var corporate_name = req.body.corporate_name;
 var leadername_nat = req.body.leadername_nat;
 var leadername_nat_2 = req.body.leadername_nat_2;
 var bn_no = req.body.bn_no;
+var subwardIdB = req.body.subwardIdB;
 
 
 if(BizOwnerType == 1){
@@ -5401,7 +5533,7 @@ if(BizOwnerType == 1){
         .input('IsOfficeAddress', 0)
         .input('CompanyEmail', inputEmail4comp)
         .input('CompanyPhone', PhoneBuz)
-        .input('OwnerId', BizOwnerType)
+        .input('SUBWARD_ID', subwardIdB)
         .execute('Save_Address_SP', function(err, recordsets, returnValue) {
             if(err) {
               console.log("fail to Save_Address_SP " + err);
@@ -5437,6 +5569,7 @@ if(BizOwnerType == 1){
             .input('CompanyEmail', inputEmail4comp)
             .input('CompanyPhone', PhoneBuz)
             .input('OwnerId', BizOwnerType)
+            .input('SUBWARD_ID', subwardIdB)
             .execute('Save_Address_SP', function(err, recordsets, returnValue) {
                 if(err) {
                   console.log("fail to Save_Address_SP " + err);
@@ -5533,6 +5666,7 @@ if(BizOwnerType == 3){
         .input('CompanyEmail', inputEmail4comp)
         .input('CompanyPhone', PhoneBuz)
         .input('OwnerId', bustype)
+        .input('SUBWARD_ID', subwardIdB)
         .execute('Save_Address_SP', function(err, recordsets, returnValue) {
             if(err) {
               console.log("fail to Save_Address_SP " + err);
@@ -5568,6 +5702,7 @@ if(BizOwnerType == 3){
             .input('CompanyEmail', inputEmail4comp)
             .input('CompanyPhone', PhoneBuz)
             .input('OwnerId', bustype)
+            .input('SUBWARD_ID', subwardIdB)
             .execute('Save_Address_SP', function(err, recordsets, returnValue) {
                 if(err) {
                   console.log("fail to Save_Address_SP " + err);
@@ -5673,6 +5808,7 @@ if(BizOwnerType == 2){
             .input('CompanyEmail', inputEmail4comp)
             .input('CompanyPhone', PhoneBuz)
             .input('OwnerId', bustype)
+            .input('SUBWARD_ID', subwardIdB)
             .execute('Save_Address_SP', function(err, recordsets, returnValue) {
                 if(err) {
                   console.log("fail to Save_Address_SP " + err);
@@ -5741,6 +5877,7 @@ if(BizOwnerType == 4){
         .input('CompanyEmail', inputEmail4comp)
         .input('CompanyPhone', PhoneBuz)
         .input('OwnerId', bustype)
+        .input('SUBWARD_ID', subwardIdB)
         .execute('Save_Address_SP', function(err, recordsets, returnValue) {
             if(err) {
               console.log("fail to Save_Address_SP " + err);
@@ -7169,6 +7306,7 @@ app.post('/AddressRecordTransfer', function(req, res){
   var inputEmail4comp = req.body.inputEmail4comp;
   var inputEmail4phn = req.body.inputEmail4phn;
   var inputEmail4pobox = req.body.inputEmail4pobox;
+  var subwardIdB = req.body.subwardIdB;
   // var issuingAuthorityId = req.body.issuingAuthorityId;
   var fname = req.body.fname;
   var mname = req.body.mname;
@@ -7266,6 +7404,7 @@ app.post('/AddressRecordTransfer', function(req, res){
         .input('CompanyPhone', inputEmail4phn)
         // .input('OwnerId', bustype)
         .input('OwnerId', 1)
+        .input('SUBWARD_ID', subwardIdB)
         .execute('Save_Address_SP', function(err, recordsets, returnValue) {
             if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
@@ -7299,6 +7438,7 @@ app.post('/AddressRecordTransfer', function(req, res){
             .input('CompanyEmail', inputEmail4comp)
             .input('CompanyPhone', inputEmail4phn)
             .input('OwnerId', 1)
+            .input('SUBWARD_ID', subwardIdB)
             .execute('Save_Address_SP', function(err, recordsets, returnValue) {
                 if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
@@ -7356,6 +7496,7 @@ app.post('/AddressRecordTransfer', function(req, res){
         .input('CompanyPhone', inputEmail4phn)
         // .input('OwnerId', bustype)
         .input('OwnerId', 3)
+        .input('SUBWARD_ID', subwardIdB)
         .execute('Save_Address_SP', function(err, recordsets, returnValue) {
             if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
@@ -7388,7 +7529,8 @@ app.post('/AddressRecordTransfer', function(req, res){
             .input('IsOfficeAddress', 1)
             .input('CompanyEmail', inputEmail4comp)
             .input('CompanyPhone', inputEmail4phn)
-            .input('OwnerId', 1)
+            .input('OwnerId', 3)
+            .input('SUBWARD_ID', subwardIdB)
             .execute('Save_Address_SP', function(err, recordsets, returnValue) {
                 if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
@@ -7397,7 +7539,7 @@ app.post('/AddressRecordTransfer', function(req, res){
      new sql.Request()
      .input('EntityTypeId', 3)
      .input('EntityId', BLdetailsId)
-     .input('OwnerSubTypeId', 1)
+     .input('OwnerSubTypeId', 3)
      .input('FrontUserId', userId)
      .input('TrackingNo', trackNo)
      .input('CorporateName', '')
@@ -7445,7 +7587,8 @@ app.post('/AddressRecordTransfer', function(req, res){
         .input('CompanyEmail', inputEmail4comp)
         .input('CompanyPhone', inputEmail4phn)
         // .input('OwnerId', bustype)
-        .input('OwnerId', 3)
+        .input('OwnerId', 2)
+        .input('SUBWARD_ID', subwardIdB)
         .execute('Save_Address_SP', function(err, recordsets, returnValue) {
             if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
@@ -7478,7 +7621,8 @@ app.post('/AddressRecordTransfer', function(req, res){
             .input('IsOfficeAddress', 1)
             .input('CompanyEmail', inputEmail4comp)
             .input('CompanyPhone', inputEmail4phn)
-            .input('OwnerId', 1)
+            .input('OwnerId', 2)
+            .input('SUBWARD_ID', subwardIdB)
             .execute('Save_Address_SP', function(err, recordsets, returnValue) {
                 if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           //sql.close();
@@ -7487,7 +7631,7 @@ app.post('/AddressRecordTransfer', function(req, res){
      new sql.Request()
      .input('EntityTypeId', 3)
      .input('EntityId', BLdetailsId)
-     .input('OwnerSubTypeId', 1)
+     .input('OwnerSubTypeId', 2)
      .input('FrontUserId', userId)
      .input('TrackingNo', trackNo)
      .input('CorporateName', '')
