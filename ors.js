@@ -9378,7 +9378,7 @@ app.get('/ownerType', function (req, res) {
           
           if (err) {          
             console.log("fail to ownerType " + err);
-            // sql.close();
+            sql.close();
             res.send({status: "failed"});
         }else{
           sql.close();

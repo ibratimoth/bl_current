@@ -164,3 +164,248 @@ Id =[{"AttachmentTypeId":1,"AttachmentName":"Proof of Business Premise","Descrip
   token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIyMDE2OCIsImlhdCI6MTY4NzA4MzE3NiwiZXhwIjoxNjg3MDg2Nzc2fQ.bO8ArOMitPFAwu0C7VJb2P64Daubf16VhVAj4OP5nOw'
 }
 [ { Id: '11759' } ]
+Hello ORS
+Sun Jun 18 2023 13:49:22 GMT+0300 (East Africa Time): Successful login
+softwaredevelopertz@gmail.com
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sun Jun 18 2023 13:49:36 GMT+0300 (East Africa Time): List of Regions
+response.body
+[{"trackingNo":"BL230618-1561"}]
+Sun Jun 18 2023 13:49:38 GMT+0300 (East Africa Time): Successful generate Tracking Number
+get particulars
+req.params.id
+20168
+1
+body
+[{"status":"success","fname":"Mark","mname":"Samwel","lname":"Nyamwocha","date_birth":"1999-01-01T00:00:00.000Z","citizen":"Local","gender":"Male"}]
+Hello ORS
+Sun Jun 18 2023 13:51:26 GMT+0300 (East Africa Time): Successful login
+softwaredevelopertz@gmail.com
+Sun Jun 18 2023 13:51:38 GMT+0300 (East Africa Time): List of Regions
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sun Jun 18 2023 13:51:38 GMT+0300 (East Africa Time): List of Regions
+response.body
+[{"trackingNo":"BL230618-1773"}]
+Sun Jun 18 2023 13:51:39 GMT+0300 (East Africa Time): Successful generate Tracking Number
+get particulars
+req.params.id
+20168
+1
+body
+[{"status":"success","fname":"Mark","mname":"Samwel","lname":"Nyamwocha","date_birth":"1999-01-01T00:00:00.000Z","citizen":"Local","gender":"Male"}]
+Hello ORS
+Sun Jun 18 2023 13:53:05 GMT+0300 (East Africa Time): Successful login
+softwaredevelopertz@gmail.com
+Sun Jun 18 2023 13:53:24 GMT+0300 (East Africa Time): List of Regions
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sun Jun 18 2023 13:53:24 GMT+0300 (East Africa Time): List of Regions
+response.body
+[{"trackingNo":"BL230618-2104"}]
+Sun Jun 18 2023 13:53:25 GMT+0300 (East Africa Time): Successful generate Tracking Number
+get particulars
+req.params.id
+20168
+1
+body
+[{"status":"success","fname":"Mark","mname":"Samwel","lname":"Nyamwocha","date_birth":"1999-01-01T00:00:00.000Z","citizen":"Local","gender":"Male"}]
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+Id =2551
+Id =Arusha CBD
+Id =Arusha
+Id =Arumeru
+Id =Monduli
+Id =Longido
+Id =Karatu
+Id =Ngorongoro
+[
+  { districtId: '25511', districtName: 'Arusha CBD' },
+  { districtId: '25512', districtName: 'Arusha' },
+  { districtId: '25513', districtName: 'Arumeru' },
+  { districtId: '25514', districtName: 'Monduli' },
+  { districtId: '25515', districtName: 'Longido' },
+  { districtId: '25516', districtName: 'Karatu' },
+  { districtId: '25517', districtName: 'Ngorongoro' }
+]
+[
+  { WardId: '23101', wardName: 'Sekei' },
+  { WardId: '23102', wardName: 'Kati' },
+  { WardId: '23103', wardName: 'Kaloleni' },
+  { WardId: '23104', wardName: 'Levolosi' },
+  { WardId: '23105', wardName: 'Ngarenaro' },
+  { WardId: '23106', wardName: 'Elerai' },
+  { WardId: '23107', wardName: 'Unga Limited' },
+  { WardId: '23108', wardName: 'Daraja Ii' },
+  { WardId: '23109', wardName: 'Themi' },
+  { WardId: '23110', wardName: 'Kimandolu' },
+  { WardId: '23111', wardName: 'Olorieni' },
+  { WardId: '23112', wardName: 'Baraa' },
+  { WardId: '23113', wardName: 'Lemara' },
+  { WardId: '23114', wardName: 'Engutoto' },
+  { WardId: '23115', wardName: 'Sokon 1' },
+  { WardId: '23116', wardName: 'Sombetini' },
+  { WardId: '23117', wardName: 'Terrat' },
+  { WardId: '23118', wardName: 'Moshono' },
+  { WardId: '23119', wardName: 'Olasiti' },
+  { WardId: '23120', wardName: 'Moivaro' },
+  { WardId: '23121', wardName: 'Sinoni' },
+  { WardId: '23122', wardName: 'Muriet' },
+  { WardId: '23123', wardName: 'Osunyai Jr' },
+  { WardId: '23124', wardName: 'Sakina' },
+  { WardId: '23125', wardName: 'Olmoti' }
+]
+[
+  {
+    Id: '27916',
+    AddressOwnerId: '157969021',
+    AddressOwnerTypeId: '3',
+    AreaTypeId: 2,
+    WardId: '11101',
+    PostCode: '11101',
+    Street: 'test',
+    Road: 'road',
+    PlotNo: '',
+    BlockNo: '',
+    HouseNo: '',
+    UnsurveyedArea: 'nioa',
+    PoBox: '123',
+    CreateDate: 2023-06-18T12:44:16.203Z,
+    CreatedByUserId: '20168',
+    TrackingNo: 'BL230618-1863',
+    CountryId: '255',
+    City: '',
+    PhysicalAddress: '',
+    ZipCode: '',
+    RegionCode: '2552',
+    DistrictCode: '25521',
+    Active: true,
+    UpdatedDate: null,
+    IsOfficeAddress: false,
+    CompanyEmail: 'abc@gmaol.com',
+    CompanyPhone: '0788990055',
+    ExtRefNo: null,
+    SUBWARD_ID: null
+  },
+  {
+    Id: '27917',
+    AddressOwnerId: '10805',
+    AddressOwnerTypeId: '4',
+    AreaTypeId: 2,
+    WardId: '11101',
+    PostCode: '11101',
+    Street: 'test',
+    Road: 'road',
+    PlotNo: '',
+    BlockNo: '',
+    HouseNo: '',
+    UnsurveyedArea: 'nioa',
+    PoBox: '123',
+    CreateDate: 2023-06-18T12:44:16.210Z,
+    CreatedByUserId: '20168',
+    TrackingNo: 'BL230618-1863',
+    CountryId: '255',
+    City: '',
+    PhysicalAddress: '',
+    ZipCode: '',
+    RegionCode: '2552',
+    DistrictCode: '25521',
+    Active: true,
+    UpdatedDate: null,
+    IsOfficeAddress: true,
+    CompanyEmail: 'abc@gmaol.com',
+    CompanyPhone: '0788990055',
+    ExtRefNo: null,
+    SUBWARD_ID: null
+  }
+]
+yes
+Id =[{"AttachmentTypeId":1,"AttachmentName":"Proof of Business Premise","Description":"Proof of Business Premise"}]
+{
+  trackNo: 'BL230618-2104',
+  userId: '20168',
+  attachmentId: '1',
+  atachment: 'data:application/pdf;base64,JVBERi0xLjcNJeLjz9MNCjEgMCBvYmoNPDwvRmlsdGVyWy9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZV0vTGVuZ3RoIDQyOD4+DXN0cmVhbQo4O1hdTz5FcU5AJScnT19AJWVAP0o7JSs4KDllPlg9TVI2Uz9pXllnQTM9XS5IRFhGLlIkbElMQCJwSitFUCglMApiXTZham1OWm4qIT0nT1FaZVFeWSosPV0/Qy5CK1xVbGc5ZGhEKiJpQ1s7Kj0zYG9QMVshU14pPzEpSVo0ZHVwYApFMXIhLywqMFsqOS5hRklSMiZiLUMjczxYbDVGSEBbPD0hIzZWKXVEQlhuSXIuRj5vUlo3RGwlTUxZXC4/ZD5Nbgo2JVEyb1lmTlJGJCQrT048K11SVUptQzBJPGpsTC5vWGlzWjtTWVVbLzcjPCYzN3JjbFFLcWVKZSMsVUY3UmdiMQpWTldGS2Y+bkRaNE9UczBTIXNhRz5HR0tVbFEqUT80NTpDSSY0SidfMmo8ZXRKSUNqN2U3blBNYj1PNlM3VU9IPApQTzdyXEkuSHUmZTBkJkU8LicpZkVSci9sKypXLClxXkQqYWk1PHV1TFguN2cvPiRYS3JjWXAwbitYbF9uVSpPKApsWyQ2Tm4rWl9OcTBdczdoc11gWFgxblo4Jjk0YVx+PgplbmRzdHJlYW0NZW5kb2JqDTQgMCBvYmoNPDwvQml0c1BlckNvbXBvbmVudCA4L0NvbG9yU3BhY2UgMiAwIFIvRmlsdGVyWy9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZV0vSGVpZ2h0IDEwNS9MZW5ndGggMTI3OC9XaWR0aCA3ND4+DXN0cmVhbQo4O1pcN11sKVJZJkdHSGFJTGFVaCZVM0xyIjsncUFMb1wwVDJbcnBkJDxpbjhKVlBsLWpLWG1nJ0guI1pSPCNMWwpqLF8tblA+JyhOUkssQS0vPUkzNGhdN2MlN3Q7K3IpYDNKN2dISW1QTmxnLHBNSW5oRjJNYnNXXStFRFFocXFwIgpydWlcX1MkWytYP15kLSdcUEkvXzUlVT9xOm4vZFUmVkEkcDYydV0hXGIzRTMySEUuK0AxZiEoI01vbTglV0cxPwpwYVlFJU5NRCMsZURDTnRxKFhPLlRlMzlSZT9SOHAjWSVvIjsybVNVXGFGPnApampTNW49aTdBSmY7czVaLFNWWwopSjFGVDxeUTVxNXNRUkAwX2BqM1xUYjJjZCZXW29MQSVjMU1xT0pCMDpvdV1SdGpRYCdqbnEkYWpyTm9IanIzYApHODtwQCFyZzQzKEc3Ozw2KHNfXSY0S3V1XjpAOHRgM1ptbU5MNzEnTURRWTcxM0AmM2lFTS5zW0BrZWdsRFU0IQpOYT8yMzE5QEQyW25NbDNlaU9LcWIjRiopVSlZV1c/LjM0TTBINSo8azJgbkNQSnI5KWxlb2hHclpvdWsiOGtSYApqJ3VRKyVZbixqKWR0ZyQzQEgqMz0mT20jMGpVW0BCIj9UMkRtcmE2I2gmNykvNW0hNzNQYiohSi51TkxnTm5cMApsdT1lPkBAa2NuPzpmaWVWQHBLMkcpVyRVSCs/VlBkajsjPF1EXmYhQzZeJCUkMSQnO0RRN05EWGUnYU9GczJFawo8ZyQ3cl1yRy02Q1tDSmYxLV9TJTs0JT9gJHQuJSNNOFY8N3BAWi8mbDtiOHJtaUhcYkYrU09FZjZia0RQPThtaApDPmorUG82byhWMT8sKmdCMjBQT1dJZmgvSkFOImc+MDsvTCJsKmJxNHRvYW1fMilsWFVBPjglSmw5c1NhSiRWTgpvLUJvSmouQ0Q1WmAkZmFPYmZIV1Y1WkY4JkMiMFs0aDFHaz1eT1NwTm4qRyRVZCNDPl1LUk9aUChcaGZDPThgNQpVI1hMMTU2WjlWZy0zKElaKSxsUmhlWTlhLUopbiVcJENETiZqQ1AzUFU5Vm5uamlMYFw0JltSRVxbKk0rUSkiJwpxPio1VyEkdDRoTShzMTdiZCpgKWdSa09eQ0RoXSZtNGwsbWVyUGxVMGNCczlUIV9ZJTlwMGkwK2BDS3QtI0BWQQpAaC81ZG5jLms3YnBBJjpjRk5YOkcqdHU8Y2IzPig7aTtrZ1EpXV1LLC1WUT1MXklbY2snPzknMlhQMCRkNUAxcwpsXW9RXCZcKzEiOi8tXmQqZkdjZElKKisrO1NCX0hWaiNsNjJnXnBsYFg/VkpcI0hDNTZGSlZqPkRvaDc7MmBVQwomXDdfJEBoUiVFKGFoIVQhYF9bbFhBbyktUytKJ11ERFEvVlZROydwN1FAQlZtP1gsbm5STWtdTDE0VjdbcU9dVgpdJDRyXlhGaUhgcGpiPkdeKj5OIjBRaV5NYXVMOE8tUk8iNFppZmBsbyopOV5ROEdgaTciSkZFVSpwX05MSmI4YQpBYyNkViVVPltFMWJGaF1fTjlAPykuVmpkKSpbNm5kNG08R1VQcShxRkRqMTlKaTkrRSlydGgrWGUnYUw0b0thaAosNGRoKk1HR3VPaTA6dFkhOV8jM2RKfj4KZW5kc3RyZWFtDWVuZG9iag02IDAgb2JqDTw8L0xlbmd0aCAyNDgyL1N1YnR5cGUvWE1ML1R5cGUvTWV0YWRhdGE+Pg1zdHJlYW0KPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNi4wLWMwMDIgNzkuMTY0NDYwLCAyMDIwLzA1LzEyLTE2OjA0OjE3ICAgICAgICAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgICAgICAgICB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIKICAgICAgICAgICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgICAgICAgICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICAgICAgICAgICB4bWxuczpwZGY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGRmLzEuMy8iPgogICAgICAgICA8eG1wOkNyZWF0ZURhdGU+MjAyMC0xMC0xNFQxNzowODoxMCswMjowMDwveG1wOkNyZWF0ZURhdGU+CiAgICAgICAgIDx4bXA6TWV0YWRhdGFEYXRlPjIwMjAtMTAtMTRUMTc6MDg6MTArMDI6MDA8L3htcDpNZXRhZGF0YURhdGU+CiAgICAgICAgIDx4bXA6TW9kaWZ5RGF0ZT4yMDIwLTEwLTE0VDE3OjA4OjEwKzAyOjAwPC94bXA6TW9kaWZ5RGF0ZT4KICAgICAgICAgPHhtcDpDcmVhdG9yVG9vbD5BZG9iZSBJbkRlc2lnbiAxNS4xIChNYWNpbnRvc2gpPC94bXA6Q3JlYXRvclRvb2w+CiAgICAgICAgIDx4bXBNTTpJbnN0YW5jZUlEPnV1aWQ6OTA5Y2Q5NmMtMTc3MC04OTQ3LWFiYmItMWUzNDFmNWUzZDQ4PC94bXBNTTpJbnN0YW5jZUlEPgogICAgICAgICA8eG1wTU06T3JpZ2luYWxEb2N1bWVudElEPnhtcC5kaWQ6ZDM2YTE2ZWMtNWE2My00YjRhLTgxZjUtMWNjOWY0OWIxOTY2PC94bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ+CiAgICAgICAgIDx4bXBNTTpEb2N1bWVudElEPnhtcC5pZDo3YTg2NWQ4NC04ZGJmLTQwMTUtOTZiNy1mZGFlODlhOTYwM2I8L3htcE1NOkRvY3VtZW50SUQ+CiAgICAgICAgIDx4bXBNTTpSZW5kaXRpb25DbGFzcz5wcm9vZjpwZGY8L3htcE1NOlJlbmRpdGlvbkNsYXNzPgogICAgICAgICA8eG1wTU06RGVyaXZlZEZyb20gcmRmOnBhcnNlVHlwZT0iUmVzb3VyY2UiPgogICAgICAgICAgICA8c3RSZWY6aW5zdGFuY2VJRD54bXAuaWlkOjIwNzEwYTljLTM2OTEtNDFmYS1iZDgxLWFkZjg1ODEwMDM4Njwvc3RSZWY6aW5zdGFuY2VJRD4KICAgICAgICAgICAgPHN0UmVmOmRvY3VtZW50SUQ+eG1wLmRpZDpiNDdlMmY1Ny0wMDI5LTQ1YzUtOGUxZC05N2Y3YzE1MzU2MTU8L3N0UmVmOmRvY3VtZW50SUQ+CiAgICAgICAgICAgIDxzdFJlZjpvcmlnaW5hbERvY3VtZW50SUQ+eG1wLmRpZDpkMzZhMTZlYy01YTYzLTRiNGEtODFmNS0xY2M5ZjQ5YjE5NjY8L3N0UmVmOm9yaWdpbmFsRG9jdW1lbnRJRD4KICAgICAgICAgICAgPHN0UmVmOnJlbmRpdGlvbkNsYXNzPmRlZmF1bHQ8L3N0UmVmOnJlbmRpdGlvbkNsYXNzPgogICAgICAgICA8L3htcE1NOkRlcml2ZWRGcm9tPgogICAgICAgICA8eG1wTU06SGlzdG9yeT4KICAgICAgICAgICAgPHJkZjpTZXE+CiAgICAgICAgICAgICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0iUmVzb3VyY2UiPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6YWN0aW9uPmNvbnZlcnRlZDwvc3RFdnQ6YWN0aW9uPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6cGFyYW1ldGVycz5mcm9tIGFwcGxpY2F0aW9uL3gtaW5kZXNpZ24gdG8gYXBwbGljYXRpb24vcGRmPC9zdEV2dDpwYXJhbWV0ZXJzPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6c29mdHdhcmVBZ2VudD5BZG9iZSBJbkRlc2lnbiAxNS4xIChNYWNpbnRvc2gpPC9zdEV2dDpzb2Z0d2FyZUFnZW50PgogICAgICAgICAgICAgICAgICA8c3RFdnQ6Y2hhbmdlZD4vPC9zdEV2dDpjaGFuZ2VkPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6d2hlbj4yMDIwLTEwLTE0VDE3OjA4OjEwKzAyOjAwPC9zdEV2dDp3aGVuPgogICAgICAgICAgICAgICA8L3JkZjpsaT4KICAgICAgICAgICAgPC9yZGY6U2VxPgogICAgICAgICA8L3htcE1NOkhpc3Rvcnk+CiAgICAgICAgIDxkYzpmb3JtYXQ+YXBwbGljYXRpb24vcGRmPC9kYzpmb3JtYXQ+CiAgICAgICAgIDxwZGY6UHJvZHVjZXI+QWRvYmUgUERGIExpYnJhcnkgMTUuMDwvcGRmOlByb2R1Y2VyPgogICAgICAgICA8cGRmOlRyYXBwZWQ+RmFsc2U8L3BkZjpUcmFwcGVkPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KPD94cGFja2V0IGVuZD0iciI/PgplbmRzdHJlYW0NZW5kb2JqDTcgMCBvYmoNPDwvQ3JlYXRpb25EYXRlKEQ6MjAyMDEwMTQxNzA4MTArMDInMDAnKS9DcmVhdG9yKEFkb2JlIEluRGVzaWduIDE1LjEgXChNYWNpbnRvc2hcKSkvTW9kRGF0ZShEOjIwMjAxMDE0MTcwODEwKzAyJzAwJykvUHJvZHVjZXIoQWRvYmUgUERGIExpYnJhcnkgMTUuMCkvVHJhcHBlZC9GYWxzZT4+DWVuZG9iag05IDAgb2JqDTw8L0xhbmcoZW4tVVMpL01ldGFkYXRhIDYgMCBSL091dGxpbmVzIDMgMCBSL1BhZ2VzIDUgMCBSL1R5cGUvQ2F0YWxvZy9WaWV3ZXJQcmVmZXJlbmNlczw8L0RpcmVjdGlvbi9MMlI+Pj4+DWVuZG9iag0xMCAwIG9iag08PC9Bbm5vdHMgMTEgMCBSL0FydEJveFswIDAgNTk1LjI3NiA4NDEuODldL0JsZWVkQm94WzAgMCA1OTUuMjc2IDg0MS44OV0vQ29udGVudHNbMjEgMCBSIDIyIDAgUiAyMyAwIFIgMjQgMCBSIDI1IDAgUiAyNiAwIFIgMjcgMCBSIDI4IDAgUl0vQ3JvcEJveFswIDAgNTk1LjI3NiA4NDEuODldL0dyb3VwIDY0IDAgUi9NZWRpYUJveFswIDAgNTk1LjI3NiA4NDEuODldL1BhcmVudCA1IDAgUi9QaWVjZUluZm88PC9JbkRlc2lnbjw8L0RvY3VtZW50SUQoXDM3NlwzNzdcMDAweFwwMDBtXDAwMHBcMDAwLlwwMDBkXDAwMGlcMDAwZFwwMDA6XDAwMGJcMDAwNFwwMDA3XDAwMGVcMDAwMlwwMDBmXDAwMDVcMDAwN1wwMDAtXDAwMDBcMDAwMFwwMDAyXDAwMDlcMDAwLVwwMDA0XDAwMDVcMDAwY1wwMDA1XDAwMC1cMDAwOFwwMDBlXDAwMDFcMDAwZFwwMDAtXDAwMDlcMDAwN1wwMDBmXDAwMDdcMDAwY1wwMDAxXDAwMDVcMDAwM1wwMDA1XDAwMDZcMDAwMVwwMDA1KS9MYXN0TW9kaWZpZWQoXDM3NlwzNzdcMDAwRFwwMDA6XDAwMDJcMDAwMFwwMDAyXDAwMDBcMDAwMVwwMDAwXDAwMDFcMDAwNFwwMDAxXDAwMDVcMDAwMFwwMDA4XDAwMDFcMDAwMFwwMDBaKS9OdW1iZXJvZlBhZ2VzIDEvT3JpZ2luYWxEb2N1bWVudElEKFwzNzZcMzc3XDAwMHhcMDAwbVwwMDBwXDAwMC5cMDAwZFwwMDBpXDAwMGRcMDAwOlwwMDBkXDAwMDNcMDAwNlwwMDBhXDAwMDFcMDAwNlwwMDBlXDAwMGNcMDAwLVwwMDA1XDAwMGFcMDAwNlwwMDAzXDAwMC1cMDAwNFwwMDBiXDAwMDRcMDAwYVwwMDAtXDAwMDhcMDAwMVwwMDBmXDAwMDVcMDAwLVwwMDAxXDAwMGNcMDAwY1wwMDA5XDAwMGZcMDAwNFwwMDA5XDAwMGJcMDAwMVwwMDA5XDAwMDZcMDAwNikvUGFnZVVJRExpc3Q8PC8wIDIxMT4+L1BhZ2VXaWR0aExpc3Q8PC8wIDU5NS4yNzY+Pj4+Pj4vUmVzb3VyY2VzPDwvQ29sb3JTcGFjZTw8L0NTMCAyMCAwIFI+Pi9FeHRHU3RhdGU8PC9HUzAgMzAgMCBSL0dTMSAzMSAwIFIvR1MyIDMyIDAgUi9HUzMgMzMgMCBSL0dTNCAzNCAwIFIvR1M1IDM1IDAgUj4+L0ZvbnQ8PC9DMl8wIDE3IDAgUi9UVDAgMTggMCBSL1RUMSAxOSAwIFI+Pi9Qcm9jU2V0Wy9QREYgL1RleHRdL1hPYmplY3Q8PC9GbTAgNTAgMCBSL0ZtMSA1MiAwIFIvRm0yIDU0IDAgUi9GbTMgNTYgMCBSL0ZtNCA1OCAwIFI+Pj4+L1JvdGF0ZSAwL1RhYnMvVy9UaHVtYiA0IDAgUi9UcmltQm94WzAgMCA1OTUuMjc2IDg0MS44OV0vVHlwZS9QYWdlPj4NZW5kb2JqDTIxIDAgb2JqDTw8L0ZpbHRlci9GbGF0ZURlY29kZS9MZW5ndGggMzY0OT4+DXN0cmVhbQpIiZxXXW8byRF856+YRxIQ1/M9s4AhQJYlIwEOF8cC/OAcAppcWcytSJmU4ii/PlU9s0t9+ZwzDMk7uzM93dXV1a1Xf+sXy271bre4uVov1ZtfTtXk68QZZXRujPMqaBWj2nWTj2ozeXX6QavlXukmtxm/W+eUUWq/xKd3+PRlP/mKFxr/jApt44IO1ZJr1fJ6wi/8bUKTYKGfzG3GLvP8hY2NbSNf+Mbjmshn4xtj/aNnm/C5xdqaJvr22Xo0XPc/XWs8Xk3mxjXZjNbo4mhIK4cAfJBHr+GWQ+g6tsrbJgUurI7KhybA3nKiG+e98ggjBnzzGVAAMMtFNK0Ktml12chzdYlA+TmrYBqjrZqbxqesfNtYhDu3jUtG+dS4NuDo3OF1GO4ERKa1yrsmBqxCYwK+mSZlh71Xk8vJ+8kZM/vqhWy/Z77hb4RteOeTiumn8u18kyyOF0v5Ub5zE1ti6RuLXNsm4sbcIGwTBU+DaFt8aZuYGB+ypA1I4JCjpAy2GkdKOJeUBabwxoJegG85wSYNwjgruFuezMoBBC8ncK9LuJ6II6fZZybRGRjKTUiOWczajSuix611mQVxHExgAPOI/2BW58zMBWQKe0lRqwKis3DMwgIKB46UkGyIwwqRRZgYPwIyHvNaUMmILiAa2jRAO3myIemsYMSwFiWzqQkhFYKRChqww7XYBG/I+yaQZG3TAtcAm1ZFvMu2GokeuGXegLcILUbwzTERkWUGWEzjbOSTRBaEEAAgaFYh+GyVgyPcEhrvuQ3YZwAK075Ab1sVEQgoCux1hAsGZGf8qKUWuYB/nkWjheUhNRaaA8oG5BmAxESzyEzwgrOxjvTWKAVWRMjjiqkgXsPawXmm1KdWrLe0SqLAkdByo6YaCVsjKzt4/GdAcPhKDD2Z0EqVYU80luk2jAQEQ9GDbo7ky6AJqVhoxcJIxAqIJW8ls0gfuEBuAmptbOFq0olra0nVgBRi4VC9RNjJp8CqxQ0RacIy4S0c9OVjRpIdOeKHFUJCEaFs6rof1kXaflj8rFeLq5yGc14EIP+UAPgM0lH0iiXSeFAAaJJDJrWaA7hEyczgD1U3IAvMFvM9B4SWogc5o+ahTEmkxosCAgmskP1c9kLIXaA2ZMhcLxKe4DyI3CIPc0hKwE5sc8BiXsqQou/kOMowCPYMDAJqS5osaEPp9cMCdSI6WpconiDfiARhdrQpuo8mQSUL4EyEmyYUSnhbFwiHyrSc1CVuiQ4qmGGWwSU8wygo0rJZTqBVgRwxmhi0IC91J0FnIPORi2xprrgE+lD8wR70CTDYCsoOZ7GIWZTCwIondw0qGjHnKDLqkfx5li5bV9hb1iwW6U2odHhTlvMiuFRRzyQCUlklqS+kluqEt3AVmWVvAYTwGMlupWmyyOl35jeUk8uMCXroASVcQ72x2QW0BlqMTWJjAg+IAzBGG4wUo7JAtRrZJYKHe9Fwo2gcWyso4slKqopJvBdugKOBESlwBLhDOznqIBINhtWVNFmeqx8LAiFIk55jOMBoA5uhQFtVHrbZgcE99DnqlvfCckYF9XZBmjeYkKl6KHGwoxfe52io07Qyp3hokVOLK2nNG1Fb8R+p0YH6DNo5ppHpRybnJd0xS4zMEB6jDBPYy1rI0r2g4SlKizFCJKw1xzSP6A0vzRSl0LTQEoi4FTmChy1r0VAi0NM8edhK6SGaAF2EhsfMRHDwirECDGJL5yqZGFaoBC+tu6yR2giFxkHLwQVjDCQdlzgnY4wtIwEgR+dk/3BSyLiMzcVweHBgFPqOb2OJq661KAOHCZ5EYbGQUadwF2rO'... 82604 more characters,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIyMDE2OCIsImlhdCI6MTY4NzA4NDA3NiwiZXhwIjoxNjg3MDg3Njc2fQ.ZgK6UDYUita2xJFagHaZhHiSxaiJGvOs0LC7xXjlwLI'
+}
+[ { Id: '11763' } ]
