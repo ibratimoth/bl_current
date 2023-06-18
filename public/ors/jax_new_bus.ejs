@@ -768,6 +768,9 @@ async function uploadFile() {
 </script>
 <script>
     function ApplicationFinal(){
+        var radioButton = document.getElementById("customRadioInline1");
+
+    if (radioButton.checked) {
         $.ajax({
             url: "/saveApplicationFinal",
             type: 'GET',
@@ -784,16 +787,25 @@ async function uploadFile() {
                     window.location = "/Dashboard" 
                 }else{
                     swal({
-                    type: 'error',
-                    title: 'Oops...',
-                    text: data,
-                    padding: '2em',
-                    timer: 2000
-                }) 
+                        type: 'error',
+                        title: 'Oops...',
+                        text: data,
+                        padding: '2em',
+                        timer: 2000
+                    }) 
                 }
                 
             }
         });
+    } else {
+        swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Please declare your particulars first',
+            padding: '2em',
+            timer: 3000
+        }) 
+    }
     }
 </script>
 <script>
