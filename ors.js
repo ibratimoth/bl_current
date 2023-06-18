@@ -7860,8 +7860,9 @@ app.post('/AddressRecordRenew', function(req, res){
 });
 
 app.post('/uploaadFile', function (req, res) {
+  console.log("req.body")
  console.log(req.body)
-  var trackngNo = req.session.trackingNo;
+  var trackngNo = req.body.trackingNo;
   var token = req.body.token;
   var attachmentId = req.body.attachmentId;
   var atachment = req.body.atachment;
