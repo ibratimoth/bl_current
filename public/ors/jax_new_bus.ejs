@@ -572,170 +572,183 @@ function getWardB()
         var bn_no= document.getElementById('bn_no').value;
         var bn_name= document.getElementById('bn_name').value;
         var tin_no_ver = document.getElementById("tin_no_ver").value;
-if(BizOwnerType == 0){
-    swal({
-        type: 'error',
-        title: 'Oops...',
-        text: 'Please select Business Owner Type!',
-        padding: '2em',
-        timer: 3000,
-    })
-    $(".saveBiz").hide();
-    $(".saveBizOne").show();
-}if(tin_no_ver == 0){
-    swal({
-        type: 'error',
-        title: 'Oops...',
-        text: 'Please verify TIN!',
-        padding: '2em',
-        timer: 3000,
-    })
-    $(".saveBiz").hide();
-    $(".saveBizOne").show();
-}if(sectorlist == 0){
-    swal({
-        type: 'error',
-        title: 'Oops...',
-        text: 'Please select Business Sector!',
-        padding: '2em',
-        timer: 3000,
-    })
-    $(".saveBiz").hide();
-    $(".saveBizOne").show(); 
-}if(categorylist == 0){
-    swal({
-        type: 'error',
-        title: 'Oops...',
-        text: 'Please select Business Category!',
-        padding: '2em',
-        timer: 3000,
-    })  
-    $(".saveBiz").hide();
-    $(".saveBizOne").show();
-}
-if(TypeList == 0){
-    swal({
-        type: 'error',
-        title: 'Oops...',
-        text: 'Please select Business Type!',
-        padding: '2em',
-        timer: 3000,
-    })  
-    $(".saveBiz").hide();
-    $(".saveBizOne").show();
-}if(regionlistB == 0){
-    swal({
-        type: 'error',
-        title: 'Oops...',
-        text: 'Please select Region!',
-        padding: '2em',
-        timer: 3000,
-    }) 
-    $(".saveBiz").hide();
-    $(".saveBizOne").show();
-}if(districtlistB == 0){
-    swal({
-        type: 'error',
-        title: 'Oops...',
-        text: 'Please select District!',
-        padding: '2em',
-        timer: 3000,
-    }) 
-    $(".saveBiz").hide();
-    $(".saveBizOne").show();
-}if(addressAreaB == 0){
-    swal({
-        type: 'error',
-        title: 'Oops...',
-        text: 'Please select Address Type!',
-        padding: '2em',
-        timer: 3000,
-    })  
-    $(".saveBiz").hide();
-    $(".saveBizOne").show();
-}if(wardIdB == 0){
-    swal({
-        type: 'error',
-        title: 'Oops...',
-        text: 'Please select Ward!',
-        padding: '2em',
-        timer: 3000,
-    }) 
-    $(".saveBiz").hide();
-    $(".saveBizOne").show();
-}if(inputEmail4phn.length < 10){
-    swal({
-        type: 'error',
-        title: 'Oops...',
-        text: 'Please check your Phone number!',
-        padding: '2em',
-        timer: 3000,
-    })
-    $(".saveBiz").hide();
-    $(".saveBizOne").show();  
-}
-if(inputEmail4comp.length <= 0){
-    swal({
-        type: 'error',
-        title: 'Oops...',
-        text: 'Please provide email!',
-        padding: '2em',
-        timer: 3000,
-    }) 
-    $(".saveBiz").hide();
-    $(".saveBizOne").show(); 
-}
-if(inputEmail4pobox.length <= 0){
-    swal({
-        type: 'error',
-        title: 'Oops...',
-        text: 'Please provide P.O Box!',
-        padding: '2em',
-        timer: 3000,
-    })  
-    $(".saveBiz").hide();
-    $(".saveBizOne").show();
-}
-if(BizOwnerType != 0 && tin_no_ver == 1 && sectorlist != 0 && categorylist != 0 
-&& regionlistB != 0 && districtlistB != 0 && 
-addressAreaB != 0 && wardIdB != 0 && TypeList != 0 && inputEmail4phn.length >= 10 && 
-inputEmail4comp.length > 0 && inputEmail4pobox.length > 0){
-        $.ajax({
-            url: "/saveStageSecond",
-            type: 'POST',
-            data: JSON.stringify({"bn_name": bn_name, "bn_no": bn_no, "company_name": company_name, "inco_no": inco_no, 
-            "reg_no_other": reg_no_other, "corporate_name": corporate_name, "leadername_nat": leadername_nat, 
-            "leadername_nat_2": leadername_nat_2, "inputEmail4pobox": inputEmail4pobox, "unservayedarea": unservayedarea, 
-            "house_no": house_no, "block_no": block_no, "plot_no": plot_no, "road": road, "regionlistB": regionlistB, 
-            "districtlistB": districtlistB, "wardIdB": wardIdB, "postcode": postcode, "street": street, 
-            "addressAreaB": addressAreaB, "categorylist": categorylist, "sectorlist": sectorlist, "busorigintype": "1", 
-            "nida_no": nida_no, "fname": fname, "mname": mname, "lname": lname, "gender": gender, "dob": dob, 
-            "issuingAuthorityId": issuingAuthorityId, "inputEmail4phn": inputEmail4phn, "inputEmail4comp": inputEmail4comp, 
-            "businessLicenceClassId": businessLicenceClassId, "BizOwnerType": BizOwnerType, "NoUnit": NoUnit, "BizTin": BizTin, 
-            "TaxPayer": TaxPayer, "TypeList": TypeList}),
-            contentType: 'application/json',
-            success: function(response) {
-                //console.log(response)
+        alert(inputEmail4phn[0])
+// if(BizOwnerType == 0){
+//     swal({
+//         type: 'error',
+//         title: 'Oops...',
+//         text: 'Please select Business Owner Type!',
+//         padding: '2em',
+//         timer: 3000,
+//     })
+//     $(".saveBiz").hide();
+//     $(".saveBizOne").show();
+// }if(tin_no_ver == 0){
+//     swal({
+//         type: 'error',
+//         title: 'Oops...',
+//         text: 'Please verify TIN!',
+//         padding: '2em',
+//         timer: 3000,
+//     })
+//     $(".saveBiz").hide();
+//     $(".saveBizOne").show();
+// }if(sectorlist == 0){
+//     swal({
+//         type: 'error',
+//         title: 'Oops...',
+//         text: 'Please select Business Sector!',
+//         padding: '2em',
+//         timer: 3000,
+//     })
+//     $(".saveBiz").hide();
+//     $(".saveBizOne").show(); 
+// }if(categorylist == 0){
+//     swal({
+//         type: 'error',
+//         title: 'Oops...',
+//         text: 'Please select Business Category!',
+//         padding: '2em',
+//         timer: 3000,
+//     })  
+//     $(".saveBiz").hide();
+//     $(".saveBizOne").show();
+// }
+// if(TypeList == 0){
+//     swal({
+//         type: 'error',
+//         title: 'Oops...',
+//         text: 'Please select Business Type!',
+//         padding: '2em',
+//         timer: 3000,
+//     })  
+//     $(".saveBiz").hide();
+//     $(".saveBizOne").show();
+// }if(regionlistB == 0){
+//     swal({
+//         type: 'error',
+//         title: 'Oops...',
+//         text: 'Please select Region!',
+//         padding: '2em',
+//         timer: 3000,
+//     }) 
+//     $(".saveBiz").hide();
+//     $(".saveBizOne").show();
+// }if(districtlistB == 0){
+//     swal({
+//         type: 'error',
+//         title: 'Oops...',
+//         text: 'Please select District!',
+//         padding: '2em',
+//         timer: 3000,
+//     }) 
+//     $(".saveBiz").hide();
+//     $(".saveBizOne").show();
+// }if(addressAreaB == 0){
+//     swal({
+//         type: 'error',
+//         title: 'Oops...',
+//         text: 'Please select Address Type!',
+//         padding: '2em',
+//         timer: 3000,
+//     })  
+//     $(".saveBiz").hide();
+//     $(".saveBizOne").show();
+// }if(wardIdB == 0){
+//     swal({
+//         type: 'error',
+//         title: 'Oops...',
+//         text: 'Please select Ward!',
+//         padding: '2em',
+//         timer: 3000,
+//     }) 
+//     $(".saveBiz").hide();
+//     $(".saveBizOne").show();
+// }if(inputEmail4phn.length != 10){
+//     swal({
+//         type: 'error',
+//         title: 'Oops...',
+//         text: 'Please check your Phone number!',
+//         padding: '2em',
+//         timer: 3000,
+//     })
+//     $(".saveBiz").hide();
+//     $(".saveBizOne").show();  
+// }
+// if(inputEmail4phn[0] == '0'){
+//     swal({
+//         type: 'error',
+//         title: 'Oops...',
+//         text: 'Please check your Phone number!',
+//         padding: '2em',
+//         timer: 3000,
+//     })
+//     $(".saveBiz").hide();
+//     $(".saveBizOne").show();  
+// }
+// if(inputEmail4comp.length <= 0){
+//     swal({
+//         type: 'error',
+//         title: 'Oops...',
+//         text: 'Please provide email!',
+//         padding: '2em',
+//         timer: 3000,
+//     }) 
+//     $(".saveBiz").hide();
+//     $(".saveBizOne").show(); 
+// }
+// if(inputEmail4pobox.length <= 0){
+//     swal({
+//         type: 'error',
+//         title: 'Oops...',
+//         text: 'Please provide P.O Box!',
+//         padding: '2em',
+//         timer: 3000,
+//     })  
+//     $(".saveBiz").hide();
+//     $(".saveBizOne").show();
+// }
 
-                swal({
-                    title: 'Success!',
-                    text: 'Data succesfully saved.',
-                    type: 'success',
-                    timer: 2000,
-                })
-            getAttachments();
-            getPermit();
-            $(".saveBiz").hide();
-            $(".saveBizOne").show();
+// if(BizOwnerType != 0 && tin_no_ver == 1 && sectorlist != 0 && categorylist != 0 
+// && regionlistB != 0 && districtlistB != 0 && 
+// addressAreaB != 0 && wardIdB != 0 && TypeList != 0 && inputEmail4phn.length == 10 && 
+// inputEmail4comp.length > 0 && inputEmail4pobox.length > 0){
+//         $.ajax({
+//             url: "/saveStageSecond",
+//             type: 'POST',
+//             data: JSON.stringify({"bn_name": bn_name, "bn_no": bn_no, "company_name": company_name, "inco_no": inco_no, 
+//             "reg_no_other": reg_no_other, "corporate_name": corporate_name, "leadername_nat": leadername_nat, 
+//             "leadername_nat_2": leadername_nat_2, "inputEmail4pobox": inputEmail4pobox, "unservayedarea": unservayedarea, 
+//             "house_no": house_no, "block_no": block_no, "plot_no": plot_no, "road": road, "regionlistB": regionlistB, 
+//             "districtlistB": districtlistB, "wardIdB": wardIdB, "postcode": postcode, "street": street, 
+//             "addressAreaB": addressAreaB, "categorylist": categorylist, "sectorlist": sectorlist, "busorigintype": "1", 
+//             "nida_no": nida_no, "fname": fname, "mname": mname, "lname": lname, "gender": gender, "dob": dob, 
+//             "issuingAuthorityId": issuingAuthorityId, "inputEmail4phn": inputEmail4phn, "inputEmail4comp": inputEmail4comp, 
+//             "businessLicenceClassId": businessLicenceClassId, "BizOwnerType": BizOwnerType, "NoUnit": NoUnit, "BizTin": BizTin, 
+//             "TaxPayer": TaxPayer, "TypeList": TypeList}),
+//             contentType: 'application/json',
+//             success: function(response) {
+//                 //console.log(response)
+//                 $(".saveBiz").hide();
+//                 $(".saveBizOne").show();
+//                 swal({
+//                     title: 'Success!',
+//                     text: 'Data succesfully saved.',
+//                     type: 'success',
+//                     timer: 2000,
+//                 })
+//             getAttachments();
+//             getPermit();
+
 
 
        
-            },
-        error: function(jqXHR, textStatus, errorThrown){
-            alert('Error: ' + textStatus + ' - ' + errorThrown);
-        }
-        });
-}
+//             },
+//         // error: function(jqXHR, textStatus, errorThrown){
+//         //     alert('Error: ' + textStatus + ' - ' + errorThrown);
+//         // }
+//         });
+// }
     }
 </script>
 <script>

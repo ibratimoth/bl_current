@@ -4805,10 +4805,15 @@ app.post('/saveStageTwo', function (req, res) {
                   request2.input('inputEmail4phn', PhoneBuz);
                   request2.input('inputEmail4pobox', inputEmail4pobox);
                   request2.input('issuingAuthorityId', issuingAuthorityId);
-                  request2.query(`INSERT INTO dbo.BusinessLicenceDetails (BusinessLicenceApplicationId, BusinessTIN, Email, PhoneNo, PoBox, IsBranch, IssueingOfficeId, LicenceStatusId, Activated) values (@BusLicAppId, @BizTin, @inputEmail4comp, @inputEmail4phn, @inputEmail4pobox, 0, @issuingAuthorityId, 5, 0)`, function (err, recordset) {
-                      if (err) {          console.log("fail to get BusinessLicApplication " + err);
-          //sql.close();
-          res.send({status: "failed"});}
+                  request2.query(`INSERT INTO dbo.BusinessLicenceDetails (BusinessLicenceApplicationId, 
+                    BusinessTIN, Email, PhoneNo, PoBox, IsBranch, IssueingOfficeId, LicenceStatusId, Activated) 
+                    VALUES (@BusLicAppId, @BizTin, @inputEmail4comp, @inputEmail4phn, 
+                      @inputEmail4pobox, 0, @issuingAuthorityId, 5, 0)`, function (err, recordset) {
+                      if (err) {          
+                        console.log("fail to get BusinessLicApplication " + err);
+                        //sql.close();
+                        res.send({status: "failed"});
+                      }
       
       
                       var request3 = new sql.Request();
