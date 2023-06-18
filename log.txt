@@ -22241,3 +22241,163 @@ tracker body
 Sun Jun 18 2023 08:37:25 GMT+0300 (East Africa Time): List of Regions
 Id =
 [{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Hello ORS
+Sun Jun 18 2023 08:43:09 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+business details
+[{"BusinessLicOwnerTypeId":"2","EntityName":"CHUI MEDIA LIMITED","RegNo":"157968971"}]
+owner sub types
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11644","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Microfinancing","BusinessTypeId":"28"}]
+[{"Id":"27783","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.897Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27784","AddressOwnerId":"10766","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"12101","PostCode":"12101","Street":"sjhsd","Road":"jkhfds","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"jcbkjs","PoBox":"hsgfds6","CreateDate":"2023-06-17T05:13:04.910Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1630","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25522","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"hhd@ggdd.com","CompanyPhone":"0743673","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"}]
+reg_id 11644
+servicecode 4201
+json ength 0
+body
+[
+  {
+    AmountTotal: '',
+    ServiceName: '',
+    ExpireDate: '',
+    CurrencyUsed: '',
+    ControlNo: '',
+    InvoiceID: ''
+  }
+]
+trackingNo
+BL230617-1630
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11644',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1630',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T02:41:37.790Z,
+    CreatedDate: 2023-06-17T02:39:43.557Z,
+    ApplicationStatusId: '1',
+    ApplicationStageId: 3,
+    BusinessTypeName: 'Microfinancing',
+    PaymentStatus: false,
+    IsSentRegistry: false
+  }
+]
+tracker body
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sun Jun 18 2023 08:43:37 GMT+0300 (East Africa Time): List of Regions
+Hello ORS
+Sun Jun 18 2023 09:19:30 GMT+0300 (East Africa Time): Successful login
+req.params.id
+20168
+1
+business details
+[{"BusinessLicOwnerTypeId":"2","EntityName":"CHUI MEDIA LIMITED","RegNo":"157968971"}]
+owner sub types
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11663","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Social Security Agents","BusinessTypeId":"42"}]
+[{"Id":"27814","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.547Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27815","AddressOwnerId":"10771","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.750Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":"1","AreaTypeName":"Unsurveyed"}]
+reg_id 11663
+servicecode 4201
+json ength 1
+body
+[
+  {
+    AmountTotal: '560000',
+    ServiceName: 'New Application for Business Licence',
+    ExpireDate: '2023-07-01T15:21:03.000Z',
+    CurrencyUsed: 'TZS',
+    ControlNo: '991160003792',
+    InvoiceID: '560'
+  }
+]
+560
+trackingNo
+BL230617-1944
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11663',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1944',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T12:09:00.717Z,
+    CreatedDate: 2023-06-17T12:07:07.260Z,
+    ApplicationStatusId: '3',
+    ApplicationStageId: 7,
+    BusinessTypeName: 'Social Security Agents',
+    PaymentStatus: true,
+    IsSentRegistry: false
+  }
+]
+tracker body
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sun Jun 18 2023 09:20:00 GMT+0300 (East Africa Time): List of Regions
+yes
+Id =[{"AttachmentTypeId":1,"AttachmentName":"Proof of Business Premise","Description":"Proof of Business Premise"}]
+req.params.id
+20168
+1
+business details
+[{"BusinessLicOwnerTypeId":"2","EntityName":"CHUI MEDIA LIMITED","RegNo":"157968971"}]
+owner sub types
+[{"OwnerSubTypeId":2,"OwnerTypeId":2,"OwnerSubTypeName":"Company","OwnerSubTypeCode":"CM","Description":null,"status":true}]
+=====<>>>> [object Object]
+[{"ApplicationTIN":"157968971","Id":"11663","ServiceCode":"4201","BusinessClassId":"1","RegNo":"157968971","ApplicationStep":"3"}]
+jfhsbf==== 1
+[{"BusinessTypeName":"Social Security Agents","BusinessTypeId":"42"}]
+[{"Id":"27814","AddressOwnerId":"157968971","AddressOwnerTypeId":"3","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.547Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":false,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":null,"AreaTypeName":"Unsurveyed"},{"Id":"27815","AddressOwnerId":"10771","AddressOwnerTypeId":"4","AreaTypeId":[2,2],"WardId":"11101","PostCode":"11101","Street":"chanika","Road":"msumbiji","PlotNo":"","BlockNo":"","HouseNo":"","UnsurveyedArea":"near church","PoBox":"234","CreateDate":"2023-06-17T14:43:27.750Z","CreatedByUserId":"20168","TrackingNo":"BL230617-1944","CountryId":"255","City":"","PhysicalAddress":"","ZipCode":"","RegionCode":"2552","DistrictCode":"25521","Active":true,"UpdatedDate":null,"IsOfficeAddress":true,"CompanyEmail":"abc@gmail.com","CompanyPhone":"0788695949","ExtRefNo":null,"SUBWARD_ID":"1","AreaTypeName":"Unsurveyed"}]
+reg_id 11663
+servicecode 4201
+json ength 1
+body
+[
+  {
+    AmountTotal: '560000',
+    ServiceName: 'New Application for Business Licence',
+    ExpireDate: '2023-07-01T15:21:03.000Z',
+    CurrencyUsed: 'TZS',
+    ControlNo: '991160003792',
+    InvoiceID: '560'
+  }
+]
+560
+trackingNo
+BL230617-1944
+result_from
+[
+  {
+    IsBranch: false,
+    BLNumber: null,
+    Id: '11663',
+    BusinessClassId: '1',
+    TrackingNo: 'BL230617-1944',
+    ServiceCode: '4201',
+    SubmittedDate: 2023-06-17T12:09:00.717Z,
+    CreatedDate: 2023-06-17T12:07:07.260Z,
+    ApplicationStatusId: '3',
+    ApplicationStageId: 7,
+    BusinessTypeName: 'Social Security Agents',
+    PaymentStatus: true,
+    IsSentRegistry: false
+  }
+]
+tracker body
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Sun Jun 18 2023 09:21:05 GMT+0300 (East Africa Time): List of Regions
+yes
+Id =[{"AttachmentTypeId":1,"AttachmentName":"Proof of Business Premise","Description":"Proof of Business Premise"}]
