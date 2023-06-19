@@ -457,9 +457,25 @@ function getWardB()
 <script>
     function getPostCode()
     { 
-        //alert(document.getElementById('wardIdB').value)
         var regId = document.getElementById('wardIdB').value;
-        //alert(regId)
+
+        $.ajax({
+            url: "/GetSubWard",
+            type: 'POST',
+            data: JSON.stringify({subwardId: regId}),
+            contentType: 'application/json',
+            success: function(response) {
+                console.log(response)  
+            if(typeof(response) === "string"){response = JSON.parse(response)}
+
+            if(response.length > 0) {
+                    $("#subwardIdB").append(`<option value='0'>--Select--</option>`)
+                response.forEach(el => {
+                    $("#subwardIdB").append(`<option value='${el.SUBWARD_ID}'> ${el.SUBWARD_NAME}</option>`)
+                })
+            }
+            }
+        });
         var txtBox1 = document.getElementById('postcode');
         txtBox1.value = regId;
     }
@@ -487,6 +503,7 @@ function getWardB()
         var unservayedarea= document.getElementById('unservayedarea').value;
         var BLNo= document.getElementById('BLNo').value;
         var trackNo= document.getElementById('trackNo').value;
+        var subwardIdB= document.getElementById('subwardIdB').value;
 
         $.ajax({
             url: "/saveBStageSecond",
@@ -496,7 +513,7 @@ function getWardB()
                 "unservayedarea": unservayedarea, "house_no": house_no, "block_no": block_no, 
                 "plot_no": plot_no, "road": road, "regionlistB": regionlistB, "districtlistB": districtlistB, 
                 "wardIdB": wardIdB, "postcode": postcode, "street": street, "addressAreaB": addressAreaB, 
-                "inputEmail4phn": inputEmail4phn, "inputEmail4comp": inputEmail4comp
+                "inputEmail4phn": inputEmail4phn, "inputEmail4comp": inputEmail4comp, "subwardIdB": subwardIdB
             }),
             contentType: 'application/json',
             success: function(response) {
@@ -512,7 +529,7 @@ function getWardB()
         $('.a').removeClass('active');
         $('.b').removeClass('active');
                     getAttachments();
-                //    getPermit();
+                   getPermit();
                     
 
                 }
@@ -543,15 +560,15 @@ $.ajax({
 
             }
             $('.widget-content .warning1.passingID1').on('click', function () {
-    var deleteBtn = $(this),
-    id = deleteBtn.data('name'),
-    name = deleteBtn.data('desc'),
-    title_tracker = deleteBtn.closest('tr').find('.tacker_p').text();
-    $("#categoryID").val( id );
-    $("#trak_no_p").val( id );
-    $("#atach_nem_p").val( title_tracker );
-    $('#rotateInDownLeft').modal('show');
-})
+                var deleteBtn = $(this),
+                id = deleteBtn.data('name'),
+                name = deleteBtn.data('desc'),
+                title_tracker = deleteBtn.closest('tr').find('.tacker_p').text();
+                $("#categoryID").val( id );
+                $("#trak_no_p").val( id );
+                $("#atach_nem_p").val( title_tracker );
+                $('#rotateInDownLeft').modal('show');
+            })
     }
     // ,
     // error: function(jqXHR, textStatus, errorThrown){

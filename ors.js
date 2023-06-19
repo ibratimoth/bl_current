@@ -3122,6 +3122,7 @@ app.post('/saveBStageSecond',function(req,res){
   var regionlistB = req.body.regionlistB;
   var districtlistB = req.body.districtlistB;
   var inputEmail4pobox = req.body.inputEmail4pobox;
+  var subwardIdB = req.body.subwardIdB;
   var userId = req.session.userID;
   if(typeof req.session.userID !== "undefined" || req.session.userID === true){
   request({
@@ -3140,7 +3141,7 @@ app.post('/saveBStageSecond',function(req,res){
     request({
       url: GetBsaveStageAddress,
       method: 'POST',
-      json: {BLNo: BLNo, trackNo: trackNo, BLdetailsId: BLdetailsId, districtlistB: districtlistB, regionlistB: regionlistB, inputEmail4pobox: inputEmail4pobox, unservayedarea: unservayedarea, house_no: house_no, block_no: block_no, plot_no: plot_no, road: road, street: street, postcode: postcode, wardIdB: wardIdB, addressAreaB: addressAreaB, PhoneBuz: PhoneBuz, inputEmail4comp: inputEmail4comp, trackngNo: trackngNo, userId: userId},
+      json: {BLNo: BLNo, trackNo: trackNo, BLdetailsId: BLdetailsId, subwardIdB: subwardIdB, districtlistB: districtlistB, regionlistB: regionlistB, inputEmail4pobox: inputEmail4pobox, unservayedarea: unservayedarea, house_no: house_no, block_no: block_no, plot_no: plot_no, road: road, street: street, postcode: postcode, wardIdB: wardIdB, addressAreaB: addressAreaB, PhoneBuz: PhoneBuz, inputEmail4comp: inputEmail4comp, trackngNo: trackngNo, userId: userId},
     }, function(error, response, body){
       if(error) {          
         console.log("fail to saveBStageSecond " + error);
@@ -4728,9 +4729,11 @@ sql.connect(configBL, function (err) {
     request1.input('BLNo', BLNo);
     request1.query('SELECT Id, BusinessTypeId, BusinessLicOwnerTypeId, ApplicationTin, NumberOfUnits, BusinessClassId FROM dbo.BusinessLicApplication WHERE TrackingNo = @BLNo', 
     function (err, recordset) {
-    if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
-         // sql.close();
-          res.send({status: "failed"});}
+    if (err) {          
+      console.log("fail to Save_EntityOwner_SP " + err);
+         sql.close();
+          res.send({status: "failed"});
+        }else{
     var result_from = recordset.recordset;
     var businessType = result_from[0].BusinessTypeId;
     var businessLicOwnerTypeId = result_from[0].BusinessLicOwnerTypeId;
@@ -4752,16 +4755,19 @@ sql.connect(configBL, function (err) {
     request.input('submitDet', new Date());
     request.query(`INSERT INTO dbo.BusinessLicApplication (TrackingNo, CreatedByUserId, ApplicationStep, BusinessTypeId, BusinessLicOwnerTypeId, ApplicationStatusId, ApplicationTypeId, CreatedDate, ServiceCode, ApplicationTin, NumberOfUnits, BusinessClassId) values (@trackngNo, @userId, 2, @businessType, @businessLicOwnerTypeId, 1, 1, @submitDet, @servtypecode, @ApplicationTin, @NumberOfUnits, @BusinessClassId)`, 
     function (err, recordset) {
-        if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
-         // sql.close();
-          res.send({status: "failed"});}
+        if (err) {          
+          console.log("fail to Save_EntityOwner_SP " + err);
+         sql.close();
+          res.send({status: "failed"});
+        }else{
         
          sql.close();
         // send records as a response
        // console.log(recordset)
         res.send("sucess");
-
+        }
     });
+  }
   });
 });
 });
@@ -6968,6 +6974,7 @@ app.post('/AddressRecordB', function(req, res){
   var trackngNo = req.body.trackngNo;
   var trackNo = req.body.trackNo;
   var BLNo = req.body.BLNo;
+  var subwardIdB = req.body.subwardIdB;
   var userId = req.body.userId;
   var BLdetailsId = req.body.BLdetailsId;
   
@@ -7043,6 +7050,7 @@ app.post('/AddressRecordB', function(req, res){
           .input('IsOfficeAddress', 0)
           .input('CompanyEmail', CompanyEmail)
           .input('CompanyPhone', CompanyPhone)
+          .input('SUBWARD_ID', subwardIdB)
           // .input('OwnerId', bustype)
           .input('OwnerId', 1)
           .execute('Save_Address_SP', function(err, recordsets, returnValue) {
@@ -7078,6 +7086,7 @@ app.post('/AddressRecordB', function(req, res){
               .input('CompanyEmail', CompanyEmail)
               .input('CompanyPhone', CompanyPhone)
               .input('OwnerId', 1)
+              .input('SUBWARD_ID', subwardIdB)
               .execute('Save_Address_SP', function(err, recordsets, returnValue) {
                   if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
@@ -7132,8 +7141,9 @@ app.post('/AddressRecordB', function(req, res){
             .input('IsOfficeAddress', 0)
             .input('CompanyEmail', CompanyEmail)
             .input('CompanyPhone', CompanyPhone)
+            .input('SUBWARD_ID', subwardIdB)
             // .input('OwnerId', bustype)
-            .input('OwnerId', 1)
+            .input('OwnerId', 3)
             .execute('Save_Address_SP', function(err, recordsets, returnValue) {
                 if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
@@ -7166,7 +7176,8 @@ app.post('/AddressRecordB', function(req, res){
                 .input('IsOfficeAddress', 1)
                 .input('CompanyEmail', CompanyEmail)
                 .input('CompanyPhone', CompanyPhone)
-                .input('OwnerId', 1)
+                .input('OwnerId', 3)
+                .input('SUBWARD_ID', subwardIdB)
                 .execute('Save_Address_SP', function(err, recordsets, returnValue) {
                     if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
           // sql.close();
@@ -7222,7 +7233,8 @@ app.post('/AddressRecordB', function(req, res){
         .input('CompanyEmail', CompanyEmail)
         .input('CompanyPhone', CompanyPhone)
         // .input('OwnerId', bustype)
-        .input('OwnerId', 1)
+        .input('OwnerId', 2)
+        .input('SUBWARD_ID', subwardIdB)
         .execute('Save_Address_SP', function(err, recordsets, returnValue) {
             if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
@@ -7255,7 +7267,8 @@ app.post('/AddressRecordB', function(req, res){
             .input('IsOfficeAddress', 1)
             .input('CompanyEmail', CompanyEmail)
             .input('CompanyPhone', CompanyPhone)
-            .input('OwnerId', 1)
+            .input('OwnerId', 2)
+            .input('SUBWARD_ID', subwardIdB)
             .execute('Save_Address_SP', function(err, recordsets, returnValue) {
                 if(err) {          console.log("fail to Save_EntityOwner_SP " + err);
          // sql.close();
@@ -8418,7 +8431,7 @@ app.get('/AddressArea', function (req, res) {
          sql.close();
           res.send({status: "failed"});
         }else{
-          sql.close();
+          // sql.close();
           // send records as a response
           res.send(recordset.recordset);
         }
@@ -9510,7 +9523,7 @@ app.get('/ownerType', function (req, res) {
   
     if (err) {
       console.log("fail to connect to server " + err);
-     // sql.close();
+     sql.close();
       res.send({status: "failed"});
     }else{
 
@@ -9518,7 +9531,8 @@ app.get('/ownerType', function (req, res) {
       var request = new sql.Request();
          
       // query to the database and get the records
-      request.query('SELECT * from tblOwnerType', function (err, recordset1) {
+      request.query('SELECT * from tblOwnerType', 
+      function (err, recordset1) {
           
           if (err) {          
             console.log("fail to ownerType " + err);
