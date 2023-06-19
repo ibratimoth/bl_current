@@ -868,6 +868,17 @@ function getWardB()
                 }
             }
             if(BizOwnerType == 3 && reg_no_other.length > 0){
+                if(corporate_name != TaxPayer){
+                    swal({
+                        type: 'error',
+                        title: 'Oops...',
+                        text: 'Name mismatch please check!',
+                        padding: '2em',
+                        timer: 3000,
+                    }) 
+                    $(".saveBiz").hide();
+                    $(".saveBizOne").show();
+                 }else{
                 $.ajax({
                     url: "/saveStageSecond",
                     type: 'POST',
@@ -900,8 +911,20 @@ function getWardB()
             
                     },
                 });
+                 }
             }
             if(BizOwnerType == 4 && bn_no.length > 0){
+                if(bn_name != TaxPayer){
+                    swal({
+                        type: 'error',
+                        title: 'Oops...',
+                        text: 'Name mismatch please check!',
+                        padding: '2em',
+                        timer: 3000,
+                    }) 
+                    $(".saveBiz").hide();
+                    $(".saveBizOne").show();
+                 }else{
                 $.ajax({
                     url: "/saveStageSecond",
                     type: 'POST',
@@ -934,6 +957,7 @@ function getWardB()
             
                     },
                 });
+                 }
             }
             }
     }
