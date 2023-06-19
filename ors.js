@@ -2334,10 +2334,11 @@ app.get('/GetBusSector',function(req,res){
 
 app.get('/GetBLAttachment',function(req,res){
   console.log("yes")
+  console.log(req.session.BizOwnerType)
   var objs12 = [];
   if(typeof req.session.userID !== "undefined" || req.session.userID === true){
   request({
-    url: GetBLAttachmntLink,
+    url: GetBLAttachmntLink+'/'+req.session.BizOwnerType,
     method: 'GET',
   }, function(error, response, body){
     if(error) {          
@@ -2962,9 +2963,11 @@ app.post('/NINVerification',function(req,res){
 });
   
 app.post('/saveStageSecond',function(req,res){
-  // console.log("mwox testing")
+  console.log("mwox testing")
   var trackngNo = req.session.TrackingNo;
   var BizOwnerType = req.body.BizOwnerType;
+  req.session.BizOwnerType = BizOwnerType
+  console.log(req.session.BizOwnerType)
   var NoUnit = req.body.NoUnit;
   var company_name = req.body.company_name;
   var BizTin = req.body.BizTin;
@@ -8649,8 +8652,9 @@ sql.connect(configBL, function (err) {
 });
 });
 
-app.get('/BLAttachmnt', function (req, res) {
-
+app.get('/BLAttachmnt/:id', function (req, res) {
+  console.log('req.session.BizOwnerType')
+console.log(req.params.id)
   // connect to your database
   sql.connect(configBL, function (err) {
 
@@ -8664,8 +8668,9 @@ app.get('/BLAttachmnt', function (req, res) {
       var request = new sql.Request();
 
       // query to the database and get the records
+      if(req.params.id == 3){
       request.query('SELECT AttachmentTypeId, AttachmentName, Description ' + 
-                    ' FROM BLAttachmentTypes WHERE AttachmentTypeId = 1', 
+                    ' FROM BLAttachmentTypes', 
       function (err, recordset) {
 
           if (err) {          
@@ -8678,6 +8683,22 @@ app.get('/BLAttachmnt', function (req, res) {
           res.send(recordset.recordset);
         }
       });
+    }else{
+      request.query('SELECT AttachmentTypeId, AttachmentName, Description ' + 
+            ' FROM BLAttachmentTypes WHERE OwnerSubTypeId IS NULL', 
+      function (err, recordset) {
+
+      if (err) {          
+      console.log("fail to Save_EntityOwner_SP " + err);
+      // sql.close();
+      res.send({status: "failed"});
+      }else{
+      sql.close();
+      // send records as a response
+      res.send(recordset.recordset);
+      }
+      });
+    }
     }
   });
 });
