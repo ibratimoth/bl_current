@@ -2944,6 +2944,9 @@ app.post('/NINVerification',function(req,res){
           res.send({"status": "failed"});
         }
     console.log(response.body)
+    if(response.body == 'TypeError'){
+      res.send({"status": "failed"})
+    }else{
      var jsonData = JSON.parse(response.body);
       var resultcode = jsonData.resultcode;
       if(resultcode == 0){
@@ -2956,6 +2959,7 @@ app.post('/NINVerification',function(req,res){
       }else{
        res.send({"status": "failed"})
       }
+    }
   });
 }else{
   //console.log(loginTrial)
@@ -2964,7 +2968,7 @@ app.post('/NINVerification',function(req,res){
 });
   
 app.post('/saveStageSecond',function(req,res){
-  console.log("mwox testing")
+  // console.log("mwox testing")
   var trackngNo = req.session.TrackingNo;
   var BizOwnerType = req.body.BizOwnerType;
   req.session.BizOwnerType = BizOwnerType
@@ -3019,13 +3023,24 @@ app.post('/saveStageSecond',function(req,res){
     request({
       url: GetsaveStageTwo,
       method: 'POST',
-      json: {fullname: fullname, bn_no: bn_no, bn_name: bn_name, company_name: company_name, inco_no: inco_no, reg_no_other: reg_no_other, corporate_name: corporate_name, leadername_nat: leadername_nat, leadername_nat_2: leadername_nat_2, districtlistB: districtlistB, regionlistB: regionlistB, inputEmail4pobox: inputEmail4pobox, unservayedarea: unservayedarea, house_no: house_no, block_no: block_no, plot_no: plot_no, road: road, street: street, postcode: postcode, wardIdB: wardIdB, addressAreaB: addressAreaB, bustype: bustype, nida_no: nida_no, dob: dob, busorigintype: busorigintype, fname: fname, mname: mname, lname: lname, gender: gender, PhoneBuz: PhoneBuz, issuingAuthorityId: issuingAuthorityId, inputEmail4comp: inputEmail4comp, businessLicenceClassId: businessLicenceClassId, trackngNo: trackngNo, userId: userId, BizOwnerType: BizOwnerType, NoUnit: NoUnit, BizTin: BizTin, TaxPayer: TaxPayer, TypeList: TypeList},
+      json: {fullname: fullname, bn_no: bn_no, bn_name: bn_name, company_name: company_name, inco_no: inco_no, 
+        reg_no_other: reg_no_other, corporate_name: corporate_name, leadername_nat: leadername_nat, 
+        leadername_nat_2: leadername_nat_2, districtlistB: districtlistB, regionlistB: regionlistB, 
+        inputEmail4pobox: inputEmail4pobox, unservayedarea: unservayedarea, house_no: house_no, 
+        block_no: block_no, plot_no: plot_no, road: road, street: street, postcode: postcode, 
+        wardIdB: wardIdB, addressAreaB: addressAreaB, bustype: bustype, nida_no: nida_no, dob: dob, 
+        busorigintype: busorigintype, fname: fname, mname: mname, lname: lname, gender: gender, 
+        PhoneBuz: PhoneBuz, issuingAuthorityId: issuingAuthorityId, inputEmail4comp: inputEmail4comp, 
+        businessLicenceClassId: businessLicenceClassId, trackngNo: trackngNo, userId: userId, 
+        BizOwnerType: BizOwnerType, NoUnit: NoUnit, BizTin: BizTin, TaxPayer: TaxPayer, TypeList: TypeList},
     }, function(error, response, body){
       if(error) {          
         console.log("fail to saveStageSecond " + error);
           // sql.close();
           res.send({status: "failed"});}
       var BLdetailsId = response.body;
+      console.log('BLdetailsId')
+      console.log(BLdetailsId)
       request({
         url: GetsaveStageAddress,
         method: 'POST',
@@ -3049,6 +3064,7 @@ app.post('/saveStageSecond',function(req,res){
         }
         res.send(response.body)
       });
+
     });
   }else{
     //console.log(loginTrial)
@@ -4913,295 +4929,318 @@ app.post('/saveStageTwo', function (req, res) {
       res.send({status: "failed"});
     }
   
-
     var request1 = new sql.Request();
     request1.input('trackngNo', trackngNo);
-    request1.query('SELECT Id FROM dbo.BusinessLicApplication WHERE TrackingNo = @trackngNo', function (err1, recordset) {
-      if (err1) {          
-        console.log("fail to BusinessLicApplication " + err1);
-         // sql.close();
-          res.send({status: "failed"});
+    request1.query('SELECT Id FROM dbo.BusinessLicApplication WHERE TrackingNo = @trackngNo', 
+    function (err1, recordset) {
+        if (err1) {          
+          console.log("fail to BusinessLicApplication " + err1);
+          // sql.close();
+            res.send({status: "failed"});
+          }
+        var result_form = recordset.recordset;
+        var Id = result_form[0].Id;
+        req.session.req_id = Id;
+        if(BizOwnerType == 1){
+          // var request12 = new sql.Request();
+          // request12.input('TypeList', TypeList);
+          // request12.input('nida_no', nida_no);
+          // request12.query('SELECT COUNT(*) kaunti FROM dbo.BusinessLicApplication ' + 
+          // ' WHERE BusinessTypeId = @TypeList AND RegNo = @nida_no', 
+          // function (err1, recordset) {
+          //   if (err1) {          
+          //     console.log("fail to BusinessLicApplication " + err1);
+          //      // sql.close();
+          //       res.send({status: "failed"});
+          //     }
+          //   var result_form = recordset.recordset;
+          //   var kaunti = result_form[0].kaunti;
+          //   if(kaunti <= 0){
+          var request = new sql.Request();
+          request.input('userId', userId);
+          request.input('BizOwnerType', BizOwnerType);
+          request.input('NoUnit', NoUnit);
+          request.input('fullname', fullname);
+          request.input('BizTin', BizTin);
+          request.input('TaxPayer', TaxPayer);
+          request.input('trackngNo', trackngNo);
+          request.input('TypeList', TypeList);
+          request.input('nida_no', nida_no);
+          request.input('businessLicenceClassId', businessLicenceClassId);
+          request.input('ServiceCode', '4201');
+          request.input('Subdet', new Date());
+          request.query(`UPDATE dbo.BusinessLicApplication SET ApplicationStep = 3, 
+          EntityName = @fullname, RegNo = @nida_no, BusinessTypeId = @TypeList, 
+          BusinessLicOwnerTypeId = @BizOwnerType, ApplicationTin = @BizTin, 
+          NumberOfUnits = @NoUnit, BusinessClassId = @businessLicenceClassId, 
+          ServiceCode = @ServiceCode WHERE TrackingNo = @trackngNo AND CreatedByUserId = @userId`, 
+          function (err, recordset) {
+              if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
+            //sql.close();
+            res.send({status: "failed"});}
+              var request2 = new sql.Request();
+                    request2.input('BusLicAppId', Id);
+                    request2.input('inputEmail4comp', inputEmail4comp);
+                    request2.input('BizTin', BizTin);
+                    request2.input('inputEmail4phn', PhoneBuz);
+                    request2.input('inputEmail4pobox', inputEmail4pobox);
+                    request2.input('issuingAuthorityId', issuingAuthorityId);
+                    request2.query(`INSERT INTO dbo.BusinessLicenceDetails (BusinessLicenceApplicationId, 
+                      BusinessTIN, Email, PhoneNo, PoBox, IsBranch, IssueingOfficeId, LicenceStatusId, Activated) 
+                      VALUES (@BusLicAppId, @BizTin, @inputEmail4comp, @inputEmail4phn, 
+                        @inputEmail4pobox, 0, @issuingAuthorityId, 5, 0)`, function (err, recordset) {
+                        if (err) {          
+                          console.log("fail to get BusinessLicApplication " + err);
+                          //sql.close();
+                          res.send({status: "failed"});
+                        }
+        
+        
+                        var request3 = new sql.Request();
+                              request3.input('ApplicationId', Id);
+                              request3.input('ServiceCode', '4201');
+                              request3.input('ApplicationStatusId', '1');
+                              request3.input('userId', userId);
+                              request3.input('CreatedDate', new Date());
+                              request3.input('ApplicationStageId', '3');
+                              request3.query(`INSERT INTO dbo.BLicenseApplicationTracker (ServiceCode, ApplicationId, ApplicationStatusId, FrontUserId, CreatedDate, ApplicationStageId) values (@ServiceCode, @ApplicationId, @ApplicationStatusId, @userId, @CreatedDate, @ApplicationStageId)`, 
+                              function (err, recordset) {
+                                  if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
+          // sql.close();
+            res.send({status: "failed"});}               
+        
+                                  var request4 = new sql.Request();
+                                  request4.input('BusLicAppId', Id);
+                                  request4.query('SELECT Id FROM dbo.BusinessLicenceDetails WHERE BusinessLicenceApplicationId = @BusLicAppId', 
+                                  function (err, recordset) {
+                                    if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
+            ////sql.close();
+            res.send({status: "failed"});}
+                                  // sql.close();
+                                    //console.log(recordset.recordset)
+                                    var result_form = recordset.recordset;
+                                    var Id_bl = result_form[0].Id;
+                                    req.session.BLdet = Id_bl;
+        
+                                    sql.close();
+                                    res.send(Id_bl)
+                              });
+                        });
+              
+                    });
+        
+          });
+        // }else{
+        //   res.send(0)
+        // }
+        // })
         }
-      var result_form = recordset.recordset;
-      var Id = result_form[0].Id;
-      req.session.req_id = Id;
-      if(BizOwnerType == 1){
-        var request = new sql.Request();
-        request.input('userId', userId);
-        request.input('BizOwnerType', BizOwnerType);
-        request.input('NoUnit', NoUnit);
-        request.input('fullname', fullname);
-        request.input('BizTin', BizTin);
-        request.input('TaxPayer', TaxPayer);
-        request.input('trackngNo', trackngNo);
-        request.input('TypeList', TypeList);
-        request.input('nida_no', nida_no);
-        request.input('businessLicenceClassId', businessLicenceClassId);
-        request.input('ServiceCode', '4201');
-        request.input('Subdet', new Date());
-        request.query(`UPDATE dbo.BusinessLicApplication SET ApplicationStep = 3, EntityName = @fullname, RegNo = @nida_no, BusinessTypeId = @TypeList, BusinessLicOwnerTypeId = @BizOwnerType, ApplicationTin = @BizTin, NumberOfUnits = @NoUnit, BusinessClassId = @businessLicenceClassId, ServiceCode = @ServiceCode WHERE TrackingNo = @trackngNo AND CreatedByUserId = @userId`, 
-        function (err, recordset) {
-            if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
-          //sql.close();
-          res.send({status: "failed"});}
-            var request2 = new sql.Request();
-                  request2.input('BusLicAppId', Id);
-                  request2.input('inputEmail4comp', inputEmail4comp);
-                  request2.input('BizTin', BizTin);
-                  request2.input('inputEmail4phn', PhoneBuz);
-                  request2.input('inputEmail4pobox', inputEmail4pobox);
-                  request2.input('issuingAuthorityId', issuingAuthorityId);
-                  request2.query(`INSERT INTO dbo.BusinessLicenceDetails (BusinessLicenceApplicationId, 
-                    BusinessTIN, Email, PhoneNo, PoBox, IsBranch, IssueingOfficeId, LicenceStatusId, Activated) 
-                    VALUES (@BusLicAppId, @BizTin, @inputEmail4comp, @inputEmail4phn, 
-                      @inputEmail4pobox, 0, @issuingAuthorityId, 5, 0)`, function (err, recordset) {
-                      if (err) {          
-                        console.log("fail to get BusinessLicApplication " + err);
-                        //sql.close();
-                        res.send({status: "failed"});
-                      }
-      
-      
-                      var request3 = new sql.Request();
-                            request3.input('ApplicationId', Id);
-                            request3.input('ServiceCode', '4201');
-                            request3.input('ApplicationStatusId', '1');
-                            request3.input('userId', userId);
-                            request3.input('CreatedDate', new Date());
-                            request3.input('ApplicationStageId', '3');
-                            request3.query(`INSERT INTO dbo.BLicenseApplicationTracker (ServiceCode, ApplicationId, ApplicationStatusId, FrontUserId, CreatedDate, ApplicationStageId) values (@ServiceCode, @ApplicationId, @ApplicationStatusId, @userId, @CreatedDate, @ApplicationStageId)`, 
-                            function (err, recordset) {
-                                if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
-         // sql.close();
-          res.send({status: "failed"});}               
-      
-                                var request4 = new sql.Request();
-                                request4.input('BusLicAppId', Id);
-                                request4.query('SELECT Id FROM dbo.BusinessLicenceDetails WHERE BusinessLicenceApplicationId = @BusLicAppId', 
-                                function (err, recordset) {
+        if(BizOwnerType == 3){
+          var request = new sql.Request();
+          request.input('userId', userId);
+          request.input('BizOwnerType', BizOwnerType);
+          request.input('NoUnit', NoUnit);
+          request.input('reg_no_other', reg_no_other);
+          request.input('corporate_name', corporate_name);
+          request.input('BizTin', BizTin);
+          request.input('TaxPayer', TaxPayer);
+          request.input('trackngNo', trackngNo);
+          request.input('TypeList', TypeList);
+          request.input('businessLicenceClassId', businessLicenceClassId);
+          request.input('ServiceCode', '4201');
+          request.input('Subdet', new Date());
+          request.query(`UPDATE dbo.BusinessLicApplication SET ApplicationStep = 3, EntityName = @corporate_name, RegNo = @reg_no_other, BusinessTypeId = @TypeList, BusinessLicOwnerTypeId = @BizOwnerType, ApplicationTin = @BizTin, NumberOfUnits = @NoUnit, BusinessClassId = @businessLicenceClassId, ServiceCode = @ServiceCode, SubmittedDate = @Subdet WHERE TrackingNo = @trackngNo AND CreatedByUserId = @userId`, 
+          function (err, recordset) {
+              if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
+          //  sql.close();
+            res.send({status: "failed"});}
+              var request2 = new sql.Request();
+                    request2.input('BusLicAppId', Id);
+                    request2.input('inputEmail4comp', inputEmail4comp);
+                    request2.input('BizTin', BizTin);
+                    request2.input('inputEmail4phn', PhoneBuz);
+                    request2.input('inputEmail4pobox', inputEmail4pobox);
+                    request2.input('issuingAuthorityId', issuingAuthorityId);
+                    request2.query(`INSERT INTO dbo.BusinessLicenceDetails (BusinessLicenceApplicationId, BusinessTIN, Email, PhoneNo, PoBox, IsBranch, IssueingOfficeId, LicenceStatusId, Activated) values (@BusLicAppId, @BizTin, @inputEmail4comp, @inputEmail4phn, @inputEmail4pobox, 0, @issuingAuthorityId, 5, 0)`, function (err, recordset) {
+                        if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
+            //sql.close();
+            res.send({status: "failed"});}
+        
+        
+                        var request3 = new sql.Request();
+                              request3.input('ApplicationId', Id);
+                              request3.input('ServiceCode', '4201');
+                              request3.input('ApplicationStatusId', '1');
+                              request3.input('userId', userId);
+                              request3.input('CreatedDate', new Date());
+                              request3.input('ApplicationStageId', '3');
+                              request3.query(`INSERT INTO dbo.BLicenseApplicationTracker (ServiceCode, ApplicationId, ApplicationStatusId, FrontUserId, CreatedDate, ApplicationStageId) values (@ServiceCode, @ApplicationId, @ApplicationStatusId, @userId, @CreatedDate, @ApplicationStageId)`, 
+                              function (err, recordset) {
                                   if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
-          ////sql.close();
-          res.send({status: "failed"});}
-                                 // sql.close();
-                                  //console.log(recordset.recordset)
-                                  var result_form = recordset.recordset;
-                                  var Id_bl = result_form[0].Id;
-                                  req.session.BLdet = Id_bl;
-      
-                                  sql.close();
-                                  res.send(Id_bl)
-                            });
-                      });
-            
-                  });
-      
-        });
-      }
-      if(BizOwnerType == 3){
-        var request = new sql.Request();
-        request.input('userId', userId);
-        request.input('BizOwnerType', BizOwnerType);
-        request.input('NoUnit', NoUnit);
-        request.input('reg_no_other', reg_no_other);
-        request.input('corporate_name', corporate_name);
-        request.input('BizTin', BizTin);
-        request.input('TaxPayer', TaxPayer);
-        request.input('trackngNo', trackngNo);
-        request.input('TypeList', TypeList);
-        request.input('businessLicenceClassId', businessLicenceClassId);
-        request.input('ServiceCode', '4201');
-        request.input('Subdet', new Date());
-        request.query(`UPDATE dbo.BusinessLicApplication SET ApplicationStep = 3, EntityName = @corporate_name, RegNo = @reg_no_other, BusinessTypeId = @TypeList, BusinessLicOwnerTypeId = @BizOwnerType, ApplicationTin = @BizTin, NumberOfUnits = @NoUnit, BusinessClassId = @businessLicenceClassId, ServiceCode = @ServiceCode, SubmittedDate = @Subdet WHERE TrackingNo = @trackngNo AND CreatedByUserId = @userId`, 
-        function (err, recordset) {
-            if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
-        //  sql.close();
-          res.send({status: "failed"});}
-            var request2 = new sql.Request();
-                  request2.input('BusLicAppId', Id);
-                  request2.input('inputEmail4comp', inputEmail4comp);
-                  request2.input('BizTin', BizTin);
-                  request2.input('inputEmail4phn', PhoneBuz);
-                  request2.input('inputEmail4pobox', inputEmail4pobox);
-                  request2.input('issuingAuthorityId', issuingAuthorityId);
-                  request2.query(`INSERT INTO dbo.BusinessLicenceDetails (BusinessLicenceApplicationId, BusinessTIN, Email, PhoneNo, PoBox, IsBranch, IssueingOfficeId, LicenceStatusId, Activated) values (@BusLicAppId, @BizTin, @inputEmail4comp, @inputEmail4phn, @inputEmail4pobox, 0, @issuingAuthorityId, 5, 0)`, function (err, recordset) {
-                      if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
-          //sql.close();
-          res.send({status: "failed"});}
-      
-      
-                      var request3 = new sql.Request();
-                            request3.input('ApplicationId', Id);
-                            request3.input('ServiceCode', '4201');
-                            request3.input('ApplicationStatusId', '1');
-                            request3.input('userId', userId);
-                            request3.input('CreatedDate', new Date());
-                            request3.input('ApplicationStageId', '3');
-                            request3.query(`INSERT INTO dbo.BLicenseApplicationTracker (ServiceCode, ApplicationId, ApplicationStatusId, FrontUserId, CreatedDate, ApplicationStageId) values (@ServiceCode, @ApplicationId, @ApplicationStatusId, @userId, @CreatedDate, @ApplicationStageId)`, 
-                            function (err, recordset) {
-                                if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
-         // sql.close();
-          res.send({status: "failed"});}               
-      
-                                var request4 = new sql.Request();
-                                request4.input('BusLicAppId', Id);
-                                request4.query('SELECT Id FROM dbo.BusinessLicenceDetails WHERE BusinessLicenceApplicationId = @BusLicAppId', 
-                                function (err, recordset) {
+          // sql.close();
+            res.send({status: "failed"});}               
+        
+                                  var request4 = new sql.Request();
+                                  request4.input('BusLicAppId', Id);
+                                  request4.query('SELECT Id FROM dbo.BusinessLicenceDetails WHERE BusinessLicenceApplicationId = @BusLicAppId', 
+                                  function (err, recordset) {
+                                    if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
+          //  sql.close();
+            res.send({status: "failed"});}
+                                  // sql.close();
+                                    //console.log(recordset.recordset)
+                                    var result_form = recordset.recordset;
+                                    var Id_bl = result_form[0].Id;
+                                    req.session.BLdet = Id_bl;
+        
+                                    sql.close();
+                                    res.send(Id_bl)
+                              });
+                        });
+              
+                    });
+        
+          });
+        }
+        if(BizOwnerType == 2){
+          var request = new sql.Request();
+          request.input('userId', userId);
+          request.input('BizOwnerType', BizOwnerType);
+          request.input('NoUnit', NoUnit);
+          // request.input('TinDate', TinDate);
+          request.input('BizTin', BizTin);
+          request.input('TaxPayer', TaxPayer);
+          request.input('trackngNo', trackngNo);
+          request.input('TypeList', TypeList);
+          request.input('businessLicenceClassId', businessLicenceClassId);
+          request.input('ServiceCode', '4201');
+          request.input('Subdet', new Date());
+          request.input('RegNo', inco_no);
+          request.input('EntityName', company_name);
+          request.query(`UPDATE dbo.BusinessLicApplication SET ApplicationStep = 3, BusinessTypeId = @TypeList, BusinessLicOwnerTypeId = @BizOwnerType, ApplicationTin = @BizTin, NumberOfUnits = @NoUnit, BusinessClassId = @businessLicenceClassId, ServiceCode = @ServiceCode, SubmittedDate = @Subdet, RegNo = @RegNo, EntityName = @EntityName WHERE TrackingNo = @trackngNo AND CreatedByUserId = @userId`, 
+          function (err, recordset) {
+              if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
+          // sql.close();
+            res.send({status: "failed"});}
+              var request2 = new sql.Request();
+                    request2.input('BusLicAppId', Id);
+                    request2.input('inputEmail4comp', inputEmail4comp);
+                    request2.input('BizTin', BizTin);
+                    request2.input('inputEmail4phn', PhoneBuz);
+                    request2.input('inputEmail4pobox', inputEmail4pobox);
+                    request2.input('issuingAuthorityId', issuingAuthorityId);
+                    request2.query(`INSERT INTO dbo.BusinessLicenceDetails (BusinessLicenceApplicationId, BusinessTIN, Email, PhoneNo, PoBox, IsBranch, IssueingOfficeId, LicenceStatusId, Activated) values (@BusLicAppId, @BizTin, @inputEmail4comp, @inputEmail4phn, @inputEmail4pobox, 0, @issuingAuthorityId, 5, 0)`, function (err, recordset) {
+                        if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
+            //sql.close();
+            res.send({status: "failed"});}
+        
+        
+                        var request3 = new sql.Request();
+                              request3.input('ApplicationId', Id);
+                              request3.input('ServiceCode', '4201');
+                              request3.input('ApplicationStatusId', '1');
+                              request3.input('userId', userId);
+                              request3.input('CreatedDate', new Date());
+                              request3.input('ApplicationStageId', '3');
+                              request3.query(`INSERT INTO dbo.BLicenseApplicationTracker (ServiceCode, ApplicationId, ApplicationStatusId, FrontUserId, CreatedDate, ApplicationStageId) values (@ServiceCode, @ApplicationId, @ApplicationStatusId, @userId, @CreatedDate, @ApplicationStageId)`, 
+                              function (err, recordset) {
                                   if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
-        //  sql.close();
-          res.send({status: "failed"});}
-                                 // sql.close();
-                                  //console.log(recordset.recordset)
-                                  var result_form = recordset.recordset;
-                                  var Id_bl = result_form[0].Id;
-                                  req.session.BLdet = Id_bl;
-      
-                                  sql.close();
-                                  res.send(Id_bl)
-                            });
-                      });
-            
-                  });
-      
-        });
-      }
-      if(BizOwnerType == 2){
-        var request = new sql.Request();
-        request.input('userId', userId);
-        request.input('BizOwnerType', BizOwnerType);
-        request.input('NoUnit', NoUnit);
-        // request.input('TinDate', TinDate);
-        request.input('BizTin', BizTin);
-        request.input('TaxPayer', TaxPayer);
-        request.input('trackngNo', trackngNo);
-        request.input('TypeList', TypeList);
-        request.input('businessLicenceClassId', businessLicenceClassId);
-        request.input('ServiceCode', '4201');
-        request.input('Subdet', new Date());
-        request.input('RegNo', inco_no);
-        request.input('EntityName', company_name);
-        request.query(`UPDATE dbo.BusinessLicApplication SET ApplicationStep = 3, BusinessTypeId = @TypeList, BusinessLicOwnerTypeId = @BizOwnerType, ApplicationTin = @BizTin, NumberOfUnits = @NoUnit, BusinessClassId = @businessLicenceClassId, ServiceCode = @ServiceCode, SubmittedDate = @Subdet, RegNo = @RegNo, EntityName = @EntityName WHERE TrackingNo = @trackngNo AND CreatedByUserId = @userId`, 
-        function (err, recordset) {
-            if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
-         // sql.close();
-          res.send({status: "failed"});}
-            var request2 = new sql.Request();
-                  request2.input('BusLicAppId', Id);
-                  request2.input('inputEmail4comp', inputEmail4comp);
-                  request2.input('BizTin', BizTin);
-                  request2.input('inputEmail4phn', PhoneBuz);
-                  request2.input('inputEmail4pobox', inputEmail4pobox);
-                  request2.input('issuingAuthorityId', issuingAuthorityId);
-                  request2.query(`INSERT INTO dbo.BusinessLicenceDetails (BusinessLicenceApplicationId, BusinessTIN, Email, PhoneNo, PoBox, IsBranch, IssueingOfficeId, LicenceStatusId, Activated) values (@BusLicAppId, @BizTin, @inputEmail4comp, @inputEmail4phn, @inputEmail4pobox, 0, @issuingAuthorityId, 5, 0)`, function (err, recordset) {
-                      if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
-          //sql.close();
-          res.send({status: "failed"});}
-      
-      
-                      var request3 = new sql.Request();
-                            request3.input('ApplicationId', Id);
-                            request3.input('ServiceCode', '4201');
-                            request3.input('ApplicationStatusId', '1');
-                            request3.input('userId', userId);
-                            request3.input('CreatedDate', new Date());
-                            request3.input('ApplicationStageId', '3');
-                            request3.query(`INSERT INTO dbo.BLicenseApplicationTracker (ServiceCode, ApplicationId, ApplicationStatusId, FrontUserId, CreatedDate, ApplicationStageId) values (@ServiceCode, @ApplicationId, @ApplicationStatusId, @userId, @CreatedDate, @ApplicationStageId)`, 
-                            function (err, recordset) {
-                                if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
-          //sql.close();
-          res.send({status: "failed"});}               
-      
-                                var request4 = new sql.Request();
-                                request4.input('BusLicAppId', Id);
-                                request4.query('SELECT Id FROM dbo.BusinessLicenceDetails WHERE BusinessLicenceApplicationId = @BusLicAppId', 
-                                function (err, recordset) {
+            //sql.close();
+            res.send({status: "failed"});}               
+        
+                                  var request4 = new sql.Request();
+                                  request4.input('BusLicAppId', Id);
+                                  request4.query('SELECT Id FROM dbo.BusinessLicenceDetails WHERE BusinessLicenceApplicationId = @BusLicAppId', 
+                                  function (err, recordset) {
+                                    if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
+            //sql.close();
+            res.send({status: "failed"});}
+                                  // sql.close();
+                                    //console.log(recordset.recordset)
+                                    var result_form = recordset.recordset;
+                                    var Id_bl = result_form[0].Id;
+                                    req.session.BLdet = Id_bl;
+        
+                                    sql.close();
+                                    res.send(Id_bl)
+                              });
+                        });
+              
+                    });
+        
+          });
+        }
+        if(BizOwnerType == 4){
+          var request = new sql.Request();
+          request.input('userId', userId);
+          request.input('BizOwnerType', BizOwnerType);
+          request.input('NoUnit', NoUnit);
+          // request.input('TinDate', TinDate);
+          request.input('BizTin', BizTin);
+          request.input('TaxPayer', TaxPayer);
+          request.input('trackngNo', trackngNo);
+          request.input('TypeList', TypeList);
+          request.input('businessLicenceClassId', businessLicenceClassId);
+          request.input('ServiceCode', '4201');
+          request.input('Subdet', new Date());
+          request.input('RegNo', bn_no);
+          request.input('EntityName', bn_name);
+          request.query(`UPDATE dbo.BusinessLicApplication SET ApplicationStep = 3, BusinessTypeId = @TypeList, BusinessLicOwnerTypeId = @BizOwnerType, ApplicationTin = @BizTin, NumberOfUnits = @NoUnit, BusinessClassId = @businessLicenceClassId, ServiceCode = @ServiceCode, SubmittedDate = @Subdet, RegNo = @RegNo, EntityName = @EntityName WHERE TrackingNo = @trackngNo AND CreatedByUserId = @userId`, 
+          function (err, recordset) {
+              if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
+            //sql.close();
+            res.send({status: "failed"});}
+              var request2 = new sql.Request();
+                    request2.input('BusLicAppId', Id);
+                    request2.input('inputEmail4comp', inputEmail4comp);
+                    request2.input('BizTin', BizTin);
+                    request2.input('inputEmail4phn', PhoneBuz);
+                    request2.input('inputEmail4pobox', inputEmail4pobox);
+                    request2.input('issuingAuthorityId', issuingAuthorityId);
+                    request2.query(`INSERT INTO dbo.BusinessLicenceDetails (BusinessLicenceApplicationId, BusinessTIN, Email, PhoneNo, PoBox, IsBranch, IssueingOfficeId, LicenceStatusId, Activated) values (@BusLicAppId, @BizTin, @inputEmail4comp, @inputEmail4phn, @inputEmail4pobox, 0, @issuingAuthorityId, 5, 0)`, function (err, recordset) {
+                        if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
+            //sql.close();
+            res.send({status: "failed"});}
+        
+        
+                        var request3 = new sql.Request();
+                              request3.input('ApplicationId', Id);
+                              request3.input('ServiceCode', '4201');
+                              request3.input('ApplicationStatusId', '1');
+                              request3.input('userId', userId);
+                              request3.input('CreatedDate', new Date());
+                              request3.input('ApplicationStageId', '3');
+                              request3.query(`INSERT INTO dbo.BLicenseApplicationTracker (ServiceCode, ApplicationId, ApplicationStatusId, FrontUserId, CreatedDate, ApplicationStageId) values (@ServiceCode, @ApplicationId, @ApplicationStatusId, @userId, @CreatedDate, @ApplicationStageId)`, 
+                              function (err, recordset) {
                                   if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
-          //sql.close();
-          res.send({status: "failed"});}
-                                 // sql.close();
-                                  //console.log(recordset.recordset)
-                                  var result_form = recordset.recordset;
-                                  var Id_bl = result_form[0].Id;
-                                  req.session.BLdet = Id_bl;
-      
-                                  sql.close();
-                                  res.send(Id_bl)
-                            });
-                      });
-            
-                  });
-      
-        });
-      }
-      if(BizOwnerType == 4){
-        var request = new sql.Request();
-        request.input('userId', userId);
-        request.input('BizOwnerType', BizOwnerType);
-        request.input('NoUnit', NoUnit);
-        // request.input('TinDate', TinDate);
-        request.input('BizTin', BizTin);
-        request.input('TaxPayer', TaxPayer);
-        request.input('trackngNo', trackngNo);
-        request.input('TypeList', TypeList);
-        request.input('businessLicenceClassId', businessLicenceClassId);
-        request.input('ServiceCode', '4201');
-        request.input('Subdet', new Date());
-        request.input('RegNo', bn_no);
-        request.input('EntityName', bn_name);
-        request.query(`UPDATE dbo.BusinessLicApplication SET ApplicationStep = 3, BusinessTypeId = @TypeList, BusinessLicOwnerTypeId = @BizOwnerType, ApplicationTin = @BizTin, NumberOfUnits = @NoUnit, BusinessClassId = @businessLicenceClassId, ServiceCode = @ServiceCode, SubmittedDate = @Subdet, RegNo = @RegNo, EntityName = @EntityName WHERE TrackingNo = @trackngNo AND CreatedByUserId = @userId`, 
-        function (err, recordset) {
-            if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
-          //sql.close();
-          res.send({status: "failed"});}
-            var request2 = new sql.Request();
-                  request2.input('BusLicAppId', Id);
-                  request2.input('inputEmail4comp', inputEmail4comp);
-                  request2.input('BizTin', BizTin);
-                  request2.input('inputEmail4phn', PhoneBuz);
-                  request2.input('inputEmail4pobox', inputEmail4pobox);
-                  request2.input('issuingAuthorityId', issuingAuthorityId);
-                  request2.query(`INSERT INTO dbo.BusinessLicenceDetails (BusinessLicenceApplicationId, BusinessTIN, Email, PhoneNo, PoBox, IsBranch, IssueingOfficeId, LicenceStatusId, Activated) values (@BusLicAppId, @BizTin, @inputEmail4comp, @inputEmail4phn, @inputEmail4pobox, 0, @issuingAuthorityId, 5, 0)`, function (err, recordset) {
-                      if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
-          //sql.close();
-          res.send({status: "failed"});}
-      
-      
-                      var request3 = new sql.Request();
-                            request3.input('ApplicationId', Id);
-                            request3.input('ServiceCode', '4201');
-                            request3.input('ApplicationStatusId', '1');
-                            request3.input('userId', userId);
-                            request3.input('CreatedDate', new Date());
-                            request3.input('ApplicationStageId', '3');
-                            request3.query(`INSERT INTO dbo.BLicenseApplicationTracker (ServiceCode, ApplicationId, ApplicationStatusId, FrontUserId, CreatedDate, ApplicationStageId) values (@ServiceCode, @ApplicationId, @ApplicationStatusId, @userId, @CreatedDate, @ApplicationStageId)`, 
-                            function (err, recordset) {
-                                if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
-          //sql.close();
-          res.send({status: "failed"});}               
-      
-                                var request4 = new sql.Request();
-                                request4.input('BusLicAppId', Id);
-                                request4.query('SELECT Id FROM dbo.BusinessLicenceDetails WHERE BusinessLicenceApplicationId = @BusLicAppId', 
-                                function (err, recordset) {
-                                  if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
-          //sql.close();
-          res.send({status: "failed"});}
-                                 // sql.close();
-                                  //console.log(recordset.recordset)
-                                  var result_form = recordset.recordset;
-                                  var Id_bl = result_form[0].Id;
-                                  req.session.BLdet = Id_bl;
-      
-                                  sql.close();
-                                  res.send(Id_bl)
-                            });
-                      });
-            
-                  });
-      
-        });
-      }
+            //sql.close();
+            res.send({status: "failed"});}               
+        
+                                  var request4 = new sql.Request();
+                                  request4.input('BusLicAppId', Id);
+                                  request4.query('SELECT Id FROM dbo.BusinessLicenceDetails WHERE BusinessLicenceApplicationId = @BusLicAppId', 
+                                  function (err, recordset) {
+                                    if (err) {          console.log("fail to Save_EntityOwner_SP " + err);
+            //sql.close();
+            res.send({status: "failed"});}
+                                  // sql.close();
+                                    //console.log(recordset.recordset)
+                                    var result_form = recordset.recordset;
+                                    var Id_bl = result_form[0].Id;
+                                    req.session.BLdet = Id_bl;
+        
+                                    sql.close();
+                                    res.send(Id_bl)
+                              });
+                        });
+              
+                    });
+        
+          });
+        }
+    });
   });
-  });
+  // });
   
   
   
@@ -8412,7 +8451,7 @@ app.get('/regions', function (req, res) {
           //sql.close();
           res.send({status: "failed"});
         }else{
-     sql.close();
+            sql.close();
           // send records as a response
           res.send(recordset.recordset);
         }

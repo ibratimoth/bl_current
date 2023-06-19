@@ -20788,3 +20788,911 @@ reuslts
   { SUBWARD_ID: '5', SUBWARD_NAME: 'Naura,' },
   { SUBWARD_ID: '6', SUBWARD_NAME: 'Goliondoi ,' }
 ]
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Mon Jun 19 2023 17:44:36 GMT+0300 (East Africa Time): Successful login
+response.body
+[{"trackingNo":"BL230619-1633"}]
+Mon Jun 19 2023 17:44:44 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+Mon Jun 19 2023 17:44:46 GMT+0300 (East Africa Time): List of Regions
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+{"resultcode":"0","message":"Success","result":{"TaxpayerId":111511306,"TaxpayerName":"","FirstName":"BARIKI","MiddleName":"LAURENT","LastName":"MALUGU","TradingName":null,"DateOfBirth":"1982-10-20T00:00:00","DateOfRegistration":"2010-12-21T10:49:47","Gender":"M","IsPerson":true,"PostalAddress":"1671","PostalCity":"DODOMA","PlotNumber":"","BlockNumber":"","Region":"Dodoma","District":"Dodoma","Ward":null,"Street":"KISASA","Tel1":"0756688111","Tel2":"0756688111","Tel3":null,"Mobile":"","Fax":"","Email":"","Vrn":null,"NumberOfEmployees":"0","NationalId":"","CertificateNo":""}}
+ispersontrue
+TypeError
+Hello ORS
+Mon Jun 19 2023 17:47:46 GMT+0300 (East Africa Time): Successful login
+response.body
+[{"trackingNo":"BL230619-1683"}]
+Mon Jun 19 2023 17:47:53 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+get business owner types
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Mon Jun 19 2023 17:47:55 GMT+0300 (East Africa Time): List of Regions
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+TypeError
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Hello ORS
+Mon Jun 19 2023 17:49:36 GMT+0300 (East Africa Time): Successful login
+response.body
+[{"trackingNo":"BL230619-1747"}]
+Mon Jun 19 2023 17:49:46 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+get business owner types
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Mon Jun 19 2023 17:49:47 GMT+0300 (East Africa Time): List of Regions
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+{"resultcode":"0","message":"Success","result":{"TaxpayerId":111511306,"TaxpayerName":"","FirstName":"BARIKI","MiddleName":"LAURENT","LastName":"MALUGU","TradingName":null,"DateOfBirth":"1982-10-20T00:00:00","DateOfRegistration":"2010-12-21T10:49:47","Gender":"M","IsPerson":true,"PostalAddress":"1671","PostalCity":"DODOMA","PlotNumber":"","BlockNumber":"","Region":"Dodoma","District":"Dodoma","Ward":null,"Street":"KISASA","Tel1":"0756688111","Tel2":"0756688111","Tel3":null,"Mobile":"","Fax":"","Email":"","Vrn":null,"NumberOfEmployees":"0","NationalId":"","CertificateNo":""}}
+ispersontrue
+TypeError
+TypeError
+{"NIN":"19821020411070000121","FIRSTNAME":"BARIKI","MIDDLENAME":"LAURENT","SURNAME":"MALUGU","SEX":"MALE","DATEOFBIRTH":"1982-10-20T00:00:00.000Z","PHONENUMBER":"0788998833","NIDAVERIFIED":2,"resultcode":0}
+[
+  {
+    Id: 1,
+    IsPerUnitFeeApplicable: false,
+    IssuingAuthorityId: 1,
+    BusinessLicenceClassCode: '1'
+  }
+]
+1
+Id =2551
+Id =Arusha CBD
+Id =Arusha
+Id =Arumeru
+Id =Monduli
+Id =Longido
+Id =Karatu
+Id =Ngorongoro
+[
+  { districtId: '25511', districtName: 'Arusha CBD' },
+  { districtId: '25512', districtName: 'Arusha' },
+  { districtId: '25513', districtName: 'Arumeru' },
+  { districtId: '25514', districtName: 'Monduli' },
+  { districtId: '25515', districtName: 'Longido' },
+  { districtId: '25516', districtName: 'Karatu' },
+  { districtId: '25517', districtName: 'Ngorongoro' }
+]
+[
+  { WardId: '23101', wardName: 'Sekei' },
+  { WardId: '23102', wardName: 'Kati' },
+  { WardId: '23103', wardName: 'Kaloleni' },
+  { WardId: '23104', wardName: 'Levolosi' },
+  { WardId: '23105', wardName: 'Ngarenaro' },
+  { WardId: '23106', wardName: 'Elerai' },
+  { WardId: '23107', wardName: 'Unga Limited' },
+  { WardId: '23108', wardName: 'Daraja Ii' },
+  { WardId: '23109', wardName: 'Themi' },
+  { WardId: '23110', wardName: 'Kimandolu' },
+  { WardId: '23111', wardName: 'Olorieni' },
+  { WardId: '23112', wardName: 'Baraa' },
+  { WardId: '23113', wardName: 'Lemara' },
+  { WardId: '23114', wardName: 'Engutoto' },
+  { WardId: '23115', wardName: 'Sokon 1' },
+  { WardId: '23116', wardName: 'Sombetini' },
+  { WardId: '23117', wardName: 'Terrat' },
+  { WardId: '23118', wardName: 'Moshono' },
+  { WardId: '23119', wardName: 'Olasiti' },
+  { WardId: '23120', wardName: 'Moivaro' },
+  { WardId: '23121', wardName: 'Sinoni' },
+  { WardId: '23122', wardName: 'Muriet' },
+  { WardId: '23123', wardName: 'Osunyai Jr' },
+  { WardId: '23124', wardName: 'Sakina' },
+  { WardId: '23125', wardName: 'Olmoti' }
+]
+23101
+reuslts
+[
+  { SUBWARD_ID: '1', SUBWARD_NAME: 'Sanawari,' },
+  { SUBWARD_ID: '2', SUBWARD_NAME: 'Naurei,' },
+  { SUBWARD_ID: '3', SUBWARD_NAME: 'Mtaa wa AICC,' },
+  { SUBWARD_ID: '4', SUBWARD_NAME: 'Mtaa wa Mahakamani,' },
+  { SUBWARD_ID: '5', SUBWARD_NAME: 'Naura,' },
+  { SUBWARD_ID: '6', SUBWARD_NAME: 'Goliondoi ,' }
+]
+1
+Hello ORS
+Hello ORS
+Mon Jun 19 2023 17:56:03 GMT+0300 (East Africa Time): Successful login
+response.body
+[{"trackingNo":"BL230619-1466"}]
+Mon Jun 19 2023 17:58:13 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+get business owner types
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Hello ORS
+Mon Jun 19 2023 17:58:44 GMT+0300 (East Africa Time): Successful login
+response.body
+[{"trackingNo":"BL230619-1708"}]
+Mon Jun 19 2023 17:58:51 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Mon Jun 19 2023 17:58:52 GMT+0300 (East Africa Time): List of Regions
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+{"resultcode":"0","message":"Success","result":{"TaxpayerId":111511306,"TaxpayerName":"","FirstName":"BARIKI","MiddleName":"LAURENT","LastName":"MALUGU","TradingName":null,"DateOfBirth":"1982-10-20T00:00:00","DateOfRegistration":"2010-12-21T10:49:47","Gender":"M","IsPerson":true,"PostalAddress":"1671","PostalCity":"DODOMA","PlotNumber":"","BlockNumber":"","Region":"Dodoma","District":"Dodoma","Ward":null,"Street":"KISASA","Tel1":"0756688111","Tel2":"0756688111","Tel3":null,"Mobile":"","Fax":"","Email":"","Vrn":null,"NumberOfEmployees":"0","NationalId":"","CertificateNo":""}}
+ispersontrue
+{"NIN":"19821020411070000121","FIRSTNAME":"BARIKI","MIDDLENAME":"LAURENT","SURNAME":"MALUGU","SEX":"MALE","DATEOFBIRTH":"1982-10-20T00:00:00.000Z","PHONENUMBER":"0788998833","NIDAVERIFIED":2,"resultcode":0}
+response.body
+[{"trackingNo":"BL230619-2159"}]
+Mon Jun 19 2023 18:08:05 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+get business owner types
+Mon Jun 19 2023 18:08:07 GMT+0300 (East Africa Time): List of Regions
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+{"resultcode":"0","message":"Success","result":{"TaxpayerId":110323255,"TaxpayerName":"","FirstName":"KIZITO","MiddleName":"JOSEPH","LastName":"JILANGI","TradingName":null,"DateOfBirth":"1983-09-29T00:00:00","DateOfRegistration":"2010-06-10T09:42:35","Gender":"M","IsPerson":true,"PostalAddress":"78789","PostalCity":"DAR ES SALAAM","PlotNumber":"","BlockNumber":"","Region":"Dar es Salaam","District":"Kinondoni","Ward":null,"Street":"MBEZI-MSHIKAMANO PRI SCHOOL","Tel1":"","Tel2":"","Tel3":null,"Mobile":"255789666755","Fax":"","Email":"","Vrn":null,"NumberOfEmployees":"1","NationalId":"19830929141220000042","CertificateNo":""}}
+ispersontrue
+{"NIN":"19821020411070000121","FIRSTNAME":"BARIKI","MIDDLENAME":"LAURENT","SURNAME":"MALUGU","SEX":"MALE","DATEOFBIRTH":"1982-10-20T00:00:00.000Z","PHONENUMBER":"0788998833","NIDAVERIFIED":2,"resultcode":0}
+[
+  {
+    Id: 1,
+    IsPerUnitFeeApplicable: false,
+    IssuingAuthorityId: 1,
+    BusinessLicenceClassCode: '1'
+  }
+]
+1
+Id =2551
+Id =Arusha CBD
+Id =Arusha
+Id =Arumeru
+Id =Monduli
+Id =Longido
+Id =Karatu
+Id =Ngorongoro
+[
+  { districtId: '25511', districtName: 'Arusha CBD' },
+  { districtId: '25512', districtName: 'Arusha' },
+  { districtId: '25513', districtName: 'Arumeru' },
+  { districtId: '25514', districtName: 'Monduli' },
+  { districtId: '25515', districtName: 'Longido' },
+  { districtId: '25516', districtName: 'Karatu' },
+  { districtId: '25517', districtName: 'Ngorongoro' }
+]
+[
+  { WardId: '23101', wardName: 'Sekei' },
+  { WardId: '23102', wardName: 'Kati' },
+  { WardId: '23103', wardName: 'Kaloleni' },
+  { WardId: '23104', wardName: 'Levolosi' },
+  { WardId: '23105', wardName: 'Ngarenaro' },
+  { WardId: '23106', wardName: 'Elerai' },
+  { WardId: '23107', wardName: 'Unga Limited' },
+  { WardId: '23108', wardName: 'Daraja Ii' },
+  { WardId: '23109', wardName: 'Themi' },
+  { WardId: '23110', wardName: 'Kimandolu' },
+  { WardId: '23111', wardName: 'Olorieni' },
+  { WardId: '23112', wardName: 'Baraa' },
+  { WardId: '23113', wardName: 'Lemara' },
+  { WardId: '23114', wardName: 'Engutoto' },
+  { WardId: '23115', wardName: 'Sokon 1' },
+  { WardId: '23116', wardName: 'Sombetini' },
+  { WardId: '23117', wardName: 'Terrat' },
+  { WardId: '23118', wardName: 'Moshono' },
+  { WardId: '23119', wardName: 'Olasiti' },
+  { WardId: '23120', wardName: 'Moivaro' },
+  { WardId: '23121', wardName: 'Sinoni' },
+  { WardId: '23122', wardName: 'Muriet' },
+  { WardId: '23123', wardName: 'Osunyai Jr' },
+  { WardId: '23124', wardName: 'Sakina' },
+  { WardId: '23125', wardName: 'Olmoti' }
+]
+23101
+reuslts
+[
+  { SUBWARD_ID: '1', SUBWARD_NAME: 'Sanawari,' },
+  { SUBWARD_ID: '2', SUBWARD_NAME: 'Naurei,' },
+  { SUBWARD_ID: '3', SUBWARD_NAME: 'Mtaa wa AICC,' },
+  { SUBWARD_ID: '4', SUBWARD_NAME: 'Mtaa wa Mahakamani,' },
+  { SUBWARD_ID: '5', SUBWARD_NAME: 'Naura,' },
+  { SUBWARD_ID: '6', SUBWARD_NAME: 'Goliondoi ,' }
+]
+{"resultcode":"0","message":"Success","result":{"TaxpayerId":111511306,"TaxpayerName":"","FirstName":"BARIKI","MiddleName":"LAURENT","LastName":"MALUGU","TradingName":null,"DateOfBirth":"1982-10-20T00:00:00","DateOfRegistration":"2010-12-21T10:49:47","Gender":"M","IsPerson":true,"PostalAddress":"1671","PostalCity":"DODOMA","PlotNumber":"","BlockNumber":"","Region":"Dodoma","District":"Dodoma","Ward":null,"Street":"KISASA","Tel1":"0756688111","Tel2":"0756688111","Tel3":null,"Mobile":"","Fax":"","Email":"","Vrn":null,"NumberOfEmployees":"0","NationalId":"","CertificateNo":""}}
+ispersontrue
+response.body
+[{"trackingNo":"BL230619-2037"}]
+Mon Jun 19 2023 18:10:29 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+get business owner types
+Mon Jun 19 2023 18:10:32 GMT+0300 (East Africa Time): List of Regions
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+{"resultcode":"0","message":"Success","result":{"TaxpayerId":111511306,"TaxpayerName":"","FirstName":"BARIKI","MiddleName":"LAURENT","LastName":"MALUGU","TradingName":null,"DateOfBirth":"1982-10-20T00:00:00","DateOfRegistration":"2010-12-21T10:49:47","Gender":"M","IsPerson":true,"PostalAddress":"1671","PostalCity":"DODOMA","PlotNumber":"","BlockNumber":"","Region":"Dodoma","District":"Dodoma","Ward":null,"Street":"KISASA","Tel1":"0756688111","Tel2":"0756688111","Tel3":null,"Mobile":"","Fax":"","Email":"","Vrn":null,"NumberOfEmployees":"0","NationalId":"","CertificateNo":""}}
+ispersontrue
+{"NIN":"19821020411070000121","FIRSTNAME":"BARIKI","MIDDLENAME":"LAURENT","SURNAME":"MALUGU","SEX":"MALE","DATEOFBIRTH":"1982-10-20T00:00:00.000Z","PHONENUMBER":"0788998833","NIDAVERIFIED":2,"resultcode":0}
+{"resultcode":"0","message":"Success","result":{"TaxpayerId":110323255,"TaxpayerName":"","FirstName":"KIZITO","MiddleName":"JOSEPH","LastName":"JILANGI","TradingName":null,"DateOfBirth":"1983-09-29T00:00:00","DateOfRegistration":"2010-06-10T09:42:35","Gender":"M","IsPerson":true,"PostalAddress":"78789","PostalCity":"DAR ES SALAAM","PlotNumber":"","BlockNumber":"","Region":"Dar es Salaam","District":"Kinondoni","Ward":null,"Street":"MBEZI-MSHIKAMANO PRI SCHOOL","Tel1":"","Tel2":"","Tel3":null,"Mobile":"255789666755","Fax":"","Email":"","Vrn":null,"NumberOfEmployees":"1","NationalId":"19830929141220000042","CertificateNo":""}}
+ispersontrue
+{"resultcode":"01","message":"Network timed out read ECONNRESET","result":"fail"}
+{"resultcode":"0","message":"Success","result":{"TaxpayerId":111511306,"TaxpayerName":"","FirstName":"BARIKI","MiddleName":"LAURENT","LastName":"MALUGU","TradingName":null,"DateOfBirth":"1982-10-20T00:00:00","DateOfRegistration":"2010-12-21T10:49:47","Gender":"M","IsPerson":true,"PostalAddress":"1671","PostalCity":"DODOMA","PlotNumber":"","BlockNumber":"","Region":"Dodoma","District":"Dodoma","Ward":null,"Street":"KISASA","Tel1":"0756688111","Tel2":"0756688111","Tel3":null,"Mobile":"","Fax":"","Email":"","Vrn":null,"NumberOfEmployees":"0","NationalId":"","CertificateNo":""}}
+ispersontrue
+[
+  {
+    Id: 1,
+    IsPerUnitFeeApplicable: false,
+    IssuingAuthorityId: 1,
+    BusinessLicenceClassCode: '1'
+  }
+]
+1
+Id =2552
+Id =Ilala CBD
+Id =Ilala
+Id =Kinondoni
+Id =Temeke
+Id =Ubungo
+Id =Kigamboni
+[
+  { districtId: '25521', districtName: 'Ilala CBD' },
+  { districtId: '25522', districtName: 'Ilala' },
+  { districtId: '25523', districtName: 'Kinondoni' },
+  { districtId: '25524', districtName: 'Temeke' },
+  { districtId: '25525', districtName: 'Ubungo' },
+  { districtId: '25526', districtName: 'Kigamboni' }
+]
+[
+  { WardId: '11101', wardName: 'Kivukoni' },
+  { WardId: '11102', wardName: 'Upanga Mashariki' },
+  { WardId: '11103', wardName: 'Upanga Magharibi' },
+  { WardId: '11104', wardName: 'Kisutu' },
+  { WardId: '11105', wardName: 'Mchafukoge' },
+  { WardId: '11106', wardName: 'Kariakoo' },
+  { WardId: '11107', wardName: 'Gerezani' },
+  { WardId: '11108', wardName: 'Jangwani' },
+  { WardId: '11109', wardName: 'Mchikichini' }
+]
+11101
+reuslts
+[
+  { SUBWARD_ID: '1', SUBWARD_NAME: 'Kivukoni,' },
+  { SUBWARD_ID: '2', SUBWARD_NAME: 'Sea View,' }
+]
+1
+BLdetailsId
+10892
+yes
+1
+req.session.BizOwnerType
+1
+Id =[{"AttachmentTypeId":1,"AttachmentName":"Proof of Business Premise","Description":"Proof of Business Premise"},{"AttachmentTypeId":2,"AttachmentName":"Tax Clearance","Description":"The Tax clearance certificate from TRA"}]
+response.body
+[{"trackingNo":"BL230619-1421"}]
+Mon Jun 19 2023 18:16:06 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+get business owner types
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Mon Jun 19 2023 18:16:08 GMT+0300 (East Africa Time): List of Regions
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+{"resultcode":"01","message":"TIN not Found - Taxpayer Not Registered  ","result":"fail"}
+{"resultcode":"01","message":"TIN not Found - Taxpayer Not Registered  ","result":"fail"}
