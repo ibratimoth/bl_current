@@ -576,6 +576,7 @@ function getWardB()
         var bn_name= document.getElementById('bn_name').value;
         var tin_no_ver = document.getElementById("tin_no_ver").value;
         // alert(inputEmail4phn[0])
+
         if(subwardIdB == 0){
             swal({
                 type: 'error',
@@ -722,11 +723,55 @@ function getWardB()
             $(".saveBiz").hide();
             $(".saveBizOne").show();
         }
-
         if(BizOwnerType != 0 && tin_no_ver == 1 && sectorlist != 0 && categorylist != 0 
         && regionlistB != 0 && districtlistB != 0 && 
         addressAreaB != 0 && wardIdB != 0 && TypeList != 0 && inputEmail4phn.length == 10 && 
         inputEmail4comp.length > 0 && inputEmail4pobox.length > 0 && inputEmail4phn[0] == '0' && subwardIdB != 0){
+            if(BizOwnerType == 1 && nida_no.length <= 0){
+                swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Please insert NIN!',
+                padding: '2em',
+                timer: 3000,
+            }) 
+            $(".saveBiz").hide();
+            $(".saveBizOne").show();
+            }
+            if(BizOwnerType == 2 && inco_no.length <= 0){
+                swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Please insert Incorparation Number!',
+                padding: '2em',
+                timer: 3000,
+            }) 
+            $(".saveBiz").hide();
+            $(".saveBizOne").show();
+            }
+            if(BizOwnerType == 3 && reg_no_other.length <= 0){
+                swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Please insert Incorparation Number!',
+                padding: '2em',
+                timer: 3000,
+            }) 
+            $(".saveBiz").hide();
+            $(".saveBizOne").show();
+            }
+            if(BizOwnerType == 4 && bn_no.length <= 0){
+                swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Please insert Registration Number!',
+                padding: '2em',
+                timer: 3000,
+            }) 
+            $(".saveBiz").hide();
+            $(".saveBizOne").show();
+            }
+            if(BizOwnerType == 1 && nida_no.length > 0){
                 $.ajax({
                     url: "/saveStageSecond",
                     type: 'POST',
@@ -762,7 +807,110 @@ function getWardB()
                 //     alert('Error: ' + textStatus + ' - ' + errorThrown);
                 // }
                 });
-        }
+            }
+            if(BizOwnerType == 2 && inco_no.length > 0){
+                $.ajax({
+                    url: "/saveStageSecond",
+                    type: 'POST',
+                    data: JSON.stringify({"bn_name": bn_name, "bn_no": bn_no, "company_name": company_name, "inco_no": inco_no, 
+                    "reg_no_other": reg_no_other, "corporate_name": corporate_name, "leadername_nat": leadername_nat, 
+                    "leadername_nat_2": leadername_nat_2, "inputEmail4pobox": inputEmail4pobox, "unservayedarea": unservayedarea, 
+                    "house_no": house_no, "block_no": block_no, "plot_no": plot_no, "road": road, "regionlistB": regionlistB, 
+                    "districtlistB": districtlistB, "wardIdB": wardIdB, "postcode": postcode, "street": street, 
+                    "addressAreaB": addressAreaB, "categorylist": categorylist, "sectorlist": sectorlist, "busorigintype": "1", 
+                    "nida_no": nida_no, "fname": fname, "mname": mname, "lname": lname, "gender": gender, "dob": dob, 
+                    "issuingAuthorityId": issuingAuthorityId, "inputEmail4phn": inputEmail4phn, "inputEmail4comp": inputEmail4comp, 
+                    "businessLicenceClassId": businessLicenceClassId, "BizOwnerType": BizOwnerType, "NoUnit": NoUnit, "BizTin": BizTin, 
+                    "TaxPayer": TaxPayer, "TypeList": TypeList, "subwardIdB": subwardIdB}),
+                    contentType: 'application/json',
+                    success: function(response) {
+                        //console.log(response)
+                        $(".saveBiz").hide();
+                        $(".saveBizOne").show();
+                        swal({
+                            title: 'Success!',
+                            text: 'Data succesfully saved.',
+                            type: 'success',
+                            timer: 2000,
+                        })
+                    getAttachments();
+                    getPermit();
+
+
+
+            
+                    },
+                });
+            }
+            if(BizOwnerType == 3 && reg_no_other.length > 0){
+                $.ajax({
+                    url: "/saveStageSecond",
+                    type: 'POST',
+                    data: JSON.stringify({"bn_name": bn_name, "bn_no": bn_no, "company_name": company_name, "inco_no": inco_no, 
+                    "reg_no_other": reg_no_other, "corporate_name": corporate_name, "leadername_nat": leadername_nat, 
+                    "leadername_nat_2": leadername_nat_2, "inputEmail4pobox": inputEmail4pobox, "unservayedarea": unservayedarea, 
+                    "house_no": house_no, "block_no": block_no, "plot_no": plot_no, "road": road, "regionlistB": regionlistB, 
+                    "districtlistB": districtlistB, "wardIdB": wardIdB, "postcode": postcode, "street": street, 
+                    "addressAreaB": addressAreaB, "categorylist": categorylist, "sectorlist": sectorlist, "busorigintype": "1", 
+                    "nida_no": nida_no, "fname": fname, "mname": mname, "lname": lname, "gender": gender, "dob": dob, 
+                    "issuingAuthorityId": issuingAuthorityId, "inputEmail4phn": inputEmail4phn, "inputEmail4comp": inputEmail4comp, 
+                    "businessLicenceClassId": businessLicenceClassId, "BizOwnerType": BizOwnerType, "NoUnit": NoUnit, "BizTin": BizTin, 
+                    "TaxPayer": TaxPayer, "TypeList": TypeList, "subwardIdB": subwardIdB}),
+                    contentType: 'application/json',
+                    success: function(response) {
+                        //console.log(response)
+                        $(".saveBiz").hide();
+                        $(".saveBizOne").show();
+                        swal({
+                            title: 'Success!',
+                            text: 'Data succesfully saved.',
+                            type: 'success',
+                            timer: 2000,
+                        })
+                    getAttachments();
+                    getPermit();
+
+
+
+            
+                    },
+                });
+            }
+            if(BizOwnerType == 4 && bn_no.length > 0){
+                $.ajax({
+                    url: "/saveStageSecond",
+                    type: 'POST',
+                    data: JSON.stringify({"bn_name": bn_name, "bn_no": bn_no, "company_name": company_name, "inco_no": inco_no, 
+                    "reg_no_other": reg_no_other, "corporate_name": corporate_name, "leadername_nat": leadername_nat, 
+                    "leadername_nat_2": leadername_nat_2, "inputEmail4pobox": inputEmail4pobox, "unservayedarea": unservayedarea, 
+                    "house_no": house_no, "block_no": block_no, "plot_no": plot_no, "road": road, "regionlistB": regionlistB, 
+                    "districtlistB": districtlistB, "wardIdB": wardIdB, "postcode": postcode, "street": street, 
+                    "addressAreaB": addressAreaB, "categorylist": categorylist, "sectorlist": sectorlist, "busorigintype": "1", 
+                    "nida_no": nida_no, "fname": fname, "mname": mname, "lname": lname, "gender": gender, "dob": dob, 
+                    "issuingAuthorityId": issuingAuthorityId, "inputEmail4phn": inputEmail4phn, "inputEmail4comp": inputEmail4comp, 
+                    "businessLicenceClassId": businessLicenceClassId, "BizOwnerType": BizOwnerType, "NoUnit": NoUnit, "BizTin": BizTin, 
+                    "TaxPayer": TaxPayer, "TypeList": TypeList, "subwardIdB": subwardIdB}),
+                    contentType: 'application/json',
+                    success: function(response) {
+                        //console.log(response)
+                        $(".saveBiz").hide();
+                        $(".saveBizOne").show();
+                        swal({
+                            title: 'Success!',
+                            text: 'Data succesfully saved.',
+                            type: 'success',
+                            timer: 2000,
+                        })
+                    getAttachments();
+                    getPermit();
+
+
+
+            
+                    },
+                });
+            }
+            }
     }
 </script>
 <script>
