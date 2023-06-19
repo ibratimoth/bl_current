@@ -3432,7 +3432,8 @@ app.get('/OnGoingApp', async function(req, res) {
       res.send("failed")
 
     }
-    //console.log(response.body)
+    // console.log('response.body')
+    // console.log(response.body)
     // var jsonData = JSON.parse(response.body);
     var jsonData = response.body;
     for(var i = 0; i < jsonData.length; i++){
@@ -3668,7 +3669,8 @@ app.get('/SubApplication', async function(req, res) {
       console.log(new Date() + " MyApplication fail to load " + error)
       res.send("failed")
     }
-    //console.log(response.body)
+    console.log('response.body')
+    // console.log(response.body)
     // var jsonData = JSON.parse(response.body);
     var jsonData = response.body;
     for(var i = 0; i < jsonData.length; i++){
@@ -3678,6 +3680,7 @@ app.get('/SubApplication', async function(req, res) {
     var submittedDate = jsonData[i].SubmittedDate;
     var createdDate = jsonData[i].CreatedDate;
     var status = jsonData[i].Name;
+    var EntityName = jsonData[i].EntityName;
     var businessTypeName = jsonData[i].BusinessTypeName;
     var PaymentStatus = jsonData[i].PaymentStatus;
     var ApplicationStatusId = jsonData[i].ApplicationStatusId;
@@ -3687,7 +3690,7 @@ app.get('/SubApplication', async function(req, res) {
     var ServiceCode = jsonData[i].ServiceCode;
     var IsSentRegistry = jsonData[i].IsSentRegistry;
     var BusinessClassId = jsonData[i].BusinessClassId;
-    
+   
     if(IsSentRegistry){
       IsSentRegistry == 1;
     }if(!IsSentRegistry){
@@ -3758,7 +3761,7 @@ app.get('/SubApplication', async function(req, res) {
       }if(ApplicationStep == 7){
         ApplicationStep = 'Supplement'
       }
-      objs12.push({"BusinessClassId": BusinessClassId, "IsSentRegistry": IsSentRegistry, "ServiceCode": ServiceCode, "IsBranch": IsBranch, "BLNumber": BLNumber, "request_id": request_id, "trackingNo": trackingNo, "submittedDate": submittedDate, "createdDate": createdDate, "status": status, "businessTypeName": businessTypeName, "paymentStatus": PaymentStatus, "ApplicationStatusId": ApplicationStatusId, "ApplicationStep": ApplicationStep})
+      objs12.push({"BusinessClassId": BusinessClassId, "EntityName": EntityName, "IsSentRegistry": IsSentRegistry, "ServiceCode": ServiceCode, "IsBranch": IsBranch, "BLNumber": BLNumber, "request_id": request_id, "trackingNo": trackingNo, "submittedDate": submittedDate, "createdDate": createdDate, "status": status, "businessTypeName": businessTypeName, "paymentStatus": PaymentStatus, "ApplicationStatusId": ApplicationStatusId, "ApplicationStep": ApplicationStep})
     //  }
 
   //  });
@@ -4504,7 +4507,7 @@ sql.connect(configBL, function (err) {
     ' a.ServiceCode as ServiceCode, a.SubmittedDate as SubmittedDate, ' + 
     ' a.CreatedDate as CreatedDate, b.ApplicationStatusId as ApplicationStatusId, ' + 
     ' b.ApplicationStageId as ApplicationStageId, c.BusinessTypeName as BusinessTypeName, ' + 
-    ' b.PaymentStatus as PaymentStatus, d.isSentToRegistry as IsSentRegistry ' + 
+    ' b.PaymentStatus as PaymentStatus, a.EntityName as EntityName, d.isSentToRegistry as IsSentRegistry ' + 
     ' FROM dbo.BusinessLicApplication as a, dbo.BLicenseApplicationTracker as b, ' + 
     ' dbo.BusinessTypes as c, dbo.BusinessLicenceDetails as d ' + 
     ' WHERE d.BusinessLicenceApplicationId = a.Id AND a.Id = b.ApplicationId ' + 

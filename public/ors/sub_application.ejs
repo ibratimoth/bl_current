@@ -62,6 +62,7 @@
                                     <thead>
                                         <tr>
                                             <th>Tracking Number</th>
+                                            <th>Entity Name</th>
                                             <th>Created Date</th>
                                             <th>Service</th>
                                             <th>Status</th>
@@ -75,6 +76,7 @@
                                     <tfoot>
                                         <tr>
                                             <th>Tracking Number</th>
+                                            <th>Entity Name</th>
                                             <th>Created Date</th>
                                             <th>Service</th>
                                             <th>Status</th>
@@ -104,6 +106,7 @@
                                     <thead>
                                         <tr>
                                             <th>Tracking Number</th>
+                                            <th>Entity Name</th>
                                             <th>Created Date</th>
                                             <th>Submitted Date</th>
                                             <th>Service</th>
@@ -193,6 +196,7 @@ $.ajax({
             for (var i=0; i<data.length; i++) {
                 if(data[i].paymentStatus){
                         var row = '<tr><td class="text-black tacker" id="tacker" style="font-weight: bold;">' + data[i].trackingNo+ '</td>'; 
+                    row = row + '<td style="color: blue;">' + data[i].EntityName + '</span></td>';
                     row = row + '<td style="color: blue;">' + data[i].createdDate + '</span></td>';
                     row = row + '<td style="color: blue;">' + data[i].submittedDate + '</td>';
                     row = row + '<td style="color: blue;"> ' + data[i].ServiceCode + ' </td>';
@@ -243,7 +247,8 @@ $.ajax({
                     }
                     else if(!data[i].paymentStatus){
                         var row = '<tr><td class="text-black tacker" id="tacker" style="font-weight: bold;">' + data[i].trackingNo+ '</td>'; 
-                row = row + '<td class="text-black">' + data[i].createdDate + '</td>';
+                            row = row + '<td style="color: blue;">' + data[i].EntityName + '</span></td>';
+                            row = row + '<td class="text-black">' + data[i].createdDate + '</td>';
                 row = row + '<td class="text-black">' + data[i].submittedDate + '</td>';
                 row = row + '<td class="text-black"> ' + data[i].ServiceCode + ' </td>';
                 // row = row + '<td class="text-center text-black" style="font-weight: bold;"> ' + data[i].BusinessClassId + ' </td>';
