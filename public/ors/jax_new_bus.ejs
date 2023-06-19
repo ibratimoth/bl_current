@@ -789,7 +789,6 @@ function getWardB()
                     id = deleteBtn.data('name'),
                     name = deleteBtn.data('desc'),
                     title_tracker = deleteBtn.closest('tr').find('.tacker').text();
-                    alert(title_tracker)
                     $("#categoryID").val(id);
                     $("#trak_no").val(id);
                     $("#atach_nem").val(title_tracker);
@@ -1274,7 +1273,7 @@ function TinVerifier(){
                 txtBox.value = "";
                 document.querySelector('#savebtn').disabled = true;
                 $(".TinLoader").hide();
-               $(".TinFirst").show();
+                $(".TinFirst").show();
             }else if(response === 'require natural person TIN'){
                 swal({
                     type: 'error',
