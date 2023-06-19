@@ -782,17 +782,19 @@ function getWardB()
                     '</tr>');
                 $('#attachmentId').append(row);
                             // Attach click event handler to dynamically created elements
-            $(document).off('click', '.widget-content .warning.passingID'); // Remove any existing event handlers
-            $(document).on('click', '.widget-content .warning.passingID', function () {
-                var deleteBtn = $(this),
+                $(document).off('click', '.widget-content .warning.passingID'); // Remove any existing event handlers
+                $(document).on('click', '.widget-content .warning.passingID', function () {
+                    
+                    var deleteBtn = $(this),
                     id = deleteBtn.data('name'),
                     name = deleteBtn.data('desc'),
                     title_tracker = deleteBtn.closest('tr').find('.tacker').text();
-                $("#categoryID").val(id);
-                $("#trak_no").val(id);
-                $("#atach_nem").val(title_tracker);
-                $('#rotateInDownLeft').modal('show');
-            });
+                    alert(title_tracker)
+                    $("#categoryID").val(id);
+                    $("#trak_no").val(id);
+                    $("#atach_nem").val(title_tracker);
+                    $('#rotateInDownLeft').modal('show');
+                });
             }
             
 
