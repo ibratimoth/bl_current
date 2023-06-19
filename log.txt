@@ -7463,3 +7463,1384 @@ Hello ORS
 Hello ORS
 Hello ORS
 Hello ORS
+Hello ORS
+Mon Jun 19 2023 11:37:07 GMT+0300 (East Africa Time): Successful login
+get particulars
+req.params.id
+20168
+1
+body
+[{"status":"success","fname":"Mark","mname":"Samwel","lname":"Nyamwocha","date_birth":"1999-01-01T00:00:00.000Z","citizen":"Local","gender":"Male"}]
+response.body
+[{"trackingNo":"BL230619-1648"}]
+Mon Jun 19 2023 11:37:14 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+fail to AddressArea Error: aborted
+fail to Save_EntityOwner_SP Error: aborted
+Id =
+{"status":"failed"}
+Mon Jun 19 2023 11:37:16 GMT+0300 (East Africa Time): List of Regions
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+{"resultcode":"01","message":"Exec Get_NINVerificationStatus_SP @NIN=@p0 - Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression."}
+{"resultcode":"01","message":"Exec Get_NINVerificationStatus_SP @NIN=@p0 - Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression."}
+{"NIN":"19741210141140000127","FIRSTNAME":"GILBERT","MIDDLENAME":"JORDAN","SURNAME":"SAMPA","SEX":"MALE","DATEOFBIRTH":"1974-12-10T00:00:00.000Z","PHONENUMBER":"0714232323","NIDAVERIFIED":2,"resultcode":0}
+get particulars
+req.params.id
+20168
+1
+body
+[{"status":"success","fname":"Mark","mname":"Samwel","lname":"Nyamwocha","date_birth":"1999-01-01T00:00:00.000Z","citizen":"Local","gender":"Male"}]
+fail to generate tracking number
+response.body
+{"status":"fail","message":"fail to generate tracking"}
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get particulars
+req.params.id
+20168
+1
+body
+[{"status":"success","fname":"Mark","mname":"Samwel","lname":"Nyamwocha","date_birth":"1999-01-01T00:00:00.000Z","citizen":"Local","gender":"Male"}]
+fail to generate tracking number
+response.body
+{"status":"fail","message":"fail to generate tracking"}
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get particulars
+req.params.id
+20168
+1
+body
+[{"status":"success","fname":"Mark","mname":"Samwel","lname":"Nyamwocha","date_birth":"1999-01-01T00:00:00.000Z","citizen":"Local","gender":"Male"}]
+response.body
+[{"trackingNo":"BL230619-1918"}]
+Mon Jun 19 2023 11:40:08 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+get business owner types
+fail to AddressArea Error: aborted
+fail to Save_EntityOwner_SP Error: aborted
+Id =
+{"status":"failed"}
+Mon Jun 19 2023 11:40:10 GMT+0300 (East Africa Time): List of Regions
+{"resultcode":"01","message":"Network timed out read ETIMEDOUT","result":"fail"}
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+{"NIN":"19741210141140000127","FIRSTNAME":"GILBERT","MIDDLENAME":"JORDAN","SURNAME":"SAMPA","SEX":"MALE","DATEOFBIRTH":"1974-12-10T00:00:00.000Z","PHONENUMBER":"0714232323","NIDAVERIFIED":2,"resultcode":0}
+{"resultcode":"0","message":"Success","result":{"TaxpayerId":132402094,"TaxpayerName":"","FirstName":"PETER","MiddleName":"HUGHO","LastName":"RIWA","TradingName":null,"DateOfBirth":"1984-12-31T00:00:00","DateOfRegistration":"2017-01-06T17:28:48","Gender":"M","IsPerson":true,"PostalAddress":"9503","PostalCity":"DAR ES SALAAM","PlotNumber":"","BlockNumber":"","Region":"Dar es Salaam","District":"Ilala","Ward":null,"Street":"GONGO LAMBOTO","Tel1":"","Tel2":"","Tel3":null,"Mobile":"255714726910","Fax":"","Email":"","Vrn":null,"NumberOfEmployees":"0","NationalId":"","CertificateNo":""}}
+ispersontrue
+[
+  {
+    Id: 1,
+    IsPerUnitFeeApplicable: false,
+    IssuingAuthorityId: 1,
+    BusinessLicenceClassCode: '1'
+  }
+]
+8
+get particulars
+req.params.id
+20168
+1
+body
+[{"status":"success","fname":"Mark","mname":"Samwel","lname":"Nyamwocha","date_birth":"1999-01-01T00:00:00.000Z","citizen":"Local","gender":"Male"}]
+fail to generate tracking number
+response.body
+{"status":"fail","message":"fail to generate tracking"}
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+get business owner types
+get particulars
+req.params.id
+20168
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Hello ORS
+Mon Jun 19 2023 11:41:45 GMT+0300 (East Africa Time): Successful login
+get particulars
+req.params.id
+20168
+1
+body
+[{"status":"success","fname":"Mark","mname":"Samwel","lname":"Nyamwocha","date_birth":"1999-01-01T00:00:00.000Z","citizen":"Local","gender":"Male"}]
+response.body
+[{"trackingNo":"BL230619-1748"}]
+Mon Jun 19 2023 11:41:51 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+Mon Jun 19 2023 11:41:53 GMT+0300 (East Africa Time): List of Regions
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+{"NIN":"19741210141140000127","FIRSTNAME":"GILBERT","MIDDLENAME":"JORDAN","SURNAME":"SAMPA","SEX":"MALE","DATEOFBIRTH":"1974-12-10T00:00:00.000Z","PHONENUMBER":"0714232323","NIDAVERIFIED":2,"resultcode":0}
+{"resultcode":"0","message":"Success","result":{"TaxpayerId":132402094,"TaxpayerName":"","FirstName":"PETER","MiddleName":"HUGHO","LastName":"RIWA","TradingName":null,"DateOfBirth":"1984-12-31T00:00:00","DateOfRegistration":"2017-01-06T17:28:48","Gender":"M","IsPerson":true,"PostalAddress":"9503","PostalCity":"DAR ES SALAAM","PlotNumber":"","BlockNumber":"","Region":"Dar es Salaam","District":"Ilala","Ward":null,"Street":"GONGO LAMBOTO","Tel1":"","Tel2":"","Tel3":null,"Mobile":"255714726910","Fax":"","Email":"","Vrn":null,"NumberOfEmployees":"0","NationalId":"","CertificateNo":""}}
+ispersontrue
+[
+  {
+    Id: 1,
+    IsPerUnitFeeApplicable: false,
+    IssuingAuthorityId: 1,
+    BusinessLicenceClassCode: '1'
+  }
+]
+8
+Id =2552
+Id =Ilala CBD
+Id =Ilala
+Id =Kinondoni
+Id =Temeke
+Id =Ubungo
+Id =Kigamboni
+[
+  { districtId: '25521', districtName: 'Ilala CBD' },
+  { districtId: '25522', districtName: 'Ilala' },
+  { districtId: '25523', districtName: 'Kinondoni' },
+  { districtId: '25524', districtName: 'Temeke' },
+  { districtId: '25525', districtName: 'Ubungo' },
+  { districtId: '25526', districtName: 'Kigamboni' }
+]
+[
+  { WardId: '11101', wardName: 'Kivukoni' },
+  { WardId: '11102', wardName: 'Upanga Mashariki' },
+  { WardId: '11103', wardName: 'Upanga Magharibi' },
+  { WardId: '11104', wardName: 'Kisutu' },
+  { WardId: '11105', wardName: 'Mchafukoge' },
+  { WardId: '11106', wardName: 'Kariakoo' },
+  { WardId: '11107', wardName: 'Gerezani' },
+  { WardId: '11108', wardName: 'Jangwani' },
+  { WardId: '11109', wardName: 'Mchikichini' }
+]
+11101
+reuslts
+[
+  { SUBWARD_ID: '1', SUBWARD_NAME: 'Kivukoni,' },
+  { SUBWARD_ID: '2', SUBWARD_NAME: 'Sea View,' }
+]
+fail to Save_Address_SP RequestError: Procedure or function 'Save_Address_SP' expects parameter '@OwnerId', which was not supplied.
+yes
+fail to Save_EntityOwner_SP RequestError: Invalid object name 'BLAttachmentTypes'.
+Id ={"status":"failed"}
+Hello ORS
+Hello ORS
+Hello ORS
+Mon Jun 19 2023 11:47:20 GMT+0300 (East Africa Time): Successful login
+get particulars
+req.params.id
+20168
+1
+body
+[{"status":"success","fname":"Mark","mname":"Samwel","lname":"Nyamwocha","date_birth":"1999-01-01T00:00:00.000Z","citizen":"Local","gender":"Male"}]
+response.body
+[{"trackingNo":"BL230619-2064"}]
+Mon Jun 19 2023 11:47:25 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+get business owner types
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Mon Jun 19 2023 11:47:27 GMT+0300 (East Africa Time): List of Regions
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+{"NIN":"19741210141140000127","FIRSTNAME":"GILBERT","MIDDLENAME":"JORDAN","SURNAME":"SAMPA","SEX":"MALE","DATEOFBIRTH":"1974-12-10T00:00:00.000Z","PHONENUMBER":"0788997766","NIDAVERIFIED":2,"resultcode":0}
+[
+  {
+    Id: 1,
+    IsPerUnitFeeApplicable: false,
+    IssuingAuthorityId: 1,
+    BusinessLicenceClassCode: '1'
+  }
+]
+1
+{"resultcode":"01","message":"Network timed out read ECONNRESET","result":"fail"}
+Id =2551
+Id =Arusha CBD
+Id =Arusha
+Id =Arumeru
+Id =Monduli
+Id =Longido
+Id =Karatu
+Id =Ngorongoro
+[
+  { districtId: '25511', districtName: 'Arusha CBD' },
+  { districtId: '25512', districtName: 'Arusha' },
+  { districtId: '25513', districtName: 'Arumeru' },
+  { districtId: '25514', districtName: 'Monduli' },
+  { districtId: '25515', districtName: 'Longido' },
+  { districtId: '25516', districtName: 'Karatu' },
+  { districtId: '25517', districtName: 'Ngorongoro' }
+]
+{"resultcode":"0","message":"Success","result":{"TaxpayerId":132402094,"TaxpayerName":"","FirstName":"PETER","MiddleName":"HUGHO","LastName":"RIWA","TradingName":null,"DateOfBirth":"1984-12-31T00:00:00","DateOfRegistration":"2017-01-06T17:28:48","Gender":"M","IsPerson":true,"PostalAddress":"9503","PostalCity":"DAR ES SALAAM","PlotNumber":"","BlockNumber":"","Region":"Dar es Salaam","District":"Ilala","Ward":null,"Street":"GONGO LAMBOTO","Tel1":"","Tel2":"","Tel3":null,"Mobile":"255714726910","Fax":"","Email":"","Vrn":null,"NumberOfEmployees":"0","NationalId":"","CertificateNo":""}}
+ispersontrue
+[
+  { WardId: '23101', wardName: 'Sekei' },
+  { WardId: '23102', wardName: 'Kati' },
+  { WardId: '23103', wardName: 'Kaloleni' },
+  { WardId: '23104', wardName: 'Levolosi' },
+  { WardId: '23105', wardName: 'Ngarenaro' },
+  { WardId: '23106', wardName: 'Elerai' },
+  { WardId: '23107', wardName: 'Unga Limited' },
+  { WardId: '23108', wardName: 'Daraja Ii' },
+  { WardId: '23109', wardName: 'Themi' },
+  { WardId: '23110', wardName: 'Kimandolu' },
+  { WardId: '23111', wardName: 'Olorieni' },
+  { WardId: '23112', wardName: 'Baraa' },
+  { WardId: '23113', wardName: 'Lemara' },
+  { WardId: '23114', wardName: 'Engutoto' },
+  { WardId: '23115', wardName: 'Sokon 1' },
+  { WardId: '23116', wardName: 'Sombetini' },
+  { WardId: '23117', wardName: 'Terrat' },
+  { WardId: '23118', wardName: 'Moshono' },
+  { WardId: '23119', wardName: 'Olasiti' },
+  { WardId: '23120', wardName: 'Moivaro' },
+  { WardId: '23121', wardName: 'Sinoni' },
+  { WardId: '23122', wardName: 'Muriet' },
+  { WardId: '23123', wardName: 'Osunyai Jr' },
+  { WardId: '23124', wardName: 'Sakina' },
+  { WardId: '23125', wardName: 'Olmoti' }
+]
+23101
+reuslts
+[
+  { SUBWARD_ID: '1', SUBWARD_NAME: 'Sanawari,' },
+  { SUBWARD_ID: '2', SUBWARD_NAME: 'Naurei,' },
+  { SUBWARD_ID: '3', SUBWARD_NAME: 'Mtaa wa AICC,' },
+  { SUBWARD_ID: '4', SUBWARD_NAME: 'Mtaa wa Mahakamani,' },
+  { SUBWARD_ID: '5', SUBWARD_NAME: 'Naura,' },
+  { SUBWARD_ID: '6', SUBWARD_NAME: 'Goliondoi ,' }
+]
+yes
+Id =[{"AttachmentTypeId":1,"AttachmentName":"Proof of Business Premise","Description":"Proof of Business Premise"}]
+get particulars
+req.params.id
+20168
+1
+body
+[{"status":"success","fname":"Mark","mname":"Samwel","lname":"Nyamwocha","date_birth":"1999-01-01T00:00:00.000Z","citizen":"Local","gender":"Male"}]
+response.body
+[{"trackingNo":"BL230619-1512"}]
+Mon Jun 19 2023 11:49:08 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+get business owner types
+Mon Jun 19 2023 11:49:09 GMT+0300 (East Africa Time): List of Regions
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+{"resultcode":"0","message":"Success","result":{"TaxpayerId":157969021,"TaxpayerName":"DAR FRESH LIMITED","FirstName":"","MiddleName":"","LastName":"","TradingName":null,"DateOfBirth":"0001-01-01T00:00:00","DateOfRegistration":"2023-06-12T12:16:54","Gender":"","IsPerson":false,"PostalAddress":"","PostalCity":"Dar es Salaam","PlotNumber":"23","BlockNumber":"B","Region":"Dar es Salaam","District":"Ilala","Ward":null,"Street":"Livingstone","Tel1":null,"Tel2":null,"Tel3":null,"Mobile":null,"Fax":null,"Email":null,"Vrn":null,"NumberOfEmployees":"6","NationalId":"","CertificateNo":""}}
+ispersonfalse
+157969021
+{"resultcode":"0","result":{"company":{"info":{"CompanyTypeID":"3","IsSharedCapital":"1","ForeignCorporateNo":null,"GivenFCoorporateDate":null,"ForeignCity":"Livingstone","ForeignPhysicalAddress":null,"CompanyTypeName":"Private Company Limited by Shares","ReservationNo":null,"CompanyName":"DAR FRESH LIMITED","CompanyTIN":"157969021","countryOfOrigin":null,"Incorporation_number":"157969021","DateofIncorporation":"2023-06-12","AccountingDate":"31","AccountingMonth":"12","IsGovernmentAShareholder":"1","ContributionByEachMemberOnWindUp":null,"TrackingNo":"CM230505-0001","ForeignEmail":null,"ForeignPhone":null,"ZipCode":null},"history":[]},"OfficeAddress":{"history":[],"info":{"IsSharedCapital":"1","AddressOwnerId":"1234","AddressOwnerTypeId":"3","WardId":"11106","AreaTypeId":"1","AreaType":"Surveyed","CountryId":"255","Country":"Tanzania","Region":"Dar Es Salaam","District":"Ilala CBD","Ward":"Kariakoo","Pobox":"333","Email":"darfresh@gmail.com","Phone":"0712334567","Unsurveyed":null,"Street":"Livingstone","Road":"Karume","PlotNo":"23","BlockNo":"B","HouseNo":"24","PhysicalAddress":null,"RegionCode":"2552","DistrictCode":"25521","PostCode":"11106","LandMarkTypeId":null,"Area":null,"LandMark":null,"LandMarkTypeName":null,"City":"Livingstone","ZipCode":null}},"Directors":{"history":[],"info":[{"isActive":true,"_id":"64871518ab0ee1120160406b","OwnerID":877,"Origin":"1","details":{"ID2":"1","OwnerID":"877","OwnerTypeId":"1","OwnerTypeName":"Natural Person","NationalityId":"1","Fname":"IRENE","Mname":"BERNAD","Lname":"MTEBE","GenderId":"2","GenderName":"Female","Dob":"1978-09-23","NIN":"19780923141290000114","WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":null,"Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":"IRENE BERNAD MTEBE","TinNo":"106985170"},"Address":{"PhoneNo":"0712456789","Email":"irene@gmail.com","AddressOwnerTypeId":"1","AreaTypeId":"1","WardId":"12107","PostCode":"12107","RegionCode":"2552","DistrictCode":"25522","RegionName":"Dar Es Salaam","DistrictName":"Ilala","WardName":"Ukonga","Street":"Banana","Road":"Nyerere","PlotNo":"12","BlockNo":"B","HouseNo":"77","UnsurveyedArea":null,"PoBox":"1232","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":null,"NationalityName":"Tanzanian","CompanyTypeId":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}},{"isActive":true,"_id":"64871518ab0ee1120160406c","OwnerID":878,"Origin":"2","details":{"ID2":"2","OwnerID":"878","OwnerTypeId":"1","OwnerTypeName":"Natural Person","NationalityId":"109","Fname":"JOHN","Mname":"STALLON","Lname":"RAMBO","GenderId":"1","GenderName":"Male","Dob":"1992-12-05","NIN":null,"WorkPermitNo":null,"PassportNo":"12345621","PassportIssuance":"254","OriginTypeId":"2","CorporateName":null,"Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":"JOHN STALLON RAMBO","TinNo":null},"Address":{"PhoneNo":"0743456578","Email":"ramb@gmail.com","AddressOwnerTypeId":"1","AreaTypeId":"0","WardId":null,"PostCode":null,"RegionCode":null,"DistrictCode":null,"RegionName":null,"DistrictName":null,"WardName":null,"Street":null,"Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":null,"PoBox":null,"CountryId":"254","CountryName":"Kenya","City":"Nairobi","PoBox2":null,"NationalityName":"Kenyan","CompanyTypeId":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":"1234","PhysicalAddress":"Nairobi, Bongo strret, Gsm Apartment, House no.12b"}},{"isActive":true,"_id":"64871518ab0ee1120160406d","OwnerID":21190,"Origin":"2","details":{"ID2":"3","OwnerID":"21190","OwnerTypeId":"5","OwnerTypeName":"Foreign Company","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"2","CorporateName":"COCO INC. LIMITED","Leader1FullName":"JOHNSON DON","Leader2FullName":"DON SELEMAN","TypeOfCorporateBody":"Foreign Company","FullName":"COCO INC. LIMITED","TinNo":null},"Address":{"PhoneNo":"0784334559","Email":"coco@gmail.com","AddressOwnerTypeId":"7","AreaTypeId":"0","WardId":null,"PostCode":null,"RegionCode":null,"DistrictCode":null,"RegionName":null,"DistrictName":null,"WardName":null,"Street":null,"Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":null,"PoBox":null,"CountryId":"256","CountryName":"Uganda","City":"Kampala","PoBox2":null,"NationalityName":null,"CompanyTypeId":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":"234500","PhysicalAddress":"Kampala, Idd street, SSB Apartment, House no.09B"}},{"isActive":true,"_id":"64871518ab0ee1120160406e","OwnerID":21191,"Origin":"2","details":{"ID2":"4","OwnerID":"21191","OwnerTypeId":"3","OwnerTypeName":"Other Coporate Body","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"2","CorporateName":"BILL FOUNDATION","Leader1FullName":"JOHNSON BOSS","Leader2FullName":"YUSUPH DON","TypeOfCorporateBody":"Other Coporate Body","FullName":"BILL FOUNDATION","TinNo":null},"Address":{"PhoneNo":"0782335566","Email":"bill@gmail.com","AddressOwnerTypeId":"7","AreaTypeId":"0","WardId":null,"PostCode":null,"RegionCode":null,"DistrictCode":null,"RegionName":null,"DistrictName":null,"WardName":null,"Street":null,"Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":null,"PoBox":null,"CountryId":"254","CountryName":"Kenya","City":"Nairobi","PoBox2":null,"NationalityName":null,"CompanyTypeId":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":"6710155","PhysicalAddress":"Nairobi, Bongo strret, Gsm Apartment, House no.12b"}},{"isActive":true,"_id":"64871518ab0ee1120160406f","OwnerID":157967088,"Origin":"1","details":{"ID2":"5","OwnerID":"157967088","OwnerTypeId":"2","OwnerTypeName":"Company","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":"Goodluck Limited","Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":null,"TinNo":"157967088"},"Address":{"PhoneNo":"0764026093","Email":"goodlucky@gmail.com","AddressOwnerTypeId":"3","AreaTypeId":"2","WardId":"21202","PostCode":"21202","RegionCode":"2554","DistrictCode":"25542","RegionName":"Tanga","DistrictName":"Tanga","WardName":"Mzizima","Street":"Kipawa","Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":"Kipawa near by Kipawa bus station","PoBox":"9292","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":null,"NationalityName":null,"CompanyTypeId":"3","LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}},{"isActive":true,"_id":"64871518ab0ee11201604070","OwnerID":21192,"Origin":"1","details":{"ID2":"6","OwnerID":"21192","OwnerTypeId":"3","OwnerTypeName":"Other Coporate Body","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":"ISTITUTE OF SOCIAL WORK","Leader1FullName":"JOHNSON CEO","Leader2FullName":"YUSUPH BOSS","TypeOfCorporateBody":"Statutory Corporation","FullName":"ISTITUTE OF SOCIAL WORK","TinNo":"101019985"},"Address":{"PhoneNo":"0712334490","Email":"sse@gmail.com","AddressOwnerTypeId":"7","AreaTypeId":"1","WardId":"14110","PostCode":"14110","RegionCode":"2552","DistrictCode":"25523","RegionName":"Dar Es Salaam","DistrictName":"Kinondoni","WardName":"Kinondoni","Street":"Sayansi","Road":"Bagamoyo","PlotNo":"34","BlockNo":"S","HouseNo":"56","UnsurveyedArea":null,"PoBox":"8989","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":"8989","NationalityName":null,"CompanyTypeId":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}}]},"CompanySecretaries":{"history":[],"info":[{"isActive":true,"_id":"64871518ab0ee11201604071","OwnerTypeId":"1","OwnerTypeName":"Natural Person","OwnerID":"877","OriginTypeId":"1","Origin":"1","details":{"ID2":"1","OwnerID":"877","OwnerTypeId":"1","OwnerTypeName":"Natural Person","NationalityId":"1","Fname":"IRENE","Mname":"BERNAD","Lname":"MTEBE","GenderId":"2","GenderName":"Female","Dob":"1978-09-23","NIN":"19780923141290000114","WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":null,"Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":"IRENE BERNAD MTEBE","IsThisSecretary":"1","Representative1":"0","Representative2":"0","CompanyTypeId":null},"Address":{"PhoneNo":"0712456789","Email":"irene@gmail.com","AddressOwnerTypeId":"1","AreaTypeId":"1","WardId":"12107","PostCode":"12107","RegionCode":"2552","DistrictCode":"25522","RegionName":"Dar Es Salaam","DistrictName":"Ilala","WardName":"Ukonga","Street":"Banana","Road":"Nyerere","PlotNo":"12","BlockNo":"B","HouseNo":"77","UnsurveyedArea":null,"PoBox":"1232","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":null,"NationalityName":"Tanzanian","LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}}]},"Representative":{"history":[],"info":[{"EntityId":"1234","EntityTypeId":"2","RepresentativeId":"877","UserId":"30430","RepresentativeTitleId":"1","OwnerTypeId":"1","RepresentativeTitle":"Shareholder","Fname":"IRENE","Mname":"BERNAD","Lname":"MTEBE","NIN":"19780923141290000114","PassportNo":null,"dob":"1978-09-23","PhoneNo":"0712456789","Email":"irene@gmail.com","resultcode":"0","IntCode":"TZ"},{"EntityId":"1234","EntityTypeId":"2","RepresentativeId":"878","UserId":null,"RepresentativeTitleId":"2","OwnerTypeId":"1","RepresentativeTitle":"Director","Fname":"JOHN","Mname":"STALLON","Lname":"RAMBO","NIN":null,"PassportNo":"12345621","dob":"1992-12-05","PhoneNo":"0743456578","Email":"ramb@gmail.com","resultcode":"0","IntCode":"KE"}]},"BusinessActivity":{"history":[],"info":[{"isActive":true,"isApproved":true,"_id":"64871518ab0ee11201604072","ActivityTypeName":"Local Activities","ActivityClassName":"Support services to forestry","ActivityClassId":"0240","ActivityTypeId":"1","IsMain":true},{"isActive":true,"isApproved":true,"_id":"64871518ab0ee11201604073","ActivityTypeName":"Local Activities","ActivityClassName":"Growing of grapes","ActivityClassId":"0121","ActivityTypeId":"1","IsMain":true}]},"Charges":{"info":[],"history":[]},"CompanyShares":{"info":{"ShareCapital":"5000000000","TotalNoOfShares":"1000"},"history":[]},"ShareTaken":{"history":[],"info":[{"_id":"64871518ab0ee1120160407a","NoOfShare":"1000","ValueOfShare":"5000000","ShareClassId":"1","ClassName":"Ordinary","Currency":"TZS","SharesTaken":"70","FreeShares":"930"}]},"ShareHolders":{"history":[],"info":[{"isActive":true,"_id":"64871518ab0ee11201604074","OwnerTypeId":"1","OwnerTypeName":"Natural Person","OwnerID":877,"OriginTypeId":"1","details":{"ID2":"1","OwnerID":"877","OwnerTypeId":"1","OwnerTypeName":"Natural Person","NationalityId":"1","Fname":"IRENE","Mname":"BERNAD","Lname":"MTEBE","GenderId":"2","GenderName":"Female","Dob":"1978-09-23","NIN":"19780923141290000114","WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":null,"Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":"IRENE BERNAD MTEBE","JointShareGroupNo":"IRENE BERNAD MTEBE","ClassName":"Ordinary","ShareClassId":"1","NoShare":"10","IsMember":"0","IsJointShare":"0","Allotment":"0","Transfer":"0","Cash":"0","Other":"0","Description":null,"CompanyTypeId":null,"members":[],"share_class":[{"NoOfShare":"10","ShareClassId":"1","ClassName":"Ordinary","ValueOfShare":"5000000.0000","TotalNoOfShare":"10"}],"TotalNoOfShares":"10","OwnershipTypeId":"1","OwnershipTypeName":"Direct Ownership","JointShareholderWithShares":"0","IsThisGovernmentEntity":"0"},"Address":{"PhoneNo":"0712456789","Email":"irene@gmail.com","AddressOwnerTypeId":"1","AreaTypeId":"1","WardId":"12107","PostCode":"12107","RegionCode":"2552","DistrictCode":"25522","RegionName":"Dar Es Salaam","DistrictName":"Ilala","WardName":"Ukonga","Street":"Banana","Road":"Nyerere","PlotNo":"12","BlockNo":"B","HouseNo":"77","UnsurveyedArea":null,"PoBox":"1232","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":null,"NationalityName":"Tanzanian","LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}},{"isActive":true,"_id":"64871518ab0ee11201604075","OwnerTypeId":"1","OwnerTypeName":"Natural Person","OwnerID":878,"OriginTypeId":"2","details":{"ID2":"2","OwnerID":"878","OwnerTypeId":"1","OwnerTypeName":"Natural Person","NationalityId":"109","Fname":"JOHN","Mname":"STALLON","Lname":"RAMBO","GenderId":"1","GenderName":"Male","Dob":"1992-12-05","NIN":null,"WorkPermitNo":null,"PassportNo":"12345621","PassportIssuance":"254","OriginTypeId":"2","CorporateName":null,"Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":"JOHN STALLON RAMBO","JointShareGroupNo":"JOHN STALLON RAMBO","ClassName":"Ordinary","ShareClassId":"1","NoShare":"10","IsMember":"0","IsJointShare":"0","Allotment":"0","Transfer":"0","Cash":"0","Other":"0","Description":null,"CompanyTypeId":null,"members":[],"share_class":[{"NoOfShare":"10","ShareClassId":"1","ClassName":"Ordinary","ValueOfShare":"5000000.0000","TotalNoOfShare":"10"}],"TotalNoOfShares":"10","OwnershipTypeId":"1","OwnershipTypeName":"Direct Ownership","JointShareholderWithShares":"0","IsThisGovernmentEntity":"0"},"Address":{"PhoneNo":"0743456578","Email":"ramb@gmail.com","AddressOwnerTypeId":"1","AreaTypeId":"0","WardId":null,"PostCode":null,"RegionCode":null,"DistrictCode":null,"RegionName":null,"DistrictName":null,"WardName":null,"Street":null,"Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":null,"PoBox":null,"CountryId":"254","CountryName":"Kenya","City":"Nairobi","PoBox2":null,"NationalityName":"Kenyan","LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":"1234","PhysicalAddress":"Nairobi, Bongo strret, Gsm Apartment, House no.12b"}},{"isActive":true,"_id":"64871518ab0ee11201604076","OwnerTypeId":"5","OwnerTypeName":"Foreign Company","OwnerID":21190,"OriginTypeId":"2","details":{"ID2":"3","OwnerID":"21190","OwnerTypeId":"5","OwnerTypeName":"Foreign Company","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"2","CorporateName":"COCO INC. LIMITED","Leader1FullName":"JOHNSON DON","Leader2FullName":"DON SELEMAN","TypeOfCorporateBody":"Foreign Company","FullName":"COCO INC. LIMITED","JointShareGroupNo":"COCO INC. LIMITED","ClassName":"Ordinary","ShareClassId":"1","NoShare":"10","IsMember":"0","IsJointShare":"0","Allotment":"0","Transfer":"0","Cash":"0","Other":"0","Description":null,"CompanyTypeId":null,"members":[],"share_class":[{"NoOfShare":"10","ShareClassId":"1","ClassName":"Ordinary","ValueOfShare":"5000000.0000","TotalNoOfShare":"10"}],"TotalNoOfShares":"10","OwnershipTypeId":"2","OwnershipTypeName":"Indirect Ownership","JointShareholderWithShares":"0","IsThisGovernmentEntity":"0"},"Address":{"PhoneNo":"0784334559","Email":"coco@gmail.com","AddressOwnerTypeId":"7","AreaTypeId":"0","WardId":null,"PostCode":null,"RegionCode":null,"DistrictCode":null,"RegionName":null,"DistrictName":null,"WardName":null,"Street":null,"Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":null,"PoBox":null,"CountryId":"256","CountryName":"Uganda","City":"Kampala","PoBox2":null,"NationalityName":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":"234500","PhysicalAddress":"Kampala, Idd street, SSB Apartment, House no.09B"}},{"isActive":true,"_id":"64871518ab0ee11201604077","OwnerTypeId":"3","OwnerTypeName":"Other Coporate Body","OwnerID":21191,"OriginTypeId":"2","details":{"ID2":"4","OwnerID":"21191","OwnerTypeId":"3","OwnerTypeName":"Other Coporate Body","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"2","CorporateName":"BILL FOUNDATION","Leader1FullName":"JOHNSON BOSS","Leader2FullName":"YUSUPH DON","TypeOfCorporateBody":"NGO","FullName":"BILL FOUNDATION","JointShareGroupNo":"BILL FOUNDATION","ClassName":"Ordinary","ShareClassId":"1","NoShare":"10","IsMember":"0","IsJointShare":"0","Allotment":"0","Transfer":"0","Cash":"0","Other":"0","Description":null,"CompanyTypeId":null,"members":[],"share_class":[{"NoOfShare":"10","ShareClassId":"1","ClassName":"Ordinary","ValueOfShare":"5000000.0000","TotalNoOfShare":"10"}],"TotalNoOfShares":"10","OwnershipTypeId":"3","OwnershipTypeName":"Both Direct and Indirect","JointShareholderWithShares":"0","IsThisGovernmentEntity":"0"},"Address":{"PhoneNo":"0782335566","Email":"bill@gmail.com","AddressOwnerTypeId":"7","AreaTypeId":"0","WardId":null,"PostCode":null,"RegionCode":null,"DistrictCode":null,"RegionName":null,"DistrictName":null,"WardName":null,"Street":null,"Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":null,"PoBox":null,"CountryId":"254","CountryName":"Kenya","City":"Nairobi","PoBox2":null,"NationalityName":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":"6710155","PhysicalAddress":"Nairobi, Bongo strret, Gsm Apartment, House no.12b"}},{"isActive":true,"_id":"64871518ab0ee11201604078","OwnerTypeId":"2","OwnerTypeName":"Company","OwnerID":157967088,"OriginTypeId":"1","details":{"ID2":"5","OwnerID":"157967088","OwnerTypeId":"2","OwnerTypeName":"Company","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":"Goodluck Limited","Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":null,"JointShareGroupNo":null,"ClassName":"Ordinary","ShareClassId":"1","NoShare":"10","IsMember":"0","IsJointShare":"0","Allotment":"0","Transfer":"0","Cash":"0","Other":"0","Description":null,"CompanyTypeId":"3","members":[],"share_class":[{"NoOfShare":"10","ShareClassId":"1","ClassName":"Ordinary","ValueOfShare":"5000000.0000","TotalNoOfShare":"10"}],"TotalNoOfShares":"10","OwnershipTypeId":"2","OwnershipTypeName":"Indirect Ownership","JointShareholderWithShares":"0","IsThisGovernmentEntity":"0"},"Address":{"PhoneNo":"0764026093","Email":"goodlucky@gmail.com","AddressOwnerTypeId":"3","AreaTypeId":"2","WardId":"21202","PostCode":"21202","RegionCode":"2554","DistrictCode":"25542","RegionName":"Tanga","DistrictName":"Tanga","WardName":"Mzizima","Street":"Kipawa","Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":"Kipawa near by Kipawa bus station","PoBox":"9292","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":null,"NationalityName":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}},{"isActive":true,"_id":"64871518ab0ee11201604079","OwnerTypeId":"3","OwnerTypeName":"Other Coporate Body","OwnerID":21192,"OriginTypeId":"1","details":{"ID2":"6","OwnerID":"21192","OwnerTypeId":"3","OwnerTypeName":"Other Coporate Body","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":"ISTITUTE OF SOCIAL WORK","Leader1FullName":"JOHNSON CEO","Leader2FullName":"YUSUPH BOSS","TypeOfCorporateBody":"Statutory Corporation","FullName":"ISTITUTE OF SOCIAL WORK","JointShareGroupNo":"ISTITUTE OF SOCIAL WORK","ClassName":"Ordinary","ShareClassId":"1","NoShare":"20","IsMember":"0","IsJointShare":"0","Allotment":"0","Transfer":"0","Cash":"0","Other":"0","Description":null,"CompanyTypeId":null,"members":[],"share_class":[{"NoOfShare":"20","ShareClassId":"1","ClassName":"Ordinary","ValueOfShare":"5000000.0000","TotalNoOfShare":"20"}],"TotalNoOfShares":"20","OwnershipTypeId":"1","OwnershipTypeName":"Direct Ownership","JointShareholderWithShares":"0","IsThisGovernmentEntity":"1"},"Address":{"PhoneNo":"0712334490","Email":"sse@gmail.com","AddressOwnerTypeId":"7","AreaTypeId":"1","WardId":"14110","PostCode":"14110","RegionCode":"2552","DistrictCode":"25523","RegionName":"Dar Es Salaam","DistrictName":"Kinondoni","WardName":"Kinondoni","Street":"Sayansi","Road":"Bagamoyo","PlotNo":"34","BlockNo":"S","HouseNo":"56","UnsurveyedArea":null,"PoBox":"8989","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":"8989","NationalityName":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}}]},"Attachments":{"info":[{"FolderNumber":"1234","AttachmentPath":"CM230505-0001_1683271689898_consolidated_form.pdf","CorporationNo":"157969021","CompanyAttachmentTypeId":"1","AttachmentsName":"Consolidated Form","ServiceName":"Registration of a new company","AttachmentDate":"2023-05-05 10:28:09.940"},{"FolderNumber":"1234","AttachmentPath":"CM230505-0001_1683271581744_memorandum_and_articles_of_association.pdf","CorporationNo":"157969021","CompanyAttachmentTypeId":"3","AttachmentsName":"Memorandum and Articles of Association","ServiceName":"Registration of a new company","AttachmentDate":"2023-05-05 10:26:21.777"},{"FolderNumber":"1234","AttachmentPath":"CM230505-0001_1683271709637_ethics_and_integrity.pdf","CorporationNo":"157969021","CompanyAttachmentTypeId":"4","AttachmentsName":"Ethics and Integrity","ServiceName":"Registration of a new company","AttachmentDate":"2023-05-05 10:28:29.647"},{"FolderNumber":"1234","AttachmentPath":"CM230505-0001_1683271728865_passport.pdf","CorporationNo":"157969021","CompanyAttachmentTypeId":"48","AttachmentsName":"Passport","ServiceName":"Registration of a new company","AttachmentDate":"2023-05-05 10:28:48.883"}],"history":[]},"Fillings":{"history":[]},"AnnualReturn":{"history":[]},"WindingUP":{"history":[]},"_id":"64871518ab0ee1120160406a","RegNo":"157969021","CompanyStatus":"1","RegDate":"2023-06-12T12:52:40.419Z","__v":0},"message":"registry data available"}
+{
+  IsSharedCapital: '1',
+  AddressOwnerId: '1234',
+  AddressOwnerTypeId: '3',
+  WardId: '11106',
+  AreaTypeId: '1',
+  AreaType: 'Surveyed',
+  CountryId: '255',
+  Country: 'Tanzania',
+  Region: 'Dar Es Salaam',
+  District: 'Ilala CBD',
+  Ward: 'Kariakoo',
+  Pobox: '333',
+  Email: 'darfresh@gmail.com',
+  Phone: '0712334567',
+  Unsurveyed: null,
+  Street: 'Livingstone',
+  Road: 'Karume',
+  PlotNo: '23',
+  BlockNo: 'B',
+  HouseNo: '24',
+  PhysicalAddress: null,
+  RegionCode: '2552',
+  DistrictCode: '25521',
+  PostCode: '11106',
+  LandMarkTypeId: null,
+  Area: null,
+  LandMark: null,
+  LandMarkTypeName: null,
+  City: 'Livingstone',
+  ZipCode: null
+}
+fail to get business type ConnectionError: Failed to connect to 41.59.225.45:1433 in 15000ms
+fail to AddressArea Error: aborted
+Id =
+{"status":"failed"}
+[
+  {
+    Id: 1,
+    IsPerUnitFeeApplicable: false,
+    IssuingAuthorityId: 1,
+    BusinessLicenceClassCode: '1'
+  }
+]
+8
+get particulars
+req.params.id
+20168
+1
+body
+[{"status":"success","fname":"Mark","mname":"Samwel","lname":"Nyamwocha","date_birth":"1999-01-01T00:00:00.000Z","citizen":"Local","gender":"Male"}]
+response.body
+[{"trackingNo":"BL230619-1435"}]
+Mon Jun 19 2023 11:49:38 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+get business owner types
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Mon Jun 19 2023 11:49:39 GMT+0300 (East Africa Time): List of Regions
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+157969021
+{"resultcode":"0","result":{"company":{"info":{"CompanyTypeID":"3","IsSharedCapital":"1","ForeignCorporateNo":null,"GivenFCoorporateDate":null,"ForeignCity":"Livingstone","ForeignPhysicalAddress":null,"CompanyTypeName":"Private Company Limited by Shares","ReservationNo":null,"CompanyName":"DAR FRESH LIMITED","CompanyTIN":"157969021","countryOfOrigin":null,"Incorporation_number":"157969021","DateofIncorporation":"2023-06-12","AccountingDate":"31","AccountingMonth":"12","IsGovernmentAShareholder":"1","ContributionByEachMemberOnWindUp":null,"TrackingNo":"CM230505-0001","ForeignEmail":null,"ForeignPhone":null,"ZipCode":null},"history":[]},"OfficeAddress":{"history":[],"info":{"IsSharedCapital":"1","AddressOwnerId":"1234","AddressOwnerTypeId":"3","WardId":"11106","AreaTypeId":"1","AreaType":"Surveyed","CountryId":"255","Country":"Tanzania","Region":"Dar Es Salaam","District":"Ilala CBD","Ward":"Kariakoo","Pobox":"333","Email":"darfresh@gmail.com","Phone":"0712334567","Unsurveyed":null,"Street":"Livingstone","Road":"Karume","PlotNo":"23","BlockNo":"B","HouseNo":"24","PhysicalAddress":null,"RegionCode":"2552","DistrictCode":"25521","PostCode":"11106","LandMarkTypeId":null,"Area":null,"LandMark":null,"LandMarkTypeName":null,"City":"Livingstone","ZipCode":null}},"Directors":{"history":[],"info":[{"isActive":true,"_id":"64871518ab0ee1120160406b","OwnerID":877,"Origin":"1","details":{"ID2":"1","OwnerID":"877","OwnerTypeId":"1","OwnerTypeName":"Natural Person","NationalityId":"1","Fname":"IRENE","Mname":"BERNAD","Lname":"MTEBE","GenderId":"2","GenderName":"Female","Dob":"1978-09-23","NIN":"19780923141290000114","WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":null,"Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":"IRENE BERNAD MTEBE","TinNo":"106985170"},"Address":{"PhoneNo":"0712456789","Email":"irene@gmail.com","AddressOwnerTypeId":"1","AreaTypeId":"1","WardId":"12107","PostCode":"12107","RegionCode":"2552","DistrictCode":"25522","RegionName":"Dar Es Salaam","DistrictName":"Ilala","WardName":"Ukonga","Street":"Banana","Road":"Nyerere","PlotNo":"12","BlockNo":"B","HouseNo":"77","UnsurveyedArea":null,"PoBox":"1232","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":null,"NationalityName":"Tanzanian","CompanyTypeId":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}},{"isActive":true,"_id":"64871518ab0ee1120160406c","OwnerID":878,"Origin":"2","details":{"ID2":"2","OwnerID":"878","OwnerTypeId":"1","OwnerTypeName":"Natural Person","NationalityId":"109","Fname":"JOHN","Mname":"STALLON","Lname":"RAMBO","GenderId":"1","GenderName":"Male","Dob":"1992-12-05","NIN":null,"WorkPermitNo":null,"PassportNo":"12345621","PassportIssuance":"254","OriginTypeId":"2","CorporateName":null,"Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":"JOHN STALLON RAMBO","TinNo":null},"Address":{"PhoneNo":"0743456578","Email":"ramb@gmail.com","AddressOwnerTypeId":"1","AreaTypeId":"0","WardId":null,"PostCode":null,"RegionCode":null,"DistrictCode":null,"RegionName":null,"DistrictName":null,"WardName":null,"Street":null,"Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":null,"PoBox":null,"CountryId":"254","CountryName":"Kenya","City":"Nairobi","PoBox2":null,"NationalityName":"Kenyan","CompanyTypeId":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":"1234","PhysicalAddress":"Nairobi, Bongo strret, Gsm Apartment, House no.12b"}},{"isActive":true,"_id":"64871518ab0ee1120160406d","OwnerID":21190,"Origin":"2","details":{"ID2":"3","OwnerID":"21190","OwnerTypeId":"5","OwnerTypeName":"Foreign Company","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"2","CorporateName":"COCO INC. LIMITED","Leader1FullName":"JOHNSON DON","Leader2FullName":"DON SELEMAN","TypeOfCorporateBody":"Foreign Company","FullName":"COCO INC. LIMITED","TinNo":null},"Address":{"PhoneNo":"0784334559","Email":"coco@gmail.com","AddressOwnerTypeId":"7","AreaTypeId":"0","WardId":null,"PostCode":null,"RegionCode":null,"DistrictCode":null,"RegionName":null,"DistrictName":null,"WardName":null,"Street":null,"Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":null,"PoBox":null,"CountryId":"256","CountryName":"Uganda","City":"Kampala","PoBox2":null,"NationalityName":null,"CompanyTypeId":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":"234500","PhysicalAddress":"Kampala, Idd street, SSB Apartment, House no.09B"}},{"isActive":true,"_id":"64871518ab0ee1120160406e","OwnerID":21191,"Origin":"2","details":{"ID2":"4","OwnerID":"21191","OwnerTypeId":"3","OwnerTypeName":"Other Coporate Body","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"2","CorporateName":"BILL FOUNDATION","Leader1FullName":"JOHNSON BOSS","Leader2FullName":"YUSUPH DON","TypeOfCorporateBody":"Other Coporate Body","FullName":"BILL FOUNDATION","TinNo":null},"Address":{"PhoneNo":"0782335566","Email":"bill@gmail.com","AddressOwnerTypeId":"7","AreaTypeId":"0","WardId":null,"PostCode":null,"RegionCode":null,"DistrictCode":null,"RegionName":null,"DistrictName":null,"WardName":null,"Street":null,"Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":null,"PoBox":null,"CountryId":"254","CountryName":"Kenya","City":"Nairobi","PoBox2":null,"NationalityName":null,"CompanyTypeId":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":"6710155","PhysicalAddress":"Nairobi, Bongo strret, Gsm Apartment, House no.12b"}},{"isActive":true,"_id":"64871518ab0ee1120160406f","OwnerID":157967088,"Origin":"1","details":{"ID2":"5","OwnerID":"157967088","OwnerTypeId":"2","OwnerTypeName":"Company","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":"Goodluck Limited","Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":null,"TinNo":"157967088"},"Address":{"PhoneNo":"0764026093","Email":"goodlucky@gmail.com","AddressOwnerTypeId":"3","AreaTypeId":"2","WardId":"21202","PostCode":"21202","RegionCode":"2554","DistrictCode":"25542","RegionName":"Tanga","DistrictName":"Tanga","WardName":"Mzizima","Street":"Kipawa","Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":"Kipawa near by Kipawa bus station","PoBox":"9292","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":null,"NationalityName":null,"CompanyTypeId":"3","LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}},{"isActive":true,"_id":"64871518ab0ee11201604070","OwnerID":21192,"Origin":"1","details":{"ID2":"6","OwnerID":"21192","OwnerTypeId":"3","OwnerTypeName":"Other Coporate Body","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":"ISTITUTE OF SOCIAL WORK","Leader1FullName":"JOHNSON CEO","Leader2FullName":"YUSUPH BOSS","TypeOfCorporateBody":"Statutory Corporation","FullName":"ISTITUTE OF SOCIAL WORK","TinNo":"101019985"},"Address":{"PhoneNo":"0712334490","Email":"sse@gmail.com","AddressOwnerTypeId":"7","AreaTypeId":"1","WardId":"14110","PostCode":"14110","RegionCode":"2552","DistrictCode":"25523","RegionName":"Dar Es Salaam","DistrictName":"Kinondoni","WardName":"Kinondoni","Street":"Sayansi","Road":"Bagamoyo","PlotNo":"34","BlockNo":"S","HouseNo":"56","UnsurveyedArea":null,"PoBox":"8989","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":"8989","NationalityName":null,"CompanyTypeId":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}}]},"CompanySecretaries":{"history":[],"info":[{"isActive":true,"_id":"64871518ab0ee11201604071","OwnerTypeId":"1","OwnerTypeName":"Natural Person","OwnerID":"877","OriginTypeId":"1","Origin":"1","details":{"ID2":"1","OwnerID":"877","OwnerTypeId":"1","OwnerTypeName":"Natural Person","NationalityId":"1","Fname":"IRENE","Mname":"BERNAD","Lname":"MTEBE","GenderId":"2","GenderName":"Female","Dob":"1978-09-23","NIN":"19780923141290000114","WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":null,"Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":"IRENE BERNAD MTEBE","IsThisSecretary":"1","Representative1":"0","Representative2":"0","CompanyTypeId":null},"Address":{"PhoneNo":"0712456789","Email":"irene@gmail.com","AddressOwnerTypeId":"1","AreaTypeId":"1","WardId":"12107","PostCode":"12107","RegionCode":"2552","DistrictCode":"25522","RegionName":"Dar Es Salaam","DistrictName":"Ilala","WardName":"Ukonga","Street":"Banana","Road":"Nyerere","PlotNo":"12","BlockNo":"B","HouseNo":"77","UnsurveyedArea":null,"PoBox":"1232","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":null,"NationalityName":"Tanzanian","LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}}]},"Representative":{"history":[],"info":[{"EntityId":"1234","EntityTypeId":"2","RepresentativeId":"877","UserId":"30430","RepresentativeTitleId":"1","OwnerTypeId":"1","RepresentativeTitle":"Shareholder","Fname":"IRENE","Mname":"BERNAD","Lname":"MTEBE","NIN":"19780923141290000114","PassportNo":null,"dob":"1978-09-23","PhoneNo":"0712456789","Email":"irene@gmail.com","resultcode":"0","IntCode":"TZ"},{"EntityId":"1234","EntityTypeId":"2","RepresentativeId":"878","UserId":null,"RepresentativeTitleId":"2","OwnerTypeId":"1","RepresentativeTitle":"Director","Fname":"JOHN","Mname":"STALLON","Lname":"RAMBO","NIN":null,"PassportNo":"12345621","dob":"1992-12-05","PhoneNo":"0743456578","Email":"ramb@gmail.com","resultcode":"0","IntCode":"KE"}]},"BusinessActivity":{"history":[],"info":[{"isActive":true,"isApproved":true,"_id":"64871518ab0ee11201604072","ActivityTypeName":"Local Activities","ActivityClassName":"Support services to forestry","ActivityClassId":"0240","ActivityTypeId":"1","IsMain":true},{"isActive":true,"isApproved":true,"_id":"64871518ab0ee11201604073","ActivityTypeName":"Local Activities","ActivityClassName":"Growing of grapes","ActivityClassId":"0121","ActivityTypeId":"1","IsMain":true}]},"Charges":{"info":[],"history":[]},"CompanyShares":{"info":{"ShareCapital":"5000000000","TotalNoOfShares":"1000"},"history":[]},"ShareTaken":{"history":[],"info":[{"_id":"64871518ab0ee1120160407a","NoOfShare":"1000","ValueOfShare":"5000000","ShareClassId":"1","ClassName":"Ordinary","Currency":"TZS","SharesTaken":"70","FreeShares":"930"}]},"ShareHolders":{"history":[],"info":[{"isActive":true,"_id":"64871518ab0ee11201604074","OwnerTypeId":"1","OwnerTypeName":"Natural Person","OwnerID":877,"OriginTypeId":"1","details":{"ID2":"1","OwnerID":"877","OwnerTypeId":"1","OwnerTypeName":"Natural Person","NationalityId":"1","Fname":"IRENE","Mname":"BERNAD","Lname":"MTEBE","GenderId":"2","GenderName":"Female","Dob":"1978-09-23","NIN":"19780923141290000114","WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":null,"Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":"IRENE BERNAD MTEBE","JointShareGroupNo":"IRENE BERNAD MTEBE","ClassName":"Ordinary","ShareClassId":"1","NoShare":"10","IsMember":"0","IsJointShare":"0","Allotment":"0","Transfer":"0","Cash":"0","Other":"0","Description":null,"CompanyTypeId":null,"members":[],"share_class":[{"NoOfShare":"10","ShareClassId":"1","ClassName":"Ordinary","ValueOfShare":"5000000.0000","TotalNoOfShare":"10"}],"TotalNoOfShares":"10","OwnershipTypeId":"1","OwnershipTypeName":"Direct Ownership","JointShareholderWithShares":"0","IsThisGovernmentEntity":"0"},"Address":{"PhoneNo":"0712456789","Email":"irene@gmail.com","AddressOwnerTypeId":"1","AreaTypeId":"1","WardId":"12107","PostCode":"12107","RegionCode":"2552","DistrictCode":"25522","RegionName":"Dar Es Salaam","DistrictName":"Ilala","WardName":"Ukonga","Street":"Banana","Road":"Nyerere","PlotNo":"12","BlockNo":"B","HouseNo":"77","UnsurveyedArea":null,"PoBox":"1232","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":null,"NationalityName":"Tanzanian","LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}},{"isActive":true,"_id":"64871518ab0ee11201604075","OwnerTypeId":"1","OwnerTypeName":"Natural Person","OwnerID":878,"OriginTypeId":"2","details":{"ID2":"2","OwnerID":"878","OwnerTypeId":"1","OwnerTypeName":"Natural Person","NationalityId":"109","Fname":"JOHN","Mname":"STALLON","Lname":"RAMBO","GenderId":"1","GenderName":"Male","Dob":"1992-12-05","NIN":null,"WorkPermitNo":null,"PassportNo":"12345621","PassportIssuance":"254","OriginTypeId":"2","CorporateName":null,"Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":"JOHN STALLON RAMBO","JointShareGroupNo":"JOHN STALLON RAMBO","ClassName":"Ordinary","ShareClassId":"1","NoShare":"10","IsMember":"0","IsJointShare":"0","Allotment":"0","Transfer":"0","Cash":"0","Other":"0","Description":null,"CompanyTypeId":null,"members":[],"share_class":[{"NoOfShare":"10","ShareClassId":"1","ClassName":"Ordinary","ValueOfShare":"5000000.0000","TotalNoOfShare":"10"}],"TotalNoOfShares":"10","OwnershipTypeId":"1","OwnershipTypeName":"Direct Ownership","JointShareholderWithShares":"0","IsThisGovernmentEntity":"0"},"Address":{"PhoneNo":"0743456578","Email":"ramb@gmail.com","AddressOwnerTypeId":"1","AreaTypeId":"0","WardId":null,"PostCode":null,"RegionCode":null,"DistrictCode":null,"RegionName":null,"DistrictName":null,"WardName":null,"Street":null,"Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":null,"PoBox":null,"CountryId":"254","CountryName":"Kenya","City":"Nairobi","PoBox2":null,"NationalityName":"Kenyan","LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":"1234","PhysicalAddress":"Nairobi, Bongo strret, Gsm Apartment, House no.12b"}},{"isActive":true,"_id":"64871518ab0ee11201604076","OwnerTypeId":"5","OwnerTypeName":"Foreign Company","OwnerID":21190,"OriginTypeId":"2","details":{"ID2":"3","OwnerID":"21190","OwnerTypeId":"5","OwnerTypeName":"Foreign Company","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"2","CorporateName":"COCO INC. LIMITED","Leader1FullName":"JOHNSON DON","Leader2FullName":"DON SELEMAN","TypeOfCorporateBody":"Foreign Company","FullName":"COCO INC. LIMITED","JointShareGroupNo":"COCO INC. LIMITED","ClassName":"Ordinary","ShareClassId":"1","NoShare":"10","IsMember":"0","IsJointShare":"0","Allotment":"0","Transfer":"0","Cash":"0","Other":"0","Description":null,"CompanyTypeId":null,"members":[],"share_class":[{"NoOfShare":"10","ShareClassId":"1","ClassName":"Ordinary","ValueOfShare":"5000000.0000","TotalNoOfShare":"10"}],"TotalNoOfShares":"10","OwnershipTypeId":"2","OwnershipTypeName":"Indirect Ownership","JointShareholderWithShares":"0","IsThisGovernmentEntity":"0"},"Address":{"PhoneNo":"0784334559","Email":"coco@gmail.com","AddressOwnerTypeId":"7","AreaTypeId":"0","WardId":null,"PostCode":null,"RegionCode":null,"DistrictCode":null,"RegionName":null,"DistrictName":null,"WardName":null,"Street":null,"Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":null,"PoBox":null,"CountryId":"256","CountryName":"Uganda","City":"Kampala","PoBox2":null,"NationalityName":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":"234500","PhysicalAddress":"Kampala, Idd street, SSB Apartment, House no.09B"}},{"isActive":true,"_id":"64871518ab0ee11201604077","OwnerTypeId":"3","OwnerTypeName":"Other Coporate Body","OwnerID":21191,"OriginTypeId":"2","details":{"ID2":"4","OwnerID":"21191","OwnerTypeId":"3","OwnerTypeName":"Other Coporate Body","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"2","CorporateName":"BILL FOUNDATION","Leader1FullName":"JOHNSON BOSS","Leader2FullName":"YUSUPH DON","TypeOfCorporateBody":"NGO","FullName":"BILL FOUNDATION","JointShareGroupNo":"BILL FOUNDATION","ClassName":"Ordinary","ShareClassId":"1","NoShare":"10","IsMember":"0","IsJointShare":"0","Allotment":"0","Transfer":"0","Cash":"0","Other":"0","Description":null,"CompanyTypeId":null,"members":[],"share_class":[{"NoOfShare":"10","ShareClassId":"1","ClassName":"Ordinary","ValueOfShare":"5000000.0000","TotalNoOfShare":"10"}],"TotalNoOfShares":"10","OwnershipTypeId":"3","OwnershipTypeName":"Both Direct and Indirect","JointShareholderWithShares":"0","IsThisGovernmentEntity":"0"},"Address":{"PhoneNo":"0782335566","Email":"bill@gmail.com","AddressOwnerTypeId":"7","AreaTypeId":"0","WardId":null,"PostCode":null,"RegionCode":null,"DistrictCode":null,"RegionName":null,"DistrictName":null,"WardName":null,"Street":null,"Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":null,"PoBox":null,"CountryId":"254","CountryName":"Kenya","City":"Nairobi","PoBox2":null,"NationalityName":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":"6710155","PhysicalAddress":"Nairobi, Bongo strret, Gsm Apartment, House no.12b"}},{"isActive":true,"_id":"64871518ab0ee11201604078","OwnerTypeId":"2","OwnerTypeName":"Company","OwnerID":157967088,"OriginTypeId":"1","details":{"ID2":"5","OwnerID":"157967088","OwnerTypeId":"2","OwnerTypeName":"Company","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":"Goodluck Limited","Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":null,"JointShareGroupNo":null,"ClassName":"Ordinary","ShareClassId":"1","NoShare":"10","IsMember":"0","IsJointShare":"0","Allotment":"0","Transfer":"0","Cash":"0","Other":"0","Description":null,"CompanyTypeId":"3","members":[],"share_class":[{"NoOfShare":"10","ShareClassId":"1","ClassName":"Ordinary","ValueOfShare":"5000000.0000","TotalNoOfShare":"10"}],"TotalNoOfShares":"10","OwnershipTypeId":"2","OwnershipTypeName":"Indirect Ownership","JointShareholderWithShares":"0","IsThisGovernmentEntity":"0"},"Address":{"PhoneNo":"0764026093","Email":"goodlucky@gmail.com","AddressOwnerTypeId":"3","AreaTypeId":"2","WardId":"21202","PostCode":"21202","RegionCode":"2554","DistrictCode":"25542","RegionName":"Tanga","DistrictName":"Tanga","WardName":"Mzizima","Street":"Kipawa","Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":"Kipawa near by Kipawa bus station","PoBox":"9292","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":null,"NationalityName":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}},{"isActive":true,"_id":"64871518ab0ee11201604079","OwnerTypeId":"3","OwnerTypeName":"Other Coporate Body","OwnerID":21192,"OriginTypeId":"1","details":{"ID2":"6","OwnerID":"21192","OwnerTypeId":"3","OwnerTypeName":"Other Coporate Body","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":"ISTITUTE OF SOCIAL WORK","Leader1FullName":"JOHNSON CEO","Leader2FullName":"YUSUPH BOSS","TypeOfCorporateBody":"Statutory Corporation","FullName":"ISTITUTE OF SOCIAL WORK","JointShareGroupNo":"ISTITUTE OF SOCIAL WORK","ClassName":"Ordinary","ShareClassId":"1","NoShare":"20","IsMember":"0","IsJointShare":"0","Allotment":"0","Transfer":"0","Cash":"0","Other":"0","Description":null,"CompanyTypeId":null,"members":[],"share_class":[{"NoOfShare":"20","ShareClassId":"1","ClassName":"Ordinary","ValueOfShare":"5000000.0000","TotalNoOfShare":"20"}],"TotalNoOfShares":"20","OwnershipTypeId":"1","OwnershipTypeName":"Direct Ownership","JointShareholderWithShares":"0","IsThisGovernmentEntity":"1"},"Address":{"PhoneNo":"0712334490","Email":"sse@gmail.com","AddressOwnerTypeId":"7","AreaTypeId":"1","WardId":"14110","PostCode":"14110","RegionCode":"2552","DistrictCode":"25523","RegionName":"Dar Es Salaam","DistrictName":"Kinondoni","WardName":"Kinondoni","Street":"Sayansi","Road":"Bagamoyo","PlotNo":"34","BlockNo":"S","HouseNo":"56","UnsurveyedArea":null,"PoBox":"8989","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":"8989","NationalityName":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}}]},"Attachments":{"info":[{"FolderNumber":"1234","AttachmentPath":"CM230505-0001_1683271689898_consolidated_form.pdf","CorporationNo":"157969021","CompanyAttachmentTypeId":"1","AttachmentsName":"Consolidated Form","ServiceName":"Registration of a new company","AttachmentDate":"2023-05-05 10:28:09.940"},{"FolderNumber":"1234","AttachmentPath":"CM230505-0001_1683271581744_memorandum_and_articles_of_association.pdf","CorporationNo":"157969021","CompanyAttachmentTypeId":"3","AttachmentsName":"Memorandum and Articles of Association","ServiceName":"Registration of a new company","AttachmentDate":"2023-05-05 10:26:21.777"},{"FolderNumber":"1234","AttachmentPath":"CM230505-0001_1683271709637_ethics_and_integrity.pdf","CorporationNo":"157969021","CompanyAttachmentTypeId":"4","AttachmentsName":"Ethics and Integrity","ServiceName":"Registration of a new company","AttachmentDate":"2023-05-05 10:28:29.647"},{"FolderNumber":"1234","AttachmentPath":"CM230505-0001_1683271728865_passport.pdf","CorporationNo":"157969021","CompanyAttachmentTypeId":"48","AttachmentsName":"Passport","ServiceName":"Registration of a new company","AttachmentDate":"2023-05-05 10:28:48.883"}],"history":[]},"Fillings":{"history":[]},"AnnualReturn":{"history":[]},"WindingUP":{"history":[]},"_id":"64871518ab0ee1120160406a","RegNo":"157969021","CompanyStatus":"1","RegDate":"2023-06-12T12:52:40.419Z","__v":0},"message":"registry data available"}
+{
+  IsSharedCapital: '1',
+  AddressOwnerId: '1234',
+  AddressOwnerTypeId: '3',
+  WardId: '11106',
+  AreaTypeId: '1',
+  AreaType: 'Surveyed',
+  CountryId: '255',
+  Country: 'Tanzania',
+  Region: 'Dar Es Salaam',
+  District: 'Ilala CBD',
+  Ward: 'Kariakoo',
+  Pobox: '333',
+  Email: 'darfresh@gmail.com',
+  Phone: '0712334567',
+  Unsurveyed: null,
+  Street: 'Livingstone',
+  Road: 'Karume',
+  PlotNo: '23',
+  BlockNo: 'B',
+  HouseNo: '24',
+  PhysicalAddress: null,
+  RegionCode: '2552',
+  DistrictCode: '25521',
+  PostCode: '11106',
+  LandMarkTypeId: null,
+  Area: null,
+  LandMark: null,
+  LandMarkTypeName: null,
+  City: 'Livingstone',
+  ZipCode: null
+}
+[
+  {
+    Id: 1,
+    IsPerUnitFeeApplicable: false,
+    IssuingAuthorityId: 1,
+    BusinessLicenceClassCode: '1'
+  }
+]
+8
+Id =2552
+Id =Ilala CBD
+Id =Ilala
+Id =Kinondoni
+Id =Temeke
+Id =Ubungo
+Id =Kigamboni
+[
+  { districtId: '25521', districtName: 'Ilala CBD' },
+  { districtId: '25522', districtName: 'Ilala' },
+  { districtId: '25523', districtName: 'Kinondoni' },
+  { districtId: '25524', districtName: 'Temeke' },
+  { districtId: '25525', districtName: 'Ubungo' },
+  { districtId: '25526', districtName: 'Kigamboni' }
+]
+[
+  { WardId: '11101', wardName: 'Kivukoni' },
+  { WardId: '11102', wardName: 'Upanga Mashariki' },
+  { WardId: '11103', wardName: 'Upanga Magharibi' },
+  { WardId: '11104', wardName: 'Kisutu' },
+  { WardId: '11105', wardName: 'Mchafukoge' },
+  { WardId: '11106', wardName: 'Kariakoo' },
+  { WardId: '11107', wardName: 'Gerezani' },
+  { WardId: '11108', wardName: 'Jangwani' },
+  { WardId: '11109', wardName: 'Mchikichini' }
+]
+11101
+reuslts
+[
+  { SUBWARD_ID: '1', SUBWARD_NAME: 'Kivukoni,' },
+  { SUBWARD_ID: '2', SUBWARD_NAME: 'Sea View,' }
+]
+{"resultcode":"01","message":"Network timed out read ETIMEDOUT","result":"fail"}
+get particulars
+req.params.id
+20168
+1
+body
+[{"status":"success","fname":"Mark","mname":"Samwel","lname":"Nyamwocha","date_birth":"1999-01-01T00:00:00.000Z","citizen":"Local","gender":"Male"}]
+response.body
+[{"trackingNo":"BL230619-1727"}]
+Mon Jun 19 2023 11:51:59 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+get business owner types
+Mon Jun 19 2023 11:52:01 GMT+0300 (East Africa Time): List of Regions
+fail to get business type Error: aborted
+fail to AddressArea Error: aborted
+Id =
+{"status":"failed"}
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+157969021
+{"resultcode":"0","result":{"company":{"info":{"CompanyTypeID":"3","IsSharedCapital":"1","ForeignCorporateNo":null,"GivenFCoorporateDate":null,"ForeignCity":"Livingstone","ForeignPhysicalAddress":null,"CompanyTypeName":"Private Company Limited by Shares","ReservationNo":null,"CompanyName":"DAR FRESH LIMITED","CompanyTIN":"157969021","countryOfOrigin":null,"Incorporation_number":"157969021","DateofIncorporation":"2023-06-12","AccountingDate":"31","AccountingMonth":"12","IsGovernmentAShareholder":"1","ContributionByEachMemberOnWindUp":null,"TrackingNo":"CM230505-0001","ForeignEmail":null,"ForeignPhone":null,"ZipCode":null},"history":[]},"OfficeAddress":{"history":[],"info":{"IsSharedCapital":"1","AddressOwnerId":"1234","AddressOwnerTypeId":"3","WardId":"11106","AreaTypeId":"1","AreaType":"Surveyed","CountryId":"255","Country":"Tanzania","Region":"Dar Es Salaam","District":"Ilala CBD","Ward":"Kariakoo","Pobox":"333","Email":"darfresh@gmail.com","Phone":"0712334567","Unsurveyed":null,"Street":"Livingstone","Road":"Karume","PlotNo":"23","BlockNo":"B","HouseNo":"24","PhysicalAddress":null,"RegionCode":"2552","DistrictCode":"25521","PostCode":"11106","LandMarkTypeId":null,"Area":null,"LandMark":null,"LandMarkTypeName":null,"City":"Livingstone","ZipCode":null}},"Directors":{"history":[],"info":[{"isActive":true,"_id":"64871518ab0ee1120160406b","OwnerID":877,"Origin":"1","details":{"ID2":"1","OwnerID":"877","OwnerTypeId":"1","OwnerTypeName":"Natural Person","NationalityId":"1","Fname":"IRENE","Mname":"BERNAD","Lname":"MTEBE","GenderId":"2","GenderName":"Female","Dob":"1978-09-23","NIN":"19780923141290000114","WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":null,"Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":"IRENE BERNAD MTEBE","TinNo":"106985170"},"Address":{"PhoneNo":"0712456789","Email":"irene@gmail.com","AddressOwnerTypeId":"1","AreaTypeId":"1","WardId":"12107","PostCode":"12107","RegionCode":"2552","DistrictCode":"25522","RegionName":"Dar Es Salaam","DistrictName":"Ilala","WardName":"Ukonga","Street":"Banana","Road":"Nyerere","PlotNo":"12","BlockNo":"B","HouseNo":"77","UnsurveyedArea":null,"PoBox":"1232","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":null,"NationalityName":"Tanzanian","CompanyTypeId":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}},{"isActive":true,"_id":"64871518ab0ee1120160406c","OwnerID":878,"Origin":"2","details":{"ID2":"2","OwnerID":"878","OwnerTypeId":"1","OwnerTypeName":"Natural Person","NationalityId":"109","Fname":"JOHN","Mname":"STALLON","Lname":"RAMBO","GenderId":"1","GenderName":"Male","Dob":"1992-12-05","NIN":null,"WorkPermitNo":null,"PassportNo":"12345621","PassportIssuance":"254","OriginTypeId":"2","CorporateName":null,"Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":"JOHN STALLON RAMBO","TinNo":null},"Address":{"PhoneNo":"0743456578","Email":"ramb@gmail.com","AddressOwnerTypeId":"1","AreaTypeId":"0","WardId":null,"PostCode":null,"RegionCode":null,"DistrictCode":null,"RegionName":null,"DistrictName":null,"WardName":null,"Street":null,"Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":null,"PoBox":null,"CountryId":"254","CountryName":"Kenya","City":"Nairobi","PoBox2":null,"NationalityName":"Kenyan","CompanyTypeId":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":"1234","PhysicalAddress":"Nairobi, Bongo strret, Gsm Apartment, House no.12b"}},{"isActive":true,"_id":"64871518ab0ee1120160406d","OwnerID":21190,"Origin":"2","details":{"ID2":"3","OwnerID":"21190","OwnerTypeId":"5","OwnerTypeName":"Foreign Company","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"2","CorporateName":"COCO INC. LIMITED","Leader1FullName":"JOHNSON DON","Leader2FullName":"DON SELEMAN","TypeOfCorporateBody":"Foreign Company","FullName":"COCO INC. LIMITED","TinNo":null},"Address":{"PhoneNo":"0784334559","Email":"coco@gmail.com","AddressOwnerTypeId":"7","AreaTypeId":"0","WardId":null,"PostCode":null,"RegionCode":null,"DistrictCode":null,"RegionName":null,"DistrictName":null,"WardName":null,"Street":null,"Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":null,"PoBox":null,"CountryId":"256","CountryName":"Uganda","City":"Kampala","PoBox2":null,"NationalityName":null,"CompanyTypeId":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":"234500","PhysicalAddress":"Kampala, Idd street, SSB Apartment, House no.09B"}},{"isActive":true,"_id":"64871518ab0ee1120160406e","OwnerID":21191,"Origin":"2","details":{"ID2":"4","OwnerID":"21191","OwnerTypeId":"3","OwnerTypeName":"Other Coporate Body","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"2","CorporateName":"BILL FOUNDATION","Leader1FullName":"JOHNSON BOSS","Leader2FullName":"YUSUPH DON","TypeOfCorporateBody":"Other Coporate Body","FullName":"BILL FOUNDATION","TinNo":null},"Address":{"PhoneNo":"0782335566","Email":"bill@gmail.com","AddressOwnerTypeId":"7","AreaTypeId":"0","WardId":null,"PostCode":null,"RegionCode":null,"DistrictCode":null,"RegionName":null,"DistrictName":null,"WardName":null,"Street":null,"Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":null,"PoBox":null,"CountryId":"254","CountryName":"Kenya","City":"Nairobi","PoBox2":null,"NationalityName":null,"CompanyTypeId":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":"6710155","PhysicalAddress":"Nairobi, Bongo strret, Gsm Apartment, House no.12b"}},{"isActive":true,"_id":"64871518ab0ee1120160406f","OwnerID":157967088,"Origin":"1","details":{"ID2":"5","OwnerID":"157967088","OwnerTypeId":"2","OwnerTypeName":"Company","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":"Goodluck Limited","Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":null,"TinNo":"157967088"},"Address":{"PhoneNo":"0764026093","Email":"goodlucky@gmail.com","AddressOwnerTypeId":"3","AreaTypeId":"2","WardId":"21202","PostCode":"21202","RegionCode":"2554","DistrictCode":"25542","RegionName":"Tanga","DistrictName":"Tanga","WardName":"Mzizima","Street":"Kipawa","Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":"Kipawa near by Kipawa bus station","PoBox":"9292","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":null,"NationalityName":null,"CompanyTypeId":"3","LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}},{"isActive":true,"_id":"64871518ab0ee11201604070","OwnerID":21192,"Origin":"1","details":{"ID2":"6","OwnerID":"21192","OwnerTypeId":"3","OwnerTypeName":"Other Coporate Body","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":"ISTITUTE OF SOCIAL WORK","Leader1FullName":"JOHNSON CEO","Leader2FullName":"YUSUPH BOSS","TypeOfCorporateBody":"Statutory Corporation","FullName":"ISTITUTE OF SOCIAL WORK","TinNo":"101019985"},"Address":{"PhoneNo":"0712334490","Email":"sse@gmail.com","AddressOwnerTypeId":"7","AreaTypeId":"1","WardId":"14110","PostCode":"14110","RegionCode":"2552","DistrictCode":"25523","RegionName":"Dar Es Salaam","DistrictName":"Kinondoni","WardName":"Kinondoni","Street":"Sayansi","Road":"Bagamoyo","PlotNo":"34","BlockNo":"S","HouseNo":"56","UnsurveyedArea":null,"PoBox":"8989","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":"8989","NationalityName":null,"CompanyTypeId":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}}]},"CompanySecretaries":{"history":[],"info":[{"isActive":true,"_id":"64871518ab0ee11201604071","OwnerTypeId":"1","OwnerTypeName":"Natural Person","OwnerID":"877","OriginTypeId":"1","Origin":"1","details":{"ID2":"1","OwnerID":"877","OwnerTypeId":"1","OwnerTypeName":"Natural Person","NationalityId":"1","Fname":"IRENE","Mname":"BERNAD","Lname":"MTEBE","GenderId":"2","GenderName":"Female","Dob":"1978-09-23","NIN":"19780923141290000114","WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":null,"Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":"IRENE BERNAD MTEBE","IsThisSecretary":"1","Representative1":"0","Representative2":"0","CompanyTypeId":null},"Address":{"PhoneNo":"0712456789","Email":"irene@gmail.com","AddressOwnerTypeId":"1","AreaTypeId":"1","WardId":"12107","PostCode":"12107","RegionCode":"2552","DistrictCode":"25522","RegionName":"Dar Es Salaam","DistrictName":"Ilala","WardName":"Ukonga","Street":"Banana","Road":"Nyerere","PlotNo":"12","BlockNo":"B","HouseNo":"77","UnsurveyedArea":null,"PoBox":"1232","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":null,"NationalityName":"Tanzanian","LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}}]},"Representative":{"history":[],"info":[{"EntityId":"1234","EntityTypeId":"2","RepresentativeId":"877","UserId":"30430","RepresentativeTitleId":"1","OwnerTypeId":"1","RepresentativeTitle":"Shareholder","Fname":"IRENE","Mname":"BERNAD","Lname":"MTEBE","NIN":"19780923141290000114","PassportNo":null,"dob":"1978-09-23","PhoneNo":"0712456789","Email":"irene@gmail.com","resultcode":"0","IntCode":"TZ"},{"EntityId":"1234","EntityTypeId":"2","RepresentativeId":"878","UserId":null,"RepresentativeTitleId":"2","OwnerTypeId":"1","RepresentativeTitle":"Director","Fname":"JOHN","Mname":"STALLON","Lname":"RAMBO","NIN":null,"PassportNo":"12345621","dob":"1992-12-05","PhoneNo":"0743456578","Email":"ramb@gmail.com","resultcode":"0","IntCode":"KE"}]},"BusinessActivity":{"history":[],"info":[{"isActive":true,"isApproved":true,"_id":"64871518ab0ee11201604072","ActivityTypeName":"Local Activities","ActivityClassName":"Support services to forestry","ActivityClassId":"0240","ActivityTypeId":"1","IsMain":true},{"isActive":true,"isApproved":true,"_id":"64871518ab0ee11201604073","ActivityTypeName":"Local Activities","ActivityClassName":"Growing of grapes","ActivityClassId":"0121","ActivityTypeId":"1","IsMain":true}]},"Charges":{"info":[],"history":[]},"CompanyShares":{"info":{"ShareCapital":"5000000000","TotalNoOfShares":"1000"},"history":[]},"ShareTaken":{"history":[],"info":[{"_id":"64871518ab0ee1120160407a","NoOfShare":"1000","ValueOfShare":"5000000","ShareClassId":"1","ClassName":"Ordinary","Currency":"TZS","SharesTaken":"70","FreeShares":"930"}]},"ShareHolders":{"history":[],"info":[{"isActive":true,"_id":"64871518ab0ee11201604074","OwnerTypeId":"1","OwnerTypeName":"Natural Person","OwnerID":877,"OriginTypeId":"1","details":{"ID2":"1","OwnerID":"877","OwnerTypeId":"1","OwnerTypeName":"Natural Person","NationalityId":"1","Fname":"IRENE","Mname":"BERNAD","Lname":"MTEBE","GenderId":"2","GenderName":"Female","Dob":"1978-09-23","NIN":"19780923141290000114","WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":null,"Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":"IRENE BERNAD MTEBE","JointShareGroupNo":"IRENE BERNAD MTEBE","ClassName":"Ordinary","ShareClassId":"1","NoShare":"10","IsMember":"0","IsJointShare":"0","Allotment":"0","Transfer":"0","Cash":"0","Other":"0","Description":null,"CompanyTypeId":null,"members":[],"share_class":[{"NoOfShare":"10","ShareClassId":"1","ClassName":"Ordinary","ValueOfShare":"5000000.0000","TotalNoOfShare":"10"}],"TotalNoOfShares":"10","OwnershipTypeId":"1","OwnershipTypeName":"Direct Ownership","JointShareholderWithShares":"0","IsThisGovernmentEntity":"0"},"Address":{"PhoneNo":"0712456789","Email":"irene@gmail.com","AddressOwnerTypeId":"1","AreaTypeId":"1","WardId":"12107","PostCode":"12107","RegionCode":"2552","DistrictCode":"25522","RegionName":"Dar Es Salaam","DistrictName":"Ilala","WardName":"Ukonga","Street":"Banana","Road":"Nyerere","PlotNo":"12","BlockNo":"B","HouseNo":"77","UnsurveyedArea":null,"PoBox":"1232","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":null,"NationalityName":"Tanzanian","LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}},{"isActive":true,"_id":"64871518ab0ee11201604075","OwnerTypeId":"1","OwnerTypeName":"Natural Person","OwnerID":878,"OriginTypeId":"2","details":{"ID2":"2","OwnerID":"878","OwnerTypeId":"1","OwnerTypeName":"Natural Person","NationalityId":"109","Fname":"JOHN","Mname":"STALLON","Lname":"RAMBO","GenderId":"1","GenderName":"Male","Dob":"1992-12-05","NIN":null,"WorkPermitNo":null,"PassportNo":"12345621","PassportIssuance":"254","OriginTypeId":"2","CorporateName":null,"Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":"JOHN STALLON RAMBO","JointShareGroupNo":"JOHN STALLON RAMBO","ClassName":"Ordinary","ShareClassId":"1","NoShare":"10","IsMember":"0","IsJointShare":"0","Allotment":"0","Transfer":"0","Cash":"0","Other":"0","Description":null,"CompanyTypeId":null,"members":[],"share_class":[{"NoOfShare":"10","ShareClassId":"1","ClassName":"Ordinary","ValueOfShare":"5000000.0000","TotalNoOfShare":"10"}],"TotalNoOfShares":"10","OwnershipTypeId":"1","OwnershipTypeName":"Direct Ownership","JointShareholderWithShares":"0","IsThisGovernmentEntity":"0"},"Address":{"PhoneNo":"0743456578","Email":"ramb@gmail.com","AddressOwnerTypeId":"1","AreaTypeId":"0","WardId":null,"PostCode":null,"RegionCode":null,"DistrictCode":null,"RegionName":null,"DistrictName":null,"WardName":null,"Street":null,"Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":null,"PoBox":null,"CountryId":"254","CountryName":"Kenya","City":"Nairobi","PoBox2":null,"NationalityName":"Kenyan","LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":"1234","PhysicalAddress":"Nairobi, Bongo strret, Gsm Apartment, House no.12b"}},{"isActive":true,"_id":"64871518ab0ee11201604076","OwnerTypeId":"5","OwnerTypeName":"Foreign Company","OwnerID":21190,"OriginTypeId":"2","details":{"ID2":"3","OwnerID":"21190","OwnerTypeId":"5","OwnerTypeName":"Foreign Company","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"2","CorporateName":"COCO INC. LIMITED","Leader1FullName":"JOHNSON DON","Leader2FullName":"DON SELEMAN","TypeOfCorporateBody":"Foreign Company","FullName":"COCO INC. LIMITED","JointShareGroupNo":"COCO INC. LIMITED","ClassName":"Ordinary","ShareClassId":"1","NoShare":"10","IsMember":"0","IsJointShare":"0","Allotment":"0","Transfer":"0","Cash":"0","Other":"0","Description":null,"CompanyTypeId":null,"members":[],"share_class":[{"NoOfShare":"10","ShareClassId":"1","ClassName":"Ordinary","ValueOfShare":"5000000.0000","TotalNoOfShare":"10"}],"TotalNoOfShares":"10","OwnershipTypeId":"2","OwnershipTypeName":"Indirect Ownership","JointShareholderWithShares":"0","IsThisGovernmentEntity":"0"},"Address":{"PhoneNo":"0784334559","Email":"coco@gmail.com","AddressOwnerTypeId":"7","AreaTypeId":"0","WardId":null,"PostCode":null,"RegionCode":null,"DistrictCode":null,"RegionName":null,"DistrictName":null,"WardName":null,"Street":null,"Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":null,"PoBox":null,"CountryId":"256","CountryName":"Uganda","City":"Kampala","PoBox2":null,"NationalityName":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":"234500","PhysicalAddress":"Kampala, Idd street, SSB Apartment, House no.09B"}},{"isActive":true,"_id":"64871518ab0ee11201604077","OwnerTypeId":"3","OwnerTypeName":"Other Coporate Body","OwnerID":21191,"OriginTypeId":"2","details":{"ID2":"4","OwnerID":"21191","OwnerTypeId":"3","OwnerTypeName":"Other Coporate Body","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"2","CorporateName":"BILL FOUNDATION","Leader1FullName":"JOHNSON BOSS","Leader2FullName":"YUSUPH DON","TypeOfCorporateBody":"NGO","FullName":"BILL FOUNDATION","JointShareGroupNo":"BILL FOUNDATION","ClassName":"Ordinary","ShareClassId":"1","NoShare":"10","IsMember":"0","IsJointShare":"0","Allotment":"0","Transfer":"0","Cash":"0","Other":"0","Description":null,"CompanyTypeId":null,"members":[],"share_class":[{"NoOfShare":"10","ShareClassId":"1","ClassName":"Ordinary","ValueOfShare":"5000000.0000","TotalNoOfShare":"10"}],"TotalNoOfShares":"10","OwnershipTypeId":"3","OwnershipTypeName":"Both Direct and Indirect","JointShareholderWithShares":"0","IsThisGovernmentEntity":"0"},"Address":{"PhoneNo":"0782335566","Email":"bill@gmail.com","AddressOwnerTypeId":"7","AreaTypeId":"0","WardId":null,"PostCode":null,"RegionCode":null,"DistrictCode":null,"RegionName":null,"DistrictName":null,"WardName":null,"Street":null,"Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":null,"PoBox":null,"CountryId":"254","CountryName":"Kenya","City":"Nairobi","PoBox2":null,"NationalityName":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":"6710155","PhysicalAddress":"Nairobi, Bongo strret, Gsm Apartment, House no.12b"}},{"isActive":true,"_id":"64871518ab0ee11201604078","OwnerTypeId":"2","OwnerTypeName":"Company","OwnerID":157967088,"OriginTypeId":"1","details":{"ID2":"5","OwnerID":"157967088","OwnerTypeId":"2","OwnerTypeName":"Company","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":"Goodluck Limited","Leader1FullName":null,"Leader2FullName":null,"TypeOfCorporateBody":null,"FullName":null,"JointShareGroupNo":null,"ClassName":"Ordinary","ShareClassId":"1","NoShare":"10","IsMember":"0","IsJointShare":"0","Allotment":"0","Transfer":"0","Cash":"0","Other":"0","Description":null,"CompanyTypeId":"3","members":[],"share_class":[{"NoOfShare":"10","ShareClassId":"1","ClassName":"Ordinary","ValueOfShare":"5000000.0000","TotalNoOfShare":"10"}],"TotalNoOfShares":"10","OwnershipTypeId":"2","OwnershipTypeName":"Indirect Ownership","JointShareholderWithShares":"0","IsThisGovernmentEntity":"0"},"Address":{"PhoneNo":"0764026093","Email":"goodlucky@gmail.com","AddressOwnerTypeId":"3","AreaTypeId":"2","WardId":"21202","PostCode":"21202","RegionCode":"2554","DistrictCode":"25542","RegionName":"Tanga","DistrictName":"Tanga","WardName":"Mzizima","Street":"Kipawa","Road":null,"PlotNo":null,"BlockNo":null,"HouseNo":null,"UnsurveyedArea":"Kipawa near by Kipawa bus station","PoBox":"9292","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":null,"NationalityName":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}},{"isActive":true,"_id":"64871518ab0ee11201604079","OwnerTypeId":"3","OwnerTypeName":"Other Coporate Body","OwnerID":21192,"OriginTypeId":"1","details":{"ID2":"6","OwnerID":"21192","OwnerTypeId":"3","OwnerTypeName":"Other Coporate Body","NationalityId":null,"Fname":null,"Mname":null,"Lname":null,"GenderId":null,"GenderName":null,"Dob":null,"NIN":null,"WorkPermitNo":null,"PassportNo":null,"PassportIssuance":null,"OriginTypeId":"1","CorporateName":"ISTITUTE OF SOCIAL WORK","Leader1FullName":"JOHNSON CEO","Leader2FullName":"YUSUPH BOSS","TypeOfCorporateBody":"Statutory Corporation","FullName":"ISTITUTE OF SOCIAL WORK","JointShareGroupNo":"ISTITUTE OF SOCIAL WORK","ClassName":"Ordinary","ShareClassId":"1","NoShare":"20","IsMember":"0","IsJointShare":"0","Allotment":"0","Transfer":"0","Cash":"0","Other":"0","Description":null,"CompanyTypeId":null,"members":[],"share_class":[{"NoOfShare":"20","ShareClassId":"1","ClassName":"Ordinary","ValueOfShare":"5000000.0000","TotalNoOfShare":"20"}],"TotalNoOfShares":"20","OwnershipTypeId":"1","OwnershipTypeName":"Direct Ownership","JointShareholderWithShares":"0","IsThisGovernmentEntity":"1"},"Address":{"PhoneNo":"0712334490","Email":"sse@gmail.com","AddressOwnerTypeId":"7","AreaTypeId":"1","WardId":"14110","PostCode":"14110","RegionCode":"2552","DistrictCode":"25523","RegionName":"Dar Es Salaam","DistrictName":"Kinondoni","WardName":"Kinondoni","Street":"Sayansi","Road":"Bagamoyo","PlotNo":"34","BlockNo":"S","HouseNo":"56","UnsurveyedArea":null,"PoBox":"8989","CountryId":"255","CountryName":"Tanzania","City":null,"PoBox2":"8989","NationalityName":null,"LandMarkTypeId":null,"Area":null,"LandMark":null,"ZipCode":null,"PhysicalAddress":null}}]},"Attachments":{"info":[{"FolderNumber":"1234","AttachmentPath":"CM230505-0001_1683271689898_consolidated_form.pdf","CorporationNo":"157969021","CompanyAttachmentTypeId":"1","AttachmentsName":"Consolidated Form","ServiceName":"Registration of a new company","AttachmentDate":"2023-05-05 10:28:09.940"},{"FolderNumber":"1234","AttachmentPath":"CM230505-0001_1683271581744_memorandum_and_articles_of_association.pdf","CorporationNo":"157969021","CompanyAttachmentTypeId":"3","AttachmentsName":"Memorandum and Articles of Association","ServiceName":"Registration of a new company","AttachmentDate":"2023-05-05 10:26:21.777"},{"FolderNumber":"1234","AttachmentPath":"CM230505-0001_1683271709637_ethics_and_integrity.pdf","CorporationNo":"157969021","CompanyAttachmentTypeId":"4","AttachmentsName":"Ethics and Integrity","ServiceName":"Registration of a new company","AttachmentDate":"2023-05-05 10:28:29.647"},{"FolderNumber":"1234","AttachmentPath":"CM230505-0001_1683271728865_passport.pdf","CorporationNo":"157969021","CompanyAttachmentTypeId":"48","AttachmentsName":"Passport","ServiceName":"Registration of a new company","AttachmentDate":"2023-05-05 10:28:48.883"}],"history":[]},"Fillings":{"history":[]},"AnnualReturn":{"history":[]},"WindingUP":{"history":[]},"_id":"64871518ab0ee1120160406a","RegNo":"157969021","CompanyStatus":"1","RegDate":"2023-06-12T12:52:40.419Z","__v":0},"message":"registry data available"}
+{
+  IsSharedCapital: '1',
+  AddressOwnerId: '1234',
+  AddressOwnerTypeId: '3',
+  WardId: '11106',
+  AreaTypeId: '1',
+  AreaType: 'Surveyed',
+  CountryId: '255',
+  Country: 'Tanzania',
+  Region: 'Dar Es Salaam',
+  District: 'Ilala CBD',
+  Ward: 'Kariakoo',
+  Pobox: '333',
+  Email: 'darfresh@gmail.com',
+  Phone: '0712334567',
+  Unsurveyed: null,
+  Street: 'Livingstone',
+  Road: 'Karume',
+  PlotNo: '23',
+  BlockNo: 'B',
+  HouseNo: '24',
+  PhysicalAddress: null,
+  RegionCode: '2552',
+  DistrictCode: '25521',
+  PostCode: '11106',
+  LandMarkTypeId: null,
+  Area: null,
+  LandMark: null,
+  LandMarkTypeName: null,
+  City: 'Livingstone',
+  ZipCode: null
+}
+get particulars
+req.params.id
+20168
+1
+body
+[{"status":"success","fname":"Mark","mname":"Samwel","lname":"Nyamwocha","date_birth":"1999-01-01T00:00:00.000Z","citizen":"Local","gender":"Male"}]
+response.body
+[{"trackingNo":"BL230619-1769"}]
+Mon Jun 19 2023 11:52:20 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+get business owner types
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+Mon Jun 19 2023 11:52:22 GMT+0300 (East Africa Time): List of Regions
+fail to get business type Error: aborted
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+{"resultcode":"01","message":"Network timed out read ETIMEDOUT","result":"fail"}
+{"resultcode":"01","message":"Network timed out read ECONNRESET","result":"fail"}
+{"resultcode":"0","message":"Success","result":{"TaxpayerId":132402094,"TaxpayerName":"","FirstName":"PETER","MiddleName":"HUGHO","LastName":"RIWA","TradingName":null,"DateOfBirth":"1984-12-31T00:00:00","DateOfRegistration":"2017-01-06T17:28:48","Gender":"M","IsPerson":true,"PostalAddress":"9503","PostalCity":"DAR ES SALAAM","PlotNumber":"","BlockNumber":"","Region":"Dar es Salaam","District":"Ilala","Ward":null,"Street":"GONGO LAMBOTO","Tel1":"","Tel2":"","Tel3":null,"Mobile":"255714726910","Fax":"","Email":"","Vrn":null,"NumberOfEmployees":"0","NationalId":"","CertificateNo":""}}
+ispersontrue
+{"resultcode":"01","message":"Network timed out read ECONNRESET","result":"fail"}
+{"resultcode":"0","message":"Success","result":{"TaxpayerId":132402094,"TaxpayerName":"","FirstName":"PETER","MiddleName":"HUGHO","LastName":"RIWA","TradingName":null,"DateOfBirth":"1984-12-31T00:00:00","DateOfRegistration":"2017-01-06T17:28:48","Gender":"M","IsPerson":true,"PostalAddress":"9503","PostalCity":"DAR ES SALAAM","PlotNumber":"","BlockNumber":"","Region":"Dar es Salaam","District":"Ilala","Ward":null,"Street":"GONGO LAMBOTO","Tel1":"","Tel2":"","Tel3":null,"Mobile":"255714726910","Fax":"","Email":"","Vrn":null,"NumberOfEmployees":"0","NationalId":"","CertificateNo":""}}
+ispersontrue
+get particulars
+req.params.id
+20168
+1
+body
+[{"status":"success","fname":"Mark","mname":"Samwel","lname":"Nyamwocha","date_birth":"1999-01-01T00:00:00.000Z","citizen":"Local","gender":"Male"}]
+response.body
+[{"trackingNo":"BL230619-1599"}]
+Mon Jun 19 2023 11:53:36 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+get business owner types
+fail to ownerType Error: aborted
+fail to Save_EntityOwner_SP Error: aborted
+fail to AddressArea Error: aborted
+Mon Jun 19 2023 11:53:37 GMT+0300 (East Africa Time): List of Regions
+Id =
+{"status":"failed"}
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]
+{"resultcode":"01","message":"Network timed out read ECONNRESET","result":"fail"}
+{"resultcode":"01","message":"Network timed out read ETIMEDOUT","result":"fail"}
+get particulars
+req.params.id
+20168
+1
+body
+[{"status":"success","fname":"Mark","mname":"Samwel","lname":"Nyamwocha","date_birth":"1999-01-01T00:00:00.000Z","citizen":"Local","gender":"Male"}]
+response.body
+[{"trackingNo":"BL230619-2302"}]
+Mon Jun 19 2023 11:55:10 GMT+0300 (East Africa Time): Successful generate Tracking Number
+{
+  recordsets: [],
+  recordset: undefined,
+  output: {},
+  rowsAffected: [ 1 ]
+}
+sucess
+get business owner types
+get business owner types
+Mon Jun 19 2023 11:55:11 GMT+0300 (East Africa Time): List of Regions
+Id =
+[{"AreaTypeId":1,"AreaTypeName":"Surveyed"},{"AreaTypeId":2,"AreaTypeName":"Unsurveyed"}]
+{"resultcode":"01","message":"Network timed out read ECONNRESET","result":"fail"}
+[
+  { Id: '1', SectorName: 'Agriculture' },
+  { Id: '2', SectorName: 'Importation' },
+  { Id: '3', SectorName: 'Livestocks' },
+  { Id: '4', SectorName: 'Fisheries' },
+  { Id: '5', SectorName: 'Tourism' },
+  { Id: '6', SectorName: 'Banking And Finance' },
+  { Id: '7', SectorName: 'Social Securities' },
+  { Id: '8', SectorName: 'Insurance' },
+  { Id: '9', SectorName: 'Estate ' },
+  { Id: '10', SectorName: 'Construction' },
+  { Id: '11', SectorName: 'Energy And Mining' },
+  { Id: '12', SectorName: 'Water Supply And Sanitation' },
+  { Id: '13', SectorName: 'Telecommunication And Network Operator' },
+  { Id: '14', SectorName: 'Manufacturing And Processing' },
+  { Id: '15', SectorName: 'Healthcare' },
+  { Id: '16', SectorName: 'Forestry' },
+  { Id: '17', SectorName: 'Shipping And Harbour Business' },
+  { Id: '18', SectorName: 'Customs Clearing Business' },
+  { Id: '19', SectorName: 'Postal Services' },
+  { Id: '20', SectorName: 'Radio Broadcasting And Television' },
+  { Id: '21', SectorName: 'Arms And Ammunition' },
+  { Id: '22', SectorName: 'Recreational And Sports Activities' },
+  { Id: '23', SectorName: 'Agency Business' },
+  { Id: '24', SectorName: 'General Merchandise' },
+  { Id: '25', SectorName: 'Research And Development Services ' },
+  { Id: '26', SectorName: 'Others' },
+  { Id: '27', SectorName: 'Education' },
+  { Id: '28', SectorName: 'Training Sector' },
+  { Id: '29', SectorName: 'General Merchandise And Finished Product' },
+  { Id: '30', SectorName: 'Service Sector' },
+  { Id: '31', SectorName: 'Finance' },
+  { Id: '32', SectorName: 'Service' },
+  { Id: '33', SectorName: 'Health Care' },
+  { Id: '34', SectorName: 'Gaming And Amusement' },
+  { Id: '35', SectorName: 'International Business' },
+  { Id: '36', SectorName: 'Test Sector' },
+  { Id: '37', SectorName: 'Test Lga Sector' },
+  { Id: '38', SectorName: 'Logistics And Transport Activities' },
+  { Id: '39', SectorName: 'Services' },
+  { Id: '40', SectorName: 'Transportation' },
+  { Id: '41', SectorName: 'Auctioneers' },
+  { Id: '42', SectorName: 'Dealership And Franchises' },
+  { Id: '43', SectorName: 'Duplicate' },
+  { Id: '44', SectorName: 'Duplicate License' },
+  { Id: '45', SectorName: 'Export Of Finished Products' },
+  { Id: '46', SectorName: 'Spare Parts' },
+  { Id: '47', SectorName: 'Transfter License' },
+  {
+    Id: '48',
+    SectorName: 'Any Other Business Not Of National Or International Nature'
+  },
+  {
+    Id: '49',
+    SectorName: 'Any Other Business Of National Or International Nature'
+  },
+  { Id: '50', SectorName: 'Service' },
+  { Id: '51', SectorName: 'Cargo Handling' },
+  { Id: '52', SectorName: 'Livestocks' },
+  { Id: '53', SectorName: 'Health' },
+  { Id: '54', SectorName: 'Workshop  And Gerages' },
+  { Id: '55', SectorName: 'Confectionaries' },
+  { Id: '56', SectorName: 'Forest' },
+  { Id: '57', SectorName: 'Textile And Garments' },
+  { Id: '58', SectorName: 'Water  And Plumbing' },
+  { Id: '59', SectorName: 'Contracting Business' },
+  { Id: '60', SectorName: 'Civil Contractors' },
+  { Id: '61', SectorName: 'Electrical Works Contractor' },
+  { Id: '62', SectorName: 'Specialist Contractors' },
+  { Id: '63', SectorName: 'Specified Proffessional' },
+  { Id: '64', SectorName: 'Industry' },
+  { Id: '65', SectorName: 'Communication' },
+  { Id: '66', SectorName: 'Hotels And Accommodation Services' },
+  { Id: '67', SectorName: 'Funeral' },
+  { Id: '68', SectorName: 'Sports Activities' },
+  { Id: '69', SectorName: 'Mining' },
+  { Id: '70', SectorName: 'Contractors' },
+  { Id: '71', SectorName: 'International Trading' }
+]
+fgdfgdf ======[{"Id":"1","SectorName":"Agriculture"},{"Id":"2","SectorName":"Importation"},{"Id":"3","SectorName":"Livestocks"},{"Id":"4","SectorName":"Fisheries"},{"Id":"5","SectorName":"Tourism"},{"Id":"6","SectorName":"Banking And Finance"},{"Id":"7","SectorName":"Social Securities"},{"Id":"8","SectorName":"Insurance"},{"Id":"9","SectorName":"Estate "},{"Id":"10","SectorName":"Construction"},{"Id":"11","SectorName":"Energy And Mining"},{"Id":"12","SectorName":"Water Supply And Sanitation"},{"Id":"13","SectorName":"Telecommunication And Network Operator"},{"Id":"14","SectorName":"Manufacturing And Processing"},{"Id":"15","SectorName":"Healthcare"},{"Id":"16","SectorName":"Forestry"},{"Id":"17","SectorName":"Shipping And Harbour Business"},{"Id":"18","SectorName":"Customs Clearing Business"},{"Id":"19","SectorName":"Postal Services"},{"Id":"20","SectorName":"Radio Broadcasting And Television"},{"Id":"21","SectorName":"Arms And Ammunition"},{"Id":"22","SectorName":"Recreational And Sports Activities"},{"Id":"23","SectorName":"Agency Business"},{"Id":"24","SectorName":"General Merchandise"},{"Id":"25","SectorName":"Research And Development Services "},{"Id":"26","SectorName":"Others"},{"Id":"27","SectorName":"Education"},{"Id":"28","SectorName":"Training Sector"},{"Id":"29","SectorName":"General Merchandise And Finished Product"},{"Id":"30","SectorName":"Service Sector"},{"Id":"31","SectorName":"Finance"},{"Id":"32","SectorName":"Service"},{"Id":"33","SectorName":"Health Care"},{"Id":"34","SectorName":"Gaming And Amusement"},{"Id":"35","SectorName":"International Business"},{"Id":"36","SectorName":"Test Sector"},{"Id":"37","SectorName":"Test Lga Sector"},{"Id":"38","SectorName":"Logistics And Transport Activities"},{"Id":"39","SectorName":"Services"},{"Id":"40","SectorName":"Transportation"},{"Id":"41","SectorName":"Auctioneers"},{"Id":"42","SectorName":"Dealership And Franchises"},{"Id":"43","SectorName":"Duplicate"},{"Id":"44","SectorName":"Duplicate License"},{"Id":"45","SectorName":"Export Of Finished Products"},{"Id":"46","SectorName":"Spare Parts"},{"Id":"47","SectorName":"Transfter License"},{"Id":"48","SectorName":"Any Other Business Not Of National Or International Nature"},{"Id":"49","SectorName":"Any Other Business Of National Or International Nature"},{"Id":"50","SectorName":"Service"},{"Id":"51","SectorName":"Cargo Handling"},{"Id":"52","SectorName":"Livestocks"},{"Id":"53","SectorName":"Health"},{"Id":"54","SectorName":"Workshop  And Gerages"},{"Id":"55","SectorName":"Confectionaries"},{"Id":"56","SectorName":"Forest"},{"Id":"57","SectorName":"Textile And Garments"},{"Id":"58","SectorName":"Water  And Plumbing"},{"Id":"59","SectorName":"Contracting Business"},{"Id":"60","SectorName":"Civil Contractors"},{"Id":"61","SectorName":"Electrical Works Contractor"},{"Id":"62","SectorName":"Specialist Contractors"},{"Id":"63","SectorName":"Specified Proffessional"},{"Id":"64","SectorName":"Industry"},{"Id":"65","SectorName":"Communication"},{"Id":"66","SectorName":"Hotels And Accommodation Services"},{"Id":"67","SectorName":"Funeral"},{"Id":"68","SectorName":"Sports Activities"},{"Id":"69","SectorName":"Mining"},{"Id":"70","SectorName":"Contractors"},{"Id":"71","SectorName":"International Trading"}]

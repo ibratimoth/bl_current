@@ -5539,6 +5539,7 @@ if(BizOwnerType == 1){
         .input('IsOfficeAddress', 0)
         .input('CompanyEmail', inputEmail4comp)
         .input('CompanyPhone', PhoneBuz)
+        .input('OwnerId', bustype)
         .input('SUBWARD_ID', subwardIdB)
         .execute('Save_Address_SP', function(err, recordsets, returnValue) {
             if(err) {
@@ -5574,7 +5575,7 @@ if(BizOwnerType == 1){
             .input('IsOfficeAddress', 1)
             .input('CompanyEmail', inputEmail4comp)
             .input('CompanyPhone', PhoneBuz)
-            .input('OwnerId', BizOwnerType)
+            .input('OwnerId', bustype)
             .input('SUBWARD_ID', subwardIdB)
             .execute('Save_Address_SP', function(err, recordsets, returnValue) {
                 if(err) {
@@ -5779,6 +5780,7 @@ if(BizOwnerType == 2){
         .input('CompanyEmail', inputEmail4comp)
         .input('CompanyPhone', PhoneBuz)
         .input('OwnerId', bustype)
+        .input('SUBWARD_ID', subwardIdB)
         .execute('Save_Address_SP', function(err, recordsets, returnValue) {
             if(err) {
               console.log("fail to Save_Address_SP " + err);
@@ -9539,7 +9541,7 @@ app.get('/ownerType', function (req, res) {
             sql.close();
             res.send({status: "failed"});
         }else{
-          sql.close();
+          // sql.close();
           // send records as a response
           res.send(recordset1.recordset);
         }
