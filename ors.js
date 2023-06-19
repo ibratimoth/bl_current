@@ -682,9 +682,10 @@ app.post('/Renew',function(req,res){
     method: 'GET',
   }, function(error, response, body){
     if(error) {          
-      console.log("fail to Save_EntityOwner_SP " + error);
-          sql.close();
-          res.send({status: "failed"});}
+        console.log("fail to Save_EntityOwner_SP " + error);
+        sql.close();
+        res.send({status: "failed"});
+      }
     var jsonData = JSON.parse(response.body);
     var newtrackingNo = jsonData[0].trackingNo
   request({
@@ -3152,7 +3153,9 @@ app.post('/saveBStageSecond',function(req,res){
           res.send({status: "failed"});
         }
       console.log(response.body)
-      res.send(response.body)
+      var BizOwnerType = response.body
+      req.session.BizOwnerType = BizOwnerType
+      res.send(req.session.BizOwnerType)
     });
 
 
@@ -7026,6 +7029,7 @@ app.post('/AddressRecordB', function(req, res){
      //console.log(recordset1.recordset)
       var result_from1 = recordset1.recordset;
       var OwnerSubTypeId = result_from1[0].OwnerSubTypeId;
+      req.session.OwnerSubTypeId = OwnerSubTypeId
 
       if(OwnerSubTypeId == 1){
           new sql.Request()
@@ -7296,7 +7300,7 @@ app.post('/AddressRecordB', function(req, res){
           res.send({status: "failed"});}
 
                 sql.close();
-                res.send("success")// your isTrue value
+                res.send(req.session.OwnerSubTypeId)// your isTrue value
               });
               });
   

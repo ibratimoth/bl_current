@@ -295,7 +295,6 @@ reader.onerror = function (error) {
             }),
             contentType: 'application/json',
             success: function(response) {
-               alert(response)
                 if(response === 'success'){
                     swal({
                         title: 'Success!',
@@ -303,6 +302,7 @@ reader.onerror = function (error) {
                         type: 'success',
                         timer: 2000,
                     })
+                    window.location.href = '/Dashboard'
                 }
             },
         // error: function(jqXHR, textStatus, errorThrown){
