@@ -1586,17 +1586,20 @@ function TinVerifier(){
 <script>
     function NinVerifier(){
         var nin_no = document.getElementById("nida_no").value;
-        var txtBox = document.getElementById('fname_nat_local');
-        var mname = document.getElementById('mname_nat_local');
-        var lname = document.getElementById('lname_nat_local');
-        var gender = document.getElementById('gender_nat');
-        var dob = document.getElementById('basicFlatpickr1');
+        var nida_question = document.getElementById("nida_question").value;
+        var nida_answer = document.getElementById("nida_answer").value;
+        // var txtBox = document.getElementById('fname_nat_local');
+        // var mname = document.getElementById('mname_nat_local');
+        // var lname = document.getElementById('lname_nat_local');
+        // var gender = document.getElementById('gender_nat');
+        // var dob = document.getElementById('basicFlatpickr1');
         $(".NinLoader").show();
         $(".NinFirst").hide();
+       
         $.ajax({
             url: "/NINVerification",
             type: 'POST',
-            data: JSON.stringify({"nin_no": nin_no}),
+            data: JSON.stringify({"nin_no": nin_no, "nida_question": nida_question, "nida_answer": nida_answer}),
             contentType: 'application/json',
             success: function(response) {
                 if(typeof(response) === "string"){response = JSON.parse(response)}

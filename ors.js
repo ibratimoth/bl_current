@@ -68,14 +68,15 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json())
 var VERURL = "http://41.59.225.60:9010/";
 // var VERURL = "http://41.59.228.17:9010/";
-var BASEURL = "http://41.59.225.45:3333/"
-// var BASEURL = "http://41.59.228.19:8281/";
+// var BASEURL = "http://41.5.45:3333/"
+var BASEURL = "http://41.59.228.19:8281/";
 var loginAPI = BASEURL+"api/login";
 var tinAPI = BASEURL+"api/VerifyTIN";
 
 var bnAPI = VERURL+"brela/v1/wbs/businessName/";
 var companyAPI = VERURL+"brela/v1/wbs/company/";
-var ninAPI = BASEURL+"api/VerifyNIN";
+// var ninAPI = BASEURL+"api/VerifyNIN";
+var ninAPI = "https://api.brela.go.tz/api/verifyNINQns";
 var APIURL = "http://127.0.0.1:8088/";
 // var APIURL = "http://41.59.225.60:3000/";
 
@@ -182,16 +183,16 @@ app.get('/GenTrackNo',function(req,res){
       console.log(new Date() + ": Fail to generate Tracking Number")
     }
     console.log('response.body')
-    console.log(response.body)
-    if(response.body == 'failed'){
+    
+    if(response.body.status == 'failed'){
       res.send({status: "failed"})
     }else{
       var jsonData = JSON.parse(response.body);
-      if(jsonData.status == 'fail'){
+      console.log(jsonData.status)
+      if(jsonData.status == 'failed'){
         res.send("No tracking Number generated")
       }else{
         console.log(new Date() + ": Successful generate Tracking Number")
-      
         res.send(jsonData[0].trackingNo)
         res.end()
       }
@@ -1421,13 +1422,13 @@ app.get('/district/:id', function (req, res) {
 });
 
 app.get('/ApplyBL',function(req,res){
-if(typeof req.session.userID !== "undefined" || req.session.userID === true){
-  // res.render(path.join(__dirname+'/public/ors/new_buslic'));
-  res.render(path.join(__dirname+'/public/ors/apply_new_form'), {controller: 1});
-}else{
-  //console.log(loginTrial)
-  res.redirect('/');
-}
+  if(typeof req.session.userID !== "undefined" || req.session.userID === true){
+    // res.render(path.join(__dirname+'/public/ors/new_buslic'));
+    res.render(path.join(__dirname+'/public/ors/apply_new_form'), {controller: 1});
+  }else{
+    //console.log(loginTrial)
+    res.redirect('/');
+  }
 });
 
 app.get('/ApplyBLBranch/:id',function(req,res){
@@ -2927,44 +2928,65 @@ app.post('/BNVerification',function(req,res){
 });
 
 app.post('/NINVerification',function(req,res){
-  var ninNo = req.body.nin_no;
-  var year = ninNo.slice(0, 4);
-  var month = ninNo.slice(4, 6);
-  var day = ninNo.slice(6, 8);
-  var ninDate = year+'-'+month+'-'+day;
+  console.log(req.body)
+  // var ninNo = req.body.nin_no;
+  // var year = ninNo.slice(0, 4);
+  // var month = ninNo.slice(4, 6);
+  // var day = ninNo.slice(6, 8);
+  // var ninDate = year+'-'+month+'-'+day;
   if(typeof req.session.userID !== "undefined" || req.session.userID === true){
-  request({
-   //  url: BASEURL+"/"+tinAPI+"?TIN="+tinNo+"&DateOfRegistrationOfTIN="+tinDate,
-   url: ninAPI+"?NIN="+ninNo+"&DateOfBirth="+ninDate,
-    method: 'GET',
-  }, function(error, response, body){
-    if(error) {          
-      console.log("fail to NINVerification " + error);
-          // sql.close();
-          res.send({"status": "failed"});
+    request({
+      url: ninAPI,
+      method: 'POST',
+      json: {
+        NIN: req.body.nin_no, 
+        QNANSW: req.body.nida_answer, 
+        RQCode: req.body.nida_question
+      },
+    }, function(error, response, body){
+      if(error) {          
+        console.log("fail to saveBStageSecond " + error);
+          //sql.close();
+          res.send({status: "failed"});
         }
-    console.log(response.body)
-    if(response.body == 'TypeError'){
-      res.send({"status": "failed"})
-    }else{
-     var jsonData = JSON.parse(response.body);
-      var resultcode = jsonData.resultcode;
-      if(resultcode == 0){
-        var FIRSTNAME = jsonData.FIRSTNAME;
-        var MIDDLENAME = jsonData.MIDDLENAME;
-        var SURNAME = jsonData.SURNAME;
-        var SEX = jsonData.SEX;
-        var DATEOFBIRTH = jsonData.DATEOFBIRTH;
-       res.send({"status": "success", "fname": FIRSTNAME, "mname": MIDDLENAME, "lname": SURNAME, "gender": SEX, "dob": DATEOFBIRTH})
-      }else{
-       res.send({"status": "failed"})
-      }
-    }
-  });
-}else{
-  //console.log(loginTrial)
-  res.redirect('/');
-}
+      console.log(response.body)
+      var BizOwnerType = response.body
+      req.session.BizOwnerType = BizOwnerType
+      res.send(req.session.BizOwnerType)
+    });
+    
+    // request({
+    // //  url: BASEURL+"/"+tinAPI+"?TIN="+tinNo+"&DateOfRegistrationOfTIN="+tinDate,
+    // url: ninAPI+"?NIN="+ninNo+"&DateOfBirth="+ninDate,
+    //   method: 'GET',
+    // }, function(error, response, body){
+    //   if(error) {          
+    //     console.log("fail to NINVerification " + error);
+    //         // sql.close();
+    //         res.send({"status": "failed"});
+    //       }
+    //   console.log(response.body)
+    //   if(response.body == 'TypeError'){
+    //     res.send({"status": "failed"})
+    //   }else{
+    //   var jsonData = JSON.parse(response.body);
+    //     var resultcode = jsonData.resultcode;
+    //     if(resultcode == 0){
+    //       var FIRSTNAME = jsonData.FIRSTNAME;
+    //       var MIDDLENAME = jsonData.MIDDLENAME;
+    //       var SURNAME = jsonData.SURNAME;
+    //       var SEX = jsonData.SEX;
+    //       var DATEOFBIRTH = jsonData.DATEOFBIRTH;
+    //     res.send({"status": "success", "fname": FIRSTNAME, "mname": MIDDLENAME, "lname": SURNAME, "gender": SEX, "dob": DATEOFBIRTH})
+    //     }else{
+    //     res.send({"status": "failed"})
+    //     }
+    //   }
+    // });
+  }else{
+    //console.log(loginTrial)
+    res.redirect('/');
+  }
 });
   
 app.post('/saveStageSecond',function(req,res){
@@ -3327,7 +3349,7 @@ app.get('/Dashboard', async function(req, res) {
     if(error){
       console.log(new Date() + " dashboard fail to load " + error)
       res.send("failed")
-    }
+    }else{
     //console.log(response.body)
     // var jsonData = JSON.parse(response.body);
     var jsonData = response.body;
@@ -3427,6 +3449,7 @@ app.get('/Dashboard', async function(req, res) {
     // res.render(path.join(__dirname+'/public/ors/licence_list'), { data: objs12 });
     res.render(path.join(__dirname+'/public/ors/dashboard1'), { data: objs12 });
     // res.send(objs12)
+  }
   });
 }else{
   //console.log(loginTrial)
@@ -4296,7 +4319,7 @@ app.get('/MyLic', async function(req, res) {
 
 app.get('/logout',function(req,res){
   console.log(new Date() + ": Successful logout")
-  res.redirect('/');
+  res.redirect('https://bors.brela.go.tz');
 });
 
 app.post('/auth',function(req,res){
@@ -9151,6 +9174,7 @@ app.get('/genBLTrackingNo', function (req, res) {
       // query to the database and execute procedure 
       let query = "exec Get_BLTrackingNo_SP";
       // console.log(query)
+      console.log("connected");
       request.query(query, function (err, recordset) {
           if (err) {
             console.log("fail to generate tracking number");
@@ -9159,6 +9183,8 @@ app.get('/genBLTrackingNo', function (req, res) {
           }else{
          // var trackNo = recordset.recordset;
          sql.close();
+         console.log('recordset')
+         console.log(recordset)
           res.send(recordset.recordset);
           }
       });
