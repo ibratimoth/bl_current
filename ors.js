@@ -18,9 +18,9 @@ const { report } = require('process');
 var sql = require("mssql");
 var http = require('http');
 const e = require('express');
-require('dotenv').config()
+require('dotenv').config();
 
-
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 var app = express(); 
 // Create application/x-www-form-urlencoded parser  
 var urlencodedParser = bodyParser.urlencoded({ extended: false })  
@@ -36,16 +36,14 @@ console.log = function () {
 console.error = console.log;
 
 var app = express();
+
 app.use(session({
-	secret: 'secret',
-	resave: true,
-	saveUninitialized: true,
-//   cookie: {
- 
-//     // Session expires after 1 min of inactivity.
-//     // expires: 900000
-//     maxAge: 600 * 1000
-// }
+  secret: 'BrelaBusinessLicence', 
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+      maxAge: 60 * 60 * 1000 
+  }
 }));
 
 var optionsAlex = {
@@ -66,18 +64,17 @@ app.set('view engine', 'ejs');
 
 // parse application/json
 app.use(bodyParser.json())
-var VERURL = "http://41.59.225.60:9010/";
-// var VERURL = "http://41.59.228.17:9010/";
-// var BASEURL = "http://41.5.45:3333/"
-var BASEURL = "http://41.59.228.19:8281/";
+// var VERURL = "http://41.59.225.60:9010/";
+var VERURL = "http://41.59.228.17:9010/";
+var BASEURL = "https://api.brela.go.tz/"
+// var BASEURL = "http://41.59.228.19:8281/";
 var loginAPI = BASEURL+"api/login";
 var tinAPI = BASEURL+"api/VerifyTIN";
 
 var bnAPI = VERURL+"brela/v1/wbs/businessName/";
 var companyAPI = VERURL+"brela/v1/wbs/company/";
-// var ninAPI = BASEURL+"api/VerifyNIN";
-var ninAPI = "https://api.brela.go.tz/api/verifyNINQns";
-var APIURL = "http://127.0.0.1:8088/";
+var ninAPI = BASEURL+"api/VerifyNIN";
+var APIURL = "http://41.59.228.19:8088/";
 // var APIURL = "http://41.59.225.60:3000/";
 
 var TrackNoGen = APIURL+'genBLTrackingNo';
@@ -96,6 +93,7 @@ var GetPostCode = APIURL+'postcode';
 var GetParticulars = APIURL+'getParticular';
 var GetStageTwo = APIURL+'originTypeView';
 var GetBusOnwerType = APIURL+'busOnwerType';
+var checkControlAPI = APIURL+'checkControl'
 var GetSubWards = APIURL+'subwards'
 var GetOriginType = APIURL+'originType';
 var GetOwnerType = APIURL+'ownerType';
@@ -152,22 +150,125 @@ var GetInvoiceDetails = APIURL+'getInvoiceDataDetails';
 var UpdatePaidAmount = APIURL+'UpdatePaidAmount';
 var UpdateAmount = APIURL+'UpdatePaymentDetails';
 
-app.get('/',function(req,res){
-  res.render(path.join(__dirname+'/public/ors/login'));
+
+const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
+
+
+// Use cookie-parser middleware
+app.use(cookieParser());
+
+// Session setup (for handling req.session)
+app.use(session({
+    secret: 'BrelaBusinessLicence',  
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: process.env.NODE_ENV === 'production' } 
+}));
+
+// Use JSON parser middleware
+app.use(express.json());
+
+// CORS and Preflight Headers Setup
+const setCorsHeaders = (res) => {
+    if (res && res.set) {
+        res.set({
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+            'Access-Control-Allow-Credentials': 'true',
+        });
+    } else {
+        console.error('Response object is not defined or invalid');
+    }
+};
+
+// Middleware function to set Authorization header
+const setAuthorizationHeader = (req, res, next) => {
+    // Handle CORS preflight request
+    if (req.method === 'OPTIONS') {
+        setCorsHeaders(res);
+        return res.status(200).json('OK');
+    }
+
+    // Get the JWT token from cookies
+    // const token = req.cookies.jwt_token;
+    const token = req.session.token;
+    const authHeader = req.headers['authorization']
+    console.log('Token from cookies:', token);
+    console.log('authHeaders:', authHeader);
+    if (token || authHeader) {
+        try {
+            // Verify the token and attach decoded user data to the request
+            const decoded = jwt.verify(token?token:authHeader, process.env.JWT_SECRET);
+            req.user = decoded; // Attach decoded token to the request
+            
+            // Set the userID in the session
+            req.session.userID = decoded.uid;
+
+            // Set Authorization header for downstream use
+            req.headers.authorization = `Bearer ${token}`;
+        } catch (err) {
+            console.log('Token verification failed:', err.message);
+            return unauthorizedResponse(req, res);
+        }
+    } else {
+        console.log('Token not found in cookies');
+        return unauthorizedResponse(req, res);
+    }
+
+    setCorsHeaders(res);
+    next(); // Proceed with the request
+};
+
+// Handle unauthorized responses
+const unauthorizedResponse = (req, res) => {
+    const loginUrl = process.env.BOS + '/login'; // Redirect to login
+    setCorsHeaders(res);
+    return res.redirect(loginUrl);
+};
+
+// Login endpoint (set cookie with token)
+app.get('/loginBrela', (req, res) => {
+    const token = req.query.auth_token?.trim();
+    if (!token) {
+        return res.status(400).json({ message: 'Token is required' });
+    }
+
+    req.session.token = token;
+
+    // Verify and decode the JWT token
+    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+        if (err) {
+            return res.status(401).json({ message: 'Invalid token' });
+        }
+
+        // Set the cookie with the JWT token
+        res.cookie('jwt_token', token, {
+            maxAge: 60 * 60 * 1000, // 1 hour
+            httpOnly: true,  // Prevent access to cookies from JavaScript
+            secure: process.env.NODE_ENV === 'production', // Secure in production
+            path: '/', // Send cookie with every request to the server
+        });
+
+        console.log('Cookie set with token:', token);
+        res.redirect('/Dashboard'); // Redirect after login
+    });
 });
 
-// app.get('/Dashboard',function(req,res){
-//   var loginTrial = req.session.userID;
-//   if(typeof req.session.userID !== "undefined" || req.session.userID === true){
-//     var current_date = new Date();
-//     var today = dateFormat(current_date, "dd, mmm yyyy");
-//     res.render(path.join(__dirname+'/public/ors/dashboard'), { today: today, userID: req.session.userID });
-//   }else{
-//     //console.log(loginTrial)
-//     res.redirect('/');
-//   }
+// Dashboard route (requires authentication
 
-// });
+// Sample middleware to log request info
+app.use((req, res, next) => {
+    console.log('userID from session:', req.session?.userID);
+    console.log('Cookies:', req.session.token);
+    console.log('Authorization Header:', req.headers.authorization);
+    next();
+});
+
+app.use(setAuthorizationHeader);
+
+
 
 app.get('/ApplyBL1',function(req,res){
   res.render(path.join(__dirname+'/public/ors/new_buslic'));
@@ -183,16 +284,16 @@ app.get('/GenTrackNo',function(req,res){
       console.log(new Date() + ": Fail to generate Tracking Number")
     }
     console.log('response.body')
-    
-    if(response.body.status == 'failed'){
+    console.log(response.body)
+    if(response.body == 'failed'){
       res.send({status: "failed"})
     }else{
       var jsonData = JSON.parse(response.body);
-      console.log(jsonData.status)
-      if(jsonData.status == 'failed'){
+      if(jsonData.status == 'fail'){
         res.send("No tracking Number generated")
       }else{
         console.log(new Date() + ": Successful generate Tracking Number")
+      
         res.send(jsonData[0].trackingNo)
         res.end()
       }
@@ -228,11 +329,13 @@ app.post('/ApplyBizType',function(req,res){
   request({
     url: ApplyBizTypeLink,
     method: 'POST',
-    json: {BLNumber: BLNumber, newtrackingNo: newtrackingNo, 
+    json: {
+      BLNumber: BLNumber, newtrackingNo: newtrackingNo, 
       sectorlist: sectorlist, categorylist: categorylist, 
       typelist: typelist, nounits: nounits, 
       businessLicenceClassId: businessLicenceClassId, 
-      issuingAuthorityId: issuingAuthorityId},
+      issuingAuthorityId: issuingAuthorityId
+    },
   }, function(error1, response1, body1){
     if(error1) {          
       console.log("fail to Apply Business Type " + error1);
@@ -277,6 +380,24 @@ app.post('/ApplyBizType',function(req,res){
   });
   });
 });
+});
+
+app.post('/checkControl',function(req,res){
+  console.log(req.body)
+  var nida_no = req.body.nida_no;
+  var TypeList = req.body.TypeList;
+    request({
+      url: checkControlAPI,
+      method: 'POST',
+      json: {nida_no: nida_no, TypeList: TypeList},
+    }, function(error3, response3, body3){
+      if(error3) {          
+        console.log("fail to Get renew Stage Address " + error3);
+        }
+        console.log('checkcontrol')
+        console.log(body3)
+      res.send(body3)
+    });
 });
 
 app.post('/applyBizTypeLic', function (req, res) {
@@ -352,21 +473,7 @@ app.post('/applyBizTypeLic', function (req, res) {
        var RegNo = result_from31[0].RegNo;
       //  console.log("====== 2" + RegNo)
 
-      var request1 = new sql.Request();
-      // request1.input('RegNo', RegNo);
-      // request22.input('ApplicationStatusId', ApplicationStatusId);
-      // request1.query('SELECT COUNT(*) AS kaunti FROM dbo.BusinessLicApplication ' + 
-      // ' WHERE RegNo = @RegNo AND ApplicationStatusId = @ApplicationStatusId', 
-      // function (err21, recordset) {
-      // if (err21) {          
-      //  console.log("fail to BusinessLicApplication " + err21);
-      //    // sql.close();
-      //    // res.send({status: "failed"});
-      //  }
-      // var result_from311 = recordset.recordset;
-
-      // var kaunti = result_from311[0].kaunti;
-      // if(kaunti >= 0){
+      // var request1 = new sql.Request();
 
        var request22 = new sql.Request();
        request22.input('newtrackingNo', newtrackingNo);
@@ -506,6 +613,44 @@ app.post('/applyBizTypeLic', function (req, res) {
              });
    });
  });
+});
+
+app.post('/checkControl', function (req, res) {
+  console.log(req.body)
+  var nida_no = req.body.nida_no;
+  var TypeList = req.body.TypeList;
+   
+   sql.connect(configBL, function (err) {
+   
+     if (err) {          
+      console.log("fail to applyBizTypeLic " + err);
+          sql.close();
+          res.send({status: "failed"});
+        };
+  //  console.log("======>>> " + BLNumber)
+          var request12 = new sql.Request();
+          request12.input('TypeList', TypeList);
+          request12.input('nida_no', nida_no);
+          request12.query('SELECT COUNT(*) kaunti FROM dbo.BusinessLicApplication ' + 
+          ' WHERE BusinessTypeId = @TypeList AND RegNo = @nida_no', 
+          function (err1, recordset) {
+            if (err1) {          
+              console.log("fail to BusinessLicApplication " + err1);
+               // sql.close();
+                res.send({status: "failed"});
+              }
+            var result_form = recordset.recordset;
+            var kaunti = result_form[0].kaunti;
+            console.log('kaunti')
+            console.log(kaunti)
+            if(kaunti <= 0){
+              res.send({"status": 'new'})
+            }
+            if(kaunti > 0){
+              res.send({"status": 'exist'})
+            }
+          })
+      })
 });
 
 app.get('/GetRegions',function(req,res){
@@ -1422,13 +1567,13 @@ app.get('/district/:id', function (req, res) {
 });
 
 app.get('/ApplyBL',function(req,res){
-  if(typeof req.session.userID !== "undefined" || req.session.userID === true){
-    // res.render(path.join(__dirname+'/public/ors/new_buslic'));
-    res.render(path.join(__dirname+'/public/ors/apply_new_form'), {controller: 1});
-  }else{
-    //console.log(loginTrial)
-    res.redirect('/');
-  }
+if(typeof req.session.userID !== "undefined" || req.session.userID === true){
+  // res.render(path.join(__dirname+'/public/ors/new_buslic'));
+  res.render(path.join(__dirname+'/public/ors/apply_new_form'), {controller: 1});
+}else{
+  //console.log(loginTrial)
+  res.redirect('/');
+}
 });
 
 app.get('/ApplyBLBranch/:id',function(req,res){
@@ -1527,6 +1672,35 @@ app.post('/ApplicationDetails', function(req, res){
       })
 })
 
+// app.post('/subwards', function(req, res){
+//   var subwardId = req.body.subwardId;
+//   var objs13 = [];
+//   sql.connect(config, function (err) {
+  
+//    if (err) {          
+//      console.log("fail to subwards " + err);
+//          sql.close();
+//          res.send({status: "failed"});
+//        }else{
+//         // console.log('subward')
+//    var request1 = new sql.Request();
+//    request1.input('subwardId', subwardId);
+//    request1.query('SELECT * FROM SUBWARD WHERE POSTCODE = @subwardId', 
+//    function (err, recordset) {
+//    if (err) {          
+//      console.log("fail to SUBWARD " + err);
+//          sql.close();
+//          res.send({status: "failed"});
+//        }
+//        else{
+//    sql.close()
+//      res.send(recordset.recordset)
+//  }
+//    })
+//  }
+//      })
+// })
+
 app.post('/subwards', function(req, res){
   var subwardId = req.body.subwardId;
   var objs13 = [];
@@ -1548,14 +1722,6 @@ app.post('/subwards', function(req, res){
          res.send({status: "failed"});
        }
        else{
-        // console.log('recordset.recordset')
-        // console.log(recordset.recordset)
-  //  var result_from = recordset.recordset;
-  //  for(var i = 0; i < result_from.length; i++){
-  //    var Comment = result_from[i].Comment;
-  //    objs13.push({status: "success", "Comment": Comment})
-  //  }
-  //  // console.log(objs13)
    sql.close()
      res.send(recordset.recordset)
  }
@@ -1660,6 +1826,8 @@ app.get('/firstStageView', async function(req, res) {
   var AplicationID;
   var BusinessClassId;
   var BusinessTypeId;
+  var BusinessTypeName;
+  var CompanyEmail;
   var RegNo;
   if(typeof req.session.userID !== "undefined" || req.session.userID === true){
   request({
@@ -1680,7 +1848,10 @@ app.get('/firstStageView', async function(req, res) {
         date_birth = dateFormat(date_birth, "dd-mmm-yyyy");
         var citizen = jsonData[i].citizen;
         var gender = jsonData[i].gender;
-        objs12.push({"fname": fname, "mname": mname, "lname": lname, "date_birth": date_birth, "citizen": citizen, "gender": gender})
+        objs12.push({
+                      "fname": fname, "mname": mname, "lname": lname, 
+                      "date_birth": date_birth, "citizen": citizen, "gender": gender
+                    })
         }
               OrigTypeName = '';
               request({
@@ -1754,6 +1925,8 @@ app.get('/firstStageView', async function(req, res) {
                                       var jsonData = JSON.parse(body);
                                       BusinessTypeId = jsonData[0].BusinessTypeId;
                                       BusinessTypeName = jsonData[0].BusinessTypeName;
+                                      BusinessCategoryName = jsonData[0].BusinessCategoryName;
+                                      var SectorName = jsonData[0].SectorName;
                                       request({
                                         url: GetsavedAreaType+"/"+req.session.req_id_view,
                                         method: 'GET',
@@ -1880,18 +2053,18 @@ app.get('/firstStageView', async function(req, res) {
                                                                                   if(body !== undefined){
                                                                                     var jsonData = JSON.parse(body);
                                                                                     ApplicationStageId = jsonData[0].ApplicationStageId;
-                                                                          res.send({"payment": objs13, "WardName": WardName, "AplicationID": AplicationID, "ServiceCode": ServiceCode,
-                                                                          "DistrictName": DistrictName, "RegionName": RegionName, "HouseNo": HouseNo, 
-                                                                          "BlockNo": BlockNo, "PlotNo": PlotNo, "UnsurveyedArea": UnsurveyedArea, 
-                                                                          "CompanyEmail": CompanyEmail, "CompanyPhone": CompanyPhone, "PoBox": PoBox, 
-                                                                          "trackNo": req.session.req_id_view, "person": objs12, "RegNo": RegNo, 
-                                                                          "OrigTypeName": OrigTypeName, "OwnerSubTypeName": OwnerSubTypeName, "EntityName": EntityName, 
-                                                                          "AplicationTIN": AplicationTIN, "BusinessTypeName": BusinessTypeName, "OwnerSubTypeId": OwnerSubTypeId,
-                                                                          "AreaTypeName": AreaTypeName, "Road": Road, "PostCode": PostCode, "WardId": WardId,
-                                                                          "Street": Street, "BusinessClassId": BusinessClassId, "RegionCode": RegionCode, "DistrictCode": DistrictCode,
-                                                                          "BusinessLicOwnerTypeId": BusinessLicOwnerTypeId, "ApplicationStageId": ApplicationStageId,
-                                                                          "BusinessTypeId": BusinessTypeId, "AreaTypeId": AreaTypeId, "invoiceData": objs14})
-                                                                                  }
+                                                                                res.send({"payment": objs13, "WardName": WardName, "AplicationID": AplicationID, "ServiceCode": ServiceCode,
+                                                                                "DistrictName": DistrictName, "RegionName": RegionName, "HouseNo": HouseNo, 
+                                                                                "BlockNo": BlockNo, "PlotNo": PlotNo, "UnsurveyedArea": UnsurveyedArea, "SectorName": SectorName,
+                                                                                "CompanyEmail": CompanyEmail, "CompanyPhone": CompanyPhone, "PoBox": PoBox, 
+                                                                                "trackNo": req.session.req_id_view, "person": objs12, "RegNo": RegNo, "BusinessCategoryName": BusinessCategoryName,
+                                                                                "OrigTypeName": OrigTypeName, "OwnerSubTypeName": OwnerSubTypeName, "EntityName": EntityName, 
+                                                                                "AplicationTIN": AplicationTIN, "BusinessTypeName": BusinessTypeName, "OwnerSubTypeId": OwnerSubTypeId,
+                                                                                "AreaTypeName": AreaTypeName, "Road": Road, "PostCode": PostCode, "WardId": WardId,
+                                                                                "Street": Street, "BusinessClassId": BusinessClassId, "RegionCode": RegionCode, "DistrictCode": DistrictCode,
+                                                                                "BusinessLicOwnerTypeId": BusinessLicOwnerTypeId, "ApplicationStageId": ApplicationStageId,
+                                                                                "BusinessTypeId": BusinessTypeId, "AreaTypeId": AreaTypeId, "invoiceData": objs14})
+                                                                                }
                                                                                 }
                                                                                 })
                                                                             }
@@ -2336,6 +2509,7 @@ app.get('/GetBusSector',function(req,res){
 
 app.get('/GetBLAttachment',function(req,res){
   console.log("yes")
+  console.log("tunafika..............................")
   console.log(req.session.BizOwnerType)
   var objs12 = [];
   if(typeof req.session.userID !== "undefined" || req.session.userID === true){
@@ -2403,6 +2577,9 @@ app.get('/GetBusTypePermits/:id',function(req,res){
   request({
     url: GetBLLPermitLink+"/"+bizNo,
     method: 'GET',
+    headers: {
+      'Authorization': req.headers.authorization
+     }
   }, function(error, response, body){
     if(error) res.send("failed")
     var jsonData = JSON.parse(response.body);
@@ -2605,20 +2782,28 @@ app.post('/UploadFx',function(req,res){
    var trackNo = req.body.trackNo;
    var userId = req.session.userID;
    var token = req.session.token;
-   atachment = req.body.atachment;
-   atachment = atachment.replace("data:application/pdf;base64,", "");
+   console.log('..trackingNO:', trackngNo);
+   console.log('..AttachID:', attachmentId);
+   console.log('..trackNO:', trackNo);
+   console.log('..uSERID:', userId);
+   console.log('..tOKEN:', token);
+   let atachment = req.body.atachment;
+    atachment = atachment.replace("data:application/pdf;base64,", "");
    console.log(atachment);
    if(typeof req.session.userID !== "undefined" || req.session.userID === true){
    request({
      url: UploadFxLink,
      method: 'POST',
      json: {trackNo: trackNo, trackngNo: trackngNo, userId: userId, attachmentId: attachmentId, atachment: atachment, token: token},
+     headers: {
+      'Authorization': req.headers.authorization
+     }
    }, function(error, response, body){
      if(error) {          
       console.log("fail to UploadFx " + error);
           // sql.close();
-          res.send({status: "failed"});}
-       res.send({"sucess": "sucess"})
+        return  res.send({status: "failed"});}
+       return res.send({"sucess": "sucess"})
    });
   }else{
     //console.log(loginTrial)
@@ -2626,34 +2811,44 @@ app.post('/UploadFx',function(req,res){
   }
 });
 
-app.post('/UploadFxP',function(req,res){
-  //  console.log(req.body)
-     var trackngNo = req.session.TrackingNo;
-     var attachmentId = req.body.attachmentId;
-     var trackNo = req.body.trackNo;
-     var userId = req.session.userID;
-     var token = req.session.token;
-     atachment = req.body.atachment;
-     atachment = atachment.replace("data:application/pdf;base64,", "");
-     console.log(atachment);
-     if(typeof req.session.userID !== "undefined" || req.session.userID === true){
-     request({
-       url: UploadFxPLink,
-       method: 'POST',
-       json: {trackNo: trackNo, trackngNo: trackngNo, userId: userId, attachmentId: attachmentId, atachment: atachment, token: token},
-     }, function(error, response, body){
-       if(error) {          
+app.post('/UploadFxP', function (req, res) {
+  var trackngNo = req.session.TrackingNo;
+  var attachmentId = req.body.attachmentId;
+  var trackNo = req.body.trackNo;
+  var userId = req.session.userID;
+  var token = req.session.token;
+  var atachment = req.body.atachment;
+  var attachment = atachment.replace("data:application/pdf;base64,", "");
+
+  console.log('trackingNo: ', trackngNo)
+  if (req.session.userID) {
+    request({
+      url: UploadFxPLink,
+      method: 'POST',
+      json: {
+        trackNo: trackNo,
+        trackngNo: trackngNo,
+        userId: userId,
+        attachmentId: attachmentId,
+        atachment: attachment,
+        token: token
+      },
+      headers: {
+       'Authorization': req.headers.authorization
+      }
+    }, function (error, response, body) {
+      // Handle the case where the request fails
+      if (error) {
         console.log("fail to UploadFxP " + error);
-            // sql.close();
-            res.send({"failed": "failed"});
-          }
-         res.send({"sucess": "sucess"})
-     });
-    }else{
-      //console.log(loginTrial)
-      res.redirect('/');
-    }
-  });
+        return res.send({ "failed": "failed" });
+      }
+      return res.send({ "success": "success" });
+    });
+  } else {
+    return res.redirect('/');
+  }
+});
+
 
 app.post('/UploadFxSup',function(req,res){
   //  console.log(req.body)
@@ -2769,10 +2964,17 @@ app.post('/TINVerification',function(req,res){
    var tinNo = req.body.tin_no;
    var busowntype = req.body.busowntype;
    if(typeof req.session.userID !== "undefined" || req.session.userID === true){
+
+    const token = req.session.token;
+    // var tiinAPI = "http://api.brela.go.tz/api/VerifyTIN";
    request({
     //  url: BASEURL+"/"+tinAPI+"?TIN="+tinNo+"&DateOfRegistrationOfTIN="+tinDate,
     url: tinAPI+"?TIN="+tinNo,
      method: 'GET',
+    //  strictSSL: false,
+     headers: {
+      'Authorization': req.headers.authorization
+     }
    }, function(error, response, body){
      if(error) {          
       console.log("fail to TINVerification " + error);
@@ -2783,9 +2985,9 @@ app.post('/TINVerification',function(req,res){
       var jsonData = JSON.parse(response.body);
       // var jsonData = response.body;
        var resultcode = jsonData.resultcode;
-      //  console.log(resultcode)
+      console.log(resultcode)
        if(resultcode == 0){
-         var resultset = jsonData.result;
+         var resultset = jsonData.data.result;
          console.log("isperson"+resultset.IsPerson)
          if(resultset.IsPerson && busowntype == 1){
           var FirstName = resultset.FirstName;
@@ -2823,12 +3025,15 @@ app.post('/TINVerification',function(req,res){
 
 app.post('/CompanyVerification',function(req,res){
   var inco_no = req.body.inco_no;
-  console.log(inco_no)
+  console.log('Incorporate number:.....:= ',inco_no)
   if(typeof req.session.userID !== "undefined" || req.session.userID === true){
   request({
    //  url: BASEURL+"/"+tinAPI+"?TIN="+tinNo+"&DateOfRegistrationOfTIN="+tinDate,
    url: companyAPI+""+inco_no,
     method: 'GET',
+    headers: {
+      'Authorization': req.headers.authorization
+     }
   }, function(error, response, body){
     if(error) {          
       console.log("fail to CompanyVerification " + error);
@@ -2928,65 +3133,44 @@ app.post('/BNVerification',function(req,res){
 });
 
 app.post('/NINVerification',function(req,res){
-  console.log(req.body)
-  // var ninNo = req.body.nin_no;
-  // var year = ninNo.slice(0, 4);
-  // var month = ninNo.slice(4, 6);
-  // var day = ninNo.slice(6, 8);
-  // var ninDate = year+'-'+month+'-'+day;
+  var ninNo = req.body.nin_no;
+  var year = ninNo.slice(0, 4);
+  var month = ninNo.slice(4, 6);
+  var day = ninNo.slice(6, 8);
+  var ninDate = year+'-'+month+'-'+day;
   if(typeof req.session.userID !== "undefined" || req.session.userID === true){
-    request({
-      url: ninAPI,
-      method: 'POST',
-      json: {
-        NIN: req.body.nin_no, 
-        QNANSW: req.body.nida_answer, 
-        RQCode: req.body.nida_question
-      },
-    }, function(error, response, body){
-      if(error) {          
-        console.log("fail to saveBStageSecond " + error);
-          //sql.close();
-          res.send({status: "failed"});
+  request({
+   //  url: BASEURL+"/"+tinAPI+"?TIN="+tinNo+"&DateOfRegistrationOfTIN="+tinDate,
+   url: ninAPI+"?NIN="+ninNo+"&DateOfBirth="+ninDate,
+    method: 'GET',
+  }, function(error, response, body){
+    if(error) {          
+      console.log("fail to NINVerification " + error);
+          // sql.close();
+          res.send({"status": "failed"});
         }
-      console.log(response.body)
-      var BizOwnerType = response.body
-      req.session.BizOwnerType = BizOwnerType
-      res.send(req.session.BizOwnerType)
-    });
-    
-    // request({
-    // //  url: BASEURL+"/"+tinAPI+"?TIN="+tinNo+"&DateOfRegistrationOfTIN="+tinDate,
-    // url: ninAPI+"?NIN="+ninNo+"&DateOfBirth="+ninDate,
-    //   method: 'GET',
-    // }, function(error, response, body){
-    //   if(error) {          
-    //     console.log("fail to NINVerification " + error);
-    //         // sql.close();
-    //         res.send({"status": "failed"});
-    //       }
-    //   console.log(response.body)
-    //   if(response.body == 'TypeError'){
-    //     res.send({"status": "failed"})
-    //   }else{
-    //   var jsonData = JSON.parse(response.body);
-    //     var resultcode = jsonData.resultcode;
-    //     if(resultcode == 0){
-    //       var FIRSTNAME = jsonData.FIRSTNAME;
-    //       var MIDDLENAME = jsonData.MIDDLENAME;
-    //       var SURNAME = jsonData.SURNAME;
-    //       var SEX = jsonData.SEX;
-    //       var DATEOFBIRTH = jsonData.DATEOFBIRTH;
-    //     res.send({"status": "success", "fname": FIRSTNAME, "mname": MIDDLENAME, "lname": SURNAME, "gender": SEX, "dob": DATEOFBIRTH})
-    //     }else{
-    //     res.send({"status": "failed"})
-    //     }
-    //   }
-    // });
-  }else{
-    //console.log(loginTrial)
-    res.redirect('/');
-  }
+    console.log(response.body)
+    if(response.body == 'TypeError'){
+      res.send({"status": "failed"})
+    }else{
+     var jsonData = JSON.parse(response.body);
+      var resultcode = jsonData.resultcode;
+      if(resultcode == 0){
+        var FIRSTNAME = jsonData.FIRSTNAME;
+        var MIDDLENAME = jsonData.MIDDLENAME;
+        var SURNAME = jsonData.SURNAME;
+        var SEX = jsonData.SEX;
+        var DATEOFBIRTH = jsonData.DATEOFBIRTH;
+       res.send({"status": "success", "fname": FIRSTNAME, "mname": MIDDLENAME, "lname": SURNAME, "gender": SEX, "dob": DATEOFBIRTH})
+      }else{
+       res.send({"status": "failed"})
+      }
+    }
+  });
+}else{
+  //console.log(loginTrial)
+  res.redirect('/');
+}
 });
   
 app.post('/saveStageSecond',function(req,res){
@@ -3349,7 +3533,7 @@ app.get('/Dashboard', async function(req, res) {
     if(error){
       console.log(new Date() + " dashboard fail to load " + error)
       res.send("failed")
-    }else{
+    }
     //console.log(response.body)
     // var jsonData = JSON.parse(response.body);
     var jsonData = response.body;
@@ -3449,7 +3633,6 @@ app.get('/Dashboard', async function(req, res) {
     // res.render(path.join(__dirname+'/public/ors/licence_list'), { data: objs12 });
     res.render(path.join(__dirname+'/public/ors/dashboard1'), { data: objs12 });
     // res.send(objs12)
-  }
   });
 }else{
   //console.log(loginTrial)
@@ -3491,6 +3674,7 @@ app.get('/OnGoingApp', async function(req, res) {
     var ServiceCode = jsonData[i].ServiceCode;
     var IsSentRegistry = jsonData[i].IsSentRegistry;
     var BusinessClassId = jsonData[i].BusinessClassId;
+    var EntityName = jsonData[i].EntityName;
     
     if(IsSentRegistry){
       IsSentRegistry == 1;
@@ -3562,7 +3746,7 @@ app.get('/OnGoingApp', async function(req, res) {
       }if(ApplicationStep == 7){
         ApplicationStep = 'Supplement'
       }
-      objs12.push({"BusinessClassId": BusinessClassId, "IsSentRegistry": IsSentRegistry, "ServiceCode": ServiceCode, "IsBranch": IsBranch, "BLNumber": BLNumber, "request_id": request_id, "trackingNo": trackingNo, "submittedDate": submittedDate, "createdDate": createdDate, "status": status, "businessTypeName": businessTypeName, "paymentStatus": PaymentStatus, "ApplicationStatusId": ApplicationStatusId, "ApplicationStep": ApplicationStep})
+      objs12.push({"BusinessClassId": BusinessClassId, "EntityName": EntityName, "IsSentRegistry": IsSentRegistry, "ServiceCode": ServiceCode, "IsBranch": IsBranch, "BLNumber": BLNumber, "request_id": request_id, "trackingNo": trackingNo, "submittedDate": submittedDate, "createdDate": createdDate, "status": status, "businessTypeName": businessTypeName, "paymentStatus": PaymentStatus, "ApplicationStatusId": ApplicationStatusId, "ApplicationStep": ApplicationStep})
     //  }
 
   //  });
@@ -3800,12 +3984,17 @@ app.get('/SubApplication', async function(req, res) {
       }if(ApplicationStep == 7){
         ApplicationStep = 'Supplement'
       }
-      objs12.push({"BusinessClassId": BusinessClassId, "EntityName": EntityName, "IsSentRegistry": IsSentRegistry, "ServiceCode": ServiceCode, "IsBranch": IsBranch, "BLNumber": BLNumber, "request_id": request_id, "trackingNo": trackingNo, "submittedDate": submittedDate, "createdDate": createdDate, "status": status, "businessTypeName": businessTypeName, "paymentStatus": PaymentStatus, "ApplicationStatusId": ApplicationStatusId, "ApplicationStep": ApplicationStep})
+      objs12.push({"BusinessClassId": BusinessClassId, "EntityName": EntityName, 
+      "IsSentRegistry": IsSentRegistry, "ServiceCode": ServiceCode, "IsBranch": IsBranch, 
+      "BLNumber": BLNumber, "request_id": request_id, "trackingNo": trackingNo, 
+      "submittedDate": submittedDate, "createdDate": createdDate, "status": status, 
+      "businessTypeName": businessTypeName, "paymentStatus": PaymentStatus, 
+      "ApplicationStatusId": ApplicationStatusId, "ApplicationStep": ApplicationStep})
     //  }
 
   //  });
     }
-    //console.log(objs12)
+    // console.log(objs12)
     res.render(path.join(__dirname+'/public/ors/sub_application'), { data: objs12 });
     // res.send(objs12)
   });
@@ -4319,7 +4508,7 @@ app.get('/MyLic', async function(req, res) {
 
 app.get('/logout',function(req,res){
   console.log(new Date() + ": Successful logout")
-  res.redirect('https://bors.brela.go.tz');
+  res.redirect('/');
 });
 
 app.post('/auth',function(req,res){
@@ -4965,20 +5154,7 @@ app.post('/saveStageTwo', function (req, res) {
         var Id = result_form[0].Id;
         req.session.req_id = Id;
         if(BizOwnerType == 1){
-          // var request12 = new sql.Request();
-          // request12.input('TypeList', TypeList);
-          // request12.input('nida_no', nida_no);
-          // request12.query('SELECT COUNT(*) kaunti FROM dbo.BusinessLicApplication ' + 
-          // ' WHERE BusinessTypeId = @TypeList AND RegNo = @nida_no', 
-          // function (err1, recordset) {
-          //   if (err1) {          
-          //     console.log("fail to BusinessLicApplication " + err1);
-          //      // sql.close();
-          //       res.send({status: "failed"});
-          //     }
-          //   var result_form = recordset.recordset;
-          //   var kaunti = result_form[0].kaunti;
-          //   if(kaunti <= 0){
+
           var request = new sql.Request();
           request.input('userId', userId);
           request.input('BizOwnerType', BizOwnerType);
@@ -7048,8 +7224,22 @@ app.post('/AddressRecordB', function(req, res){
   var trackNo = req.body.trackNo;
   var BLNo = req.body.BLNo;
   var subwardIdB = req.body.subwardIdB;
+  var wardIdBNew = req.body.wardIdB;
   var userId = req.body.userId;
   var BLdetailsId = req.body.BLdetailsId;
+  var districtlistB = req.body.districtlistB; 
+  var regionlistB = req.body.regionlistB; 
+  var pobox = req.body.inputEmail4pobox; 
+  var unservayedarea = req.body.unservayedarea; 
+  var house_no = req.body.house_no; 
+  var block_no = req.body.block_no; 
+  var plot_no = req.body.plot_no; 
+  var roadNew = req.body.road; 
+  var streetNew = req.body.street; 
+  var postcodeNew = req.body.postcode; 
+  var addressAreaB = req.body.addressAreaB; 
+  var PhoneBuz = req.body.PhoneBuz; 
+  var Email = req.body.inputEmail4comp; 
   
     sql.connect(config, function(err) {
       if (err) {
@@ -7101,29 +7291,29 @@ app.post('/AddressRecordB', function(req, res){
           .input('AddressOwnerId', AddressOwnerId)
           .input('AddressOwnerTypeId', 1)
           .input('AreaTypeId', AreaTypeId)
-          .input('WardId', WardId)
+          .input('WardId', wardIdBNew)
           .input('TrackingNo', trackNo)
-          .input('PostCode', PostCode)
-          .input('Street', Street)
-          .input('Road', Road)
-          .input('PlotNo', PlotNo)
-          .input('BlockNo', BlockNo)
-          .input('HouseNo', HouseNo)
-          .input('UnsurveyedArea', UnsurveyedArea)
-          .input('PoBox', PoBox)
+          .input('PostCode', postcodeNew)
+          .input('Street', streetNew)
+          .input('Road', roadNew)
+          .input('PlotNo', plot_no)
+          .input('BlockNo', block_no)
+          .input('HouseNo', house_no)
+          .input('UnsurveyedArea', unservayedarea)
+          .input('PoBox', pobox)
           .input('FrontUserId', userId)
           .input('CountryId', '255')
           .input('City', '')
           .input('ZipCode', '')
           .input('PhysicalAddress','')
-          .input('RegionCode', RegionCode)
-          .input('DistrictCode', DistrictCode)
+          .input('RegionCode', regionlistB)
+          .input('DistrictCode', districtlistB)
           .input('Area', '')
           .input('LandMarkTypeId', '')
           .input('LandMark', '')
           .input('IsOfficeAddress', 0)
-          .input('CompanyEmail', CompanyEmail)
-          .input('CompanyPhone', CompanyPhone)
+          .input('CompanyEmail', Email)
+          .input('CompanyPhone', PhoneBuz)
           .input('SUBWARD_ID', subwardIdB)
           // .input('OwnerId', bustype)
           .input('OwnerId', 1)
@@ -7136,29 +7326,29 @@ app.post('/AddressRecordB', function(req, res){
               .input('AddressOwnerId', BLdetailsId)
               .input('AddressOwnerTypeId', 4)
               .input('AreaTypeId', AreaTypeId)
-              .input('WardId', WardId)
+              .input('WardId', wardIdBNew)
               .input('TrackingNo', trackNo)
-              .input('PostCode', PostCode)
-              .input('Street', Street)
-              .input('Road', Road)
-              .input('PlotNo', PlotNo)
-              .input('BlockNo', BlockNo)
-              .input('HouseNo', HouseNo)
-              .input('UnsurveyedArea', UnsurveyedArea)
-              .input('PoBox', PoBox)
+              .input('PostCode', postcodeNew)
+              .input('Street', streetNew)
+              .input('Road', roadNew)
+              .input('PlotNo', plot_no)
+              .input('BlockNo', block_no)
+              .input('HouseNo', house_no)
+              .input('UnsurveyedArea', unservayedarea)
+              .input('PoBox', pobox)
               .input('FrontUserId', userId)
               .input('CountryId', '255')
               .input('City', '')
               .input('ZipCode', '')
               .input('PhysicalAddress','')
-              .input('RegionCode', RegionCode)
-              .input('DistrictCode', DistrictCode)
+              .input('RegionCode', regionlistB)
+              .input('DistrictCode', districtlistB)
               .input('Area', '')
               .input('LandMarkTypeId', '')
               .input('LandMark', '')
               .input('IsOfficeAddress', 1)
-              .input('CompanyEmail', CompanyEmail)
-              .input('CompanyPhone', CompanyPhone)
+              .input('CompanyEmail', Email)
+              .input('CompanyPhone', PhoneBuz)
               .input('OwnerId', 1)
               .input('SUBWARD_ID', subwardIdB)
               .execute('Save_Address_SP', function(err, recordsets, returnValue) {
@@ -7192,29 +7382,29 @@ app.post('/AddressRecordB', function(req, res){
             .input('AddressOwnerId', AddressOwnerId)
             .input('AddressOwnerTypeId', 7)
             .input('AreaTypeId', AreaTypeId)
-            .input('WardId', WardId)
+            .input('WardId', wardIdBNew)
             .input('TrackingNo', trackNo)
-            .input('PostCode', PostCode)
-            .input('Street', Street)
-            .input('Road', Road)
-            .input('PlotNo', PlotNo)
-            .input('BlockNo', BlockNo)
-            .input('HouseNo', HouseNo)
-            .input('UnsurveyedArea', UnsurveyedArea)
-            .input('PoBox', PoBox)
+            .input('PostCode', postcodeNew)
+            .input('Street', streetNew)
+            .input('Road', roadNew)
+            .input('PlotNo', plot_no)
+            .input('BlockNo', block_no)
+            .input('HouseNo', house_no)
+            .input('UnsurveyedArea', unservayedarea)
+            .input('PoBox', pobox)
             .input('FrontUserId', userId)
             .input('CountryId', '255')
             .input('City', '')
             .input('ZipCode', '')
             .input('PhysicalAddress','')
-            .input('RegionCode', RegionCode)
-            .input('DistrictCode', DistrictCode)
+            .input('RegionCode', regionlistB)
+            .input('DistrictCode', districtlistB)
             .input('Area', '')
             .input('LandMarkTypeId', '')
             .input('LandMark', '')
             .input('IsOfficeAddress', 0)
-            .input('CompanyEmail', CompanyEmail)
-            .input('CompanyPhone', CompanyPhone)
+            .input('CompanyEmail', Email)
+            .input('CompanyPhone', PhoneBuz)
             .input('SUBWARD_ID', subwardIdB)
             // .input('OwnerId', bustype)
             .input('OwnerId', 3)
@@ -7227,29 +7417,29 @@ app.post('/AddressRecordB', function(req, res){
                 .input('AddressOwnerId', BLdetailsId)
                 .input('AddressOwnerTypeId', 4)
                 .input('AreaTypeId', AreaTypeId)
-                .input('WardId', WardId)
+                .input('WardId', wardIdBNew)
                 .input('TrackingNo', trackNo)
-                .input('PostCode', PostCode)
-                .input('Street', Street)
-                .input('Road', Road)
-                .input('PlotNo', PlotNo)
-                .input('BlockNo', BlockNo)
-                .input('HouseNo', HouseNo)
-                .input('UnsurveyedArea', UnsurveyedArea)
-                .input('PoBox', PoBox)
+                .input('PostCode', postcodeNew)
+                .input('Street', streetNew)
+                .input('Road', roadNew)
+                .input('PlotNo', plot_no)
+                .input('BlockNo', block_no)
+                .input('HouseNo', house_no)
+                .input('UnsurveyedArea', unservayedarea)
+                .input('PoBox', pobox)
                 .input('FrontUserId', userId)
                 .input('CountryId', '255')
                 .input('City', '')
                 .input('ZipCode', '')
                 .input('PhysicalAddress','')
-                .input('RegionCode', RegionCode)
-                .input('DistrictCode', DistrictCode)
+                .input('RegionCode', regionlistB)
+                .input('DistrictCode', districtlistB)
                 .input('Area', '')
                 .input('LandMarkTypeId', '')
                 .input('LandMark', '')
                 .input('IsOfficeAddress', 1)
-                .input('CompanyEmail', CompanyEmail)
-                .input('CompanyPhone', CompanyPhone)
+                .input('CompanyEmail', Email)
+                .input('CompanyPhone', PhoneBuz)
                 .input('OwnerId', 3)
                 .input('SUBWARD_ID', subwardIdB)
                 .execute('Save_Address_SP', function(err, recordsets, returnValue) {
@@ -7283,29 +7473,29 @@ app.post('/AddressRecordB', function(req, res){
         .input('AddressOwnerId', AddressOwnerId)
         .input('AddressOwnerTypeId', 3)
         .input('AreaTypeId', AreaTypeId)
-        .input('WardId', WardId)
+        .input('WardId', wardIdBNew)
         .input('TrackingNo', trackNo)
-        .input('PostCode', PostCode)
-        .input('Street', Street)
-        .input('Road', Road)
-        .input('PlotNo', PlotNo)
-        .input('BlockNo', BlockNo)
-        .input('HouseNo', HouseNo)
-        .input('UnsurveyedArea', UnsurveyedArea)
-        .input('PoBox', PoBox)
+        .input('PostCode', postcodeNew)
+        .input('Street', streetNew)
+        .input('Road', roadNew)
+        .input('PlotNo', plot_no)
+        .input('BlockNo', block_no)
+        .input('HouseNo', house_no)
+        .input('UnsurveyedArea', unservayedarea)
+        .input('PoBox', pobox)
         .input('FrontUserId', userId)
         .input('CountryId', '255')
         .input('City', '')
         .input('ZipCode', '')
         .input('PhysicalAddress','')
-        .input('RegionCode', RegionCode)
-        .input('DistrictCode', DistrictCode)
+        .input('RegionCode', regionlistB)
+        .input('DistrictCode', districtlistB)
         .input('Area', '')
         .input('LandMarkTypeId', '')
         .input('LandMark', '')
         .input('IsOfficeAddress', 0)
-        .input('CompanyEmail', CompanyEmail)
-        .input('CompanyPhone', CompanyPhone)
+        .input('CompanyEmail', Email)
+        .input('CompanyPhone', PhoneBuz)
         // .input('OwnerId', bustype)
         .input('OwnerId', 2)
         .input('SUBWARD_ID', subwardIdB)
@@ -7318,29 +7508,29 @@ app.post('/AddressRecordB', function(req, res){
             .input('AddressOwnerId', BLdetailsId)
             .input('AddressOwnerTypeId', 4)
             .input('AreaTypeId', AreaTypeId)
-            .input('WardId', WardId)
+            .input('WardId', wardIdBNew)
             .input('TrackingNo', trackNo)
-            .input('PostCode', PostCode)
-            .input('Street', Street)
-            .input('Road', Road)
-            .input('PlotNo', PlotNo)
-            .input('BlockNo', BlockNo)
-            .input('HouseNo', HouseNo)
-            .input('UnsurveyedArea', UnsurveyedArea)
-            .input('PoBox', PoBox)
+            .input('PostCode', postcodeNew)
+            .input('Street', streetNew)
+            .input('Road', roadNew)
+            .input('PlotNo', plot_no)
+            .input('BlockNo', block_no)
+            .input('HouseNo', house_no)
+            .input('UnsurveyedArea', unservayedarea)
+            .input('PoBox', pobox)
             .input('FrontUserId', userId)
             .input('CountryId', '255')
             .input('City', '')
             .input('ZipCode', '')
             .input('PhysicalAddress','')
-            .input('RegionCode', RegionCode)
-            .input('DistrictCode', DistrictCode)
+            .input('RegionCode', regionlistB)
+            .input('DistrictCode', districtlistB)
             .input('Area', '')
             .input('LandMarkTypeId', '')
             .input('LandMark', '')
             .input('IsOfficeAddress', 1)
-            .input('CompanyEmail', CompanyEmail)
-            .input('CompanyPhone', CompanyPhone)
+            .input('CompanyEmail', Email)
+            .input('CompanyPhone', PhoneBuz)
             .input('OwnerId', 2)
             .input('SUBWARD_ID', subwardIdB)
             .execute('Save_Address_SP', function(err, recordsets, returnValue) {
@@ -9174,7 +9364,6 @@ app.get('/genBLTrackingNo', function (req, res) {
       // query to the database and execute procedure 
       let query = "exec Get_BLTrackingNo_SP";
       // console.log(query)
-      console.log("connected");
       request.query(query, function (err, recordset) {
           if (err) {
             console.log("fail to generate tracking number");
@@ -9183,8 +9372,6 @@ app.get('/genBLTrackingNo', function (req, res) {
           }else{
          // var trackNo = recordset.recordset;
          sql.close();
-         console.log('recordset')
-         console.log(recordset)
           res.send(recordset.recordset);
           }
       });
@@ -9432,14 +9619,19 @@ app.get('/getSavedBizType/:id', function (req, res) {
         var request = new sql.Request();
         request.input('TrackingNo', TrackingNo);
         // query to the database and get the records
-        request.query('SELECT a.BusinessTypeName as BusinessTypeName, a.BusinessTypeId as BusinessTypeId FROM dbo.BusinessTypes as a, dbo.BusinessLicApplication as b WHERE a.BusinessTypeId = b.BusinessTypeId AND b.TrackingNo = @TrackingNo', 
+        request.query('SELECT a.BusinessTypeName as BusinessTypeName, ' + 
+        ' a.BusinessTypeId as BusinessTypeId, c.BusinessCategoryName AS BusinessCategoryName, d.SectorName AS SectorName ' + 
+        ' FROM dbo.BusinessTypes as a, dbo.BusinessLicApplication as b, BusinessCategory AS c, BusinessSector AS d ' + 
+        ' WHERE a.BusinessTypeId = b.BusinessTypeId ' + 
+        ' AND b.TrackingNo = @TrackingNo AND c.Id = a.BusinessCategoryId AND c.BusinessSectorId = d.Id', 
         function (err, recordset1) {
             
-            if (err) {          console.log("fail to getSavedBizType " + err);
-          //sql.close();
-          res.send({status: "failed"});
-        }else{
-      sql.close();
+            if (err) {          
+              console.log("fail to getSavedBizType " + err);
+              //sql.close();
+              res.send({status: "failed"});
+            }else{
+            sql.close();
             // send records as a response
             res.send(recordset1.recordset);
         }
@@ -9769,5 +9961,5 @@ app.get('/sectors', function (req, res) {
   });
 });
 
-var server = app.listen(8088);
+var server = app.listen(8089);
 console.log('Hello ORS');

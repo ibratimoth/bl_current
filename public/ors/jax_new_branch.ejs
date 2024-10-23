@@ -483,10 +483,8 @@ function getWardB()
 <script>
     function saveBizDet()
     { 
-        $('#icon-pills-profile').tab('show');
-        $('.c').addClass('active');
-        $('.a').removeClass('active');
-        $('.b').removeClass('active');
+        document.getElementById("loading").style.display = "block";
+        document.getElementById("mask").style.display = "block";
         var inputEmail4comp= document.getElementById('inputEmail4comp').value;
         var inputEmail4phn= document.getElementById('inputEmail4phn').value;
         var inputEmail4pobox= document.getElementById('inputEmail4pobox').value;
@@ -504,79 +502,338 @@ function getWardB()
         var BLNo= document.getElementById('BLNo').value;
         var trackNo= document.getElementById('trackNo').value;
         var subwardIdB= document.getElementById('subwardIdB').value;
+        if(addressAreaB == '--Select--'){
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Please select Address Type',
+                // footer: '&lt;a href&gt;Why do I have this issue?&lt;/a&gt;',
+                padding: '2em'
+            })
+        }if(regionlistB == '--Select--'){
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Please select Region',
+                // footer: '&lt;a href&gt;Why do I have this issue?&lt;/a&gt;',
+                padding: '2em'
+            })
+        }if(districtlistB == '--Select--'){
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Please select District',
+                // footer: '&lt;a href&gt;Why do I have this issue?&lt;/a&gt;',
+                padding: '2em'
+            })
+        }
+        if(addressAreaB != '--Select--' && regionlistB != '--Select--'){
+            $('#icon-pills-profile').tab('show');
+            $('.c').addClass('active');
+            $('.a').removeClass('active');
+            $('.b').removeClass('active');
+            $.ajax({
+                url: "/saveBStageSecond",
+                type: 'POST',
+                data: JSON.stringify({
+                    "trackNo": trackNo, "BLNo": BLNo, "inputEmail4pobox": inputEmail4pobox, 
+                    "unservayedarea": unservayedarea, "house_no": house_no, "block_no": block_no, 
+                    "plot_no": plot_no, "road": road, "regionlistB": regionlistB, "districtlistB": districtlistB, 
+                    "wardIdB": wardIdB, "postcode": postcode, "street": street, "addressAreaB": addressAreaB, 
+                    "inputEmail4phn": inputEmail4phn, "inputEmail4comp": inputEmail4comp, "subwardIdB": subwardIdB
+                }),
+                contentType: 'application/json',
+                success: function(response) {
+                    if(response === 'success'){
+                        swal({
+                                title: 'Success!',
+                                text: 'Data succesfully saved.',
+                                type: 'success',
+                                timer: 2000,
+                            })
+                
+            $('.c').addClass('active');
+            $('.a').removeClass('active');
+            $('.b').removeClass('active');
+                        getAttachments();
+                    // getPermit();
+                        
 
-        $.ajax({
-            url: "/saveBStageSecond",
-            type: 'POST',
-            data: JSON.stringify({
-                "trackNo": trackNo, "BLNo": BLNo, "inputEmail4pobox": inputEmail4pobox, 
-                "unservayedarea": unservayedarea, "house_no": house_no, "block_no": block_no, 
-                "plot_no": plot_no, "road": road, "regionlistB": regionlistB, "districtlistB": districtlistB, 
-                "wardIdB": wardIdB, "postcode": postcode, "street": street, "addressAreaB": addressAreaB, 
-                "inputEmail4phn": inputEmail4phn, "inputEmail4comp": inputEmail4comp, "subwardIdB": subwardIdB
-            }),
-            contentType: 'application/json',
-            success: function(response) {
-                if(response === 'success'){
-                    swal({
-                            title: 'Success!',
-                            text: 'Data succesfully saved.',
-                            type: 'success',
-                            timer: 2000,
-                        })
-            
-        $('.c').addClass('active');
-        $('.a').removeClass('active');
-        $('.b').removeClass('active');
-                    getAttachments();
-                   getPermit();
-                    
-
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 </script>
 <script>
-function getAttachments(){
-setTimeout(
-function getAttachments()
-{ 
-$.ajax({
-    url: '/GetBLAttachment',
-    dataType: 'json',
-    success: function(data) {
-        console.log(data)
-        $("#attachmentId").find('tbody').empty();
-            for (var i=0; i<data.length; i++) {
-                var row = $('<tr><td class="text-black cheque-amt tacker_p" id="tacker_p">' + data[i].AttachmentName+ '</td>'+
-                    '<td class="text-black">' + data[i].Description + '</td>'+
-                        '<td class="text-left">'+
+// function getAttachments(){
+// setTimeout(
+// function getAttachments()
+// { 
+// $.ajax({
+//     url: '/GetBLAttachment',
+//     dataType: 'json',
+//     success: function(data) {
+//         console.log(data)
+//         document.getElementById("loading").style.display = "none";
+//         document.getElementById("mask").style.display = "none";
+//         $("#attachmentId").find('tbody').empty();
+//             for (var i=0; i<data.length; i++) {
+//                 var row = $('<tr><td class="text-black cheque-amt tacker_p" id="tacker_p">' + data[i].AttachmentName+ '</td>'+
+//                     '<td class="text-black">' + data[i].Description + '</td>'+
+//                         '<td class="text-left">'+
                         
-                            '<button type="button" class="btn btn-primary warning1 passingID1" data-toggle="modal" data-name=' + data[i].AttachmentTypeId+ ' data-desc=' + data[i].AttachmentName+ ' data-batch="1">Attach File</button> '+
-                        ' </td>'+
+//                             '<button type="button" class="btn btn-primary warning1 passingID1" data-toggle="modal" data-name=' + data[i].AttachmentTypeId+ ' data-desc=' + data[i].AttachmentName+ ' data-batch="1">Attach File</button> '+
+//                         ' </td>'+
+//                         '</tr>');
+//                 $('#attachmentId').append(row);
+
+//             }
+//             $('.widget-content .warning1.passingID1').on('click', function () {
+//                 var deleteBtn = $(this),
+//                 id = deleteBtn.data('name'),
+//                 name = deleteBtn.data('desc'),
+//                 title_tracker = deleteBtn.closest('tr').find('.tacker_p').text();
+//                 $("#categoryID").val( id );
+//                 $("#trak_no_p").val( id );
+//                 $("#atach_nem_p").val( title_tracker );
+//                 $('#rotateInDownLeft').modal('show');
+//             })
+//     }
+//     // ,
+//     // error: function(jqXHR, textStatus, errorThrown){
+//     //     alert('Error1: ' + textStatus + ' - ' + errorThrown);
+//     // }
+// });
+// }
+
+function getAttachments() {
+        // getPermits();
+        $.ajax({
+            url: '/GetBLAttachmentFirst',
+            dataType: 'json',
+            success: function (data) {
+                document.getElementById("loading").style.display = "none";
+                document.getElementById("mask").style.display = "none";
+                $("#attachmentId").find('tbody').empty();
+                for (var i = 0; i < data.length; i++) {
+                    if(data[i].Path == null){
+                        var row = $('<tr><td class="text-black cheque-amt tacker">' + data[i].AttachmentName + '</td>' +
+                        '<td class="text-black">' + data[i].Description + '</td>' +
+                        '<td class="text-left">' +
+                        '<button type="button" class="btn btn-primary warning passingID" data-toggle="modal" data-name="' +
+                        data[i].AttachmentTypeId + '" data-desc="' + data[i].AttachmentName + '" data-batch="1">Attach File</button> ' +
+                        '<button type="button" class="btn btn-warning warning1 passingID1" data-toggle="modal" data-name="' +
+                        '</td>' +
                         '</tr>');
-                $('#attachmentId').append(row);
+                    }
+                    if(data[i].Path != null){
+                        var row = $('<tr><td class="text-black cheque-amt tacker">' + data[i].AttachmentName + '</td>' +
+                        '<td class="text-black">' + data[i].Description + '</td>' +
+                        '<td class="text-left">' +
+                        '<button type="button" class="btn btn-primary warning passingID" data-toggle="modal" data-name="' +
+                        data[i].AttachmentTypeId + '" data-desc="' + data[i].AttachmentName + '" data-batch="1">Attach File</button> ' +
+                        '<button type="button" class="btn btn-warning warning1 passingID1" data-toggle="modal" data-name="' +
+                        data[i].AttachmentTypeId + '" data-desc="' + data[i].AttachmentName + '" data-batch="1">View File</button> ' +
+                        '<button type="button" class="btn btn-danger warning2 passingID2" data-toggle="modal" data-name="' +
+                        data[i].AttachmentTypeId + '" data-desc="' + data[i].AttachmentName + '" data-batch="1">Delete File</button> ' +
+                        '</td>' +
+                        '</tr>');
+                    }
+
+                    $('#attachmentId').append(row);
+                                // Attach click event handler to dynamically created elements
+                    $(document).off('click', '.widget-content .warning.passingID'); // Remove any existing event handlers
+                    $(document).on('click', '.widget-content .warning.passingID', function () {
+                        
+                        var deleteBtn = $(this),
+                        id = deleteBtn.data('name'),
+                        name = deleteBtn.data('desc'),
+                        title_tracker = deleteBtn.closest('tr').find('.tacker').text();
+                        $("#categoryID").val(id);
+                        $("#trak_no").val(id);
+                        $("#atach_nem").val(title_tracker);
+                        $('#rotateInDownLeft').modal('show');
+                    });
+                    $(document).off('click', '.widget-content .warning1.passingID1'); // Remove any existing event handlers
+                    $('.widget-content .warning1.passingID1').on('click', function () {
+                        var deleteBtn = $(this),
+                        id = deleteBtn.data('name'),
+                        name = deleteBtn.data('desc'),
+                        path_pdf = deleteBtn.data('path'),
+                        title_tracker = deleteBtn.closest('tr').find('.tacker').text();
+                        $.ajax({
+                                url: "/viewPDf",
+                                type: 'POST',
+                                data: JSON.stringify({"attachmentId": id}),
+                                contentType: 'application/json',
+                                success: function(response) {
+                                    var Path = response.Path
+                                    // Update the src attribute of the embed element
+                                    $('#pdfModalPreview').find('embed').attr('src', 
+                                    "http://41.59.228.19/attachment/"+Path);
+
+                                    $('#pdfModalPreview').modal('show');
+                                },
+                            });
+
+                    });
+                    $(document).off('click', '.widget-content .warning2.passingID2'); // Remove any existing event handlers
+                    $('.widget-content .warning2.passingID2').on('click', function () {
+                        var deleteBtn = $(this),
+                        id = deleteBtn.data('name'),
+                        name = deleteBtn.data('desc'),
+                        path_pdf = deleteBtn.data('path'),
+                        title_tracker = deleteBtn.closest('tr').find('.tacker').text();
+                                    swal({
+                                            title: 'Are you sure yo want to delete this attachment?',
+                                            text: "You won't be able to revert this!",
+                                            type: 'warning',
+                                            showCancelButton: true,
+                                            confirmButtonText: 'Delete',
+                                            padding: '2em'
+                                            }).then(function(result) {
+                                            if (result.value) {
+                                                $.ajax({
+                                                url: "/deletePDf",
+                                                type: 'POST',
+                                                data: JSON.stringify({"attachmentId": id}),
+                                                contentType: 'application/json',
+                                                success: function(response) {
+                                                swal(
+                                                'Deleted!',
+                                                'Your file has been deleted.',
+                                                'success'
+                                                )
+                                                getAttachments();
+                                                    },
+                                                });
+                                            }
+                                        })
+
+                    });
+
+                }
+                
 
             }
-            $('.widget-content .warning1.passingID1').on('click', function () {
-                var deleteBtn = $(this),
-                id = deleteBtn.data('name'),
-                name = deleteBtn.data('desc'),
-                title_tracker = deleteBtn.closest('tr').find('.tacker_p').text();
-                $("#categoryID").val( id );
-                $("#trak_no_p").val( id );
-                $("#atach_nem_p").val( title_tracker );
-                $('#rotateInDownLeft').modal('show');
-            })
+        });
     }
-    // ,
-    // error: function(jqXHR, textStatus, errorThrown){
-    //     alert('Error1: ' + textStatus + ' - ' + errorThrown);
-    // }
-});
-}, 3000);
-}
+
+// function getAttachments() {
+//         // getPermits();
+//         $.ajax({
+//             url: '/GetBLAttachmentFirst',
+//             dataType: 'json',
+//             success: function (data) {
+//                 document.getElementById("loading").style.display = "none";
+//                 document.getElementById("mask").style.display = "none";
+//                 $("#attachmentId").find('tbody').empty();
+//                 for (var i = 0; i < data.length; i++) {
+//                     if(data[i].Path == null){
+//                         var row = $('<tr><td class="text-black cheque-amt tacker">' + data[i].AttachmentName + '</td>' +
+//                         '<td class="text-black">' + data[i].Description + '</td>' +
+//                         '<td class="text-left">' +
+//                         '<button type="button" class="btn btn-primary warning passingID" data-toggle="modal" data-name="' +
+//                         data[i].AttachmentTypeId + '" data-desc="' + data[i].AttachmentName + '" data-batch="1">Attach File</button> ' +
+//                         '<button type="button" class="btn btn-warning warning1 passingID1" data-toggle="modal" data-name="' +
+//                         '</td>' +
+//                         '</tr>');
+//                     }
+//                     if(data[i].Path != null){
+//                         var row = $('<tr><td class="text-black cheque-amt tacker">' + data[i].AttachmentName + '</td>' +
+//                         '<td class="text-black">' + data[i].Description + '</td>' +
+//                         '<td class="text-left">' +
+//                         '<button type="button" class="btn btn-primary warning passingID" data-toggle="modal" data-name="' +
+//                         data[i].AttachmentTypeId + '" data-desc="' + data[i].AttachmentName + '" data-batch="1">Attach File</button> ' +
+//                         '<button type="button" class="btn btn-warning warning1 passingID1" data-toggle="modal" data-name="' +
+//                         data[i].AttachmentTypeId + '" data-desc="' + data[i].AttachmentName + '" data-batch="1">View File</button> ' +
+//                         '<button type="button" class="btn btn-danger warning2 passingID2" data-toggle="modal" data-name="' +
+//                         data[i].AttachmentTypeId + '" data-desc="' + data[i].AttachmentName + '" data-batch="1">Delete File</button> ' +
+//                         '</td>' +
+//                         '</tr>');
+//                     }
+
+//                     $('#attachmentId').append(row);
+//                                 // Attach click event handler to dynamically created elements
+//                     $(document).off('click', '.widget-content .warning.passingID'); // Remove any existing event handlers
+//                     $(document).on('click', '.widget-content .warning.passingID', function () {
+                        
+//                         var deleteBtn = $(this),
+//                         id = deleteBtn.data('name'),
+//                         name = deleteBtn.data('desc'),
+//                         title_tracker = deleteBtn.closest('tr').find('.tacker').text();
+//                         $("#categoryID").val(id);
+//                         $("#trak_no").val(id);
+//                         $("#atach_nem").val(title_tracker);
+//                         $('#rotateInDownLeft').modal('show');
+//                     });
+//                     $(document).off('click', '.widget-content .warning1.passingID1'); // Remove any existing event handlers
+//                     $('.widget-content .warning1.passingID1').on('click', function () {
+//                         var deleteBtn = $(this),
+//                         id = deleteBtn.data('name'),
+//                         name = deleteBtn.data('desc'),
+//                         path_pdf = deleteBtn.data('path'),
+//                         title_tracker = deleteBtn.closest('tr').find('.tacker').text();
+//                         $.ajax({
+//                                 url: "/viewPDf",
+//                                 type: 'POST',
+//                                 data: JSON.stringify({"attachmentId": id}),
+//                                 contentType: 'application/json',
+//                                 success: function(response) {
+//                                     var Path = response.Path
+//                                     // Update the src attribute of the embed element
+//                                     $('#pdfModalPreview').find('embed').attr('src', 
+//                                     "http://41.59.228.19/attachment/"+Path);
+
+//                                     $('#pdfModalPreview').modal('show');
+//                                 },
+//                             });
+
+//                     });
+//                     $(document).off('click', '.widget-content .warning2.passingID2'); // Remove any existing event handlers
+//                     $('.widget-content .warning2.passingID2').on('click', function () {
+//                         var deleteBtn = $(this),
+//                         id = deleteBtn.data('name'),
+//                         name = deleteBtn.data('desc'),
+//                         path_pdf = deleteBtn.data('path'),
+//                         title_tracker = deleteBtn.closest('tr').find('.tacker').text();
+//                                     swal({
+//                                             title: 'Are you sure yo want to delete this attachment?',
+//                                             text: "You won't be able to revert this!",
+//                                             type: 'warning',
+//                                             showCancelButton: true,
+//                                             confirmButtonText: 'Delete',
+//                                             padding: '2em'
+//                                             }).then(function(result) {
+//                                             if (result.value) {
+//                                                 $.ajax({
+//                                                 url: "/deletePDf",
+//                                                 type: 'POST',
+//                                                 data: JSON.stringify({"attachmentId": id}),
+//                                                 contentType: 'application/json',
+//                                                 success: function(response) {
+//                                                 swal(
+//                                                 'Deleted!',
+//                                                 'Your file has been deleted.',
+//                                                 'success'
+//                                                 )
+//                                                 getAttachments();
+//                                                     },
+//                                                 });
+//                                             }
+//                                         })
+
+//                     });
+
+//                 }
+                
+
+//             }
+//         });
+//     }
+// , 3000);
+// }
 </script>
 <script>
 async function uploadFile() {
@@ -616,6 +873,46 @@ function myFunction(){
 }
 </script>
 <script>
+        function getPermits()
+    { 
+        //alert("bizNumber")
+        var bizNumber = document.getElementById('bizNumber').value;
+        //alert(bizNumber)
+    $.ajax({
+        url: '/GetBusTypePermits'+'/'+bizNumber,
+        dataType: 'json',
+        success: function(data) {
+            // alert(data)
+            $("#permittId").find('tbody').empty();
+                for (var i=0; i<=data.length; i++) {
+                    var row = $('<tr><td class="text-black cheque-amt tacker1" id="tacker1">' + data[i].PermitName+ '</td>'+
+                        '<td class="text-black">' + data[i].IssuingAgency + '</td>'+
+                            '<td class="text-left">'+
+                            
+                                '<button type="button" class="btn btn-primary warning12 passingID12" data-toggle="modal" data-name1=' + data[i].PermitId+ ' data-desc1=' + data[i].PermitName+ ' data-batch="1">Attach File</button> '+
+                                // '<button type="button" class="btn btn-primary warning1 permitID" data-toggle="modal" data-name=' + data[i].PermitName+ ' data-desc=' + data[i].PermitId+ ' data-batch="1">Attach File</button> '+
+                            // ' <button type="button" id="attach_btn" data-name="XYZ" data-batch="123" class="btn btn-info mb-2 mr-2 attachID" data-toggle="modal" data-id=' + data[i].AttachmentName+ ' data-target="#rotateleftModal">View</button>'+
+                            // ' <button type="button" class="btn btn-primary passingID" data-toggle="modal" data-target="#rotateInDownLeft" data-name=' + data[i].AttachmentName+ ' data-desc=' + data[i].AttachmentTypeId+ ' data-batch="1">Attach File</button> ' +
+                            // '&lt;button class="mr-2 btn btn-primary  warning passingID"&gt;Attach File&lt;/button&gt;'+
+    
+    
+                            ' </td>'+
+                            '</tr>');
+                    $('#permittId').append(row);
+                    $('.widget-content .warning12.passingID12').on('click', function () {
+                        var deleteBtn = $(this),
+                        id = deleteBtn.data('name1'),
+                        name = deleteBtn.data('desc1'),
+                        title_tracker = deleteBtn.closest('tr').find('.tacker1').text();
+                        $("#categoryID1").val( id );
+                        $("#trak_no1").val( id );
+                        $("#atach_nem1").val( title_tracker );
+                        $('#zoomupModal').modal('show');
+                    })
+                }
+        }
+    });
+    }
 // function getPermit(){
 // setTimeout(
 // function getPermits()
@@ -764,34 +1061,124 @@ function getAddrArea()
     }, 1000);
 </script>
 <script>
+// function fileUploadY(){
+// var fileInput = document.querySelector('#fileupload_p');
+// var regId = document.getElementById('categoryID').value;
+// var trackNo = document.getElementById('trackNo').value;
+
+// var reader = new FileReader();
+// reader.readAsDataURL(fileInput.files[0]);
+
+// reader.onload = function () {
+//     $.ajax({
+//         url: "/UploadFY",
+//         type: 'POST',
+//         data: JSON.stringify({"atachment": reader.result, "attachmentId": regId, "trackNo": trackNo}),
+//         contentType: 'application/json',
+//         success: function(response) {
+//            console.log(response)
+//             if(typeof(response) === "string"){response = JSON.parse(response)}
+//         }
+//     });
+//     // alert(reader.result);
+// 	// console.log(reader.result);//base64encoded string
+
+// };
+// reader.onerror = function (error) {
+//     alert('Error: ' + error);
+// 	console.log('Error: ', error);
+// };
+// }
+// function fileUploadY(){
+// var fileInput = document.querySelector('#fileupload_p');
+// var regId = document.getElementById('categoryID').value;
+// var trackNo = document.getElementById('trackNo').value;
+// var file = fileInput.files[0];
+// var fileName = file.name;
+
+// var reader = new FileReader();
+// reader.readAsDataURL(fileInput.files[0]);
+
+// reader.onload = function () {
+//     $.ajax({
+//         url: "/UploadFx",
+//         type: 'POST',
+//         data: JSON.stringify({"atachment": reader.result, "attachmentId": regId}),
+//         contentType: 'application/json',
+//         success: function(response) {
+//            // alert("response")
+//             if(typeof(response) === "string"){response = JSON.parse(response)}
+//             swal({
+//                     title: 'Success!',
+//                     text: fileName + ' succesfully uploaded to the system.',
+//                     type: 'success',
+//                     timer: 3000,
+//                 })
+//             getAttachments()
+//         }
+//     });
+//     // alert(reader.result);
+// 	console.log(reader.result);//base64encoded string
+
+// };
+// reader.onerror = function (error) {
+//     //alert('Error: ' + error);
+// 	console.log('Error: ', error);
+//     swal({
+//             type: 'error',
+//             title: 'Oops...',
+//             text: fileName + ' Fail to upload, please try again',
+//             padding: '2em',
+//             timer: 3000
+//         })
+// };
+// }
+
 function fileUploadY(){
-var fileInput = document.querySelector('#fileupload_p');
-var regId = document.getElementById('categoryID').value;
-var trackNo = document.getElementById('trackNo').value;
-
-var reader = new FileReader();
-reader.readAsDataURL(fileInput.files[0]);
-
-reader.onload = function () {
-    $.ajax({
-        url: "/UploadFY",
-        type: 'POST',
-        data: JSON.stringify({"atachment": reader.result, "attachmentId": regId, "trackNo": trackNo}),
-        contentType: 'application/json',
-        success: function(response) {
-           console.log(response)
-            if(typeof(response) === "string"){response = JSON.parse(response)}
-        }
-    });
-    // alert(reader.result);
-	// console.log(reader.result);//base64encoded string
-
-};
-reader.onerror = function (error) {
-    alert('Error: ' + error);
-	console.log('Error: ', error);
-};
-}
+    var fileInput = document.querySelector('#fileupload_p');
+    var regId = document.getElementById('categoryID').value;
+    
+    var reader = new FileReader();
+    reader.readAsDataURL(fileInput.files[0]);
+    var file = fileInput.files[0];
+    var fileName = file.name;
+    
+    reader.onload = function () {
+        $.ajax({
+            url: "/UploadFxP",
+            type: 'POST',
+            data: JSON.stringify({"atachment": reader.result, "attachmentId": regId}),
+            contentType: 'application/json',
+            success: function(response) {
+                // if(typeof(response) === "string"){response = JSON.parse(response)}
+                if(response.status == 'sucess'){
+                swal({
+                    title: 'Success!',
+                    text: fileName + ' succesfully uploaded to the system.',
+                    type: 'success',
+                    timer: 3000,
+                })
+            getAttachments()
+                }else{
+                    swal({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'An error occured attachment fail to upload to the system.',
+                    padding: '2em',
+                    timer: 3000
+                })
+                }
+            }
+        });
+        // alert(reader.result);
+        console.log(reader.result);//base64encoded string
+    
+    };
+    reader.onerror = function (error) {
+        //alert('Error: ' + error);
+        console.log('Error: ', error);
+    };
+    }
 </script>
 <script>
     function validateSize(input) {

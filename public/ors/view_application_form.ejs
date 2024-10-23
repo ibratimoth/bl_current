@@ -1,0 +1,435 @@
+<%- include('sidebarmenu.ejs')%>
+<style>
+    .loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+<div class="loader-container">
+    <div class="loader"></div>
+</div>
+        <!--  BEGIN CONTENT AREA  -->
+        <div id="content" class="main-content">
+            <div class="layout-px-spacing">
+                <div class="row invoice layout-top-spacing">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="app-hamburger-container">
+                            <div class="hamburger"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu chat-menu d-xl-none"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div>
+                        </div>
+                        <div class="doc-container">
+
+
+                            <div class="invoice-container">
+                                <div class="invoice-inbox">
+
+                                    
+                                    <div class="">
+                                        
+                                        <div class="invoice-00001">
+                                            <div class="content-section  animated animatedFadeInUp fadeInUp">
+
+                                                <div class="row inv--head-section">
+
+                                                    <div class="col-sm-6 col-12">
+                                                        <h3 class="in-heading" id="entity_name"></h3>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12 align-self-center text-sm-right">
+                                                        <div class="company-info">
+                                                            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-hexagon"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg> -->
+                                                            <h5 class="inv-brand-name" id="tracking_number"></h5>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+
+                                                <div class="row inv--detail-section inv--payment-info">
+                                                    <div class="col-sm-12 col-12">
+                                                        <h6 class=" inv-title">Application Information</h6>
+                                                    </div>
+                                                    <div class="col-sm-7 align-self-center">
+                                                        <p class="inv-list-number"><span class="inv-title">Full Name : </span> <span class="inv-date" id="fname"></span></p>
+                                                        <p class="inv-created-date"><span class="inv-title">Gender : </span> <span class="inv-date" id="gender"></span></p>
+                                                        <p class="inv-due-date"><span class="inv-title">Date of Birth : </span> <span class="inv-date" id="dob"></span></p>
+                                                        <p class="inv-due-date"><span class="inv-title">Citizenship : </span> <span class="inv-date" id="citizen"></span></p>
+                                                    </div>
+                                                    <div class="col-sm-5 align-self-center  text-sm-right order-2">
+                                                        <!-- <p class="inv-list-number"><span class="inv-title">Tracking Number : </span> <span class="inv-number" id="tracking_number">[invoice number]</span></p> -->
+                                                        <p class="inv-created-date"><span class="inv-title">Service Type : </span> <span class="inv-date">20 Aug 2019</span></p>
+                                                        <p class="inv-due-date"><span class="inv-title">Submit Date : </span> <span class="inv-date">26 Aug 2019</span></p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row inv--product-table-section">
+                                                    <div class="col-12">
+                                                        <div class="table-responsive">
+                                                            <table class="table">
+                                                                <thead class="">
+                                                                    <tr>
+                                                                        <th scope="col">S.No</th>
+                                                                        <th scope="col">Items</th>
+                                                                        <th class="text-right" scope="col">Qty</th>
+                                                                        <th class="text-right" scope="col">Unit Price</th>
+                                                                        <th class="text-right" scope="col">Amount</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>Electric Shaver</td>
+                                                                        <td class="text-right">20</td>
+                                                                        <td class="text-right">$300</td>
+                                                                        <td class="text-right">$2800</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2</td>
+                                                                        <td>Earphones</td>
+                                                                        <td class="text-right">49</td>
+                                                                        <td class="text-right">$500</td>
+                                                                        <td class="text-right">$7000</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>3</td>
+                                                                        <td>Wireless Router</td>
+                                                                        <td class="text-right">30</td>
+                                                                        <td class="text-right">$500</td>
+                                                                        <td class="text-right">$3500</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mt-4">
+                                                    <div class="col-sm-5 col-12 order-sm-0 order-1">
+                                                        <div class="inv--payment-info">
+                                                            <div class="row">
+                                                                <div class="col-sm-12 col-12">
+                                                                    <h6 class=" inv-title">Payment Info:</h6>
+                                                                </div>
+                                                                <div class="col-sm-4 col-12">
+                                                                    <p class=" inv-subtitle">Bank Name: </p>
+                                                                </div>
+                                                                <div class="col-sm-8 col-12">
+                                                                    <p class="">Bank of America</p>
+                                                                </div>
+                                                                <div class="col-sm-4 col-12">
+                                                                    <p class=" inv-subtitle">Account Number : </p>
+                                                                </div>
+                                                                <div class="col-sm-8 col-12">
+                                                                    <p class="">1234567890</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-7 col-12 order-sm-1 order-0">
+                                                        <div class="inv--total-amounts text-sm-right">
+                                                            <div class="row">
+                                                                <div class="col-sm-8 col-7">
+                                                                    <p class="">Sub Total: </p>
+                                                                </div>
+                                                                <div class="col-sm-4 col-5">
+                                                                    <p class="">$13300</p>
+                                                                </div>
+                                                                <div class="col-sm-8 col-7">
+                                                                    <p class="">Tax Amount: </p>
+                                                                </div>
+                                                                <div class="col-sm-4 col-5">
+                                                                    <p class="">$700</p>
+                                                                </div>
+                                                                <div class="col-sm-8 col-7">
+                                                                    <p class=" discount-rate">Discount : <span class="discount-percentage">5%</span> </p>
+                                                                </div>
+                                                                <div class="col-sm-4 col-5">
+                                                                    <p class="">$700</p>
+                                                                </div>
+                                                                <div class="col-sm-8 col-7 grand-total-title">
+                                                                    <h4 class="">Grand Total : </h4>
+                                                                </div>
+                                                                <div class="col-sm-4 col-5 grand-total-amount">
+                                                                    <h4 class="">$14000</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div> 
+                                    </div>
+
+
+                                </div>
+
+                                <div class="inv--thankYou">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-12">
+                                            <p class="">Thank you for doing Business with us.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+                </div>
+        <div class="footer-wrapper">
+                <div class="footer-section f-section-1">
+                    <p class="">Copyright © 2020 <a target="_blank" href="https://designreset.com">DesignReset</a>, All rights reserved.</p>
+                </div>
+                <div class="footer-section f-section-2">
+                    <p class="">Coded with <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></p>
+                </div>
+            </div>
+        </div>
+        <!--  END CONTENT AREA  -->
+
+
+    </div>
+    <!-- END MAIN CONTAINER -->
+
+    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+    <script src="../ors/assets/js/libs/jquery-3.1.1.min.js"></script>
+    <script src="../ors/bootstrap/js/popper.min.js"></script>
+    <script src="../ors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../ors/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="../ors/assets/js/app.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            App.init();
+        });
+    </script>
+    <script src="../ors/assets/js/custom.js"></script>
+    <!-- END GLOBAL MANDATORY SCRIPTS -->
+    <script src="../ors/assets/js/apps/invoice.js"></script>]
+    <script>
+        function firstView()
+        {
+        $.ajax({
+            url: "/firstStageView",
+            type: 'GET',
+            contentType: 'application/json', // added data type
+            success: function(response) {
+                hideLoader();
+            if(typeof(response) === "string"){response = JSON.parse(response)}
+            
+            var trackingNo = response.trackNo;
+            var EntityName = response.EntityName;
+            var tracking_number = document.getElementById('tracking_number');
+            var entity_name = document.getElementById('entity_name');
+            entity_name.textContent = EntityName;
+            tracking_number.textContent = trackingNo;
+            var fname = response.person[0].fname;
+            var mname = response.person[0].mname;
+            var lname = response.person[0].lname;
+            var fullname = document.getElementById('fname');
+            fullname.textContent = fname + " " + mname + " " + lname;
+            var gender = response.person[0].gender;
+            var dob = response.person[0].date_birth;
+            var citizen = response.person[0].citizen;
+            var gender_input = document.getElementById('gender');
+            gender_input.textContent = gender;
+            var dob_input = document.getElementById('dob');
+            dob_input.textContent = dob;
+            var citizen_input = document.getElementById('citizen');
+            citizen_input.textContent = citizen;
+            // var ServiceCode = response.ServiceCode;
+            
+            // // var txtBox9 = document.getElementById('serviceCode');
+            // txtBox9.value = ServiceCode;
+
+            // var OrigTypeName = response.OrigTypeName;
+            // var AplicationID = response.AplicationID;
+            // var OwnerSubTypeName = response.OwnerSubTypeName;
+            // var OwnerSubTypeId = response.OwnerSubTypeId;
+            // var EntityName = response.EntityName;
+            // var AplicationTIN = response.AplicationTIN;
+            // var BusinessClassId = response.BusinessClassId;
+            // var BusinessTypeName = response.BusinessTypeName;
+            // var BusinessTypeId = response.BusinessTypeId;
+            // var AreaTypeName = response.AreaTypeName;
+            // var Road = response.Road;
+            // var PostCode = response.PostCode;
+            // var Street = response.Street;
+            // var PoBox = response.PoBox;
+            // var CompanyPhone = response.CompanyPhone;
+            // var CompanyEmail = response.CompanyEmail;
+            // var UnsurveyedArea = response.UnsurveyedArea;
+            // var ApplicationStageId = response.ApplicationStageId;
+            // var PlotNo = response.PlotNo;
+            // var BlockNo = response.BlockNo;
+            // var HouseNo = response.HouseNo;
+            // var RegionName = response.RegionName;
+            // var DistrictName = response.DistrictName;
+            // var WardName = response.WardName;ControlNo;
+            // var DistrictCode = response.DistrictCode;
+            // var RegionCode = response.RegionCode;
+            // var AreaTypeId = response.AreaTypeId;
+            // var RegNo = response.RegNo;
+            // var BusinessLicOwnerTypeId = response.BusinessLicOwnerTypeId;
+            // var WardId = response.WardId;
+
+            // var txtBoxtrackNo = document.getElementById('trackNo');
+            // txtBoxtrackNo.value = trackingNo;
+
+            // var txtBox2 = document.getElementById('mname');
+            // txtBox2.value = mname;
+            // var txtBox3 = document.getElementById('lname');
+            // txtBox3.value = lname;
+            // txtBox6.value = citizen;
+            // var txtBox7 = document.getElementById('busorigintype');
+            // txtBox7.value = OrigTypeName;
+            // var txtBox8 = document.getElementById('applicationId');
+            // txtBox8.value = AplicationID;
+            // var tin_no = document.getElementById('tin_no');
+            // tin_no.value = AplicationTIN;
+
+            // // var txtBox9 = document.getElementById('typelist');
+            // // txtBox9.value = 'BusinessTypeName';
+            // // var txtBox10 = document.getElementById('addressAreaB');
+            // // txtBox10.value = AreaTypeName;
+            // var txtBox11 = document.getElementById('inputroad');
+            // txtBox11.value = Road;
+            // var txtBox12 = document.getElementById('postcode');
+            // txtBox12.value = PostCode;
+            // var txtBox13 = document.getElementById('inputEmail4Street');
+            // txtBox13.value = Street;
+            // var txtBox14 = document.getElementById('inputEmail4pobox');
+            // txtBox14.value = PoBox;
+            // var txtBox15 = document.getElementById('inputEmail4phn');
+            // txtBox15.value = CompanyPhone;
+            // var txtBox16 = document.getElementById('inputEmail4comp');
+            // txtBox16.value = CompanyEmail;
+            // var txtBox17 = document.getElementById('unservayedarea');
+            // txtBox17.value = UnsurveyedArea;
+            // var txtBox18 = document.getElementById('plot_no');
+            // txtBox18.value = PlotNo;
+            // var txtBox19 = document.getElementById('block_no');
+            // txtBox19.value = BlockNo;
+            // var txtBox20 = document.getElementById('house_no');
+            // txtBox20.value = HouseNo;
+            // var txtBox21 = document.getElementById('businessLicenceClassId');
+            // txtBox21.value = BusinessClassId;
+            // var txtBox22 = document.getElementById('nida_no');
+            // txtBox22.value = RegNo;
+
+            // var txtBox24 = document.getElementById('reg_no_other');
+            // txtBox24.value = RegNo;
+            // var txtBox24 = document.getElementById('bn_no');
+            // txtBox24.value = RegNo;
+            //     var txtBox23 = document.getElementById('inco_no');
+            //     txtBox23.value = RegNo;
+            //     var company_name = document.getElementById('company_name');
+            //     company_name.value = EntityName;
+            // var paymentDetails = response.payment;
+            // var invoiceDetails = response.invoiceData;
+
+            // document.getElementById("loading").style.display = "none";
+            // document.getElementById("mask").style.display = "none";
+            // alert(paymentDetails[0].AmountTotal)
+            // // alert(AmountTotal)
+            // if(typeof paymentDetails[0].AmountTotal == 'undefined' || paymentDetails[0].AmountTotal == ''){
+            //     $('.paymentDiv').hide()
+            //     var row = $('<tr><td class="text-black cheque-amt tacker" id="tacker">-</td>'+
+            //     '<td class="text-black">-</td>'+
+            //     '<td class="text-black">No control Number yet</td>'+
+            //     '<td class="text-black">-</td>'+
+            //         '</tr>');
+            // $('#paymentId').append(row);
+            // }else if(paymentDetails[0].AmountTotal > 0){
+            //     $('.paymentDiv').show()
+            //     for(var i = 0; i < paymentDetails.length; i++){
+            //     var AmountTotal = paymentDetails[i].AmountTotal;
+            //     var ServiceName = paymentDetails[i].ServiceName;
+            //     var ExpireDate = paymentDetails[i].ExpireDate;
+            //     var ControlNo = paymentDetails[i].ControlNo;
+            //     var CurrencyUsed = paymentDetails[i].CurrencyUsed;
+            //     var nf = Intl.NumberFormat();
+            //     var row = $('<tr><td class="text-black cheque-amt tacker" id="tacker">' + ServiceName+ '</td>'+
+            //     '<td class="text-black">' + CurrencyUsed + " " + nf.format(AmountTotal) + '</td>'+
+            //     '<td class="text-black">' + ControlNo + '</td>'+
+            //     '<td class="text-black">' + ExpireDate + '</td>'+
+            //         '</tr>');
+            // $('#paymentId').append(row);
+            // }
+            // }
+            // $("#busowntype").append(`<option value='${BusinessLicOwnerTypeId}'> ${OwnerSubTypeName}</option>`)
+            // $("#addressAreaB").append(`<option value='${AreaTypeId}'> ${AreaTypeName}</option>`)
+            // $("#typelist").append(`<option value='${BusinessTypeId}'> ${BusinessTypeName}</option>`)
+            // $("#regionlistB").append(`<option value='${RegionCode}'> ${RegionName}</option>`)
+            // $("#districtlistB").append(`<option value='${DistrictCode}'> ${DistrictName}</option>`)
+            // // $("#districtlistB").append(`<option value='${DistrictName}'> ${DistrictName}</option>`)
+            // $("#wardIdB").append(`<option value='${WardId}'> ${WardName}</option>`)
+            // if(AreaTypeId === '1'){
+            //     $(".maeneo").show();
+            //     // $(".locationB").show();
+            //     $(".unservayedB").hide();
+            // }if(AreaTypeId === '2'){
+            //     $(".maeneo").hide();
+            //     // $(".locationB").hide();
+            //     $(".unservayedB").show();
+            // }if(AreaTypeId === '--Select--'){
+            //     $(".maeneo").hide();
+            //     $(".locationB").hide();
+            //     $(".unservayedB").hide();
+            // }
+// comment();
+// // getBusOwnTypeData();
+// regGetAddressArea();
+// regB();
+// getAttachments();
+            // 
+
+
+            }
+            
+        });
+
+}
+window.onload = firstView;
+    </script>
+    <script>
+//         document.addEventListener("DOMContentLoaded", function() {
+//     // Simulate content loading (you should replace this with your actual content loading logic)
+//     setTimeout(function() {
+//         hideLoader();
+//     }, 2000); // Replace 2000 with the time it takes to load your content
+// });
+
+function hideLoader() {
+    const loaderContainer = document.querySelector(".loader-container");
+    if (loaderContainer) {
+        loaderContainer.style.display = "none";
+    }
+}
+
+    </script>
+
+</body>
+</html>

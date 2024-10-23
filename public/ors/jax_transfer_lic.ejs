@@ -382,11 +382,14 @@ function getBizType()
 <script>
 function getDistrictB()
 { 
-
+    //alert("djdjd")
     var regId = document.getElementById('regionlistB').value;
-    $('#districtlist')
+    var businessLicenceClassId = document.getElementById('BusinessClassId').value;
+    // alert(regId + " asaa.... " + businessLicenceClassId)
+    $('#districtlistB')
     .empty()
-    $.ajax({
+    if(businessLicenceClassId === '1'){
+        $.ajax({
         url: "/GetDistrict/"+regId,
         type: 'GET',
         contentType: 'application/json',
@@ -400,6 +403,28 @@ function getDistrictB()
         }
         }
     });
+    }
+    if(businessLicenceClassId === '2'){
+        $.ajax({
+        url: "/GetLga/"+regId,
+        type: 'GET',
+        contentType: 'application/json',
+        success: function(response) {
+            if(typeof(response) === "string"){response = JSON.parse(response)}
+        if(response.length > 0) {
+            $("#districtlistB").append(`<option value='--Select--'>--Select--</option>`)
+            response.forEach(el => {
+                $("#districtlistB").append(`<option value='${el.districtId}'> ${el.districtName}</option>`)
+            })
+        }
+        }
+    });
+    }
+    if(businessLicenceClassId === ''){
+
+            $("#districtlistB").append(`<option value='--Please select Business Type First--'>--Please select Business Type First--</option>`)
+
+    }
 }
 </script>
 <script>
@@ -454,18 +479,8 @@ function getWardB()
 <script>
     function saveBizDet()
     { 
-        $('#icon-pills-profile').tab('show');
-        $('.c').addClass('active');
-        $('.a').removeClass('active');
-        $('.b').removeClass('active');
-      getAttachments();
-    //    getPermit();
-        // var BizOwnerType= document.getElementById('busowntype').value;
-        // var NoUnit= document.getElementById('nounits').value;
-        // var TinDate= document.getElementById('basicFlatpickr').value;
-        // var BizTin= document.getElementById('tin_no').value;
-        // var TaxPayer= document.getElementById('taxpayer').value;
-        // var TypeList= document.getElementById('typelist').value;
+        document.getElementById("loading").style.display = "block";
+        document.getElementById("mask").style.display = "block";
         var inputEmail4comp= document.getElementById('inputEmail4comp').value;
         var inputEmail4phn= document.getElementById('inputEmail4phn').value;
         var inputEmail4pobox= document.getElementById('inputEmail4pobox').value;
@@ -495,12 +510,52 @@ function getWardB()
             "inputEmail4phn": inputEmail4phn, "inputEmail4comp": inputEmail4comp, "subwardIdB": subwardIdB}),
             contentType: 'application/json',
             success: function(response) {
-                if(response === 'success'){
-    
-                }
+
+                        if(response == 'success'){
+                            $(".saveBiz").hide();
+                            $(".saveBizOne").show();
+                            swal({
+                                title: 'Success!',
+                                text: 'Data succesfully saved.',
+                                type: 'success',
+                                timer: 2000,
+                            })
+                            getAttachments();
+                            getPermits();
+                            $('#icon-pills-profile').tab('show');
+                            $('.c').addClass('active');
+                            $('.a').removeClass('active');
+                            $('.b').removeClass('active');
+                            
+                        } else{
+                            swal({
+                                type: 'error',
+                                title: 'Oops...',
+                                text: response.message,
+                                padding: '2em',
+                                timer: 3000,
+                            }) 
+                        }
             }
         });
     }
+</script>
+<script>
+    function ValidateEmail()
+        {
+            var emailInput = document.getElementById('inputEmail4comp').value;
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if(emailInput.match(mailformat))
+            {
+                $('.emailValidator').hide()
+                return true;
+            }
+            else
+            {
+                $('.emailValidator').show()
+                return false;
+            }
+        }
 </script>
 <script>
     function onlyNumberKey(evt) {
@@ -513,44 +568,142 @@ function getWardB()
       }
 </script>
 <script>
-function getAttachments(){
-setTimeout(
 function getAttachments()
 { 
+
 $.ajax({
     url: '/GetBLAttachment',
     dataType: 'json',
     success: function(data) {
-        console.log(data)
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("mask").style.display = "none";
         $("#attachmentId").find('tbody').empty();
-            for (var i=0; i<data.length; i++) {
-                var row = $('<tr><td class="text-black cheque-amt tacker_p" id="tacker_p">' + data[i].AttachmentName+ '</td>'+
-                    '<td class="text-black">' + data[i].Description + '</td>'+
-                        '<td class="text-left">'+
-                        
-                            '<button type="button" class="btn btn-primary warning1 passingID1" data-toggle="modal" data-name=' + data[i].AttachmentTypeId+ ' data-desc=' + data[i].AttachmentName+ ' data-batch="1">Attach File</button> '+
-                        ' </td>'+
-                        '</tr>');
-                $('#attachmentId').append(row);
-
+        for (var i = 0; i < data.length; i++) {
+            if(data[i].Path == null){
+                var row = $('<tr><td class="text-black cheque-amt tacker">' + data[i].AttachmentName + '</td>' +
+                '<td class="text-black">' + data[i].Description + '</td>' +
+                '<td class="text-left">' +
+                '<button type="button" class="btn btn-primary warning passingID" data-toggle="modal" data-name="' +
+                data[i].AttachmentTypeId + '" data-desc="' + data[i].AttachmentName + '" data-batch="1">Attach File</button> ' +
+                '<button type="button" class="btn btn-warning warning1 passingID1" data-toggle="modal" data-name="' +
+                '</td>' +
+                '</tr>');
             }
+            if(data[i].Path != null){
+                var row = $('<tr><td class="text-black cheque-amt tacker">' + data[i].AttachmentName + '</td>' +
+                '<td class="text-black">' + data[i].Description + '</td>' +
+                '<td class="text-left">' +
+                '<button type="button" class="btn btn-primary warning passingID" data-toggle="modal" data-name="' +
+                data[i].AttachmentTypeId + '" data-desc="' + data[i].AttachmentName + '" data-batch="1">Attach File</button> ' +
+                '<button type="button" class="btn btn-warning warning1 passingID1" data-toggle="modal" data-name="' +
+                data[i].AttachmentTypeId + '" data-desc="' + data[i].AttachmentName + '" data-batch="1">View File</button> ' +
+                '<button type="button" class="btn btn-danger warning2 passingID2" data-toggle="modal" data-name="' +
+                data[i].AttachmentTypeId + '" data-desc="' + data[i].AttachmentName + '" data-batch="1">Delete File</button> ' +
+                '</td>' +
+                '</tr>');
+            }
+
+            $('#attachmentId').append(row);
+                        // Attach click event handler to dynamically created elements
+            $(document).off('click', '.widget-content .warning.passingID'); // Remove any existing event handlers
+            $(document).on('click', '.widget-content .warning.passingID', function () {
+                
+                var deleteBtn = $(this),
+                id = deleteBtn.data('name'),
+                name = deleteBtn.data('desc'),
+                title_tracker = deleteBtn.closest('tr').find('.tacker').text();
+                $("#categoryID").val(id);
+                $("#trak_no").val(id);
+                $("#atach_nem_p").val(title_tracker);
+                $('#rotateInDownLeft').modal('show');
+            });
+            $(document).off('click', '.widget-content .warning1.passingID1'); // Remove any existing event handlers
             $('.widget-content .warning1.passingID1').on('click', function () {
-    var deleteBtn = $(this),
-    id = deleteBtn.data('name'),
-    name = deleteBtn.data('desc'),
-    title_tracker = deleteBtn.closest('tr').find('.tacker_p').text();
-    $("#categoryID").val( id );
-    $("#trak_no_p").val( id );
-    $("#atach_nem_p").val( title_tracker );
-    $('#rotateInDownLeft').modal('show');
-})
+                var deleteBtn = $(this),
+                id = deleteBtn.data('name'),
+                name = deleteBtn.data('desc'),
+                path_pdf = deleteBtn.data('path'),
+                title_tracker = deleteBtn.closest('tr').find('.tacker').text();
+                $.ajax({
+                        url: "/viewPDf",
+                        type: 'POST',
+                        data: JSON.stringify({"attachmentId": id}),
+                        contentType: 'application/json',
+                        success: function(response) {
+                            var Path = response.Path
+                            // Update the src attribute of the embed element
+                            $('#pdfModalPreview').find('embed').attr('src', 
+                            "http://41.59.228.19/attachment/"+Path);
+
+                            $('#pdfModalPreview').modal('show');
+                        },
+                    });
+
+            });
+            $(document).off('click', '.widget-content .warning2.passingID2'); // Remove any existing event handlers
+            $('.widget-content .warning2.passingID2').on('click', function () {
+                var deleteBtn = $(this),
+                id = deleteBtn.data('name'),
+                name = deleteBtn.data('desc'),
+                path_pdf = deleteBtn.data('path'),
+                title_tracker = deleteBtn.closest('tr').find('.tacker').text();
+                    swal({
+                            title: 'Are you sure yo want to delete this attachment?',
+                            text: "You won't be able to revert this!",
+                            type: 'warning',
+                            showCancelButton: true,
+                            confirmButtonText: 'Delete',
+                            padding: '2em'
+                            }).then(function(result) {
+                            if (result.value) {
+                                $.ajax({
+                                url: "/deletePDf",
+                                type: 'POST',
+                                data: JSON.stringify({"attachmentId": id}),
+                                contentType: 'application/json',
+                                success: function(response) {
+                                swal(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                                )
+                                getAttachments();
+                                    },
+                                });
+                            }
+                        })
+
+                    });
+
+                }
+//             for (var i=0; i<data.length; i++) {
+//                 var row = $('<tr><td class="text-black cheque-amt tacker_p" id="tacker_p">' + data[i].AttachmentName+ '</td>'+
+//                     '<td class="text-black">' + data[i].Description + '</td>'+
+//                         '<td class="text-left">'+
+                        
+//                             '<button type="button" class="btn btn-primary warning1 passingID1" data-toggle="modal" data-name=' + data[i].AttachmentTypeId+ ' data-desc=' + data[i].AttachmentName+ ' data-batch="1">Attach File</button> '+
+//                         ' </td>'+
+//                         '</tr>');
+//                 $('#attachmentId').append(row);
+
+//             }
+//             $('.widget-content .warning1.passingID1').on('click', function () {
+//     var deleteBtn = $(this),
+//     id = deleteBtn.data('name'),
+//     name = deleteBtn.data('desc'),
+//     title_tracker = deleteBtn.closest('tr').find('.tacker_p').text();
+//     $("#categoryID").val( id );
+//     $("#trak_no_p").val( id );
+//     $("#atach_nem_p").val( title_tracker );
+//     $('#rotateInDownLeft').modal('show');
+// })
     }
     // ,
     // error: function(jqXHR, textStatus, errorThrown){
     //     alert('Error1: ' + textStatus + ' - ' + errorThrown);
     // }
 });
-}, 3000);
+// }, 3000);
 }
 </script>
 <script>
@@ -566,6 +719,35 @@ async function uploadFile() {
     body: formData
   }); 
 }
+</script>
+<script>
+    function ApplicationFinal(){
+        $.ajax({
+            url: "/saveApplicationFinal",
+            type: 'GET',
+            contentType: 'application/json', // added data type
+            success: function(data) {
+                if(data === 'success'){
+                    swal({
+                        title: 'Success!',
+                        text: 'Application Submited succesful.',
+                        type: 'success',
+                        timer: 2000,
+                    });
+                    window.location = "/Dashboard" 
+                }else{
+                    swal({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: data,
+                    padding: '2em',
+                    timer: 2000
+                }) 
+                }
+                
+            }
+        });
+    }
 </script>
 <script>
 function myFunction(){
@@ -739,34 +921,80 @@ function getAddrArea()
     }, 1000);
 </script>
 <script>
+// function fileUploadY(){
+// var fileInput = document.querySelector('#fileupload_p');
+// var regId = document.getElementById('categoryID').value;
+// var trackNo = document.getElementById('trackNo').value;
+
+// var reader = new FileReader();
+// reader.readAsDataURL(fileInput.files[0]);
+
+// reader.onload = function () {
+//     $.ajax({
+//         url: "/UploadFY",
+//         type: 'POST',
+//         data: JSON.stringify({"atachment": reader.result, "attachmentId": regId, "trackNo": trackNo}),
+//         contentType: 'application/json',
+//         success: function(response) {
+//            console.log(response)
+//             if(typeof(response) === "string"){response = JSON.parse(response)}
+//         }
+//     });
+//     // alert(reader.result);
+// 	// console.log(reader.result);//base64encoded string
+
+// };
+// reader.onerror = function (error) {
+//     alert('Error: ' + error);
+// 	console.log('Error: ', error);
+// };
+// }
+
 function fileUploadY(){
-var fileInput = document.querySelector('#fileupload_p');
-var regId = document.getElementById('categoryID').value;
-var trackNo = document.getElementById('trackNo').value;
-
-var reader = new FileReader();
-reader.readAsDataURL(fileInput.files[0]);
-
-reader.onload = function () {
-    $.ajax({
-        url: "/UploadFY",
-        type: 'POST',
-        data: JSON.stringify({"atachment": reader.result, "attachmentId": regId, "trackNo": trackNo}),
-        contentType: 'application/json',
-        success: function(response) {
-           console.log(response)
-            if(typeof(response) === "string"){response = JSON.parse(response)}
-        }
-    });
-    // alert(reader.result);
-	// console.log(reader.result);//base64encoded string
-
-};
-reader.onerror = function (error) {
-    alert('Error: ' + error);
-	console.log('Error: ', error);
-};
-}
+    var fileInput = document.querySelector('#fileupload_p');
+    var regId = document.getElementById('categoryID').value;
+    
+    var reader = new FileReader();
+    reader.readAsDataURL(fileInput.files[0]);
+    var file = fileInput.files[0];
+    var fileName = file.name;
+    
+    reader.onload = function () {
+        $.ajax({
+            url: "/UploadFxP",
+            type: 'POST',
+            data: JSON.stringify({"atachment": reader.result, "attachmentId": regId}),
+            contentType: 'application/json',
+            success: function(response) {
+                // if(typeof(response) === "string"){response = JSON.parse(response)}
+                if(response.status == 'sucess'){
+                swal({
+                    title: 'Success!',
+                    text: fileName + ' succesfully uploaded to the system.',
+                    type: 'success',
+                    timer: 3000,
+                })
+            getAttachments()
+                }else{
+                    swal({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'An error occured attachment fail to upload to the system.',
+                    padding: '2em',
+                    timer: 3000
+                })
+                }
+            }
+        });
+        // alert(reader.result);
+        console.log(reader.result);//base64encoded string
+    
+    };
+    reader.onerror = function (error) {
+        //alert('Error: ' + error);
+        console.log('Error: ', error);
+    };
+    }
 </script>
 <script>
 function TinVerifier(){

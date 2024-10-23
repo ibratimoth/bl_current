@@ -33,70 +33,70 @@ $("#html5-extension").find('tbody').empty();
                 row = row + '<td style="color: black;"> ' + data[i].EntityName + ' </td>';
             row = row + '<td style="color: black;">' + data[i].businessTypeName + '</span></td>';
             row = row + '<td style="color: black;"> ' + data[i].BusinessClassId + ' </td>';
-            row = row + '<td style="color: black;">' + data[i].FeePaid + '</td>';
-            // row = row + '<td style="color: black;">' + data[i].expireDate + '</td>';
-            if(data[i].IsBranch === 'Principal'){
-                if(data[i].LicenceStatusId === 'Active'){
-            row = row + '<td>'+
-                '<div class="btn-group">'+
-                    '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">Action'+
-                    '</button>'+
-                    '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
-                        '<a class="dropdown-item warning passingID text-black" href="http://41.59.225.60/api/printout/'+data[i].trackingNo +'/4201/bl">Download Certificate</a>'+
-                        '<a class="dropdown-item text-black" href="/CancelApplication/'+data[i].trackingNo+'" >Cancelation</a>'+
-                        '<a class="dropdown-item text-black" href="/ApplyBLBranch/'+data[i].trackingNo+'" >Apply For Branch</a>'+
-                        '<a class="dropdown-item text-black" href="/Transfer/'+data[i].trackingNo+'">Transfer Business Licence</a>'+
-                '</div>'+
-                ' </td></tr>';
-                    }
-                    if(data[i].LicenceStatusId === 'Expired'){
-            row = row + '<td>'+
-                '<div class="btn-group">'+
-                    '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">Action'+
-                    '</button>'+
-                    '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
-                        '<a class="dropdown-item text-black warning confirm" data-id="'+ data[i].trackingNo +'">Renew</a>'+
-                '</div>'+
-                ' </td></tr>';
-                    }
-                    if(data[i].LicenceStatusId === 'Cancelled'){
-                        row = row + '<td style="color: black;">' + data[i].LicenceStatusId + '</td>';
-                    }
-                    if(data[i].LicenceStatusId === 'Expired '){
-                        row = row + '<td style="color: black;">' + data[i].LicenceStatusId + '</td>';
-                    }
-                    }
-            if(data[i].IsBranch === 'Branch'){
-                if(data[i].LicenceStatusId === 'Active'){
-            row = row + '<td>'+
-                '<div class="btn-group">'+
-                    '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">Action'+
-                    '</button>'+
-                    '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
-                        '<a class="dropdown-item warning passingID text-black" href="http://41.59.225.60/api/printout/'+data[i].trackingNo +'/4201/bl">Download Certificate</a>'+
-                        '<a class="dropdown-item text-black" href="/CancelApplication/'+data[i].trackingNo+'" >Cancelation</a>'+
-                        '<a class="dropdown-item text-black" href="/Transfer/'+data[i].trackingNo+'">Transfer Business Licence</a>'+
-                '</div>'+
-                ' </td></tr>';
-                    }
-                    if(data[i].LicenceStatusId === 'Expired'){
-            row = row + '<td>'+
-                '<div class="btn-group">'+
-                    '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">Action'+
-                    '</button>'+
-                    '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
-                        '<a class="dropdown-item text-black warning confirm" data-id="'+ data[i].trackingNo +'">Renew</a>'+
-                '</div>'+
-                ' </td></tr>';
-                    }
-                    if(data[i].LicenceStatusId === 'Cancelled'){
-                        row = row + '<td style="color: black;">' + data[i].LicenceStatusId + '</td>';
+            row = row + '<td style="color: black;">' + data[i].SubmittedDate + '</td>';
+            row = row + '<td style="color: black;">' + data[i].SubmittedDate + '</td>';
+            // if(data[i].IsBranch === 'Principal'){
+            //     if(data[i].LicenceStatusId === 'Active'){
+            // row = row + '<td>'+
+            //     '<div class="btn-group">'+
+            //         '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">Action'+
+            //         '</button>'+
+            //         '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
+            //             '<a class="dropdown-item warning passingID text-black" href="http://41.59.225.60/api/printout/'+data[i].trackingNo +'/4201/bl">Download Certificate</a>'+
+            //             '<a class="dropdown-item text-black" href="/CancelApplication/'+data[i].trackingNo+'" >Cancelation</a>'+
+            //             '<a class="dropdown-item text-black" href="/ApplyBLBranch/'+data[i].trackingNo+'" >Apply For Branch</a>'+
+            //             '<a class="dropdown-item text-black" href="/Transfer/'+data[i].trackingNo+'">Change of Location</a>'+
+            //     '</div>'+
+            //     ' </td></tr>';
+            //         }
+            //         if(data[i].LicenceStatusId === 'Expired'){
+            // row = row + '<td>'+
+            //     '<div class="btn-group">'+
+            //         '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">Action'+
+            //         '</button>'+
+            //         '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
+            //             '<a class="dropdown-item text-black warning confirm" data-id="'+ data[i].trackingNo +'">Renew</a>'+
+            //     '</div>'+
+            //     ' </td></tr>';
+            //         }
+            //         if(data[i].LicenceStatusId === 'Cancelled'){
+            //             row = row + '<td style="color: black;">' + data[i].LicenceStatusId + '</td>';
+            //         }
+            //         if(data[i].LicenceStatusId === 'Expired '){
+            //             row = row + '<td style="color: black;">' + data[i].LicenceStatusId + '</td>';
+            //         }
+            //         }
+            // if(data[i].IsBranch === 'Branch'){
+            //     if(data[i].LicenceStatusId === 'Active'){
+            // row = row + '<td>'+
+            //     '<div class="btn-group">'+
+            //         '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">Action'+
+            //         '</button>'+
+            //         '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
+            //             '<a class="dropdown-item warning passingID text-black" href="http://41.59.225.60/api/printout/'+data[i].trackingNo +'/4201/bl">Download Certificate</a>'+
+            //             '<a class="dropdown-item text-black" href="/CancelApplication/'+data[i].trackingNo+'" >Cancelation</a>'+
+            //             '<a class="dropdown-item text-black" href="/Transfer/'+data[i].trackingNo+'">Change of Location</a>'+
+            //     '</div>'+
+            //     ' </td></tr>';
+            //         }
+            //         if(data[i].LicenceStatusId === 'Expired'){
+            // row = row + '<td>'+
+            //     '<div class="btn-group">'+
+            //         '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">Action'+
+            //         '</button>'+
+            //         '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
+            //             '<a class="dropdown-item text-black warning confirm" data-id="'+ data[i].trackingNo +'">Renew</a>'+
+            //     '</div>'+
+            //     ' </td></tr>';
+            //         }
+            //         if(data[i].LicenceStatusId === 'Cancelled'){
+            //             row = row + '<td style="color: black;">' + data[i].LicenceStatusId + '</td>';
 
-                    }
-                    if(data[i].LicenceStatusId === 'Expired '){
-                        row = row + '<td style="color: black;">' + data[i].LicenceStatusId + '</td>';
-                    }
-                    }
+            //         }
+            //         if(data[i].LicenceStatusId === 'Expired '){
+            //             row = row + '<td style="color: black;">' + data[i].LicenceStatusId + '</td>';
+            //         }
+            //         }
             }
       
         $('#html5-extension').append(row);

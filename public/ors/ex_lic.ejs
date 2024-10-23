@@ -42,10 +42,11 @@ $("#html5-extension").find('tbody').empty();
                     '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">Action'+
                     '</button>'+
                     '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
-                        '<a class="dropdown-item warning passingID text-black" href="http://41.59.225.60/api/printout/'+data[i].trackingNo +'/4201/bl">Download Certificate</a>'+
+                        '<a class="dropdown-item warning passingID text-black" href="http://41.59.228.25/api/printout/'+data[i].trackingNo +'/4201/bl">Download Certificate</a>'+
+                        // '<a class="dropdown-item warning passingID text-black" href="http://41.59.225.60/api/printout/'+data[i].trackingNo +'/4201/bl">Download Certificate</a>'+
                         '<a class="dropdown-item text-black" href="/CancelApplication/'+data[i].trackingNo+'" >Cancelation</a>'+
                         '<a class="dropdown-item text-black" href="/ApplyBLBranch/'+data[i].trackingNo+'" >Apply For Branch</a>'+
-                        '<a class="dropdown-item text-black" href="/Transfer/'+data[i].trackingNo+'">Transfer Business Licence</a>'+
+                        '<a class="dropdown-item text-black" href="/Transfer/'+data[i].trackingNo+'">Change of Location</a>'+
                 '</div>'+
                 ' </td></tr>';
                     }
@@ -71,9 +72,10 @@ $("#html5-extension").find('tbody').empty();
                     '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">Action'+
                     '</button>'+
                     '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
-                        '<a class="dropdown-item warning passingID text-black" href="http://41.59.225.60/api/printout/'+data[i].trackingNo +'/4201/bl">Download Certificate</a>'+
+                        '<a class="dropdown-item warning passingID text-black" href="http://41.59.228.25/api/printout/'+data[i].trackingNo +'/4201/bl">Download Certificate</a>'+
+                        // '<a class="dropdown-item warning passingID text-black" href="http://41.59.225.60/api/printout/'+data[i].trackingNo +'/4201/bl">Download Certificate</a>'+
                         '<a class="dropdown-item text-black" href="/CancelApplication/'+data[i].trackingNo+'" >Cancelation</a>'+
-                        '<a class="dropdown-item text-black" href="/Transfer/'+data[i].trackingNo+'">Transfer Business Licence</a>'+
+                        '<a class="dropdown-item text-black" href="/Transfer/'+data[i].trackingNo+'">Change of Location</a>'+
                 '</div>'+
                 ' </td></tr>';
                     }
@@ -100,42 +102,118 @@ $("#html5-extension").find('tbody').empty();
             var deleteBtn = $(this),
             id = deleteBtn.data('id'),
             title_tracker = deleteBtn.closest('tr').find('.tacker').text();
-            swal({
-            title: 'Renew Business Licence',
-            text: "Do you want to Renew Business Licence Number " + title_tracker+"?",
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Renew',
-            padding: '2em'
-            }).then(function(result) {
 
-            if (result.value) {
-            $.ajax({
-            url: "/Renew",
-            type: 'POST',
-            data: JSON.stringify({"BLNumber": title_tracker}),
-            contentType: 'application/json',
-            success: function(response) {
-                swal({
-                        title: 'Renew Business Licence!',
-                        text: 'Application for Renew of Business Licence has been sent succesfully.',
-                        type: 'success',
-                        timer: 2000,
-                    }
-            ).then(function(result){
-                location.reload();
-            })
-            }
-            });
-            }
-            })
+            $('#rotateInDownLeft').modal('show');
+            var txtBox = document.getElementById('swali');
+            var uploadType = document.getElementById('uploadType');
+            txtBox.textContent = "Do you want to Renew Business Licence Number " + title_tracker+"?";
+            uploadType.value = title_tracker
             })
     }
 }
-// ,
-// error: function(jqXHR, textStatus, errorThrown){
-//     alert('Error: ' + textStatus + ' - ' + errorThrown);
-// }
 });
 }, 2000);
+
+function validateSize(input) {
+      const fileSize = input.files[0].size / 1024 / 1024; // in MiB
+      if (fileSize > 2) {
+        swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'File size exceeds 2 MiB, Please Try Again!',
+                padding: '2em',
+                timer: 3000
+            })
+        document.querySelector('#upload-btn').disabled = true;
+        // $(file).val(''); //for clearing with Jquery
+      } else {
+        // Proceed further
+        if ( input.files[0].type === 'application/pdf' ) {
+            console.log( 'It is validated!' )
+        document.querySelector('#upload-btn').disabled = false;
+        }else{
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Only PDF file required, Please Try Again!',
+                padding: '2em',
+                timer: 3000
+            })
+            document.querySelector('#upload-btn').disabled = true;
+        }
+      }
+}
+
+function fileUploadX(){
+$(".TinLoader").show();
+$(".TinFirst").hide();
+var fileInput = document.querySelector('#fileupload');
+var regId = document.getElementById('categoryID').value;
+var uploadType = document.getElementById('uploadType').value;
+var file = fileInput.files[0];
+var fileName = file.name;
+
+var reader = new FileReader();
+reader.readAsDataURL(fileInput.files[0]);
+
+reader.onload = function () {
+    $.ajax({
+            url: "/Renew",
+            type: 'POST',
+            data: JSON.stringify({"BLNumber": uploadType}),
+            contentType: 'application/json',
+            success: function(response) {
+                if(response.status == 'fail'){
+                    $(".TinLoader").hide();
+                    $(".TinFirst").show();
+                    swal({
+                        type: 'error',
+                        title: 'Oops...',
+                        text: response.data,
+                        padding: '2em',
+                        timer: 3000
+                    })
+                }else if(response.status == 'success'){
+                    $.ajax({
+                    url: "/UploadFx",
+                    type: 'POST',
+                    data: JSON.stringify({"atachment": reader.result, "attachmentId": regId}),
+                    contentType: 'application/json',
+                    success: function(response) {
+                    // alert("response")
+                        if(typeof(response) === "string"){response = JSON.parse(response)}
+                        $(".TinLoader").hide();
+                        $(".TinFirst").show();
+                            swal({
+                                    title: 'Renew Business Licence!',
+                                    text: 'Application for Renew of Business Licence has been sent succesfully.',
+                                    type: 'success',
+                                    timer: 3000,
+                                }
+                            ).then(function(result){
+                                // location.reload();
+                                window.location.href = "/Dashboard";
+                            })
+                    }
+                });
+                }
+            }
+            });
+  
+    // alert(reader.result);
+	console.log(reader.result);//base64encoded string
+
+};
+reader.onerror = function (error) {
+    //alert('Error: ' + error);
+	console.log('Error: ', error);
+    swal({
+            type: 'error',
+            title: 'Oops...',
+            text: fileName + ' Fail to upload, please try again',
+            padding: '2em',
+            timer: 3000
+        })
+};
+}
 </script>

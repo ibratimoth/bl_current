@@ -17,10 +17,16 @@
             }
         });
     } );
-</script>       
+</script>  
 <script>
-    setTimeout(
-        function()
+    function handleButtonClick() {
+      generateTrackingNo();
+      getAttachments();
+    }
+  </script>     
+<script>
+    // setTimeout(
+        function generateTrackingNo()
         { 
             $(".unservayed").hide();
             $.ajax({
@@ -32,26 +38,59 @@
                 txtBox.value = data;
                 var txtBox1 = document.getElementById('trackNo');
                 txtBox1.value = data;
-                saveApplicantDet();
+                if(data.length > 0){
+                    
+               // saveApplicantDet();
+               var TrackingNo= document.getElementById('inputEmail4').value;
+                var servtype= document.getElementById('servtype').value;
+                var fname= document.getElementById('fname').value;
+                var mname= document.getElementById('mname').value;
+                var lname= document.getElementById('lname').value;
+                var gender= document.getElementById('gender').value;
+                var dob= document.getElementById('dob').value;
+                var citizen= document.getElementById('citizen').value;
+
+            // alert(document.getElementById('inputEmail4').value);
+            $.ajax({
+                url: "/saveStageFirst",
+                type: 'POST',
+                data: JSON.stringify({
+                    "TrackingNo": TrackingNo, 
+                    "servtype": servtype, 
+                    "fname": fname, 
+                    "mname": mname, 
+                    "lname": lname, 
+                    "gender": gender, 
+                    "dob": dob, 
+                    "citizen": citizen}),
+                contentType: 'application/json',
+                success: function(response) {
+                saveBizDet()
+                        }
+                    })
                 }
-            });
-    }, 2000);
+                
+                    }
+                });
+        }
+    // , 2000);
 </script>
 <script type="text/javascript">
     window.addEventListener("load", function(args){
         window.setTimeout(function () {
             document.getElementById("loading").style.display = "none";
             document.getElementById("mask").style.display = "none";
+            saveApplicantDet();
         }, 5000);
     });
 </script>
 <script>
-        setTimeout(
+        // setTimeout(
 function getParticular()
 { 
-    $(window).load(function() {
-            $(".loader").fadeOut("slow");
-    });
+    // $(window).load(function() {
+    //         $(".loader").fadeOut("slow");
+    // });
     $.ajax({
         url: "/GetParticular",
         type: 'GET',
@@ -60,6 +99,7 @@ function getParticular()
             if(typeof(response) === "string"){response = JSON.parse(response)}
         // if(response.length > 0) {
         //     response.forEach(el => {
+            
                 var txtBox = document.getElementById('fname');
                 txtBox.value = response.fname;
                 var txtBox1 = document.getElementById('mname');
@@ -76,7 +116,8 @@ function getParticular()
         // }
         }
     });
-}, 1000);
+}
+// , 1000);
 </script>
 <script>
 // setTimeout(
@@ -184,7 +225,7 @@ function getBizCatDet()
         url: '/GetBusTypePermitsCount'+'/'+bizNumber,
         dataType: 'json',
         success: function(data) {
-            alert(data)
+            //alert(data)
             if(typeof(data) === "string"){data = JSON.parse(data)}
            if(data === 'success'){
             $(".permitInfo").show();
@@ -237,36 +278,47 @@ function saveApplicantDet()
     $('.b').addClass('active');
     $('.a').removeClass('active');
     $('.c').removeClass('active');
-    var TrackingNo= document.getElementById('inputEmail4').value;
-    var servtype= document.getElementById('servtype').value;
-    var fname= document.getElementById('fname').value;
-    var mname= document.getElementById('mname').value;
-    var lname= document.getElementById('lname').value;
-    var gender= document.getElementById('gender').value;
-    var dob= document.getElementById('dob').value;
-    var citizen= document.getElementById('citizen').value;
+//     var TrackingNo= document.getElementById('inputEmail4').value;
+//     var servtype= document.getElementById('servtype').value;
+//     var fname= document.getElementById('fname').value;
+//     var mname= document.getElementById('mname').value;
+//     var lname= document.getElementById('lname').value;
+//     var gender= document.getElementById('gender').value;
+//     var dob= document.getElementById('dob').value;
+//     var citizen= document.getElementById('citizen').value;
 
-   // alert(document.getElementById('inputEmail4').value);
-    $.ajax({
-        url: "/saveStageFirst",
-        type: 'POST',
-        data: JSON.stringify({"TrackingNo": TrackingNo, "servtype": servtype, "fname": fname, "mname": mname, "lname": lname, "gender": gender, "dob": dob, "citizen": citizen}),
-        contentType: 'application/json',
-        success: function(response) {
-            getOrigin();
+//    // alert(document.getElementById('inputEmail4').value);
+//     $.ajax({
+//         url: "/saveStageFirst",
+//         type: 'POST',
+//         data: JSON.stringify({
+//             "TrackingNo": TrackingNo, 
+//             "servtype": servtype, 
+//             "fname": fname, 
+//             "mname": mname, 
+//             "lname": lname, 
+//             "gender": gender, 
+//             "dob": dob, 
+//             "citizen": citizen}),
+//         contentType: 'application/json',
+//         success: function(response) {
+            // getParticular();
+            getBusOwnTypeData();
+            // getBusOwnTypeData();
             getOwnerType();
-            getBusOwnTypeData();
-            getBusOwnTypeData();
+            getOrigin();
             regAddress();
             regB();
-           // alert("response")
-            if(typeof(response) === "string"){response = JSON.parse(response)}
-            if(response === 'success'){
-               // alert(response)
+            
+            // saveBizDet()
+           // 
+    //         if(typeof(response) === "string"){response = JSON.parse(response)}
+    //         if(response === 'success'){
+    //            // alert(response)
 
-            }
-        }
-    });
+    //         }
+    //     }
+    // });
 }
 // window.onload = saveApplicantDet;
 </script>
@@ -293,8 +345,8 @@ function saveApplicantDet()
     function getBusOwnTypeData()
     { 
         // var BizownerTypeId= document.getElementById('bustype').value;
-        // $('#busowntype')
-        // .empty()
+        $('#busowntype')
+        .empty()
         $.ajax({
             url: "/GetBusOwnerType",
             type: 'GET',
@@ -339,6 +391,8 @@ function getSector(){
 // setTimeout(
 // function sector()
 // { 
+    $('#sectorlist')
+        .empty()
     $.ajax({
         url: "/GetBusSector",
         type: 'GET',
@@ -478,6 +532,15 @@ function getDistrictB()
               return false;
           return true;
       }
+    function onlyNumberKeyThree(evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode >= 49 && charCode <= 51) { // Allow only 1, 2, or 3
+        if (evt.target.value.length === 0) { // Check if the input length is 0
+            return true; // Allow input
+        }
+    }
+    return false; // Prevent input
+    }
 </script>
 <script>
 function getWardB()
@@ -512,8 +575,7 @@ function getWardB()
             type: 'POST',
             data: JSON.stringify({subwardId: regId}),
             contentType: 'application/json',
-            success: function(response) {
-                console.log(response)  
+            success: function(response) { 
             if(typeof(response) === "string"){response = JSON.parse(response)}
 
             if(response.length > 0) {
@@ -529,6 +591,23 @@ function getWardB()
     }
 </script>
 <script>
+    function ValidateEmail()
+        {
+            var emailInput = document.getElementById('inputEmail4comp').value;
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if(emailInput.match(mailformat))
+            {
+                $('.emailValidator').hide()
+                return true;
+            }
+            else
+            {
+                $('.emailValidator').show()
+                return false;
+            }
+        }
+</script>
+<script>
     function saveBizDet()
     { 
         $(".saveBizOne").hide();
@@ -537,6 +616,7 @@ function getWardB()
         var NoUnit= document.getElementById('nounits').value;
         var BizTin= document.getElementById('tin_no').value;
         var TaxPayer= document.getElementById('taxpayer').value;
+        var taxpayerBN = document.getElementById('taxpayerBN').value;
         var TypeList= document.getElementById('typelist').value;
         var inputEmail4comp= document.getElementById('inputEmail4comp').value;
         var inputEmail4phn= document.getElementById('inputEmail4phn').value;
@@ -560,7 +640,7 @@ function getWardB()
         var road= document.getElementById('inputroad').value;
         var plot_no= document.getElementById('plot_no').value;
         var block_no= document.getElementById('block_no').value;
-        var house_no= document.getElementById('house_no').value;
+        var house_no = document.getElementById('house_no').value.trim();
         var unservayedarea= document.getElementById('unservayedarea').value;
         var subwardIdB= document.getElementById('subwardIdB').value;
 
@@ -573,8 +653,14 @@ function getWardB()
         var company_name= document.getElementById('company_name').value;
 
         var bn_no= document.getElementById('bn_no').value;
+        var substring = "T/A";
         var bn_name= document.getElementById('bn_name').value;
+        if(bn_name.includes(substring)){
+            var subn_name = bn_name.split('T/A')
+            bn_name = subn_name[1]
+        }
         var tin_no_ver = document.getElementById("tin_no_ver").value;
+        var duration_licence_years = document.getElementById("duration_licence_years").value;
         // alert(inputEmail4phn[0])
 
         if(subwardIdB == 0){
@@ -712,6 +798,83 @@ function getWardB()
             $(".saveBiz").hide();
             $(".saveBizOne").show(); 
         }
+        if(road.length <= 0){
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Please provide road!',
+                padding: '2em',
+                timer: 3000,
+            }) 
+            $(".saveBiz").hide();
+            $(".saveBizOne").show(); 
+        }
+        if(street.length <= 0){
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Please provide road!',
+                padding: '2em',
+                timer: 3000,
+            }) 
+            $(".saveBiz").hide();
+            $(".saveBizOne").show(); 
+        }
+        if(addressAreaB == 1 && plot_no.length <= 0){
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Please enter Plot Number!',
+                padding: '2em',
+                timer: 3000,
+            }) 
+            $(".saveBiz").hide();
+            $(".saveBizOne").show();  
+        }
+        if(addressAreaB == 1 && block_no.length <= 0){
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Please enter Block Number!',
+                padding: '2em',
+                timer: 3000,
+            }) 
+            $(".saveBiz").hide();
+            $(".saveBizOne").show();  
+        }
+        if(addressAreaB == 1){
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Please enter Block Number!',
+                padding: '2em',
+                timer: 3000,
+            })  
+            $(".saveBiz").hide();
+            $(".saveBizOne").show(); 
+        }
+        if(house_no === ""){
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Please enter House Number!',
+                padding: '2em',
+                timer: 3000,
+            })  
+            $(".saveBiz").hide();
+            $(".saveBizOne").show(); 
+        }
+        if(addressAreaB == 2 && unservayedarea.length <= 0){
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Please enter Unsurveyed Details!',
+                padding: '2em',
+                timer: 3000,
+            }) 
+            $(".saveBiz").hide();
+            $(".saveBizOne").show();  
+        }
         if(inputEmail4pobox.length <= 0){
             swal({
                 type: 'error',
@@ -773,7 +936,7 @@ function getWardB()
             }
             if(BizOwnerType == 1 && nida_no.length > 0){
                 var fullname = fname + " " + mname + " " + lname;
-                 if(fullname != TaxPayer){
+                 if(fullname.toUpperCase().trim() != TaxPayer.toUpperCase().trim()){
                     swal({
                         type: 'error',
                         title: 'Oops...',
@@ -796,24 +959,32 @@ function getWardB()
                     "nida_no": nida_no, "fname": fname, "mname": mname, "lname": lname, "gender": gender, "dob": dob, 
                     "issuingAuthorityId": issuingAuthorityId, "inputEmail4phn": inputEmail4phn, "inputEmail4comp": inputEmail4comp, 
                     "businessLicenceClassId": businessLicenceClassId, "BizOwnerType": BizOwnerType, "NoUnit": NoUnit, "BizTin": BizTin, 
-                    "TaxPayer": TaxPayer, "TypeList": TypeList, "subwardIdB": subwardIdB}),
+                    "TaxPayer": TaxPayer, "TypeList": TypeList, 
+                    "subwardIdB": subwardIdB, "duration_licence_years": duration_licence_years}),
                     contentType: 'application/json',
                     success: function(response) {
-                        //console.log(response)
-                        $(".saveBiz").hide();
-                        $(".saveBizOne").show();
-                        swal({
-                            title: 'Success!',
-                            text: 'Data succesfully saved.',
-                            type: 'success',
-                            timer: 2000,
-                        })
-                    getAttachments();
-                    getPermit();
-
-
-
-            
+                        if(response.status == 'no data'){
+                            swal({
+                                type: 'error',
+                                title: 'Oops...',
+                                text: response.message,
+                                padding: '2em',
+                                timer: 3000,
+                            }) 
+                        }
+                        else{
+                            $(".saveBiz").hide();
+                            $(".saveBizOne").show();
+                            swal({
+                                title: 'Success!',
+                                text: 'Data succesfully saved.',
+                                type: 'success',
+                                timer: 2000,
+                            })
+                            getAttachments();
+                            getPermits();
+                            
+                        }
                     },
                 // error: function(jqXHR, textStatus, errorThrown){
                 //     alert('Error: ' + textStatus + ' - ' + errorThrown);
@@ -822,7 +993,7 @@ function getWardB()
                 }
             }
             if(BizOwnerType == 2 && inco_no.length > 0){
-                if(company_name != TaxPayer){
+                if(company_name.toUpperCase().trim() != TaxPayer.toUpperCase().trim()){
                     swal({
                         type: 'error',
                         title: 'Oops...',
@@ -849,6 +1020,35 @@ function getWardB()
                         contentType: 'application/json',
                         success: function(response) {
                             //console.log(response)
+                        //     $(".saveBiz").hide();
+                        //     $(".saveBizOne").show();
+                        //     swal({
+                        //         title: 'Success!',
+                        //         text: 'Data succesfully saved.',
+                        //         type: 'success',
+                        //         timer: 2000,
+                        //     })
+                        // getAttachments();
+                        // getPermits();
+                        if(response.status == 'no data'){
+                            swal({
+                                type: 'error',
+                                title: 'Oops...',
+                                text: response.message,
+                                padding: '2em',
+                                timer: 3000,
+                            }) 
+                        }
+                        // if(response.status == 'failed'){
+                        //     swal({
+                        //         type: 'error',
+                        //         title: 'Oops...',
+                        //         text: "Something went wrong",
+                        //         padding: '2em',
+                        //         timer: 3000,
+                        //     }) 
+                        // }
+                        else{
                             $(".saveBiz").hide();
                             $(".saveBizOne").show();
                             swal({
@@ -857,8 +1057,10 @@ function getWardB()
                                 type: 'success',
                                 timer: 2000,
                             })
-                        getAttachments();
-                        getPermit();
+                            getAttachments();
+                            getPermits();
+                            
+                        }
 
 
 
@@ -868,7 +1070,7 @@ function getWardB()
                 }
             }
             if(BizOwnerType == 3 && reg_no_other.length > 0){
-                if(corporate_name != TaxPayer){
+                if(corporate_name.toUpperCase().trim() != TaxPayer.toUpperCase().trim()){
                     swal({
                         type: 'error',
                         title: 'Oops...',
@@ -894,17 +1096,37 @@ function getWardB()
                     "TaxPayer": TaxPayer, "TypeList": TypeList, "subwardIdB": subwardIdB}),
                     contentType: 'application/json',
                     success: function(response) {
-                        //console.log(response)
-                        $(".saveBiz").hide();
-                        $(".saveBizOne").show();
-                        swal({
-                            title: 'Success!',
-                            text: 'Data succesfully saved.',
-                            type: 'success',
-                            timer: 2000,
-                        })
-                    getAttachments();
-                    getPermit();
+                        if(response.status == 'no data'){
+                            swal({
+                                type: 'error',
+                                title: 'Oops...',
+                                text: response.message,
+                                padding: '2em',
+                                timer: 3000,
+                            }) 
+                        }
+                        // if(response.status == 'failed'){
+                        //     swal({
+                        //         type: 'error',
+                        //         title: 'Oops...',
+                        //         text: "Something went wrong",
+                        //         padding: '2em',
+                        //         timer: 3000,
+                        //     }) 
+                        // }
+                        else{
+                            $(".saveBiz").hide();
+                            $(".saveBizOne").show();
+                            swal({
+                                title: 'Success!',
+                                text: 'Data succesfully saved.',
+                                type: 'success',
+                                timer: 2000,
+                            })
+                            getAttachments();
+                            getPermits();
+                            
+                        }
 
 
 
@@ -914,11 +1136,11 @@ function getWardB()
                  }
             }
             if(BizOwnerType == 4 && bn_no.length > 0){
-                if(bn_name != TaxPayer){
+                if(TaxPayer != taxpayerBN){
                     swal({
                         type: 'error',
                         title: 'Oops...',
-                        text: 'Name mismatch please check!',
+                        text: 'Business Name Owner missmatch, Please try again!',
                         padding: '2em',
                         timer: 3000,
                     }) 
@@ -940,17 +1162,37 @@ function getWardB()
                     "TaxPayer": TaxPayer, "TypeList": TypeList, "subwardIdB": subwardIdB}),
                     contentType: 'application/json',
                     success: function(response) {
-                        //console.log(response)
-                        $(".saveBiz").hide();
-                        $(".saveBizOne").show();
-                        swal({
-                            title: 'Success!',
-                            text: 'Data succesfully saved.',
-                            type: 'success',
-                            timer: 2000,
-                        })
-                    getAttachments();
-                    getPermit();
+                        if(response.status == 'no data'){
+                            swal({
+                                type: 'error',
+                                title: 'Oops...',
+                                text: response.message,
+                                padding: '2em',
+                                timer: 3000,
+                            }) 
+                        }
+                        // if(response.status == 'failed'){
+                        //     swal({
+                        //         type: 'error',
+                        //         title: 'Oops...',
+                        //         text: "Something went wrong",
+                        //         padding: '2em',
+                        //         timer: 3000,
+                        //     }) 
+                        // }
+                        else{
+                            $(".saveBiz").hide();
+                            $(".saveBizOne").show();
+                            swal({
+                                title: 'Success!',
+                                text: 'Data succesfully saved.',
+                                type: 'success',
+                                timer: 2000,
+                            })
+                            getAttachments();
+                            getPermits();
+                            
+                        }
 
 
 
@@ -964,39 +1206,127 @@ function getWardB()
 </script>
 <script>
     function getAttachments() {
-    $.ajax({
-        url: '/GetBLAttachment',
-        dataType: 'json',
-        success: function (data) {
-            $("#attachmentId").find('tbody').empty();
-            for (var i = 0; i < data.length; i++) {
-                var row = $('<tr><td class="text-black cheque-amt tacker">' + data[i].AttachmentName + '</td>' +
-                    '<td class="text-black">' + data[i].Description + '</td>' +
-                    '<td class="text-left">' +
-                    '<button type="button" class="btn btn-primary warning passingID" data-toggle="modal" data-name="' +
-                    data[i].AttachmentTypeId + '" data-desc="' + data[i].AttachmentName + '" data-batch="1">Attach File</button> ' +
-                    '</td>' +
-                    '</tr>');
-                $('#attachmentId').append(row);
-                            // Attach click event handler to dynamically created elements
-                $(document).off('click', '.widget-content .warning.passingID'); // Remove any existing event handlers
-                $(document).on('click', '.widget-content .warning.passingID', function () {
-                    
-                    var deleteBtn = $(this),
-                    id = deleteBtn.data('name'),
-                    name = deleteBtn.data('desc'),
-                    title_tracker = deleteBtn.closest('tr').find('.tacker').text();
-                    $("#categoryID").val(id);
-                    $("#trak_no").val(id);
-                    $("#atach_nem").val(title_tracker);
-                    $('#rotateInDownLeft').modal('show');
+        // Hide save button, show loading indicator
+        $('#saveBizOne').hide();
+        $('#saveBiz').show();
+    
+        // Call getPermits
+        getPermits();
+    
+        // AJAX request to fetch attachments
+        $.ajax({
+            url: '/GetBLAttachment',
+            dataType: 'json',
+            success: function (data) {
+                // Empty the table before adding new data
+                let attachmentTable = $("#attachmentId").find('tbody');
+                attachmentTable.empty();
+    
+                let rows = ''; // Collect all rows first to avoid multiple DOM manipulations
+    
+                // Loop through the data
+                data.forEach(function(item) {
+                    let row = '<tr><td class="text-black cheque-amt tacker">' + item.AttachmentName + '</td>' +
+                              '<td class="text-black">' + item.Description + '</td>' +
+                              '<td class="text-left">';
+    
+                    // Add buttons based on whether the attachment has a file path
+                    row += '<button type="button" class="btn btn-primary warning passingID" data-toggle="modal" data-name="' +
+                           item.AttachmentTypeId + '" data-desc="' + item.AttachmentName + '" data-batch="1">Attach File</button> ';
+    
+                    if (item.Path != null) {
+                        row += '<button type="button" class="btn btn-warning warning1 passingID1" data-toggle="modal" data-name="' +
+                               item.AttachmentTypeId + '" data-desc="' + item.AttachmentName + '" data-batch="1">View File</button> ' +
+                               '<button type="button" class="btn btn-danger warning2 passingID2" data-toggle="modal" data-name="' +
+                               item.AttachmentTypeId + '" data-desc="' + item.AttachmentName + '" data-batch="1">Delete File</button> ';
+                    }
+    
+                    row += '</td></tr>';
+                    rows += row;
                 });
+    
+                // Append all rows at once for better performance
+                attachmentTable.append(rows);
+    
+                // Rebind event handlers for dynamic elements
+                rebindEventHandlers();
+    
+                // Show save button again, hide loading indicator
+                $('#saveBizOne').show();
+                $('#saveBiz').hide();
+            },
+            error: function() {
+                // Handle error case and restore the button states
+                alert("Failed to load attachments. Please try again.");
+                $('#saveBizOne').show();
+                $('#saveBiz').hide();
             }
+        });
+    }
+    
+    function rebindEventHandlers() {
+        // Handle Attach File button click
+        $(document).off('click', '.widget-content .warning.passingID').on('click', '.widget-content .warning.passingID', function () {
+            var deleteBtn = $(this),
+                id = deleteBtn.data('name'),
+                title_tracker = deleteBtn.closest('tr').find('.tacker').text();
             
-
-        }
-    });
-}
+            // Update modal values
+            $("#fileupload").val('');
+            $("#categoryID").val(id);
+            $("#trak_no").val(id);
+            $("#atach_nem").val(title_tracker);
+            $('#rotateInDownLeft').modal('show');
+        });
+    
+        // Handle View File button click
+        $(document).off('click', '.widget-content .warning1.passingID1').on('click', '.widget-content .warning1.passingID1', function () {
+            var deleteBtn = $(this),
+                id = deleteBtn.data('name');
+            
+            // AJAX call to get PDF view path
+            $.ajax({
+                url: "/viewPDf",
+                type: 'POST',
+                data: JSON.stringify({ "attachmentId": id }),
+                contentType: 'application/json',
+                success: function(response) {
+                    var Path = response.Path;
+                    $('#pdfModalPreview').find('embed').attr('src', "http://41.59.228.19/attachment/" + Path);
+                    $('#pdfModalPreview').modal('show');
+                },
+            });
+        });
+    
+        // Handle Delete File button click
+        $(document).off('click', '.widget-content .warning2.passingID2').on('click', '.widget-content .warning2.passingID2', function () {
+            var deleteBtn = $(this),
+                id = deleteBtn.data('name');
+    
+            swal({
+                title: 'Are you sure you want to delete this attachment?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Delete',
+                padding: '2em'
+            }).then(function(result) {
+                if (result.value) {
+                    $.ajax({
+                        url: "/deletePDf",
+                        type: 'POST',
+                        data: JSON.stringify({ "attachmentId": id }),
+                        contentType: 'application/json',
+                        success: function() {
+                            swal('Deleted!', 'Your file has been deleted.', 'success');
+                            getAttachments(); // Refresh the list
+                        },
+                    });
+                }
+            });
+        });
+    }
+    
 
     // function getAttachments(){
     // setTimeout(
@@ -1038,17 +1368,63 @@ function getWardB()
     // }
 </script>
 <script>
+// async function uploadFile() {
+//   let formData = new FormData(); 
+//   formData.append("fileupload", fileupload.files[0]);
+//   formData.append("categoryID", document.getElementById('categoryID').value);
+//   formData.append("trackNo", document.getElementById('trackNo').value);
+//   formData.append("uploadType", document.getElementById('uploadType').value);
+  
+//     await fetch('/upload', {
+//     method: "POST", 
+//     body: formData
+//   }); 
+// }
+
 async function uploadFile() {
   let formData = new FormData(); 
   formData.append("fileupload", fileupload.files[0]);
   formData.append("categoryID", document.getElementById('categoryID').value);
   formData.append("trackNo", document.getElementById('trackNo').value);
   formData.append("uploadType", document.getElementById('uploadType').value);
-  
-    await fetch('/upload', {
-    method: "POST", 
-    body: formData
-  }); 
+
+  try {
+    const response = await fetch('/upload', {
+      method: "POST", 
+      body: formData
+    });
+    console.log(response)
+    if (response.ok) {
+      // If the response status code is in the 200-299 range, it's considered a success.
+      const data = await response.json(); // Assuming the response is in JSON format
+    //   alert('Upload successful! Response data: ' + JSON.stringify(data));
+    swal({
+            title: 'Success!',
+            text: 'Attachment successfully uploaded',
+            type: 'success',
+            timer: 2000,
+        });
+    } else {
+      // If the response status code is not in the 200-299 range, it's an error.
+    //   alert('Upload failed. Status: ' + response.status);
+    swal({
+            type: 'error',
+            title: 'Oops...',
+            text: "Fail to uplade file please try again",
+            padding: '2em',
+            timer: 2000
+        })
+    }
+  } catch (error) {
+    // alert('An error occurred: ' + error.message);
+    swal({
+            type: 'error',
+            title: 'Oops...',
+            text: "Network problem, please contact admnistrator",
+            padding: '2em',
+            timer: 2000
+        })
+  }
 }
 </script>
 <script>
@@ -1116,40 +1492,50 @@ function myFunction(){
     // setTimeout(
     function getPermits()
     { 
+        //alert("bizNumber")
         var bizNumber = document.getElementById('bizNumber').value;
-        // alert(bizNumber)
+        //alert(bizNumber)
     $.ajax({
         url: '/GetBusTypePermits'+'/'+bizNumber,
         dataType: 'json',
         success: function(data) {
             // alert(data)
             $("#permittId").find('tbody').empty();
-                for (var i=0; i<=data.length; i++) {
-                    var row = $('<tr><td class="text-black cheque-amt tacker1" id="tacker1">' + data[i].PermitName+ '</td>'+
-                        '<td class="text-black">' + data[i].IssuingAgency + '</td>'+
-                            '<td class="text-left">'+
+            for (var i = 0; i < data.length; i++) {
+                var row = $(
+                    '<tr>' +
+                        '<td class="text-black cheque-amt tacker1" id="tacker1">' + data[i].PermitName + '</td>' +
+                        '<td class="text-black">' + data[i].IssuingAgency + '</td>' +
+                        '<td class="text-left">' +
                             
-                                '<button type="button" class="btn btn-primary warning1 passingID1" data-toggle="modal" data-name1=' + data[i].PermitId+ ' data-desc1=' + data[i].PermitName+ ' data-batch="1">Attach File</button> '+
-                                // '<button type="button" class="btn btn-primary warning1 permitID" data-toggle="modal" data-name=' + data[i].PermitName+ ' data-desc=' + data[i].PermitId+ ' data-batch="1">Attach File</button> '+
-                            // ' <button type="button" id="attach_btn" data-name="XYZ" data-batch="123" class="btn btn-info mb-2 mr-2 attachID" data-toggle="modal" data-id=' + data[i].AttachmentName+ ' data-target="#rotateleftModal">View</button>'+
-                            // ' <button type="button" class="btn btn-primary passingID" data-toggle="modal" data-target="#rotateInDownLeft" data-name=' + data[i].AttachmentName+ ' data-desc=' + data[i].AttachmentTypeId+ ' data-batch="1">Attach File</button> ' +
-                            // '&lt;button class="mr-2 btn btn-primary  warning passingID"&gt;Attach File&lt;/button&gt;'+
-    
-    
-                            ' </td>'+
-                            '</tr>');
-                    $('#permittId').append(row);
-                    $('.widget-content .warning1.passingID1').on('click', function () {
-                        var deleteBtn = $(this),
+                          '<button type="button" class="btn btn-primary passingID" ' +
+                            'data-toggle="modal" data-target="#rotateInDownLeft" ' +
+                            'data-name="' + data[i].AttachmentName + '" ' +
+                            'data-desc="' + data[i].AttachmentTypeId + '" data-batch="1">Attach File</button> ' +
+                        '</td>' +
+                    '</tr>'
+                );
+                
+                $('#permittId').append(row);
+                
+                // Bind the click event for the dynamically added buttons
+                $('.widget-content').on('click', '.warning12.passingID12', function () {
+                    var deleteBtn = $(this),
                         id = deleteBtn.data('name1'),
                         name = deleteBtn.data('desc1'),
                         title_tracker = deleteBtn.closest('tr').find('.tacker1').text();
-                        $("#categoryID1").val( id );
-                        $("#trak_no1").val( id );
-                        $("#atach_nem1").val( title_tracker );
-                        $('#zoomupModal').modal('show');
-                    })
-                }
+                    
+                    // Set the values in the modal
+                    $("#fileupload").val('');
+                    $("#categoryID1").val(id);
+                    $("#trak_no1").val(id);
+                    $("#atach_nem1").val(title_tracker);
+                    
+                    // Show the modal
+                    $('#zoomupModal').modal('show');
+                });
+            }
+            
         }
     });
     }
@@ -1234,7 +1620,8 @@ function getAddrArea()
     // setTimeout(
     function regAddress()
     { 
-        // alert('hello')
+        $('#addressAreaB')
+        .empty()
         $.ajax({
             url: "/GetAddressArea",
             type: 'GET',
@@ -1276,6 +1663,8 @@ function getAddrArea()
     // setTimeout(
     function regB()
     { 
+        $('#regionlistB')
+        .empty()
         $.ajax({
             url: "/GetRegions",
             type: 'GET',
@@ -1294,64 +1683,91 @@ function getAddrArea()
     // , 4000);
 </script>
 <script>
-function fileUploadX(){
-var fileInput = document.querySelector('#fileupload');
-var regId = document.getElementById('categoryID').value;
-
-var reader = new FileReader();
-reader.readAsDataURL(fileInput.files[0]);
-
-reader.onload = function () {
-    $.ajax({
-        url: "/UploadFx",
-        type: 'POST',
-        data: JSON.stringify({"atachment": reader.result, "attachmentId": regId}),
-        contentType: 'application/json',
-        success: function(response) {
-           // alert("response")
-            if(typeof(response) === "string"){response = JSON.parse(response)}
+    function fileUploadX(){
+        var fileInput = document.querySelector('#fileupload');
+        var regId = document.getElementById('categoryID').value;
+        var file = fileInput.files[0];
+        var fileName = file.name;
+        
+        var reader = new FileReader();
+        reader.readAsDataURL(fileInput.files[0]);
+        
+        reader.onload = function () {
+            $.ajax({
+                url: "/UploadFx",
+                type: 'POST',
+                data: JSON.stringify({"atachment": reader.result, "attachmentId": regId}),
+                contentType: 'application/json',
+                success: function(response) {
+                   // alert("response")
+                    if(typeof(response) === "string"){response = JSON.parse(response)}
+                    swal({
+                            title: 'Success!',
+                            text: fileName + ' succesfully uploaded to the system.',
+                            type: 'success',
+                            timer: 3000,
+                        })
+                    getAttachments()
+                }
+            });
+        
+        };
+        reader.onerror = function (error) {
+            //alert('Error: ' + error);
+            console.log('Error: ', error);
+            swal({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: fileName + ' Fail to upload, please try again',
+                    padding: '2em',
+                    timer: 3000
+                })
+        };
         }
-    });
-    // alert(reader.result);
-	console.log(reader.result);//base64encoded string
-
-};
-reader.onerror = function (error) {
-    alert('Error: ' + error);
-	console.log('Error: ', error);
-};
-}
-</script>
-<script>
-    function fileUploadP(){
-    var fileInput = document.querySelector('#fileupload1');
-    var regId = document.getElementById('categoryID1').value;
-    
-    var reader = new FileReader();
-    reader.readAsDataURL(fileInput.files[0]);
-    
-    reader.onload = function () {
-        $.ajax({
-            url: "/UploadFxP",
-            type: 'POST',
-            data: JSON.stringify({"atachment": reader.result, "attachmentId": regId}),
-            contentType: 'application/json',
-            success: function(response) {
-               // alert("response")
-                if(typeof(response) === "string"){response = JSON.parse(response)}
+        </script>
+        <script>
+            function fileUploadP(){
+                var fileInput = document.querySelector('#fileupload1');
+                var regId = document.getElementById('categoryID1').value;
+                
+                var reader = new FileReader();
+                reader.readAsDataURL(fileInput.files[0]);
+                
+                reader.onload = function () {
+                    $.ajax({
+                        url: "/UploadFxP",
+                        method: "POST",
+                        data: JSON.stringify({"atachment": reader.result, "attachmentId": regId}),
+                        contentType: 'application/json',
+                        success: function(response) {
+                         // alert("response")
+                    if(typeof(response) === "string"){response = JSON.parse(response)}
+                    swal({
+                            title: 'Success!',
+                            text: fileName + ' succesfully uploaded to the system.',
+                            type: 'success',
+                            timer: 3000,
+                        })
+                    getAttachments()
+                        },
+                        
+                    });
+                };
+                
+                reader.onerror = function (error) {
+                    //alert('Error: ' + error);
+                    console.log('Error: ', error);
+                    swal({
+                            type: 'error',
+                            title: 'Oops...',
+                            text: fileName + ' Fail to upload, please try again',
+                            padding: '2em',
+                            timer: 3000
+                        })
+                };
             }
-        });
-        // alert(reader.result);
-        console.log(reader.result);//base64encoded string
-    
-    };
-    reader.onerror = function (error) {
-        alert('Error: ' + error);
-        console.log('Error: ', error);
-    };
-    }
-    </script>
-<script>
+            </script>
+                    <script>
     function validateSize(input) {
       const fileSize = input.files[0].size / 1024 / 1024; // in MiB
       if (fileSize > 2) {
@@ -1551,8 +1967,10 @@ function TinVerifier(){
     function BNVerifier(){
         var bn_no = document.getElementById("bn_no").value;
         var txtBox = document.getElementById('bn_name');
+        var taxpayerBN = document.getElementById('taxpayerBN');
         var txtBox1 = document.getElementById('bn_type');
         var txtBox2 = document.getElementById('date_registration');
+        var TaxPayer= document.getElementById('taxpayer').value;
         $(".BNLoader").show();
         $(".BNFirst").hide();
         $.ajax({
@@ -1561,6 +1979,7 @@ function TinVerifier(){
             data: JSON.stringify({"bn_no": bn_no}),
             contentType: 'application/json',
             success: function(response) {
+                console.log(response.ownerNames)
                 if(response.status === 'failed'){
                     swal({
                         type: 'error',
@@ -1573,11 +1992,26 @@ function TinVerifier(){
                     $(".BNLoader").hide();
                     $(".BNFirst").show();
                 }else{
+                    if(response.ownerNames.length > 0){
+                    for(var i = 0; i < response.ownerNames.length; i++){
+                        if(response.ownerNames[i].ownerName == TaxPayer){
+                            taxpayerBN.value = response.ownerNames[i].ownerName;
+                        }
+                    }
                    txtBox.value = response.businessName;
                    txtBox1.value = response.BusinessType;
                    txtBox2.value = response.registryDate;
                    $(".BNLoader").hide();
                    $(".BNFirst").show();
+                }else{
+                    swal({
+                            type: 'error',
+                            title: 'Oops...',
+                            text: 'Business Name has no Owners, Please Try Again!',
+                            padding: '2em',
+                            timer: 3000
+                        })  
+                }
                 }
             }
         });
@@ -1586,42 +2020,176 @@ function TinVerifier(){
 <script>
     function NinVerifier(){
         var nin_no = document.getElementById("nida_no").value;
-        var nida_question = document.getElementById("nida_question").value;
-        var nida_answer = document.getElementById("nida_answer").value;
-        // var txtBox = document.getElementById('fname_nat_local');
-        // var mname = document.getElementById('mname_nat_local');
-        // var lname = document.getElementById('lname_nat_local');
-        // var gender = document.getElementById('gender_nat');
-        // var dob = document.getElementById('basicFlatpickr1');
+        var nida_question = document.getElementById("nida_question");
+        var nida_answer = document.getElementById("nida_answer");
+        var nidaquestion = document.getElementById('nidaquestion');
+        var fname = document.getElementById('fname_nat_local');
+        var mname = document.getElementById('mname_nat_local');
+        var lname = document.getElementById('lname_nat_local');
+        var gender = document.getElementById('gender_nat');
+        var dob = document.getElementById('basicFlatpickr1');
+        var nida_no_approved = document.getElementById('nida_no_approved');
         $(".NinLoader").show();
         $(".NinFirst").hide();
        
         $.ajax({
-            url: "/NINVerification",
+            url: "https://api.brela.go.tz/api/verifyNINQns",
             type: 'POST',
-            data: JSON.stringify({"nin_no": nin_no, "nida_question": nida_question, "nida_answer": nida_answer}),
+            data: JSON.stringify({"NIN": nin_no, "RQCode": nida_question.value, "QNANSW": nida_answer.value}),
             contentType: 'application/json',
             success: function(response) {
+                console.log(response)
                 if(typeof(response) === "string"){response = JSON.parse(response)}
-                if(response.status === 'failed'){
-                    swal({
-                        type: 'error',
-                        title: 'Oops...',
-                        text: 'NIN Number not valid, Please Try Again!',
-                        padding: '2em',
-                        timer: 3000
-                    })
-                    txtBox.value = "";
+                if(response.Question === true){
+                    $(".ninqsns").show();
                     $(".NinLoader").hide();
                     $(".NinFirst").show();
-                }else if(response.status === 'success'){
-                   txtBox.value = response.fname;
-                   mname.value = response.mname;
-                   lname.value = response.lname;
-                   gender.value = response.gender;
-                   dob.value = response.dob;
-                   $(".NinLoader").hide();
-                   $(".NinFirst").show();
+                    nidaquestion.textContent = response.SW + '/' + response.EN;
+                    nida_question.value = response.RQCode;
+                    nida_answer.value = ''
+                    // console.log(response.Question)
+                    // swal({
+                    //     type: 'error',
+                    //     title: 'Oops...',
+                    //     text: 'NIN Number not valid, Please Try Again!',
+                    //     padding: '2em',
+                    //     timer: 3000
+                    // })
+                    // txtBox.value = "";
+                    // $(".NinLoader").hide();
+                    // $(".NinFirst").show();
+                }
+                if(response.Question === false){
+                    $(".natural_person_div").show();
+                    $(".ninqsns").hide();
+                    $(".NinLoader").hide();
+                    $(".NinFirst").show();
+                    $(".natural_person").hide();
+                    nidaquestion.textContent = response.SW + '/' + response.EN;
+                    fname.value = response.FIRSTNAME;
+                    mname.value = response.MIDDLENAME;
+                    lname.value = response.SURNAME;
+                    gender.value = response.SEX;
+                    dob.value = response.DATEOFBIRTH;
+                    nida_no_approved.value = response.NIN
+                    // console.log(response.Question)
+                    // swal({
+                    //     type: 'error',
+                    //     title: 'Oops...',
+                    //     text: 'NIN Number not valid, Please Try Again!',
+                    //     padding: '2em',
+                    //     timer: 3000
+                    // })
+                    // txtBox.value = "";
+                    // $(".NinLoader").hide();
+                    // $(".NinFirst").show();
+                }
+                // else{
+                //     swal({
+                //         type: 'error',
+                //         title: 'Oops...',
+                //         text: response.message,
+                //         padding: '2em',
+                //         timer: 3000
+                //     })
+                //    $(".NinLoader").hide();
+                //    $(".NinFirst").show();
+                // }
+            }
+        });
+    }
+
+    function NinVerifierOC(){
+        var nin_no = document.getElementById("nida_no_oc").value;
+        var nida_question = document.getElementById("nida_question_oc");
+        var nida_answer = document.getElementById("nida_answer_oc");
+        var nidaquestion = document.getElementById('nidaquestionoc');
+        var leadername_nat = document.getElementById('leadername_nat');
+        // var mname = document.getElementById('mname_nat_local');
+        // var lname = document.getElementById('lname_nat_local');
+        // var gender = document.getElementById('gender_nat');
+        // var dob = document.getElementById('basicFlatpickr1');
+        // var nida_no_approved = document.getElementById('nida_no_approved');
+        $(".NinLoaderOC").show();
+        $(".NinFirstOC").hide();
+       
+        $.ajax({
+            url: "https://api.brela.go.tz/api/verifyNINQns",
+            type: 'POST',
+            data: JSON.stringify({"NIN": nin_no, "RQCode": nida_question.value, "QNANSW": nida_answer.value}),
+            contentType: 'application/json',
+            success: function(response) {
+                console.log(response)
+                if(typeof(response) === "string"){response = JSON.parse(response)}
+                if(response.Question === true){
+                    $(".ninqsnsOC").show();
+                    $(".NinLoaderOC").hide();
+                    $(".NinFirstOC").show();
+                    nidaquestion.textContent = response.SW + '/' + response.EN;
+                    nida_question.value = response.RQCode;
+                    nida_answer.value = ''
+                }
+                if(response.Question === false){
+                    // $(".natural_person_div").show();
+                    $(".ninqsnsOC").hide();
+                    $(".NinLoaderOC").hide();
+                    $(".NinFirstOC").show();
+                    // $(".natural_person").hide();
+                    nidaquestion.textContent = response.SW + '/' + response.EN;
+                    leadername_nat.value = response.FIRSTNAME + " " + response.MIDDLENAME + " " + response.SURNAME;
+                    // mname.value = response.MIDDLENAME;
+                    // lname.value = response.SURNAME;
+                    // gender.value = response.SEX;
+                    // dob.value = response.DATEOFBIRTH;
+                    // nida_no_approved.value = response.NIN
+                }
+            }
+        });
+    }
+
+    function NinVerifierOC2(){
+        var nin_no = document.getElementById("nida_no_oc_2").value;
+        var nida_question = document.getElementById("nida_question_oc_2");
+        var nida_answer = document.getElementById("nida_answer_oc_2");
+        var nidaquestion = document.getElementById('nidaquestionoc2');
+        var leadername_nat = document.getElementById('leadername_nat_2');
+        // var mname = document.getElementById('mname_nat_local');
+        // var lname = document.getElementById('lname_nat_local');
+        // var gender = document.getElementById('gender_nat');
+        // var dob = document.getElementById('basicFlatpickr1');
+        // var nida_no_approved = document.getElementById('nida_no_approved');
+        $(".NinLoaderOC2").show();
+        $(".NinFirstOC2").hide();
+       
+        $.ajax({
+            url: "https://api.brela.go.tz/api/verifyNINQns",
+            type: 'POST',
+            data: JSON.stringify({"NIN": nin_no, "RQCode": nida_question.value, "QNANSW": nida_answer.value}),
+            contentType: 'application/json',
+            success: function(response) {
+                console.log(response)
+                if(typeof(response) === "string"){response = JSON.parse(response)}
+                if(response.Question === true){
+                    $(".ninqsnsOC2").show();
+                    $(".NinLoaderOC2").hide();
+                    $(".NinFirstOC2").show();
+                    nidaquestion.textContent = response.SW + '/' + response.EN;
+                    nida_question.value = response.RQCode;
+                    nida_answer.value = ''
+                }
+                if(response.Question === false){
+                    // $(".natural_person_div").show();
+                    $(".ninqsnsOC2").hide();
+                    $(".NinLoaderOC2").hide();
+                    $(".NinFirstOC2").show();
+                    // $(".natural_person").hide();
+                    nidaquestion.textContent = response.SW + '/' + response.EN;
+                    leadername_nat.value = response.FIRSTNAME + " " + response.MIDDLENAME + " " + response.SURNAME;
+                    // mname.value = response.MIDDLENAME;
+                    // lname.value = response.SURNAME;
+                    // gender.value = response.SEX;
+                    // dob.value = response.DATEOFBIRTH;
+                    // nida_no_approved.value = response.NIN
                 }
             }
         });

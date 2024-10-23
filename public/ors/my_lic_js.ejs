@@ -44,11 +44,12 @@ $("#html5-extension").find('tbody').empty();
                     '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">Action'+
                     '</button>'+
                     '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
-                        '<a class="dropdown-item warning passingID text-black" href="http://41.59.225.60/api/printout/'+data[i].trackingNo +'/4201/bl/'+username+'">Download Licence</a>'+
+                        // '<a class="dropdown-item warning passingID text-black" href="http://41.59.225.60/api/printout/'+data[i].trackingNo +'/4201/bl/'+username+'">Download Licence</a>'+
+                        '<a class="dropdown-item warning passingID text-black" href="http://41.59.228.25/api/printout/'+data[i].trackingNo +'/4201/bl/'+username+'">Download Licence</a>'+
                         '<a class="dropdown-item text-black lineofbiz business" data-id="'+ data[i].BLNumber +'">Apply Line of Business</a>'+
                         '<a class="dropdown-item text-black warning confirm" data-id="'+ data[i].trackingNo +'">Cancelation</a>'+
                         '<a class="dropdown-item text-black" href="/ApplyBLBranch/'+data[i].trackingNo+'" >Apply For Branch</a>'+
-                        '<a class="dropdown-item text-black" href="/Transfer/'+data[i].trackingNo+'">Transfer Business Licence</a>'+
+                        '<a class="dropdown-item text-black" href="/Transfer/'+data[i].trackingNo+'">Change of Location</a>'+
                 '</div>'+
                 ' </td></tr>';
 
@@ -59,10 +60,11 @@ $("#html5-extension").find('tbody').empty();
                     '<button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">Action'+
                     '</button>'+
                     '<div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">'+
-                        '<a class="dropdown-item warning passingID text-black" href="http://41.59.225.60/api/printout/'+data[i].trackingNo +'/4201/bl/'+username+'">Download Licence</a>'+
+                        // '<a class="dropdown-item warning passingID text-black" href="http://41.59.225.60/api/printout/'+data[i].trackingNo +'/4201/bl/'+username+'">Download Licence</a>'+
+                        '<a class="dropdown-item warning passingID text-black" href="http://41.59.228.25/api/printout/'+data[i].trackingNo +'/4201/bl/'+username+'">Download Licence</a>'+
                         '<a class="dropdown-item text-black lineofbiz business" data-id="'+ data[i].BLNumber +'">Apply Line of Business</a>'+
                         '<a class="dropdown-item text-black warning confirm" data-id="'+ data[i].trackingNo +'">Cancelation</a>'+
-                        '<a class="dropdown-item text-black" href="/Transfer/'+data[i].trackingNo+'">Transfer Business Licence</a>'+
+                        '<a class="dropdown-item text-black" href="/Transfer/'+data[i].trackingNo+'">Change of Location</a>'+
                 '</div>'+
                 ' </td></tr>';
                     }
@@ -75,28 +77,36 @@ id = deleteBtn.data('id'),
 title_tracker = deleteBtn.closest('tr').find('.tacker').text();
 swal({
 title: 'Cancel Business Licence',
-text: "Are you sure you want to cancel Business Licence Number " + title_tracker+"?",
+text: "Please provide reason(s) for cancellation of Business Licence Number" + title_tracker+"?",
 type: 'warning',
 showCancelButton: true,
 confirmButtonText: 'Confirm',
-padding: '2em'
+padding: '2em',
+input: 'textarea',
+inputValidator: (value) => {
+    // Validate the textarea input
+    if (!value) {
+      return 'You must enter a message in the textarea!';
+    }
+  }
 }).then(function(result) {
 
 if (result.value) {
 $.ajax({
 url: "/Cancelation",
 type: 'POST',
-data: JSON.stringify({"BLNumber": title_tracker}),
+data: JSON.stringify({"BLNumber": title_tracker, "cancellation_reason": result.value}),
 contentType: 'application/json',
 success: function(response) {
     swal({
-  title: 'Business Licence Cancelation!',
-  text: 'Application for Cancelation of Business Licence has been sent succesfully.',
-  type: 'success',
-  timer: 2000,
-    }
+        title: 'Business Licence Cancelation!',
+        text: 'Application for Cancelation of Business Licence has been sent succesfully.',
+        type: 'success',
+        timer: 2000,
+        }
 ).then(function(result){
-    location.reload();
+    // location.reload();
+    window.location.href = "/Dashboard";
 })
 }
 });
@@ -195,25 +205,24 @@ function getSector(){
             type: 'GET',
             contentType: 'application/json',
             success: function(response) {
-                alert(response)
                 if(typeof(response) === "string"){response = JSON.parse(response)}
                 if(response.status === 'failed'){
-      swal({
-        title: 'Failed',
-        text: 'Business Type Already has On-Going Request',
-        timer: 3000,
-        padding: '2em',
-        onOpen: function () {
-          swal.showLoading()
-        }
-      }).then(function (result) {
-        if (
-          // Read more about handling dismissals
-          result.dismiss === swal.DismissReason.timer
-        ) {
-          console.log('I was closed by the timer')
-        }
-      })
+                    swal({
+                        title: 'Failed',
+                        text: 'Business Type Already has On-Going Request',
+                        timer: 3000,
+                        padding: '2em',
+                        onOpen: function () {
+                        swal.showLoading()
+                        }
+                    }).then(function (result) {
+                        if (
+                        // Read more about handling dismissals
+                        result.dismiss === swal.DismissReason.timer
+                        ) {
+                        console.log('I was closed by the timer')
+                        }
+                    })
                 }if(response.status === 'success'){
                     var results = response.data;
                     var BusinessLicenceClassCode = results[0].BusinessLicenceClassCode;
@@ -223,7 +232,6 @@ function getSector(){
                     txtBox.value = BusinessLicenceClassCode;
                     var txtBox1 = document.getElementById('issuingAuthorityId');
                     txtBox1.value = issuingAuthorityId;
-                    console.log(isPerUnitFeeApplicable)
                     if(isPerUnitFeeApplicable == true){
                         $(".nounits_div").show();
                     }if(isPerUnitFeeApplicable == false){
@@ -237,6 +245,8 @@ function getSector(){
 </script>
 <script>
 function ApplyBizType(){
+    $(".TinLoader").show();
+    $(".ApplyLoader").hide();
     var previousBLNo = document.getElementById('previousBLNo').value;
     var sectorlist = document.getElementById('sectorlist').value;
     var categorylist = document.getElementById('categorylist').value;
@@ -244,7 +254,39 @@ function ApplyBizType(){
     var nounits = document.getElementById('nounits').value;
     var businessLicenceClassId = document.getElementById('businessLicenceClassId').value;
     var issuingAuthorityId = document.getElementById('issuingAuthorityId').value;
-    $.ajax({
+    if(sectorlist == '--Select--'){
+        $(".TinLoader").hide();
+        $(".ApplyLoader").show();
+        swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Please select Business Sector',
+            // footer: '&lt;a href&gt;Why do I have this issue?&lt;/a&gt;',
+            padding: '2em'
+        })
+    }if(categorylist == '--Select--'){
+        $(".TinLoader").hide();
+        $(".ApplyLoader").show();
+        swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Please select Business Category',
+            // footer: '&lt;a href&gt;Why do I have this issue?&lt;/a&gt;',
+            padding: '2em'
+        })
+    }if(typelist == '--Select--'){
+        $(".TinLoader").hide();
+        $(".ApplyLoader").show();
+        swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Please select Business Type',
+            // footer: '&lt;a href&gt;Why do I have this issue?&lt;/a&gt;',
+            padding: '2em'
+        })
+    }
+    if(sectorlist != '--Select--' && categorylist != '--Select--' && typelist != '--Select--'){
+        $.ajax({
         url: "/ApplyBizType",
         type: 'POST',
         data: JSON.stringify({"BLNumber": previousBLNo, "sectorlist": sectorlist, 
@@ -253,19 +295,19 @@ function ApplyBizType(){
         "issuingAuthorityId": issuingAuthorityId}),
         contentType: 'application/json',
         success: function(response) {
-        //     console.log(response)
-        //    alert(response)
-            // if(typeof(response) === "string"){response = JSON.parse(response)}
             if(response === 'success'){
+                $(".TinLoader").hide();
+                $(".ApplyLoader").show();
                 swal({
-  title: 'Business Licence Application!',
-  text: 'Application for New Business Line has been sent succesfully.',
-  type: 'success',
-  timer: 2000,
-    })
-    window.location.href = "/MyLicence";
+                    title: 'Business Licence Application!',
+                    text: 'Application for New Business Line has been sent succesfully.',
+                    type: 'success',
+                    timer: 3000,
+                })
+    window.location.href = "/Dashboard";
         }
     }
     });
+    }
 }
 </script>

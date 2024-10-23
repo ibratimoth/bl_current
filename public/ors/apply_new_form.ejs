@@ -9,6 +9,7 @@
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
     <link href="ors/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="ors/assets/css/plugins.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="ors/plugins/select2/select2.min.css">
     <link href="ors/assets/css/components/tabs-accordian/custom-accordions.css" rel="stylesheet" type="text/css" />
@@ -32,6 +33,11 @@
 
     <!--  BEGIN CUSTOM STYLE FILE  -->
 <link rel="stylesheet" type="text/css" href="ors/assets/css/elements/alert.css">
+
+
+
+<link rel="stylesheet" href="ors/plugins/font-icons/fontawesome/css/regular.css">
+<link rel="stylesheet" href="ors/plugins/font-icons/fontawesome/css/fontawesome.css">
 
   
     <style>
@@ -407,7 +413,6 @@
                                 <div class="widget-content widget-content-area">
                                     <input type="hidden" class="form-control text-black" id="trackNo" name="trackNo">
                                     <input type="hidden" class="form-control text-black" id="bizNumber" name="bizNumber">
-                                    <input type="hidden" class="form-control text-black" id="bizNumber" name="bizNumber">
                                     <div id="circle-basic" class="">
 
                                         <h3>Application Details</h3>
@@ -418,9 +423,10 @@
                                                 <h5 style="font-weight: bold;color: blue;"> Business Licence Application Form</h5>
                                                 <form>
                                                     <div class="form-group row  mb-4">
-                                                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-black">Tracking Number:</label>
-                                                        <div class="col-sm-4">
-                                                            <input type="text" class="form-control form-control-sm text-black" id="inputEmail4" placeholder="Waiting for tracking number..." disabled>
+                                                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-black" hidden>Tracking Number:</label>
+                                                        <div class="col-sm-4" hidden>
+                                                            <input type="hidden" class="form-control form-control-sm text-black" id="inputEmail4">
+                                                            <input type="text" class="form-control text-black" id="servtypecode" value="4201" disabled>
                                                         </div>
                                                         <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-black">Service Type:</label>
                                                         <div class="col-sm-4">
@@ -428,8 +434,8 @@
                                                             <input type="hidden" class="form-control text-black" id="servtypecode" value="4201">
                                                         </div>
                                                     </div>
-                                                    <h6 style="font-weight: bold;color: blue;"> Applicant Information</h6>
-                                                    <div class="form-group row  mb-4">
+                                                    <!-- <h6 style="font-weight: bold;color: blue;"> Applicant Information</h6> -->
+                                                    <div class="form-group row  mb-4" hidden>
                                                         <label for="colFormLabelSm" class="col-md-2 col-form-label col-form-label-sm text-black">First Name:</label>
                                                         <div class="col-sm-4">
                                                             <input type="text" class="form-control form-control-sm text-black" id="fname" placeholder="Please Wait..." disabled>
@@ -439,7 +445,7 @@
                                                             <input type="text" class="form-control form-control-sm text-black" id="mname" placeholder="Please Wait..." disabled>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row  mb-4">
+                                                    <div class="form-group row  mb-4" hidden>
                                                         <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-black">Last Name:</label>
                                                         <div class="col-sm-4">
                                                             <input type="text" class="form-control form-control-sm text-black" id="lname" placeholder="Please Wait..." disabled>
@@ -498,9 +504,15 @@
                                                         </div> -->
                                                         <div class="form-group col-md-4">
                                                             <label for="inputState" class="text-black">Business Owner Sub Type</label>
+                                                                    <i data-feather="rotate-cw" onclick="getBusOwnTypeData()"></i><span class="icon-name"> </span>
                                                             <select class="form-control  basic" id="busowntype" onchange="getBusOwnType()" required>
                                                                 </select>
                                                         </div>
+                                                        <script>
+                                                            function loadFx(){
+                                                                alert("hello")
+                                                            }
+                                                        </script>
                                                         <div class="form-group col-md-4">
                                                             <label for="inputEmail4" class="text-black">Tax Identification Number TIN</label>
                                                                 <div class="input-group mb-4">
@@ -522,6 +534,7 @@
                                                           <div class="form-group col-md-4">
                                                             <label for="inputEmail4" class="text-black">Taxpayer Name</label>
                                                             <input type="text" class="form-control text-black" id="taxpayer" placeholder="Waiting for Business TIN number..." disabled>
+                                                            <input type="hidden" class="form-control text-black" id="taxpayerBN">
                                                         </div>
                                                         <!-- <div class="form-group col-md-4">
                                                             <label for="inputState" class="text-black bs-tooltip" data-placement="top" title="Nationality Origin Type">Origin Type</label>
@@ -554,12 +567,12 @@
                                                               </div>
                                                           </div>
                                                           <div class="form-group col-md-6 ninqsns" id="ninqsns" name="ninqsns" style="display: none">
-                                                            <label for="inputEmail4" class="text-black">NIDA Number(NIN)</label>
+                                                            <label for="inputEmail4" class="text-black nidaquestion" id="nidaquestion" name="nidaquestion"></label>
                                                                 <div class="input-group mb-4">
                                                                 <input type="text" class="form-control" id="nida_answer" placeholder="Please write your answer here..." aria-label="NIDA Number">
-                                                                <input type="text" class="form-control" id="nida_question" aria-label="NIDA Number">
+                                                                <input type="hidden" class="form-control" id="nida_question" aria-label="NIDA Number">
                                                                 <div class="input-group-append NinFirstSubmit">
-                                                                  <button class="btn btn-primary" onclick="NinVerifier()" type="button">LOAD FROM NIDA</button>
+                                                                  <button class="btn btn-primary" onclick="NinVerifier()" type="button"> ANSWER</button>
                                                                 </div>
                                                                 <div class="input-group-append NinSubmit" style="display: none">
                                                                     <button class="btn btn-info btn-lg mb-3 mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-loader spin mr-2"><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line></svg>  Please Wait...</button>
@@ -568,18 +581,18 @@
                                                           </div>
                                                     </div>
 
-                                                    <!-- <div class="form-row mb-4 natural_person" id="natural_person" name="natural_person" style="display: none">
+                                                    <div class="form-row mb-4 natural_person_div" id="natural_person_div" name="natural_person_div" style="display: none">
                                                       
                                                         <div class="form-group col-md-4">
                                                             <label for="inputEmail4" class="text-black">NIDA Number(NIN)</label>
                                                                 <div class="input-group mb-4">
-                                                                <input type="text" class="form-control" id="nida_no" placeholder="NIDA Number" aria-label="NIDA Number">
-                                                                <div class="input-group-append NinFirst">
+                                                                <input type="text" class="form-control" id="nida_no_approved" placeholder="NIDA Number" aria-label="NIDA Number" disabled>
+                                                                <!-- <div class="input-group-append NinFirst">
                                                                   <button class="btn btn-primary" onclick="NinVerifier()" type="button">LOAD FROM NIDA</button>
                                                                 </div>
                                                                 <div class="input-group-append NinLoader" style="display: none">
                                                                     <button class="btn btn-info btn-lg mb-3 mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-loader spin mr-2"><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line></svg>  Please Wait...</button>
-                                                                </div>
+                                                                </div> -->
                                                               </div>
                                                           </div>
                                                           <div class="form-group col-md-4">
@@ -605,7 +618,7 @@
                                                             </div>
                                                         </div>
                                                    
-                                                    </div> -->
+                                                    </div>
             
                                                     <div class="form-row mb-4 company" id="company" name="company" style="display: none">
                                                     
@@ -649,10 +662,60 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group col-md-6">
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="inputEmail4" class="text-black">NIDA Number(NIN)</label>
+                                                                        <div class="input-group mb-6">
+                                                                        <input type="text" class="form-control" id="nida_no_oc" placeholder="NIDA Number" aria-label="NIDA Number">
+                                                                        <div class="input-group-append NinFirstOC">
+                                                                          <button class="btn btn-primary" onclick="NinVerifierOC()" type="button">LOAD FROM NIDA</button>
+                                                                        </div>
+                                                                        <div class="input-group-append NinLoaderOC" style="display: none">
+                                                                            <button class="btn btn-info btn-lg mb-3 mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-loader spin mr-2"><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line></svg>  Please Wait...</button>
+                                                                        </div>
+                                                                      </div>
+                                                                  </div>
+                                                                  <div class="form-group col-md-12 ninqsnsOC" id="ninqsnsOC" name="ninqsnsOC" style="display: none">
+                                                                    <label for="inputEmail4" class="text-black nidaquestionoc" id="nidaquestionoc" name="nidaquestionoc"></label>
+                                                                        <div class="input-group mb-4">
+                                                                        <input type="text" class="form-control" id="nida_answer_oc" placeholder="Please write your answer here..." aria-label="NIDA Number">
+                                                                        <input type="hidden" class="form-control" id="nida_question_oc" aria-label="NIDA Number">
+                                                                        <div class="input-group-append NinFirstSubmit">
+                                                                          <button class="btn btn-primary" onclick="NinVerifierOC()" type="button"> ANSWER</button>
+                                                                        </div>
+                                                                        <div class="input-group-append NinSubmit" style="display: none">
+                                                                            <button class="btn btn-info btn-lg mb-3 mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-loader spin mr-2"><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line></svg>  Please Wait...</button>
+                                                                        </div>
+                                                                      </div>
+                                                                  </div>
                                                             <label for="inputEmail4" class="text-black">Leader/Trustee/Director 1 Full Name</label>
                                                             <input type="text" class="form-control leadername_nat" id="leadername_nat" name="leadername_nat">
                                                         </div>
                                                         <div class="form-group col-md-6">
+                                                            <div class="form-group col-md-12">
+                                                                <label for="inputEmail4" class="text-black">NIDA Number(NIN)</label>
+                                                                    <div class="input-group mb-6">
+                                                                    <input type="text" class="form-control" id="nida_no_oc_2" placeholder="NIDA Number" aria-label="NIDA Number">
+                                                                    <div class="input-group-append NinFirstOC2">
+                                                                      <button class="btn btn-primary" onclick="NinVerifierOC2()" type="button">LOAD FROM NIDA</button>
+                                                                    </div>
+                                                                    <div class="input-group-append NinLoaderOC2" style="display: none">
+                                                                        <button class="btn btn-info btn-lg mb-3 mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-loader spin mr-2"><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line></svg>  Please Wait...</button>
+                                                                    </div>
+                                                                  </div>
+                                                              </div>
+                                                              <div class="form-group col-md-12 ninqsnsOC2" id="ninqsnsOC2" name="ninqsnsOC2" style="display: none">
+                                                                <label for="inputEmail4" class="text-black nidaquestionoc2" id="nidaquestionoc2" name="nidaquestionoc2"></label>
+                                                                    <div class="input-group mb-4">
+                                                                    <input type="text" class="form-control" id="nida_answer_oc_2" placeholder="Please write your answer here..." aria-label="NIDA Number">
+                                                                    <input type="hidden" class="form-control" id="nida_question_oc_2" aria-label="NIDA Number">
+                                                                    <div class="input-group-append NinFirstSubmit2">
+                                                                      <button class="btn btn-primary" onclick="NinVerifierOC2()" type="button"> ANSWER</button>
+                                                                    </div>
+                                                                    <div class="input-group-append NinSubmit2" style="display: none">
+                                                                        <button class="btn btn-info btn-lg mb-3 mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-loader spin mr-2"><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line></svg>  Please Wait...</button>
+                                                                    </div>
+                                                                  </div>
+                                                              </div>
                                                             <label for="inputEmail4" class="text-black">Leader/Trustee/Director 2 Full Name</label>
                                                             <input type="text" class="form-control leadername_nat_2" id="leadername_nat_2" name="leadername_nat_2">
                                                         </div>
@@ -689,6 +752,7 @@
                                                     <div class="form-row mb-4">
                                                         <div class="form-group col-md-4">
                                                             <label for="inputEmail4" class="text-black">Business Sector</label>
+                                                            <i data-feather="rotate-cw" onclick="getSector()"></i><span class="icon-name"> </span>
                                                             <select class="form-control  basic" onchange="getCategory()" id="sectorlist">
             
                                                                 </select>
@@ -714,6 +778,11 @@
                                                         <div class="form-group col-md-4 permitInfo" style="display: none">
                                                             <span style="color: red;">This Business Line require permit.</span>
                                                         </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4" class="text-black">Licence Duration(Years)</label>
+                                                            <input type="number" maxlength="1" value = "1" onkeypress="return onlyNumberKeyThree(event)" 
+                                                            class="form-control text-black" id="duration_licence_years" placeholder="Enter Number up to Three Years" required>
+                                                        </div>
             
                                                     <input type="hidden" class="form-control" id="businessLicenceClassId">
                                                     <input type="hidden" class="form-control" id="issuingAuthorityId">
@@ -723,8 +792,9 @@
                                                     <div class="form-row mb-4">
                                                         <div class="form-group col-md-3">
                                                             <label for="inputEmail4" class="text-black">Address Type</label>
+                                                            <i data-feather="rotate-cw" onclick="regAddress()"></i><span class="icon-name"> </span>
                                                             <select id="addressAreaB" name="addressAreaB" onchange="getAddrAreaB()" class="form-control text-black" required>
-                                                                <option selected>--Select--</option>
+                                                                <!-- <option selected>--Select--</option> -->
                                                             </select>
                                                         </div>
                                                     </div>
@@ -732,6 +802,7 @@
             
                                                         <div class="form-group col-md-3">
                                                             <label for="inputEmail4" class="text-black">Region</label>
+                                                            <i data-feather="rotate-cw" onclick="regB()"></i><span class="icon-name"> </span>
                                                             <select class="form-control basic text-black" onchange="getDistrictB()" id="regionlistB">
             
                                                                 </select>
@@ -777,7 +848,7 @@
                                                         </div>
                                                         <div class="form-group col-md-4">
                                                             <label for="inputEmail4" class="text-black">House Number</label>
-                                                            <input type="number" class="form-control" id="house_no" placeholder="Enter House No">
+                                                            <input type="text" class="form-control" id="house_no" placeholder="Enter House No">
                                                         </div>
                                                     </div>
                                                     <div class="form-row mb-4 unservayedB" style="display: none">
@@ -795,16 +866,22 @@
                                                         </div>
                                                         <div class="form-group col-md-4">
                                                             <label for="inputEmail4" class="text-black">Email address</label>
-                                                            <input type="email" class="form-control text-black inputEmail4comp" id="inputEmail4comp" name="inputEmail4comp" placeholder="Enter Email" required>
+                                                            <input type="email" class="form-control text-black inputEmail4comp" 
+                                                            id="inputEmail4comp" name="inputEmail4comp" onkeypress="ValidateEmail()" placeholder="Enter Email" required>
+                                                            <span class="emailValidator" id="emailValidator" style="color: red;display: none;">Invalid email address</span>
                                                         </div>
+
                                                         <div class="form-group col-md-4">
                                                             <label for="inputEmail4" class="text-black">P.O. Box</label>
-                                                            <input type="text" class="form-control text-black" id="inputEmail4pobox" placeholder="Enter P.O Box" required>
+                                                            <input type="text" class="form-control text-black" id="inputEmail4pobox" onkeypress="return onlyNumberKey(event)" placeholder="Enter P.O Box" required>
                                                         </div>
                                                     </div>
                                                     
                                                     <div class="saveBizOne" id="saveBizOne" name="saveBizOne" style="text-align: center;">
-                                                        <button class="btn btn-success" onclick="saveBizDet()" id="savebtn" type="button" >Save</button>
+                                                        <!-- <button class="btn btn-success" onclick="generateTrackingNo()" id="savebtn" type="button" >Save</button>
+                                                        <button class="btn btn-success" onclick="getAttachments()" id="savebtn" type="button" >Save</button> -->
+                                                        <button class="btn btn-success" onclick="handleButtonClick()"
+                                                            id="savebtn" type="button">Save</button>
                                                     </div>
                                                     <div class="saveBiz" id="saveBiz" name="saveBiz" style="text-align: center;display: none;">
                                                         <button class="btn btn-success btn-lg mb-3 mr-3">
@@ -894,13 +971,13 @@
                                                                         
                                                                 
                                                                     </tbody>
-                                                                    <tfoot>
+                                                                    <!-- <tfoot>
                                                                         <tr>
                                                                             <th>Attachment Name</th>
                                                                             <th>Description</th>
                                                                             <th>Document</th>
                                                                         </tr>
-                                                                    </tfoot>
+                                                                    </tfoot> -->
                                                                 </table>
                                                             </div>
                                                         </div>
@@ -931,13 +1008,13 @@
                                                                         
                                                                 
                                                                     </tbody>
-                                                                    <tfoot>
+                                                                    <!-- <tfoot>
                                                                         <tr>
                                                                             <th>Permit Name</th>
                                                                             <th>Description</th>
                                                                             <th>Document</th>
                                                                         </tr>
-                                                                    </tfoot>
+                                                                    </tfoot> -->
                                                                 </table>
                                                             </div>
                                                         </div>
@@ -1033,6 +1110,45 @@
                         </div>
                     </div>
                 </div>
+                <div class="modal fade" id="pdfModal" tabindex="-1" role="dialog" aria-labelledby="pdfModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="pdfModalLabel">PDF Viewer</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <div id="pdfContainer"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div id="pdfModalPreview" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Preview Business Licence Attachment here</h4>
+                            </div>
+                            <div class="modal-body">
+                
+                                <embed src=""
+                                       frameborder="0" width="100%" height="600px">
+                
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                
+                        </div>
+                    </div>
+                </div>
+
                 <%- include('jax_new_bus.ejs')%> 
         </div>
         <!--  END CONTENT AREA  -->
@@ -1090,5 +1206,21 @@
     <!-- <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script> -->
     <script src="ors/assets/js/ie11fix/fn.fix-padStart.js"></script>
     <script src="ors/assets/js/apps/notes.js"></script>
+
+    <script src="ors/plugins/font-icons/feather/feather.min.js"></script>
+
+    <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Bootstrap CSS and JS (for modal) -->
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- PDF.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.7.570/pdf.min.js"></script>
+
+<script type="text/javascript">
+    feather.replace();
+</script>
 </body>
 </html>

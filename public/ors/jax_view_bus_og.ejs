@@ -2,38 +2,80 @@
     // setTimeout(
     function getAttachments()
     { 
-    $.ajax({
-        url: '/GetBLAttachment',
-        dataType: 'json',
-        success: function(data) {
-            // alert(data)
-            $("#attachmentId").find('tbody').empty();
-                for (var i=0; i<=data.length; i++) {
-                    var row = $('<tr><td class="text-black cheque-amt tacker" id="tacker">' + data[i].AttachmentName+ '</td>'+
-                        '<td class="text-black">' + data[i].Description + '</td>'+
-                            '<td class="text-left">'+
-                            
-                                '<button type="button" class="btn btn-primary warningtt passingIDtt" data-toggle="modal" data-name=' + 
-                                data[i].AttachmentTypeId+ ' data-desc=' + data[i].AttachmentName+ ' data-batch="1">View File</button> '+
-
-                            ' </td>'+
-                            '</tr>');
-                    $('#attachmentId').append(row);
-                    $('.widget-content .warningtt.passingIDtt').on('click', function () {
-                        var deleteBtn = $(this),
-                        id = deleteBtn.data('name'),
-                        name = deleteBtn.data('desc'),
-                        title_tracker = deleteBtn.closest('tr').find('.tacker').text();
-                        $("#categoryID").val( id );
-                        $("#trak_no").val( id );
-                        $("#atach_nem").val( title_tracker );
-                        $('#rotateInDownLeft').modal('show');
-                    })
+        
+        var trackingNo = document.getElementById('inputEmail4').value;
+        $.ajax({
+            url: '/GetSubmittedBLAttachmnt',
+            type: 'POST',
+            data: JSON.stringify({"trackingNo": trackingNo}),
+            contentType: 'application/json',
+            success: function(data) {
+                $("#attachmentId").find('tbody').empty();
+                    for (var i=0; i<=data.length; i++) {
+                        var row = $('<tr><td class="text-black cheque-amt tacker" id="tacker">' + data[i].AttachmentName+ '</td>'+
+                            '<td class="text-black">' + data[i].Description + '</td>'+
+                                '<td class="text-left">'+
+                                
+                                    '<button type="button" class="btn btn-primary warningtt passingIDtt" data-toggle="modal" data-name=' + 
+                                    data[i].AttachmentTypeId+ ' data-desc=' + data[i].AttachmentName+ ' data-path=' + data[i].Path + ' data-batch="1">View File</button> '+
+                                ' </td>'+
+                                '</tr>');
+                                $('#attachmentId').append(row);
+                                $('.widget-content .warningtt.passingIDtt').on('click', function () {
+                                    var deleteBtn = $(this),
+                                    id = deleteBtn.data('name'),
+                                    name = deleteBtn.data('desc'),
+                                    path_pdf = deleteBtn.data('path'),
+                                    title_tracker = deleteBtn.closest('tr').find('.tacker').text();
+                                    $('#pdfModalPreview').find('embed').attr('src', path_pdf);
+                                    $('#pdfModalPreview').modal('show');
+                                });
+                    }  
                 }
-        }
-    });
+        });
+        getPermits();
+        
     }
     // , 1000);
+
+    function openPdf(e){
+        var pdf_path = e.getAttribute('data-path');
+        // alert(pdf_path)
+    }
+
+    function getPermits()
+    { 
+        var trackingNo = document.getElementById('inputEmail4').value;
+        $.ajax({
+            url: '/GetSubmittedBLPermit',
+            type: 'POST',
+            data: JSON.stringify({"trackingNo": trackingNo}),
+            contentType: 'application/json',
+            success: function(data) {
+                $("#permittId").find('tbody').empty();
+                    for (var i=0; i<=data.length; i++) {
+                        var row = $('<tr><td class="text-black cheque-amt tacker1" id="tacker1">' + data[i].AttachmentName+ '</td>'+
+                            '<td class="text-black">' + data[i].Description + '</td>'+
+                                '<td class="text-left">'+
+                                
+                                    '<button type="button" class="btn btn-primary warningpp passingIDpp" data-toggle="modal" data-name=' + 
+                                    data[i].AttachmentTypeId+ ' data-desc=' + data[i].AttachmentName+ ' data-path=' + data[i].Path + ' data-batch="1">View File</button> '+
+                                ' </td>'+
+                                '</tr>');
+                                $('#permittId').append(row);
+                                $('.widget-content .warningpp.passingIDpp').on('click', function () {
+                                    var deleteBtn = $(this),
+                                    id = deleteBtn.data('name'),
+                                    name = deleteBtn.data('desc'),
+                                    path_pdf = deleteBtn.data('path'),
+                                    title_tracker = deleteBtn.closest('tr').find('.tacker1').text();
+                                    $('#pdfModalPreview').find('embed').attr('src', path_pdf);
+                                    $('#pdfModalPreview').modal('show');
+                                });
+                    }
+            }
+        });
+    }
 
 </script>
 <script>
@@ -65,23 +107,31 @@ function comment()
     { 
     var trackingNo = document.getElementById('trackNo').value;
     var textBox = document.getElementById('comments');
+    var description = document.getElementById('description');
     $.ajax({
             url: "/ApplicationDetails",
             type: 'POST',
             data: JSON.stringify({"trackingNo": trackingNo}),
             contentType: 'application/json',
             success: function(response) {
-                console.log(response)
-                if(typeof(response) === "string"){response = JSON.parse(response)}
+                if(response[0].status == 'failed'){
+                    $(".comentDiv").hide();
+                }else{
+                    if(typeof(response) === "string"){response = JSON.parse(response)}
+                
                 if(response.length > 0) {
+                    $(".comentDiv").show();
                 response.forEach(el => {
-                    textBox.value = el.Comment
+                    textBox.value = el.Comment;
+                    description.value = el.description;
+
                 })
             }
+                }
+
             }
         });
     }
-    // , 2000);
 </script>
 <script>
     function onlyNumberKey(evt) {
@@ -135,8 +185,8 @@ reader.onload = function () {
 
 };
 reader.onerror = function (error) {
-    alert('Error: ' + error);
-	console.log('Error: ', error);
+    // alert('Error: ' + error);
+	// console.log('Error: ', error);
 };
 }
 </script>
@@ -198,8 +248,8 @@ reader.onerror = function (error) {
         
         };
         reader.onerror = function (error) {
-            alert('Error: ' + error);
-            console.log('Error: ', error);
+            // alert('Error: ' + error);
+            // console.log('Error: ', error);
         };
         }
 </script>
@@ -227,8 +277,8 @@ reader.onerror = function (error) {
     
     };
     reader.onerror = function (error) {
-        alert('Error: ' + error);
-        console.log('Error: ', error);
+        // alert('Error: ' + error);
+        // console.log('Error: ', error);
     };
     }
     </script>
@@ -251,7 +301,6 @@ reader.onerror = function (error) {
         var phone_no= document.getElementById('inputEmail4phn').value;
         var email= document.getElementById('inputEmail4comp').value;
 
-
         $.ajax({
             url: "/updateStageSecond",
             type: 'POST',
@@ -264,7 +313,7 @@ reader.onerror = function (error) {
             }),
             contentType: 'application/json',
             success: function(response) {
-               alert(response)
+            //    alert(response)
                 if(response === 'success'){
                     swal({
                         title: 'Success!',
@@ -295,7 +344,7 @@ reader.onerror = function (error) {
             }),
             contentType: 'application/json',
             success: function(response) {
-               alert(response)
+            //    alert(response)
                 if(response === 'success'){
                     swal({
                         title: 'Success!',
@@ -616,7 +665,6 @@ reader.onerror = function (error) {
             // setTimeout(
             function firstView()
             { 
-                
                 $('#paymentId')
                     .empty()
                     // $(".unservayed").hide();
@@ -626,7 +674,9 @@ reader.onerror = function (error) {
                         contentType: 'application/json', // added data type
                         success: function(response) {
                         if(typeof(response) === "string"){response = JSON.parse(response)}
+                        
                         var ServiceCode = response.ServiceCode;
+                        
                         var txtBox9 = document.getElementById('serviceCode');
                         txtBox9.value = ServiceCode;
                         var fname = response.person[0].fname;
@@ -660,13 +710,16 @@ reader.onerror = function (error) {
                         var HouseNo = response.HouseNo;
                         var RegionName = response.RegionName;
                         var DistrictName = response.DistrictName;
-                        var WardName = response.WardName;ControlNo;
+                        var WardName = response.WardName;
                         var DistrictCode = response.DistrictCode;
                         var RegionCode = response.RegionCode;
                         var AreaTypeId = response.AreaTypeId;
                         var RegNo = response.RegNo;
+                        var cancellation_reason = response.cancellation_reason;
                         var BusinessLicOwnerTypeId = response.BusinessLicOwnerTypeId;
                         var WardId = response.WardId;
+                        var duration_licence_years = response.year_duration;
+                        var ServiceType = response.ServiceType;
                         var txtBox = document.getElementById('inputEmail4');
                         txtBox.value = trackingNo;
                         var txtBoxtrackNo = document.getElementById('trackNo');
@@ -690,8 +743,8 @@ reader.onerror = function (error) {
                         var tin_no = document.getElementById('tin_no');
                         tin_no.value = AplicationTIN;
 
-                        // var txtBox9 = document.getElementById('typelist');
-                        // txtBox9.value = 'BusinessTypeName';
+                        var duration_licence_years = document.getElementById('duration_licence_years');
+                        duration_licence_years.value = duration_licence_years;
                         // var txtBox10 = document.getElementById('addressAreaB');
                         // txtBox10.value = AreaTypeName;
                         var txtBox11 = document.getElementById('inputroad');
@@ -718,21 +771,24 @@ reader.onerror = function (error) {
                         txtBox21.value = BusinessClassId;
                         var txtBox22 = document.getElementById('nida_no');
                         txtBox22.value = RegNo;
-
+                        var txtBox222 = document.getElementById('cancellation_reason');
+                        txtBox222.value = cancellation_reason;
                         var txtBox24 = document.getElementById('reg_no_other');
                         txtBox24.value = RegNo;
                         var txtBox24 = document.getElementById('bn_no');
                         txtBox24.value = RegNo;
-                        if(ApplicationStageId != 1){
-                            $("#paymentDiv").show()
-                        }
-                        if(OwnerSubTypeId == 2){
+                        // if(ApplicationStageId != 1){
+                        //     $("#paymentDiv").show()
+                        // }
+                        // if(OwnerSubTypeId == 2){
                             var txtBox23 = document.getElementById('inco_no');
                             txtBox23.value = RegNo;
                             var company_name = document.getElementById('company_name');
                             company_name.value = EntityName;
-                            $("#company").show()
-                        }
+                            var servtype = document.getElementById('servtype');
+                            servtype.value = ServiceType;
+                            // $("#company").show()
+                        // }
                         // var txtBox23 = document.getElementById('wardIdB');
                         // txtBox23.value = WardName;
                         var paymentDetails = response.payment;
@@ -740,14 +796,23 @@ reader.onerror = function (error) {
 
                         document.getElementById("loading").style.display = "none";
                         document.getElementById("mask").style.display = "none";
-                        if(paymentDetails.length <= 0){
+                       // alert(paymentDetails[0].AmountTotal)
+                        // alert(paymentDetails[0].ControlNo)
+                        if(paymentDetails[0].ControlNo == 'Waiting for Control Number'){
+                            $('.invoiveButtonDiv').hide()
+                        }
+                        if(typeof paymentDetails[0].AmountTotal == 'undefined' || paymentDetails[0].AmountTotal == ''){
+                            $('.paymentDiv').hide()
+                            $('.invoiveButtonDiv').hide()
                             var row = $('<tr><td class="text-black cheque-amt tacker" id="tacker">-</td>'+
                             '<td class="text-black">-</td>'+
                             '<td class="text-black">No control Number yet</td>'+
                             '<td class="text-black">-</td>'+
                                 '</tr>');
                         $('#paymentId').append(row);
-                        }else{
+                        }
+                        else if(paymentDetails[0].AmountTotal > 0){
+                            $('.paymentDiv').show()
                             for(var i = 0; i < paymentDetails.length; i++){
                             var AmountTotal = paymentDetails[i].AmountTotal;
                             var ServiceName = paymentDetails[i].ServiceName;
@@ -797,10 +862,11 @@ reader.onerror = function (error) {
                             $(".locationB").hide();
                             $(".unservayedB").hide();
                         }
-            // comment();
+            comment();
             // getBusOwnTypeData();
             regGetAddressArea();
             regB();
+            // getAttachments();
                         // 
        
 
@@ -837,7 +903,8 @@ function downloadInvoice(){
     var serviceCode = document.getElementById('serviceCode').value;
     var username = document.getElementById('username').value;
     var trackingNo = document.getElementById('trackingNo').value;
-    location.href = "http://41.59.225.60/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/normal/"+username;
+    // location.href = "http://41.59.225.60/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/normal/"+username;
+    location.href = "http://41.59.228.25/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/normal/"+username;
 }
 </script>
 <script>
@@ -846,7 +913,8 @@ function downloadInvoice(){
         var serviceCode = document.getElementById('serviceCode').value;
         var username = document.getElementById('username').value;
     var trackingNo = document.getElementById('trackingNo').value;
-        location.href = "http://41.59.225.60/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/nmb/"+username;
+        // location.href = "http://41.59.225.60/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/nmb/"+username;
+        location.href = "http://41.59.228.25/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/nmb/"+username;
     }
 </script>
 <script>
@@ -855,7 +923,8 @@ function downloadInvoice(){
         var serviceCode = document.getElementById('serviceCode').value;
         var username = document.getElementById('username').value;
     var trackingNo = document.getElementById('trackingNo').value;
-        location.href = "http://41.59.225.60/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/crdb/"+username;
+        // location.href = "http://41.59.225.60/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/crdb/"+username;
+        location.href = "http://41.59.228.25/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/crdb/"+username;
     }
 </script>
 <script>
@@ -864,7 +933,8 @@ function downloadInvoice(){
         var serviceCode = document.getElementById('serviceCode').value;
         var username = document.getElementById('username').value;
     var trackingNo = document.getElementById('trackingNo').value;
-        location.href = "http://41.59.225.60/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/invoice/1/nbc/"+username;
+        // location.href = "http://41.59.225.60/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/invoice/1/nbc/"+username;
+        location.href = "http://41.59.228.25/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/invoice/1/nbc/"+username;
     }
 </script>
 <script>
@@ -873,7 +943,8 @@ function downloadInvoice(){
         var serviceCode = document.getElementById('serviceCode').value;
         var username = document.getElementById('username').value;
     var trackingNo = document.getElementById('trackingNo').value;
-        location.href = "http://41.59.225.60/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/receipt/1/normal/"+username;
+        // location.href = "http://41.59.225.60/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/receipt/1/normal/"+username;
+        location.href = "http://41.59.228.25/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/receipt/1/normal/"+username;
     }
 </script>
 <script>

@@ -114,12 +114,13 @@ var fileInput = document.querySelector('#fileupload');
 var regId = document.getElementById('categoryID').value;
 document.getElementById("loading").style.display = "block";
 document.getElementById("mask").style.display = "block";
+
 var reader = new FileReader();
 reader.readAsDataURL(fileInput.files[0]);
 
 reader.onload = function () {
     $.ajax({
-        url: "/UploadFx",
+        url: "/UploadFxS",
         type: 'POST',
         data: JSON.stringify({"atachment": reader.result, "attachmentId": regId}),
         contentType: 'application/json',
@@ -135,7 +136,7 @@ reader.onload = function () {
 
 };
 reader.onerror = function (error) {
-    alert('Error: ' + error);
+   // alert('Error: ' + error);
 	console.log('Error: ', error);
 };
 }
@@ -198,7 +199,7 @@ reader.onerror = function (error) {
         
         };
         reader.onerror = function (error) {
-            alert('Error: ' + error);
+            //alert('Error: ' + error);
             console.log('Error: ', error);
         };
         }
@@ -227,7 +228,7 @@ reader.onerror = function (error) {
     
     };
     reader.onerror = function (error) {
-        alert('Error: ' + error);
+        //alert('Error: ' + error);
         console.log('Error: ', error);
     };
     }
@@ -264,8 +265,8 @@ reader.onerror = function (error) {
             }),
             contentType: 'application/json',
             success: function(response) {
-               alert(response)
-                if(response === 'success'){
+            //    alert(response)
+                // if(response === 'success'){
                     swal({
                         title: 'Success!',
                         text: 'Data succesfully updated.',
@@ -274,7 +275,7 @@ reader.onerror = function (error) {
                     })
                   getAttachments();
                   getPermit();
-                }
+                // }
             },
         // error: function(jqXHR, textStatus, errorThrown){
         //     alert('Error: ' + textStatus + ' - ' + errorThrown);
@@ -286,16 +287,18 @@ reader.onerror = function (error) {
     function submitSup()
     { 
         var trackNo= document.getElementById('trackNo').value;
-
+        var description= document.getElementById('s-text-description').value;
         $.ajax({
             url: "/SubmitSupplimenti",
             type: 'POST',
             data: JSON.stringify({
-                "trackingNo": trackNo
+                "trackingNo": trackNo,
+                "description": description
             }),
             contentType: 'application/json',
             success: function(response) {
-                if(response === 'success'){
+                // alert(response)
+                // if(response === 'success'){
                     swal({
                         title: 'Success!',
                         text: 'Suppliment successfully submitted.',
@@ -303,7 +306,7 @@ reader.onerror = function (error) {
                         timer: 2000,
                     })
                     window.location.href = '/Dashboard'
-                }
+                // }
             },
         // error: function(jqXHR, textStatus, errorThrown){
         //     alert('Error: ' + textStatus + ' - ' + errorThrown);
@@ -826,7 +829,8 @@ function downloadInvoice(){
     var serviceCode = document.getElementById('serviceCode').value;
     var username = document.getElementById('username').value;
     var trackingNo = document.getElementById('trackingNo').value;
-    location.href = "http://41.59.225.60/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/normal/"+username;
+    // location.href = "http://41.59.225.60/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/normal/"+username;
+    location.href = "http://41.59.228.25/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/normal/"+username;
 }
 </script>
 <script>
@@ -835,7 +839,8 @@ function downloadInvoice(){
         var serviceCode = document.getElementById('serviceCode').value;
         var username = document.getElementById('username').value;
     var trackingNo = document.getElementById('trackingNo').value;
-        location.href = "http://41.59.225.60/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/nmb/"+username;
+        location.href = "http://41.59.228.25/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/nmb/"+username;
+        // location.href = "http://41.59.225.60/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/nmb/"+username;
     }
 </script>
 <script>
@@ -844,7 +849,8 @@ function downloadInvoice(){
         var serviceCode = document.getElementById('serviceCode').value;
         var username = document.getElementById('username').value;
     var trackingNo = document.getElementById('trackingNo').value;
-        location.href = "http://41.59.225.60/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/crdb/"+username;
+        location.href = "http://41.59.228.25/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/crdb/"+username;
+        // location.href = "http://41.59.225.60/api/download-bill-payment/"+trackingNo+"/"+serviceCode+"/invoice/1/crdb/"+username;
     }
 </script>
 <script>
@@ -853,7 +859,8 @@ function downloadInvoice(){
         var serviceCode = document.getElementById('serviceCode').value;
         var username = document.getElementById('username').value;
     var trackingNo = document.getElementById('trackingNo').value;
-        location.href = "http://41.59.225.60/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/invoice/1/nbc/"+username;
+        location.href = "http://41.59.228.25/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/invoice/1/nbc/"+username;
+        // location.href = "http://41.59.225.60/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/invoice/1/nbc/"+username;
     }
 </script>
 <script>
@@ -862,7 +869,8 @@ function downloadInvoice(){
         var serviceCode = document.getElementById('serviceCode').value;
         var username = document.getElementById('username').value;
     var trackingNo = document.getElementById('trackingNo').value;
-        location.href = "http://41.59.225.60/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/receipt/1/normal/"+username;
+        location.href = "http://41.59.228.25/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/receipt/1/normal/"+username;
+        // location.href = "http://41.59.225.60/api/download-bill-payment/"+applicationId+"/"+serviceCode+"/receipt/1/normal/"+username;
     }
 </script>
 <script>
